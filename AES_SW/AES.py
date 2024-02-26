@@ -42,8 +42,8 @@ def mix_columns(mat: list[list[int]]) -> list[list[int]]:
         mat[3][i] = (3 * s0) ^ s1 ^ s2 ^ (2 * s3)
 
 def add_roundkey(mat: list[list[int]], roundkey: list[list[int]]) -> list[list[int]]:
-    for i in range 4:
-        for j in range 4:
+    for i in range(4):
+        for j in range(4):
             mat[i][j] = roundkey[i][j] ^ mat[i][j]
 
     return mat
