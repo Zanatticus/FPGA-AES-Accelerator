@@ -57,15 +57,22 @@ def add_round_key(state, round_key):
         for j in range(4):
             state[i][j] ^= round_key[i][j]
 
-
+# Generate round keys using the AES Key Schedule. AES requires a separate 128-bit round key for each round plus one more.
 def key_expansion(key):
-    # Key expansion
-    pass
-
+    N = [4, 6, 8] # Number of 32-bit words for 128, 192, 256-bit keys, respectively
+    rounds = [11, 13, 15] # Number of rounds for 128, 192, 256-bit keys, respectively
+    Rcon = [0x01, 0x02, 0x04, 0x08, 0x10, 0x20, 0x40, 0x80, 0x1B, 0x36]
+    rcon10 = [0x36, 0x00, 0x00, 0x00]
+    
+    
+    RotWord = lambda word: word[1:] + word[:1]
+    SubWord = lambda word: [s_box[b] for b in word]
+    
 
 def encrypt_block(block, round_keys):
     # Encrypt a single block
     state = [[block[j + 4*i] for j in range(4)] for i in range(4)]
+    import ipdb;ipdb.set_trace()
     add_round_key(state, round_keys[0])
 
     for round_key in round_keys[1:]:
