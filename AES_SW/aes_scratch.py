@@ -83,7 +83,7 @@ def key_expansion(key):
     
     key_schedule = key.copy()
     ExpandedKeyWordList = []
-    for i in range(0, (4*Nr) - 1):
+    for i in range(0, (4*Nr)):
         if i < Nk:
             newWord = key_schedule[i : i + 4]
         elif i % Nk == 0:
@@ -121,6 +121,7 @@ def encrypt_block(block, round_keys):
 
 def aes_encrypt(plaintext, key):
     round_keys = key_expansion(key)
+    ipdb.set_trace()
     ciphertext = []
 
     for block_start in range(0, len(plaintext), 16):
