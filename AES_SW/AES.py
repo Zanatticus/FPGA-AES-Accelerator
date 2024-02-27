@@ -55,3 +55,58 @@ def do_round(mat: list[list[int]], roundkey: list[list[int]]) -> list[list[int]]
     mat =  add_roundkey(mat, roundkey)
 
     return mat
+
+def expand_key(key: str) -> bytearray:
+    key = bytearray(ord(key))
+    key_mat = [bytearray]
+    num_rounds = 0
+    size_index = 0
+    if(len(key) == 16):
+        key_mat = [key[i*4:(i*4)+4] for i in range(4)]
+        num_rounds = 10
+        size_index = 4
+    elif(len(key) == 24):
+        key_mat = [key[i*4:(i*4)+4] for i in range(6)]
+        num_rounds = 12
+        size_index = 6
+    elif(len(key) == 32):
+        key_mat = [key[i*4:(i*4)+4] for i in range(8)]
+        num_rounds = 14
+        size_index = 8
+    else:
+        return None
+    
+    seed = []
+    for x in range(size_index):
+        seed.append(sum(key_mat[x]).to_bytes(4, 'big'))
+    expanded_key = expander(seed, num_rounds)
+
+
+def expander(seed: list[bytearray], num_rounds, size_index) -> list[bytearray]:
+    expanded = [0] * (num_rounds + 1)
+    expanded[0] = seed
+    for i in range(num_rounds):
+        expanded[i+1] = expander_step(expanded[i], i+1, size_index)
+    return(expanded)
+
+def expander_step(prev: list[bytearray], rnd, size_index) -> list[bytearray]:
+    out = [0] * size_index
+    w_3_prime = g_box(prev[-1], rnd)
+    for i in range(size_index):
+        if(i == 0):
+            out[i] = bytearray(a ^ b for a, b in zip(w_3_prime, prev[0]))
+        else:
+            out[i] = bytearray(a ^ b for a, b in zip(out[i-1], prev[i]))
+    
+    return out
+
+def g_box(word: bytearray[4], rnd) -> bytearray[4]:
+    Rcon_lst = [0x00, 0x01, 0x02, 0x04, 0x08, 0x10, 0x20, 
+                0x40, 0x80, 0x1b, 0x36, 0x6c, 0xd8, 0xab, 
+                0x4d]
+    rcon = bytearray([Rcon_lst[rnd], 0x00, 0x00, 0x00])
+    word = word[1:] + [word[0]]
+    word = [Sbox[(x & 0xF0) >> 4][x &0x0F] for x in word]
+    word = bytearray(a ^ b for a, b in zip(word, rcon))
+
+    return word
