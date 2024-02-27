@@ -52,13 +52,22 @@ def mix_columns(state):
         state[1][i] = s0 ^ (2 * s1) ^ (3 * s2) ^ s3
         state[2][i] = s0 ^ s1 ^ (2 * s2) ^ (3 * s3)
         state[3][i] = (3 * s0) ^ s1 ^ s2 ^ (2 * s3)
+        ipdb.set_trace()
+        for j in range(4):
+            if state[j][i] > 255:
+                h = state[j][i] >> 7
+                state[j][i] = state[j][i] << 1
+                state[j][i] ^= h * 0x1B
+                # state[j][i] = state[j][i] 
+                # state[j][i] = state[j][i] ^ 0x11B # XOR with the polynomial x^8 + x^4 + x^3 + x + 1
+        ipdb.set_trace()
 
 
 def add_round_key(state, round_key):
     # Add round key to the state matrix
     for i in range(4):
         for j in range(4):
-            state[i][j] ^= round_key[i][j]
+            state[i][j] ^= round_key[j]
 
 # Generate round keys using the AES Key Schedule. AES requires a separate 128-bit round key for each round plus one more.
 def key_expansion(key):
@@ -103,11 +112,19 @@ def encrypt_block(block, round_keys):
     # Encrypt a single block
     state = [[block[j + 4*i] for j in range(4)] for i in range(4)]
     add_round_key(state, round_keys[0])
-
+    
     for round_key in round_keys[1:]:
+        ipdb.set_trace()
         substitute_bytes(state)
+        
+        ipdb.set_trace()
         shift_rows(state)
+        
+        ipdb.set_trace()
         mix_columns(state)
+        
+        ipdb.set_trace()
+
         add_round_key(state, round_key)
 
     substitute_bytes(state)
@@ -121,7 +138,6 @@ def encrypt_block(block, round_keys):
 
 def aes_encrypt(plaintext, key):
     round_keys = key_expansion(key)
-    ipdb.set_trace()
     ciphertext = []
 
     for block_start in range(0, len(plaintext), 16):
