@@ -15,8 +15,37 @@ Sbox = (
             0x70, 0x3E, 0xB5, 0x66, 0x48, 0x03, 0xF6, 0x0E, 0x61, 0x35, 0x57, 0xB9, 0x86, 0xC1, 0x1D, 0x9E,
             0xE1, 0xF8, 0x98, 0x11, 0x69, 0xD9, 0x8E, 0x94, 0x9B, 0x1E, 0x87, 0xE9, 0xCE, 0x55, 0x28, 0xDF,
             0x8C, 0xA1, 0x89, 0x0D, 0xBF, 0xE6, 0x42, 0x68, 0x41, 0x99, 0x2D, 0x0F, 0xB0, 0x54, 0xBB, 0x16
-            )
+        )
 
+
+# Formats a string into a list of blocks that AES can operate on
+def format_data(data: str) -> list[list[list[int]]]:
+    # Pad the input string if its length is not a multiple of 16
+    padded_string = data.ljust((len(data) + 15) // 16 * 16)
+
+    # Split the padded string into chunks of 16 characters
+    chunks = [padded_string[i:i+16] for i in range(0, len(padded_string), 16)]
+
+    # Convert each chunk into a 4x4 matrix of integers
+    matrices = []
+    for chunk in chunks:
+        matrix = []
+        for i in range(0, len(chunk), 4):
+            matrix.append([ord(char) for char in chunk[i:i+4]])
+        matrices.append(matrix)
+
+    return matrices
+
+# Does a round of AES
+def do_round(mat: list[list[int]], roundkey: list[list[int]]) -> list[list[int]]:
+    mat = sub_bytes(mat)
+    mat = shift_rows(mat)
+    mat = mix_columns(mat)
+    mat =  add_roundkey(mat, roundkey)
+
+    return mat
+
+# First step of AES round
 def sub_bytes(mat: list[list[int]]) -> list[list[int]]:
     for x in range(4):
         for y in range(4):
@@ -24,11 +53,13 @@ def sub_bytes(mat: list[list[int]]) -> list[list[int]]:
 
     return mat
 
+# Second step of AES round
 def shift_rows(mat: list[list[int]]) -> list[list[int]]:
     mat[1] = mat[1][1:] + mat[1][:1]
     mat[2] = mat[2][2:] + mat[2][:2]
     mat[3] = mat[3][3:] + mat[3][:3]
 
+#  Third step of AES round
 def mix_columns(mat: list[list[int]]) -> list[list[int]]:
    for i in range(4):
         s0 = mat[0][i]
@@ -41,21 +72,15 @@ def mix_columns(mat: list[list[int]]) -> list[list[int]]:
         mat[2][i] = s0 ^ s1 ^ (2 * s2) ^ (3 * s3)
         mat[3][i] = (3 * s0) ^ s1 ^ s2 ^ (2 * s3)
 
-def add_roundkey(mat: list[list[int]], roundkey: list[list[int]]) -> list[list[int]]:
+# Fourth step of AES round
+def add_roundkey(mat: list[list[int]], roundkey: list[list[bytes]]) -> list[list[int]]:
     for i in range(4):
         for j in range(4):
             mat[i][j] = roundkey[i][j] ^ mat[i][j]
 
     return mat
 
-def do_round(mat: list[list[int]], roundkey: list[list[int]]) -> list[list[int]]:
-    mat = sub_bytes(mat)
-    mat = shift_rows(mat)
-    mat = mix_columns(mat)
-    mat =  add_roundkey(mat, roundkey)
-
-    return mat
-
+# Function to handle key expansion
 def expand_key(key: str) -> bytearray:
     key = bytearray(ord(key))
     key_mat = [bytearray]
@@ -79,16 +104,35 @@ def expand_key(key: str) -> bytearray:
     seed = []
     for x in range(size_index):
         seed.append(sum(key_mat[x]).to_bytes(4, 'big'))
-    expanded_key = expander(seed, num_rounds)
+    raw_key = expander(seed, num_rounds)
+    extended_key = format_key(raw_key)
+    return extended_key
 
+# Key expansion helper
+def format_key(expanded_key: list[list[bytearray]]) -> list[list[bytes]]:
+    long_bytearray = bytearray()
+    for sublist in expanded_key:
+        for byte_arr in sublist:
+            long_bytearray.extend(byte_arr)
+    group_size = 16
+    formatted_groups = [long_bytearray[i:i+group_size] for i in range(0, len(long_bytearray), group_size)]
+    extended_key = []
+    for group in formatted_groups:
+        matrix = []
+        for i in range(0, len(group), 4):
+            matrix.append(list(group[i:i+4]))
+        extended_key.append(matrix)
+    return extended_key
 
-def expander(seed: list[bytearray], num_rounds, size_index) -> list[bytearray]:
+# Key expansion helper          
+def expander(seed: list[bytearray], num_rounds, size_index) -> list[list[bytearray]]:
     expanded = [0] * (num_rounds + 1)
     expanded[0] = seed
     for i in range(num_rounds):
         expanded[i+1] = expander_step(expanded[i], i+1, size_index)
     return(expanded)
 
+# Key expansion helper     
 def expander_step(prev: list[bytearray], rnd, size_index) -> list[bytearray]:
     out = [0] * size_index
     w_3_prime = g_box(prev[-1], rnd)
@@ -100,6 +144,7 @@ def expander_step(prev: list[bytearray], rnd, size_index) -> list[bytearray]:
     
     return out
 
+# Key expansion helper     
 def g_box(word: bytearray[4], rnd) -> bytearray[4]:
     Rcon_lst = [0x00, 0x01, 0x02, 0x04, 0x08, 0x10, 0x20, 
                 0x40, 0x80, 0x1b, 0x36, 0x6c, 0xd8, 0xab, 
@@ -110,3 +155,4 @@ def g_box(word: bytearray[4], rnd) -> bytearray[4]:
     word = bytearray(a ^ b for a, b in zip(word, rcon))
 
     return word
+
