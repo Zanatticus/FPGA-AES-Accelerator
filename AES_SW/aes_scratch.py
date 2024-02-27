@@ -1,3 +1,6 @@
+import ipdb
+
+
 s_box = (
             0x63, 0x7C, 0x77, 0x7B, 0xF2, 0x6B, 0x6F, 0xC5, 0x30, 0x01, 0x67, 0x2B, 0xFE, 0xD7, 0xAB, 0x76,
             0xCA, 0x82, 0xC9, 0x7D, 0xFA, 0x59, 0x47, 0xF0, 0xAD, 0xD4, 0xA2, 0xAF, 0x9C, 0xA4, 0x72, 0xC0,
@@ -60,24 +63,25 @@ def add_round_key(state, round_key):
 # Generate round keys using the AES Key Schedule. AES requires a separate 128-bit round key for each round plus one more.
 def key_expansion(key):
     rounds = [11, 13, 15] # Number of rounds for 128, 192, 256-bit keys, respectively
-    Rcon = [0x01, 0x02, 0x04, 0x08, 0x10, 0x20, 0x40, 0x80, 0x1B, 0x36] # The round constant word array
+    # 32-bit word round constants for each round
+    Rcon = [0x01000000, 0x02000000, 0x04000000, 0x08000000, 0x10000000, 
+            0x20000000, 0x40000000, 0x80000000, 0x1B000000, 0x36000000]
     
     key_size = len(key) # Key size in bytes
     Nk = key_size // 4 # Number of 32-bit words in the key
     Nr = rounds[Nk - 4] # Number of round keys needed
     
-    #RotWord = lambda word: word[1:] + word[:1]
-    # Define RotWord lambda to be a one-byte left circular shift agnostic of the datatype
+    # one-byte left circular shift/rotation 
     RotWord = lambda word: word[1:] + [word[0]]
-    SubWord = lambda word: [s_box[b] for b in word]
     
-    import ipdb;ipdb.set_trace()
+    # application of the AES S-box to each of the four bytes of the word
+    SubWord = lambda word: [s_box[b] for b in word]
     
     key_schedule = key.copy()
     ExpandedKeyWordList = []
     for i in range(0, (4*Nr) - 1):
         if i < Nk:
-            newWord = key_schedule[i]
+            newWord = key_schedule[i : i + 4]
         elif i % Nk == 0:
             newWord = ExpandedKeyWordList[i-Nk] ^ SubWord(RotWord(ExpandedKeyWordList[i-1])) ^ Rcon[i//Nk]
         elif (Nk > 6) and (i % Nk == 4):
@@ -86,7 +90,7 @@ def key_expansion(key):
             newWord = ExpandedKeyWordList[i-Nk] ^ ExpandedKeyWordList[i-1]
         ExpandedKeyWordList.append(newWord)
     
-    import ipdb;ipdb.set_trace()
+    ipdb.set_trace()
     return round_keys
 
 def encrypt_block(block, round_keys):
