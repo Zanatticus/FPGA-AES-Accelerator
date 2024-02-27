@@ -59,20 +59,39 @@ def add_round_key(state, round_key):
 
 # Generate round keys using the AES Key Schedule. AES requires a separate 128-bit round key for each round plus one more.
 def key_expansion(key):
-    N = [4, 6, 8] # Number of 32-bit words for 128, 192, 256-bit keys, respectively
     rounds = [11, 13, 15] # Number of rounds for 128, 192, 256-bit keys, respectively
-    Rcon = [0x01, 0x02, 0x04, 0x08, 0x10, 0x20, 0x40, 0x80, 0x1B, 0x36]
-    rcon10 = [0x36, 0x00, 0x00, 0x00]
+    Rcon = [0x01, 0x02, 0x04, 0x08, 0x10, 0x20, 0x40, 0x80, 0x1B, 0x36] # The round constant word array
     
+    key_size = len(key) # Key size in bytes
+    Nk = key_size // 4 # Number of 32-bit words in the key
+    Nr = rounds[Nk - 4] # Number of round keys needed
     
-    RotWord = lambda word: word[1:] + word[:1]
+    #RotWord = lambda word: word[1:] + word[:1]
+    # Define RotWord lambda to be a one-byte left circular shift agnostic of the datatype
+    RotWord = lambda word: word[1:] + [word[0]]
     SubWord = lambda word: [s_box[b] for b in word]
     
+    import ipdb;ipdb.set_trace()
+    
+    key_schedule = key.copy()
+    ExpandedKeyWordList = []
+    for i in range(0, (4*Nr) - 1):
+        if i < Nk:
+            newWord = key_schedule[i]
+        elif i % Nk == 0:
+            newWord = ExpandedKeyWordList[i-Nk] ^ SubWord(RotWord(ExpandedKeyWordList[i-1])) ^ Rcon[i//Nk]
+        elif (Nk > 6) and (i % Nk == 4):
+            newWord = ExpandedKeyWordList[i-Nk] ^ SubWord(ExpandedKeyWordList[i-1])
+        else:
+            newWord = ExpandedKeyWordList[i-Nk] ^ ExpandedKeyWordList[i-1]
+        ExpandedKeyWordList.append(newWord)
+    
+    import ipdb;ipdb.set_trace()
+    return round_keys
 
 def encrypt_block(block, round_keys):
     # Encrypt a single block
     state = [[block[j + 4*i] for j in range(4)] for i in range(4)]
-    import ipdb;ipdb.set_trace()
     add_round_key(state, round_keys[0])
 
     for round_key in round_keys[1:]:
