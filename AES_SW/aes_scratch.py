@@ -64,9 +64,10 @@ def add_round_key(state, round_key):
 def key_expansion(key):
     rounds = [11, 13, 15] # Number of rounds for 128, 192, 256-bit keys, respectively
     # 32-bit word round constants for each round
-    Rcon = [0x01000000, 0x02000000, 0x04000000, 0x08000000, 0x10000000, 
-            0x20000000, 0x40000000, 0x80000000, 0x1B000000, 0x36000000]
-    
+    Rc = [0x01, 0x02, 0x04, 0x08, 0x10, 
+            0x20, 0x40, 0x80, 0x1B, 0x36]
+    Rcon = [[Rc[i],0,0,0] for i in range(0, 10)]
+
     key_size = len(key) # Key size in bytes
     Nk = key_size // 4 # Number of 32-bit words in the key
     Nr = rounds[Nk - 4] # Number of round keys needed
@@ -77,17 +78,36 @@ def key_expansion(key):
     # application of the AES S-box to each of the four bytes of the word
     SubWord = lambda word: [s_box[b] for b in word]
     
+    # lambda function for xoring two lists
+    xor = lambda a, b: [a[i] ^ b[i] for i in range(4)]
+    
     key_schedule = key.copy()
     ExpandedKeyWordList = []
     for i in range(0, (4*Nr) - 1):
         if i < Nk:
             newWord = key_schedule[i : i + 4]
         elif i % Nk == 0:
-            newWord = ExpandedKeyWordList[i-Nk] ^ SubWord(RotWord(ExpandedKeyWordList[i-1])) ^ Rcon[i//Nk]
+            # newWord = ExpandedKeyWordList[i-Nk] ^ SubWord(RotWord(ExpandedKeyWordList[i-1])) ^ Rcon[i//Nk]
+            try:
+                newWord = xor(xor(ExpandedKeyWordList[i-Nk], SubWord(RotWord(ExpandedKeyWordList[i-1]))), Rcon[(i//Nk) - 1])
+            except:
+                print('1')
+                ipdb.set_trace()
         elif (Nk > 6) and (i % Nk == 4):
-            newWord = ExpandedKeyWordList[i-Nk] ^ SubWord(ExpandedKeyWordList[i-1])
+            # newWord = ExpandedKeyWordList[i-Nk] ^ SubWord(ExpandedKeyWordList[i-1])
+            try:
+                newWord = xor(ExpandedKeyWordList[i-Nk], SubWord(ExpandedKeyWordList[i-1]))
+            except:
+                print('2')
+                ipdb.set_trace()
         else:
-            newWord = ExpandedKeyWordList[i-Nk] ^ ExpandedKeyWordList[i-1]
+            # newWord = ExpandedKeyWordList[i-Nk] ^ ExpandedKeyWordList[i-1]
+            try:
+                newWord = xor(ExpandedKeyWordList[i-Nk], ExpandedKeyWordList[i-1])
+            except:
+                print('3')
+
+                ipdb.set_trace()
         ExpandedKeyWordList.append(newWord)
     
     ipdb.set_trace()
