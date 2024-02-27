@@ -88,30 +88,16 @@ def key_expansion(key):
             newWord = key_schedule[i : i + 4]
         elif i % Nk == 0:
             # newWord = ExpandedKeyWordList[i-Nk] ^ SubWord(RotWord(ExpandedKeyWordList[i-1])) ^ Rcon[i//Nk]
-            try:
-                newWord = xor(xor(ExpandedKeyWordList[i-Nk], SubWord(RotWord(ExpandedKeyWordList[i-1]))), Rcon[(i//Nk) - 1])
-            except:
-                print('1')
-                ipdb.set_trace()
+            newWord = xor(xor(ExpandedKeyWordList[i-Nk], SubWord(RotWord(ExpandedKeyWordList[i-1]))), Rcon[(i//Nk) - 1])
         elif (Nk > 6) and (i % Nk == 4):
             # newWord = ExpandedKeyWordList[i-Nk] ^ SubWord(ExpandedKeyWordList[i-1])
-            try:
-                newWord = xor(ExpandedKeyWordList[i-Nk], SubWord(ExpandedKeyWordList[i-1]))
-            except:
-                print('2')
-                ipdb.set_trace()
+            newWord = xor(ExpandedKeyWordList[i-Nk], SubWord(ExpandedKeyWordList[i-1]))
         else:
             # newWord = ExpandedKeyWordList[i-Nk] ^ ExpandedKeyWordList[i-1]
-            try:
-                newWord = xor(ExpandedKeyWordList[i-Nk], ExpandedKeyWordList[i-1])
-            except:
-                print('3')
-
-                ipdb.set_trace()
+            newWord = xor(ExpandedKeyWordList[i-Nk], ExpandedKeyWordList[i-1])
         ExpandedKeyWordList.append(newWord)
-    
-    ipdb.set_trace()
-    return round_keys
+
+    return ExpandedKeyWordList
 
 def encrypt_block(block, round_keys):
     # Encrypt a single block
