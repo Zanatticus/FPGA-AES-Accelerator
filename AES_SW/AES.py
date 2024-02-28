@@ -1,3 +1,8 @@
+#################################################
+# @File AES Encryption Functions Using no       #
+#       external libraries                      #
+#################################################
+
 Sbox = (
             0x63, 0x7C, 0x77, 0x7B, 0xF2, 0x6B, 0x6F, 0xC5, 0x30, 0x01, 0x67, 0x2B, 0xFE, 0xD7, 0xAB, 0x76,
             0xCA, 0x82, 0xC9, 0x7D, 0xFA, 0x59, 0x47, 0xF0, 0xAD, 0xD4, 0xA2, 0xAF, 0x9C, 0xA4, 0x72, 0xC0,
@@ -134,7 +139,7 @@ def add_roundkey(mat: list[list[int]], roundkey: list[list[bytes]]) -> list[list
 
 # Function to handle key expansion
 def expand_key(key: str) -> list[list[list[bytes]]]:
-    key = bytearray(ord(key))
+    key = bytearray(key.encode())
     key_mat = [bytearray]
     num_rounds = 0
     size_index = 0
@@ -197,7 +202,7 @@ def expander_step(prev: list[bytearray], rnd, size_index) -> list[bytearray]:
     return out
 
 # Key expansion helper     
-def g_box(word: bytearray[4], rnd) -> bytearray[4]:
+def g_box(word: bytearray, rnd) -> bytearray:
     Rcon_lst = [0x00, 0x01, 0x02, 0x04, 0x08, 0x10, 0x20, 
                 0x40, 0x80, 0x1b, 0x36, 0x6c, 0xd8, 0xab, 
                 0x4d]
