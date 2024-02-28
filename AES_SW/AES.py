@@ -17,9 +17,18 @@ Sbox = (
             0x8C, 0xA1, 0x89, 0x0D, 0xBF, 0xE6, 0x42, 0x68, 0x41, 0x99, 0x2D, 0x0F, 0xB0, 0x54, 0xBB, 0x16
         )
 
+# Takes a string and a key as input and returns its aes encrypted output
+def AES_encrypt(plaintext: str, key: str, type: int) -> str:
+    f_data = format_input(plaintext)
+    exp_key = expand_key(key)
+    out_data = []
+    for x in f_data:
+        out_data.append(aes_encrypt_block(x, exp_key, type))
+    ciphertext = format_output(out_data)
+    return ciphertext
 
 # Formats a string into a list of blocks that AES can operate on
-def format_data(data: str) -> list[list[list[int]]]:
+def format_input(data: str) -> list[list[list[int]]]:
     # Pad the input string if its length is not a multiple of 16
     padded_string = data.ljust((len(data) + 15) // 16 * 16)
 
@@ -36,11 +45,54 @@ def format_data(data: str) -> list[list[list[int]]]:
 
     return matrices
 
+# Formats the output of AES encryption back to a string
+def format_output(matrices: list[list[list[int]]]) -> str:
+    # Convert each matrix into a string of characters
+    characters = []
+    for matrix in matrices:
+        for row in matrix:
+            for char_code in row:
+                characters.append(chr(char_code))
+
+    # Join all characters into a single string
+    output_string = ''.join(characters)
+
+    return output_string
+
+# Encrypts one block of data
+def aes_encrypt_block(mat: list[list[int]], exp_key: list[list[list[bytes]]], type: int) -> list[list[int]]:
+    num_rounds = 0
+    if(type == 128):
+        num_rounds = 10
+    elif(type == 192):
+        num_rounds = 12
+    elif(type == 256):
+        num_rounds = 14
+    else:
+        return None
+    
+    for i in range(num_rounds):
+        if(i == 0):
+            mat = add_roundkey(mat, exp_key[i])
+        elif(i == (num_rounds - 1)):
+            mat = do_last_round(mat, exp_key[i])
+        else:
+            mat = do_round(mat, exp_key[i])
+    return mat 
+
 # Does a round of AES
-def do_round(mat: list[list[int]], roundkey: list[list[int]]) -> list[list[int]]:
+def do_round(mat: list[list[int]], roundkey: list[list[bytes]]) -> list[list[int]]:
     mat = sub_bytes(mat)
     mat = shift_rows(mat)
     mat = mix_columns(mat)
+    mat =  add_roundkey(mat, roundkey)
+
+    return mat
+
+# Does the last round of AES omitting shiftcolumns
+def do_last_round(mat: list[list[int]], roundkey: list[list[bytes]]) -> list[list[int]]:
+    mat = sub_bytes(mat)
+    mat = shift_rows(mat)
     mat =  add_roundkey(mat, roundkey)
 
     return mat
@@ -81,7 +133,7 @@ def add_roundkey(mat: list[list[int]], roundkey: list[list[bytes]]) -> list[list
     return mat
 
 # Function to handle key expansion
-def expand_key(key: str) -> bytearray:
+def expand_key(key: str) -> list[list[list[bytes]]]:
     key = bytearray(ord(key))
     key_mat = [bytearray]
     num_rounds = 0
@@ -109,7 +161,7 @@ def expand_key(key: str) -> bytearray:
     return extended_key
 
 # Key expansion helper
-def format_key(expanded_key: list[list[bytearray]]) -> list[list[bytes]]:
+def format_key(expanded_key: list[list[bytearray]]) -> list[list[list[bytes]]]:
     long_bytearray = bytearray()
     for sublist in expanded_key:
         for byte_arr in sublist:
@@ -155,4 +207,3 @@ def g_box(word: bytearray[4], rnd) -> bytearray[4]:
     word = bytearray(a ^ b for a, b in zip(word, rcon))
 
     return word
-
