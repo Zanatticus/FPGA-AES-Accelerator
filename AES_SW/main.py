@@ -13,4 +13,4 @@ print(f"Plaintext: {plaintext}")
 print(f"Cyphertext: {cyphertext}")
 
 
-decrypted_plaintext = AES_decrypt(cyphertext, key, 256)
+# decrypted_plaintext = AES_decrypt(cyphertext, key, 256)
