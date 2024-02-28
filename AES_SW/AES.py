@@ -161,7 +161,7 @@ def expand_key(key: str) -> list[list[list[bytes]]]:
     seed = []
     for x in range(size_index):
         seed.append(sum(key_mat[x]).to_bytes(4, 'big'))
-    raw_key = expander(seed, num_rounds)
+    raw_key = expander(seed, num_rounds, size_index)
     extended_key = format_key(raw_key)
     return extended_key
 
@@ -207,7 +207,10 @@ def g_box(word: bytearray, rnd) -> bytearray:
                 0x40, 0x80, 0x1b, 0x36, 0x6c, 0xd8, 0xab, 
                 0x4d]
     rcon = bytearray([Rcon_lst[rnd], 0x00, 0x00, 0x00])
-    word = word[1:] + [word[0]]
+    byte_1 =int.from_bytes(word[0], "big")
+    word = int.from_bytes(word, "big") 
+    temp = (word << 8) |  byte_1
+    word = int.to_bytes(temp, "big")
     word = [Sbox[(x & 0xF0) >> 4][x &0x0F] for x in word]
     word = bytearray(a ^ b for a, b in zip(word, rcon))
 
