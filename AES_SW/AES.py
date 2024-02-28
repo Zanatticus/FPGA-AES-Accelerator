@@ -105,7 +105,9 @@ def do_last_round(mat: list[list[int]], roundkey: list[list[bytes]]) -> list[lis
 def sub_bytes(mat: list[list[int]]) -> list[list[int]]:
     for x in range(4):
         for y in range(4):
-            mat[x][y] = Sbox[mat[x][y]]
+            left_bits = mat[x][y] & 0xF0 >> 4
+            right_bits = mat[x][y] & 0x0F
+            mat[x][y] = Sbox[left_bits][right_bits]
 
     return mat
 
@@ -114,25 +116,28 @@ def shift_rows(mat: list[list[int]]) -> list[list[int]]:
     mat[1] = mat[1][1:] + mat[1][:1]
     mat[2] = mat[2][2:] + mat[2][:2]
     mat[3] = mat[3][3:] + mat[3][:3]
+    return mat
 
 #  Third step of AES round
 def mix_columns(mat: list[list[int]]) -> list[list[int]]:
-   for i in range(4):
+    for i in range(4):
         s0 = mat[0][i]
         s1 = mat[1][i]
         s2 = mat[2][i]
         s3 = mat[3][i]
 
-        mat[0][i] = (2 * s0) ^ (3 * s1) ^ s2 ^ s3
-        mat[1][i] = s0 ^ (2 * s1) ^ (3 * s2) ^ s3
-        mat[2][i] = s0 ^ s1 ^ (2 * s2) ^ (3 * s3)
-        mat[3][i] = (3 * s0) ^ s1 ^ s2 ^ (2 * s3)
+        mat[0][i] = galois_multiply(2, s0) ^ galois_multiply(3, s1) ^ s2 ^ s3
+        mat[1][i] = s0 ^ galois_multiply(2, s1) ^ galois_multiply(3, s2) ^ s3
+        mat[2][i] = s0 ^ s1 ^ galois_multiply(2, s2) ^ galois_multiply(3, s3)
+        mat[3][i] = galois_multiply(3, s0) ^ s1 ^ s2 ^ galois_multiply(2, s3)
+    return mat
 
 # Fourth step of AES round
-def add_roundkey(mat: list[list[int]], roundkey: list[list[bytes]]) -> list[list[int]]:
+def add_roundkey(mat: list[list[int]], roundkey: list[list[bytes]]):
     for i in range(4):
         for j in range(4):
-            mat[i][j] = roundkey[i][j] ^ mat[i][j]
+            val = roundkey[i][j] ^ mat[i][j]
+            mat[i][j] = val
 
     return mat
 
@@ -214,3 +219,17 @@ def g_box(word: bytearray, rnd) -> bytearray:
     word = bytearray(a ^ b for a, b in zip(word, rcon))
 
     return word
+
+
+def galois_multiply(a, b):
+    """Galois Field multiplicaiton for AES"""
+    p = 0
+    while b:
+        if b & 1:
+            p ^= a
+        a <<= 1
+        if a & 0x100:
+            a ^= 0x1b
+        b >>= 1
+
+    return p & 0xff

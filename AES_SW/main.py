@@ -1,6 +1,6 @@
-import AES
 from AES import AES_encrypt
-from Crypto.Random import get_random_bytes
+from AES import AES_decrypt 
+# from Crypto.Random import get_random_bytes
 
 # AES key
 key = 'kwnfy4ncketndjiltjebbgkechtkvhjk'
@@ -9,4 +9,8 @@ plaintext = "Speed I am speed, faster than fast quicker than quick. LIGHTNING LI
 
 cyphertext = AES_encrypt(plaintext, key, 256)
 
-print(cyphertext)
+print(f"Plaintext: {plaintext}")
+print(f"Cyphertext: {cyphertext}")
+
+
+decrypted_plaintext = AES_decrypt(cyphertext, key, 256)
