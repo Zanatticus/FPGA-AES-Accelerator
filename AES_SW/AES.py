@@ -21,6 +21,7 @@ Sbox = [
             [0xE1, 0xF8, 0x98, 0x11, 0x69, 0xD9, 0x8E, 0x94, 0x9B, 0x1E, 0x87, 0xE9, 0xCE, 0x55, 0x28, 0xDF],
             [0x8C, 0xA1, 0x89, 0x0D, 0xBF, 0xE6, 0x42, 0x68, 0x41, 0x99, 0x2D, 0x0F, 0xB0, 0x54, 0xBB, 0x16]
         ]
+
 # Takes a string and a key as input and returns its aes encrypted output
 def AES_encrypt(plaintext: str, key: str, type: int) -> str:
     f_data = format_input(plaintext)
@@ -220,7 +221,7 @@ def g_box(word: bytearray, rnd) -> bytearray:
 
     return word
 
-
+# Multiplication in a galois field
 def galois_multiply(a, b):
     """Galois Field multiplicaiton for AES"""
     p = 0
@@ -233,3 +234,81 @@ def galois_multiply(a, b):
         b >>= 1
 
     return p & 0xff
+
+
+# Takes a string and a key as input and returns its AES decrypted output
+def AES_decrypt(ciphertext: str, key: str, type: int) -> str:
+    f_data = format_input(ciphertext)
+    exp_key = expand_key(key)
+    out_data = []
+    for x in f_data:
+        out_data.append(aes_decrypt_block(x, exp_key, type))
+    plaintext = format_output(out_data)
+    return plaintext
+
+# Decrypts one block of data
+def aes_decrypt_block(mat: list[list[int]], exp_key: list[list[list[bytes]]], type: int) -> list[list[int]]:
+    num_rounds = 0
+    if(type == 128):
+        num_rounds = 10
+    elif(type == 192):
+        num_rounds = 12
+    elif(type == 256):
+        num_rounds = 14
+    else:
+        return None
+    
+    for i in range(num_rounds, 0, -1):
+        if(i == num_rounds):
+            mat = do_last_round_decrypt(mat, exp_key[i])
+        else:
+            mat = do_round_decrypt(mat, exp_key[i])
+    mat = add_roundkey(mat, exp_key[0])  # Final round with initial key
+    return mat
+
+# Does a round of AES decryption
+def do_round_decrypt(mat: list[list[int]], roundkey: list[list[bytes]]) -> list[list[int]]:
+    mat = inv_shift_rows(mat)
+    mat = inv_sub_bytes(mat)
+    mat =  add_roundkey(mat, roundkey)
+    mat = inv_mix_columns(mat)
+
+    return mat
+
+# Does the last round of AES decryption omitting inv_shift_columns
+def do_last_round_decrypt(mat: list[list[int]], roundkey: list[list[bytes]]) -> list[list[int]]:
+    mat = inv_shift_rows(mat)
+    mat =  add_roundkey(mat, roundkey)
+
+    return mat
+
+# Inverse of shift_rows
+def inv_shift_rows(mat: list[list[int]]) -> list[list[int]]:
+    mat[1] = mat[1][-1:] + mat[1][:-1]
+    mat[2] = mat[2][-2:] + mat[2][:-2]
+    mat[3] = mat[3][-3:] + mat[3][:-3]
+    return mat
+
+def inv_sub_bytes(mat: list[list[int]]) -> list[list[int]]:
+    for x in range(4):
+        for y in range(4):
+            byte_value = mat[x][y]
+            row = (byte_value & 0xF0) >> 4
+            col = byte_value & 0x0F
+            mat[x][y] = Sbox[row][col]
+
+    return mat
+
+# Inverse of mix_columns
+def inv_mix_columns(mat: list[list[int]]) -> list[list[int]]:
+    for i in range(4):
+        s0 = mat[0][i]
+        s1 = mat[1][i]
+        s2 = mat[2][i]
+        s3 = mat[3][i]
+
+        mat[0][i] = galois_multiply(0x0e, s0) ^ galois_multiply(0x0b, s1) ^ galois_multiply(0x0d, s2) ^ galois_multiply(0x09, s3)
+        mat[1][i] = galois_multiply(0x09, s0) ^ galois_multiply(0x0e, s1) ^ galois_multiply(0x0b, s2) ^ galois_multiply(0x0d, s3)
+        mat[2][i] = galois_multiply(0x0d, s0) ^ galois_multiply(0x09, s1) ^ galois_multiply(0x0e, s2) ^ galois_multiply(0x0b, s3)
+        mat[3][i] = galois_multiply(0x0b, s0) ^ galois_multiply(0x0d, s1) ^ galois_multiply(0x09, s2) ^ galois_multiply(0x0e, s3)
+    return mat
