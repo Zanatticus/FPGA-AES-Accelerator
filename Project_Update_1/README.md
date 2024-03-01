@@ -13,3 +13,5 @@ calling `python3 aes_module.py` will run the Python script using external Pycryp
 ## Output
 
 The timing results can be seen in the print output in the Jupyter Notebook files [AES.ipynb](https://github.com/Zanatticus/FPGA_AES_Accelerator/blob/main/Project_Update_1/AES.ipynb) and [aes_module.ipynb](https://github.com/Zanatticus/FPGA_AES_Accelerator/blob/main/Project_Update_1/aes_module.ipynb)
+
+Or they can be viewed in the screenshots of the Jupyter Notebook files [aes_notebook.png](https://github.com/Zanatticus/FPGA_AES_Accelerator/blob/main/Project_Update_1/aes_notebook.png) and [aes_module_notebook.png](https://github.com/Zanatticus/FPGA_AES_Accelerator/blob/main/Project_Update_1/aes_module_notebook.png)
