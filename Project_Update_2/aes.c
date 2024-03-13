@@ -3,25 +3,15 @@
 
 int main(int argc, char *argv[])
 {
-    // the expanded keySize
     int expandedKeySize = 176;
-
-    // the expanded key
     unsigned char expandedKey[expandedKeySize];
 
     // the cipher key
     unsigned char key[16] = {'k', 'k', 'k', 'k', 'e', 'e', 'e', 'e', 'y', 'y', 'y', 'y', '.', '.', '.', '.'};
-
-    // the cipher key size
     enum keySize size = SIZE_16;
 
-    // the plaintext
     unsigned char plaintext[16] = {'a', 'b', 'c', 'd', 'e', 'f', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0'};
-
-    // the ciphertext
     unsigned char ciphertext[16];
-
-    // the decrypted text
     unsigned char decryptedtext[16];
 
     int i;
@@ -145,7 +135,7 @@ void expandKey(unsigned char *expandedKey,
     int i;
     unsigned char t[4] = {0}; // temporary 4-byte variable
 
-    // set the 16,24,32 bytes of the expanded key to the input key
+    // set the 16, 24, 32 bytes of the expanded key to the input key
     for (i = 0; i < size; i++)
         expandedKey[i] = key[i];
     currentSize += size;
@@ -158,7 +148,7 @@ void expandKey(unsigned char *expandedKey,
             t[i] = expandedKey[(currentSize - 4) + i];
         }
 
-        /* every 16,24,32 bytes we apply the core schedule to t
+        /* every 16, 24, 32 bytes we apply the core schedule to t
          * and increment rconIteration afterwards
          */
         if (currentSize % size == 0)
@@ -173,9 +163,10 @@ void expandKey(unsigned char *expandedKey,
                 t[i] = getSBoxValue(t[i]);
         }
 
-        /* We XOR t with the four-byte block 16,24,32 bytes before the new expanded key.
-         * This becomes the next four bytes in the expanded key.
-         */
+        /* 
+        We XOR t with the four-byte block 16,24,32 bytes before the new expanded key.
+        This becomes the next four bytes in the expanded key.
+        */
         for (i = 0; i < 4; i++)
         {
             expandedKey[currentSize] = expandedKey[currentSize - size] ^ t[i];
