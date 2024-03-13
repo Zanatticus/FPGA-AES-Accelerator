@@ -8,12 +8,15 @@ typedef ap_axis<32, 1, 1, 1> AXI_STREAM;
 void aes(
     AXI_STREAM *in,
     AXI_STREAM *out,
-    AXI_STREAM *key
+    AXI_STREAM *key,
+    AXI_STREAM *size
 ) {
     #pragma HLS INTERFACE axis port=in
     #pragma HLS INTERFACE axis port=out
     #pragma HLS INTERFACE axis port=key
+    #pragma HLS INTERFACE axis port=size
     #pragma HLS INTERFACE ap_ctrl_none port=return
+    #pragma HLS INTERFACE s_axilite port=return
 
     #pragma HLS DATAFLOW
     
@@ -23,20 +26,35 @@ void aes(
     unsigned char ciphertext[16];
     unsigned char key[16];
 
-    for (int i = 0; i < 16; i++) {
-        #pragma HLS PIPELINE II=1
-        in >> plaintext[i];
+    int i = 0;
+    while (1) {
+        if (in->last()) {
+            break;
+        }
+        // Pipe AXI_STREAM *in to plaintext
+        plaintext[i] = in->data;
+        key[i] = key->data;
+        i++;
     }
-    for (int i = 0; i < 16; i++) {
-        #pragma HLS PIPELINE II=1
-        key >> key[i];
+    i = 0;
+    while (1) {
+        if (key->last()) {
+            break;
+        }
+        // Pipe AXI_STREAM *key to key
+        key[i] = key->data;
+        i++;
     }
 
-    aes_encrypt(plaintext, ciphertext, key, SIZE_16);
+    aes_encrypt(plaintext, ciphertext, key, size->data);
 
-    for (int i = 0; i < 16; i++) {
-        #pragma HLS PIPELINE II=1
-        out << ciphertext[i];
-    }
+    // Pipe ciphertext to AXI_STREAM *out
+    out->data = ciphertext[i];
+    out->keep = in->keep;
+    out->strb = in->strb;
+    out->last = in->last;
+    out->dest = in->dest;
+    out->id = in->id;
+    out->user = in->user;
 
 } 
