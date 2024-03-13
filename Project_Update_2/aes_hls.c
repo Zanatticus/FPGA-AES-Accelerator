@@ -1,5 +1,3 @@
-// Modify and prepare the entire file (aes.c) to be viable for AXI-STREAM High Level Synthesis
-
 #include "aes.h"
 #include <hls_stream.h>
 #include <ap_axi_sdata.h>
