@@ -14,7 +14,7 @@ void aes(
     #pragma HLS INTERFACE axis port=key
     #pragma HLS INTERFACE axis port=size
     #pragma HLS INTERFACE ap_ctrl_none port=return
-    #pragma HLS INTERFACE s_axilite port=return
+    //#pragma HLS INTERFACE s_axilite port=return
 
     #pragma HLS DATAFLOW
     
