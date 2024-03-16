@@ -55,6 +55,11 @@ int main(int argc, char *argv[])
         printf("%2.2x%c", ciphertext[i], ((i + 1) % 16) ? ' ' : '\n');
     }
 
+    FILE *fp = fopen("output.dat", "w");
+    for (int i = 0; i < 16; i++) {
+        fprintf(fp, "%02x ", ciphertext[i]);
+    }
+
     // AES Decryption
     aes_decrypt(ciphertext, decryptedtext, key, SIZE_16);
 

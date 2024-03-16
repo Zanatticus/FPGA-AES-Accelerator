@@ -1,9 +1,7 @@
-#include "aes.h"
-#include <hls_stream.h>
-#include <ap_axi_sdata.h>
+#include "aes_hls.h"
 
-typedef ap_axis<32, 1, 1, 1> AXI_STREAM;
-void aes(
+
+void aes (
     AXI_STREAM *in,
     AXI_STREAM *out,
     AXI_STREAM *key,
