@@ -24,7 +24,7 @@ int main () {
     ret = system("diff --brief -w output.dat output.golden.dat");
 
     if (ret != 0) {
-        printf("Encrpytion Test Failed !!!\n");
+        printf("Encryption Test Failed !!!\n");
         ret = 1;
     }
     else {

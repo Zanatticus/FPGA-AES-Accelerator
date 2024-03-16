@@ -1,7 +1,7 @@
 #ifndef AES_HLS_H_
 #define AES_HLS_H_
-#include <hls_stream.h>
-#include <ap_axi_sdata.h>
+// #include <hls_stream.h>
+// #include <ap_axi_sdata.h>
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -101,13 +101,20 @@ char aes_decrypt(unsigned char *input, unsigned char *output, unsigned char *key
 
 
 
-typedef ap_axis<32, 1, 1, 1> AXI_STREAM;
+// typedef ap_axis<32, 1, 1, 1> AXI_STREAM;
+
+// void aes (
+//     AXI_STREAM *in,
+//     AXI_STREAM *out,
+//     AXI_STREAM *key,
+//     AXI_STREAM *size
+// )
 
 void aes (
-    AXI_STREAM *in,
-    AXI_STREAM *out,
-    AXI_STREAM *key,
-    AXI_STREAM *size
+    unsigned char *in,
+    unsigned char *out,
+    unsigned char *key,
+    unsigned char *size
 )
 
 #endif
