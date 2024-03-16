@@ -59,6 +59,19 @@ int main(int argc, char *argv[])
     for (int i = 0; i < 16; i++) {
         fprintf(fp, "%02x ", ciphertext[i]);
     }
+    fclose(fp);
+    
+
+    int ret = system("diff -w output.dat output.golden.dat");
+
+    if (ret != 0) {
+        printf("Encryption Test Failed !!! %i\n", ret);
+        ret = 1;
+    }
+    else {
+        printf("Encryption Test Passed !!!\n");
+    }
+
 
     // AES Decryption
     aes_decrypt(ciphertext, decryptedtext, key, SIZE_16);

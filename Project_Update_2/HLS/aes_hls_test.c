@@ -34,9 +34,10 @@ int main () {
     for (i = 0; i < 16; i++) {
         fprintf(fp, "%02x ", ciphertext[i]);
     }
+    fclose(fp);
 
     // Compare the results of the function against expected results
-    ret = system("diff --brief -w output.dat output.golden.dat");
+    ret = system("diff -w output.dat output.golden.dat");
 
     if (ret != 0) {
         printf("Encryption Test Failed !!!\n");
