@@ -12,7 +12,7 @@ void aes (
     aes_decrypt(out, decryptedtext, key, size);
 } 
 
-
+#define MAX_EXPANDED_KEY_SIZE 240
 
 unsigned char sbox[256] = {
     // 0     1    2      3     4    5     6     7      8    9     A      B    C     D     E     F
@@ -331,7 +331,7 @@ char aes_encrypt(unsigned char *input,
     int nbrRounds;
 
     // the expanded key
-    unsigned char *expandedKey;
+    unsigned char expandedKey[MAX_EXPANDED_KEY_SIZE];
 
     // the 128 bit block to encode
     unsigned char block[16];
@@ -357,48 +357,35 @@ char aes_encrypt(unsigned char *input,
 
     expandedKeySize = (16 * (nbrRounds + 1));
 
-    expandedKey = (unsigned char *)malloc(expandedKeySize * sizeof(unsigned char));
+    /*
+    Set the block values, for the block:
+        a0,0 a0,1 a0,2 a0,3
+        a1,0 a1,1 a1,2 a1,3
+        a2,0 a2,1 a2,2 a2,3
+        a3,0 a3,1 a3,2 a3,3
+    the mapping order is a0,0 a1,0 a2,0 a3,0 a0,1 a1,1 ... a2,3 a3,3
+    */
 
-    if (expandedKey == NULL)
+    // iterate over the columns
+    for (i = 0; i < 4; i++)
     {
-        return ERROR_MEMORY_ALLOCATION_FAILED;
+        // iterate over the rows
+        for (j = 0; j < 4; j++)
+            block[(i + (j * 4))] = input[(i * 4) + j];
     }
-    else
+
+    // expand the key into an 176, 208, 240 bytes key
+    expandKey(expandedKey, key, size, expandedKeySize);
+
+    // encrypt the block using the expandedKey
+    aes_main(block, expandedKey, nbrRounds);
+
+    // unmap the block again into the output
+    for (i = 0; i < 4; i++)
     {
-        /*
-        Set the block values, for the block:
-            a0,0 a0,1 a0,2 a0,3
-            a1,0 a1,1 a1,2 a1,3
-            a2,0 a2,1 a2,2 a2,3
-            a3,0 a3,1 a3,2 a3,3
-        the mapping order is a0,0 a1,0 a2,0 a3,0 a0,1 a1,1 ... a2,3 a3,3
-        */
-
-        // iterate over the columns
-        for (i = 0; i < 4; i++)
-        {
-            // iterate over the rows
-            for (j = 0; j < 4; j++)
-                block[(i + (j * 4))] = input[(i * 4) + j];
-        }
-
-        // expand the key into an 176, 208, 240 bytes key
-        expandKey(expandedKey, key, size, expandedKeySize);
-
-        // encrypt the block using the expandedKey
-        aes_main(block, expandedKey, nbrRounds);
-
-        // unmap the block again into the output
-        for (i = 0; i < 4; i++)
-        {
-            // iterate over the rows
-            for (j = 0; j < 4; j++)
-                output[(i * 4) + j] = block[(i + (j * 4))];
-        }
-
-        // de-allocate/free memory for expandedKey
-        free(expandedKey);
-        expandedKey = NULL;
+        // iterate over the rows
+        for (j = 0; j < 4; j++)
+            output[(i * 4) + j] = block[(i + (j * 4))];
     }
 
     return SUCCESS;
@@ -530,7 +517,7 @@ char aes_decrypt(unsigned char *input,
     int nbrRounds;
 
     // the expanded key
-    unsigned char *expandedKey;
+    unsigned char expandedKey[MAX_EXPANDED_KEY_SIZE];
 
     // the 128 bit block to decode
     unsigned char block[16];
@@ -556,48 +543,35 @@ char aes_decrypt(unsigned char *input,
 
     expandedKeySize = (16 * (nbrRounds + 1));
 
-    expandedKey = (unsigned char *)malloc(expandedKeySize * sizeof(unsigned char));
+    /*
+    Set the block values, for the block:
+        a0,0 a0,1 a0,2 a0,3
+        a1,0 a1,1 a1,2 a1,3
+        a2,0 a2,1 a2,2 a2,3
+        a3,0 a3,1 a3,2 a3,3
+    the mapping order is a0,0 a1,0 a2,0 a3,0 a0,1 a1,1 ... a2,3 a3,3
+    */
 
-    if (expandedKey == NULL)
+    // iterate over the columns
+    for (i = 0; i < 4; i++)
     {
-        return ERROR_MEMORY_ALLOCATION_FAILED;
+        // iterate over the rows
+        for (j = 0; j < 4; j++)
+            block[(i + (j * 4))] = input[(i * 4) + j];
     }
-    else
+
+    // expand the key into an 176, 208, 240 bytes key
+    expandKey(expandedKey, key, size, expandedKeySize);
+
+    // decrypt the block using the expandedKey
+    aes_invMain(block, expandedKey, nbrRounds);
+
+    // unmap the block again into the output
+    for (i = 0; i < 4; i++)
     {
-        /*
-        Set the block values, for the block:
-            a0,0 a0,1 a0,2 a0,3
-            a1,0 a1,1 a1,2 a1,3
-            a2,0 a2,1 a2,2 a2,3
-            a3,0 a3,1 a3,2 a3,3
-        the mapping order is a0,0 a1,0 a2,0 a3,0 a0,1 a1,1 ... a2,3 a3,3
-        */
-
-        // iterate over the columns
-        for (i = 0; i < 4; i++)
-        {
-            // iterate over the rows
-            for (j = 0; j < 4; j++)
-                block[(i + (j * 4))] = input[(i * 4) + j];
-        }
-
-        // expand the key into an 176, 208, 240 bytes key
-        expandKey(expandedKey, key, size, expandedKeySize);
-
-        // decrypt the block using the expandedKey
-        aes_invMain(block, expandedKey, nbrRounds);
-
-        // unmap the block again into the output
-        for (i = 0; i < 4; i++)
-        {
-            // iterate over the rows
-            for (j = 0; j < 4; j++)
-                output[(i * 4) + j] = block[(i + (j * 4))];
-        }
-
-        // de-allocate/free memory for expandedKey
-        free(expandedKey);
-        expandedKey = NULL;
+        // iterate over the rows
+        for (j = 0; j < 4; j++)
+            output[(i * 4) + j] = block[(i + (j * 4))];
     }
 
     return SUCCESS;
