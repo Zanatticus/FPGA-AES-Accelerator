@@ -12,7 +12,7 @@ int main () {
 
     aes(plaintext, ciphertext, key, SIZE_16);
 
-    printf("Ciphertext: %s\n", ciphertext);
+    printf("Ciphertext: %.*s\n", SIZE_16, ciphertext);
 
     // Capture the output results of the function, write to a file
     FILE *fp = fopen("output.dat", "w");
