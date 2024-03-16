@@ -7,12 +7,26 @@ int main () {
     unsigned char ciphertext[16];
     unsigned char key[16] = {'k', 'k', 'k', 'k', 'e', 'e', 'e', 'e', 'y', 'y', 'y', 'y', '.', '.', '.', '.'};
 
-    printf("Plaintext: %.*s\n", SIZE_16, plaintext);
-    printf("Key: %.*s\n", SIZE_16, key);
+    printf("\nCipher Key (HEX format):\n");
+    for (i = 0; i < 16; i++)
+    {
+        // Print characters in HEX format, 16 chars per line
+        printf("%2.2x%c", key[i], ((i + 1) % 16) ? ' ' : '\n');
+    }
+
+    printf("\nPlaintext (HEX format):\n");
+    for (i = 0; i < 16; i++)
+    {
+        printf("%2.2x%c", plaintext[i], ((i + 1) % 16) ? ' ' : '\n');
+    }   
 
     aes(plaintext, ciphertext, key, SIZE_16);
 
-    printf("Ciphertext: %.*s\n", SIZE_16, ciphertext);
+    printf("\nCiphertext (HEX format):\n");
+    for (i = 0; i < 16; i++)
+    {
+        printf("%2.2x%c", ciphertext[i], ((i + 1) % 16) ? ' ' : '\n');
+    }
 
     // Capture the output results of the function, write to a file
     FILE *fp = fopen("output.dat", "w");
