@@ -115,6 +115,6 @@ void aes (
     unsigned char *out,
     unsigned char *key,
     unsigned int size
-)
+);
 
 #endif
