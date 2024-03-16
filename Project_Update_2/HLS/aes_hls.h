@@ -68,7 +68,8 @@ void aes (
     unsigned char *in,
     unsigned char *out,
     unsigned char *key,
-    unsigned int size
+    unsigned int size,
+    unsigned char *decryptedtext
 );
 
 #endif

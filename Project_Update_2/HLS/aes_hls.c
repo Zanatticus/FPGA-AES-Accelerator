@@ -5,9 +5,11 @@ void aes (
     unsigned char *in,
     unsigned char *out,
     unsigned char *key,
-    unsigned int size
+    unsigned int size,
+    unsigned char *decryptedtext
 ) {
     aes_encrypt(in, out, key, size);
+    aes_decrypt(out, decryptedtext, key, size);
 } 
 
 

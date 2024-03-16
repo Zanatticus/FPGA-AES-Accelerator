@@ -83,6 +83,15 @@ int main(int argc, char *argv[])
         printf("%2.2x%c", decryptedtext[i], ((i + 1) % 16) ? ' ' : '\n');
     }
 
+    // Capture the output results of the function, write to a file
+    fp = fopen("output2.golden.dat", "w");
+    for (i = 0; i < 16; i++) {
+        fprintf(fp, "%02x ", decryptedtext[i]);
+    }
+    fclose(fp);
+
+
+
     return 0;
 }
 

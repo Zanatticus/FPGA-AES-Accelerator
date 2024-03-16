@@ -21,7 +21,7 @@ int main () {
         printf("%2.2x%c", plaintext[i], ((i + 1) % 16) ? ' ' : '\n');
     }   
 
-    aes(plaintext, ciphertext, key, SIZE_16);
+    aes(plaintext, ciphertext, key, SIZE_16, decryptedtext);
 
     printf("\nCiphertext (HEX format):\n");
     for (i = 0; i < 16; i++)
@@ -46,6 +46,31 @@ int main () {
     else {
         printf("Encryption Test Passed !!!\n");
     }
+
+    printf("\nDecrypted text (HEX format):\n");
+    for (i = 0; i < 16; i++)
+    {
+        printf("%2.2x%c", decryptedtext[i], ((i + 1) % 16) ? ' ' : '\n');
+    }
+
+    // Capture the output results of the function, write to a file
+    fp = fopen("output2.dat", "w");
+    for (i = 0; i < 16; i++) {
+        fprintf(fp, "%02x ", decryptedtext[i]);
+    }
+    fclose(fp);
+
+    // Compare the results of the function against expected results
+    ret = system("diff -w output2.dat output2.golden.dat");
+
+    if (ret != 0) {
+        printf("Decryption Test Failed !!!\n");
+        ret = 1;
+    }
+    else {
+        printf("Decryption Test Passed !!!\n");
+    }
+
 
     return ret;
 }
