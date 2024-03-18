@@ -15,8 +15,8 @@ void aes (
     #pragma HLS INTERFACE mode=m_axi port=size
     #pragma HLS INTERFACE mode=m_axi port=decryptedtext depth=16
 
-    aes_encrypt(in, out, key, size);
-    aes_decrypt(out, decryptedtext, key, size);
+    aes_encrypt(plaintext, ciphertext, key, size);
+    aes_decrypt(ciphertext, decryptedtext, key, size);
 } 
 
 #define MAX_EXPANDED_KEY_SIZE 240
