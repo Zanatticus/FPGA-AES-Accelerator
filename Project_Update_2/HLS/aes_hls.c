@@ -8,6 +8,13 @@ void aes (
     unsigned int size,
     unsigned char *decryptedtext
 ) {
+    #pragma HLS INTERFACE ap_ctrl_none port=return
+    #pragma HLS INTERFACE s_axilite port=in
+    #pragma HLS INTERFACE s_axilite port=out
+    #pragma HLS INTERFACE s_axilite port=key
+    #pragma HLS INTERFACE s_axilite port=size
+    #pragma HLS INTERFACE s_axilite port=decryptedtext
+
     aes_encrypt(in, out, key, size);
     aes_decrypt(out, decryptedtext, key, size);
 } 
