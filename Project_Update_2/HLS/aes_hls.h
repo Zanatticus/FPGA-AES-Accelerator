@@ -65,8 +65,8 @@ char aes_decrypt(unsigned char *input, unsigned char *output, unsigned char *key
 // )
 
 void aes (
-    unsigned char *in,
-    unsigned char *out,
+    unsigned char *plaintext,
+    unsigned char *ciphertext,
     unsigned char *key,
     unsigned int size,
     unsigned char *decryptedtext

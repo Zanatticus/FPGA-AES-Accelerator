@@ -2,18 +2,18 @@
 
 
 void aes (
-    unsigned char *in,
-    unsigned char *out,
+    unsigned char *plaintext,
+    unsigned char *ciphertext,
     unsigned char *key,
     unsigned int size,
     unsigned char *decryptedtext
 ) {
     #pragma HLS INTERFACE ap_ctrl_none port=return
-    #pragma HLS INTERFACE s_axilite port=in
-    #pragma HLS INTERFACE s_axilite port=out
-    #pragma HLS INTERFACE s_axilite port=key
-    #pragma HLS INTERFACE s_axilite port=size
-    #pragma HLS INTERFACE s_axilite port=decryptedtext
+    #pragma HLS INTERFACE mode=m_axi port=in depth=16
+    #pragma HLS INTERFACE mode=m_axi port=out depth=16
+    #pragma HLS INTERFACE mode=m_axi port=key depth=16
+    #pragma HLS INTERFACE mode=m_axi port=size
+    #pragma HLS INTERFACE mode=m_axi port=decryptedtext depth=16
 
     aes_encrypt(in, out, key, size);
     aes_decrypt(out, decryptedtext, key, size);
