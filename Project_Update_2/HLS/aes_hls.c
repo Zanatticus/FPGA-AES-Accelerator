@@ -8,7 +8,6 @@ void aes (
     unsigned int size,
     unsigned char *decryptedtext
 ) {
-    #pragma HLS INTERFACE ap_ctrl_none port=return
     #pragma HLS INTERFACE mode=m_axi port=in depth=16
     #pragma HLS INTERFACE mode=m_axi port=out depth=16
     #pragma HLS INTERFACE mode=m_axi port=key depth=16
