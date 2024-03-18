@@ -5,17 +5,18 @@ void aes (
     unsigned char *plaintext,
     unsigned char *ciphertext,
     unsigned char *key,
-    unsigned int size,
+    unsigned int key_size,
     unsigned char *decryptedtext
 ) {
+	#pragma HLS INTERFACE ap_ctrl_none port=return
     #pragma HLS INTERFACE mode=m_axi port=plaintext depth=16
     #pragma HLS INTERFACE mode=m_axi port=ciphertext depth=16
     #pragma HLS INTERFACE mode=m_axi port=key depth=16
-    #pragma HLS INTERFACE mode=m_axi port=size
+    #pragma HLS INTERFACE mode=s_axilite port=key_size
     #pragma HLS INTERFACE mode=m_axi port=decryptedtext depth=16
 
-    aes_encrypt(plaintext, ciphertext, key, size);
-    aes_decrypt(ciphertext, decryptedtext, key, size);
+    aes_encrypt(plaintext, ciphertext, key, key_size);
+    aes_decrypt(ciphertext, decryptedtext, key, key_size);
 } 
 
 #define MAX_EXPANDED_KEY_SIZE 240
