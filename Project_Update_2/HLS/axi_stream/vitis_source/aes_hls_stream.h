@@ -1,7 +1,7 @@
 #ifndef AES_HLS_H_
 #define AES_HLS_H_
-// #include <hls_stream.h>
-// #include <ap_axi_sdata.h>
+#include <hls_stream.h>
+#include <ap_axi_sdata.h>
 #include <stdio.h>
 #include <stdlib.h>
 
