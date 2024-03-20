@@ -1,4 +1,5 @@
-#include "aes_hls_stream.h"
+#include <iostream>
+#include "aes_axis.h"
 
 int main () {
     int ret = 0;

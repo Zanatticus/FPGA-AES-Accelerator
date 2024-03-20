@@ -1,4 +1,4 @@
-#include "aes_hls_stream.h"
+#include "aes_axis.h"
 
 
 void aes (
@@ -14,6 +14,7 @@ void aes (
     #pragma HLS INTERFACE mode=s_axilite port=key_size
     #pragma HLS INTERFACE axis port=decryptedtext
     #pragma HLS INTERFACE ap_ctrl_none port=return
+    //#pragma HLS INTERFACE s_axilite port=return
 
     unsigned char plaintext_array[16];
     unsigned char ciphertext_array[16];
@@ -41,6 +42,7 @@ void aes (
     }
 
     aes_encrypt(plaintext_array, ciphertext_array, key_array, key_size);
+    aes_decrypt(ciphertext_array, decryptedtext_array, key_array, key_size);
 
     // Pipe ciphertext_array to AXI_STREAM *ciphertext
     ciphertext->data = ciphertext_array[i];
@@ -51,7 +53,6 @@ void aes (
     ciphertext->id = plaintext->id;
     ciphertext->user = plaintext->user;
 
-    aes_decrypt(ciphertext_array, decryptedtext_array, key_array, key_size);
 
     // Pipe decryptedtext_array to AXI_STREAM *decryptedtext
     decryptedtext->data = decryptedtext_array[i];
