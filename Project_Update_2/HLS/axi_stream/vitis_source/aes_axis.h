@@ -64,6 +64,6 @@ void aes (
     AXI_STREAM *key,
     unsigned int key_size,
     AXI_STREAM *decryptedtext
-)
+);
 
 #endif
