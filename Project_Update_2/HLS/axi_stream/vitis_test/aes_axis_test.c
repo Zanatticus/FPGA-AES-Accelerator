@@ -1,4 +1,3 @@
-#include <iostream>
 #include "aes_axis.h"
 
 void aes(AXI_STREAM plaintext, AXI_STREAM ciphertext, AXI_STREAM key, unsigned int key_size, AXI_STREAM decryptedtext);
