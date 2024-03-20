@@ -23,46 +23,59 @@ void aes (
 
     int i = 0;
     while (1) {
-        if (plaintext->last()) {
-            break;
-        }
-        // Pipe AXI_STREAM *in to plaintext
-        plaintext_array[i] = plaintext->data;
-        key_array[i] = key->data;
-        i++;
-    }
-    i = 0;
-    while (1) {
         if (key->last()) {
+            i = 0;
             break;
         }
         // Pipe AXI_STREAM *key to key
         key_array[i] = key->data;
         i++;
     }
+    while (1) {
+        if (plaintext->last()) {
+            i = 0;
+            break;
+        }
+        // Pipe AXI_STREAM *plaintext to plaintext
+        plaintext_array[i] = plaintext->data;
+        i++;
+    }
+
 
     aes_encrypt(plaintext_array, ciphertext_array, key_array, key_size);
     aes_decrypt(ciphertext_array, decryptedtext_array, key_array, key_size);
 
     // Pipe ciphertext_array to AXI_STREAM *ciphertext
-    ciphertext->data = ciphertext_array[i];
-    ciphertext->keep = plaintext->keep;
-    ciphertext->strb = plaintext->strb;
-    ciphertext->last = plaintext->last;
-    ciphertext->dest = plaintext->dest;
-    ciphertext->id = plaintext->id;
-    ciphertext->user = plaintext->user;
-
+    for (i = 0; i < key_size; i++) {
+        ciphertext->data = ciphertext_array[i];
+        ciphertext->keep = plaintext->keep;
+        ciphertext->strb = plaintext->strb;
+        if (i == key_size - 1) {
+            ciphertext->last = 1;
+        }
+        else {
+            ciphertext->last = 0;
+        }
+        ciphertext->dest = plaintext->dest;
+        ciphertext->id = plaintext->id;
+        ciphertext->user = plaintext->user;
+    }
 
     // Pipe decryptedtext_array to AXI_STREAM *decryptedtext
-    decryptedtext->data = decryptedtext_array[i];
-    decryptedtext->keep = plaintext->keep;
-    decryptedtext->strb = plaintext->strb;
-    decryptedtext->last = plaintext->last;
-    decryptedtext->dest = plaintext->dest;
-    decryptedtext->id = plaintext->id;
-    decryptedtext->user = plaintext->user;
-
+    for (i = 0; i < key_size; i++) {
+        decryptedtext->data = decryptedtext_array[i];
+        decryptedtext->keep = plaintext->keep;
+        decryptedtext->strb = plaintext->strb;
+        if (i == key_size - 1) {
+            decryptedtext->last = 1;
+        }
+        else {
+            decryptedtext->last = 0;
+        }
+        decryptedtext->dest = plaintext->dest;
+        decryptedtext->id = plaintext->id;
+        decryptedtext->user = plaintext->user;
+    }
 } 
 
 
