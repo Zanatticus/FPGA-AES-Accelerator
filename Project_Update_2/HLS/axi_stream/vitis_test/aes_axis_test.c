@@ -63,7 +63,7 @@ int main () {
     printf("\nCiphertext (HEX format):\n");
     for (i = 0; i < data_size - 1; i++)
     {
-        ciphertext.stream.read(tmp2);
+        ciphertext_stream.read(tmp2);
         ciphertext[i] = tmp3.data;
         printf("%2.2x%c", ciphertext[i], ((i + 1) % data_size) ? ' ' : '\n');
     }

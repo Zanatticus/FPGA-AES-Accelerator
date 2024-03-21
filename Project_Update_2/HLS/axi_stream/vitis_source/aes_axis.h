@@ -56,7 +56,8 @@ void aes_invRound(unsigned char *state, unsigned char *roundKey);
 void aes_invMain(unsigned char *state, unsigned char *expandedKey, int nbrRounds);
 char aes_decrypt(unsigned char *input, unsigned char *output, unsigned char *key, enum keySize size);
 
-typedef ap_axis<32, 1, 1, 1> AXI_STREAM;
+
+typedef ap_axis<64, 1, 1, 1> AXI_STREAM;
 
 void aes (
     AXI_STREAM *plaintext,
