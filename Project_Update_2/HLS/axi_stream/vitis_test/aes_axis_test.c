@@ -1,6 +1,6 @@
 #include "aes_axis.h"
 
-void aes(AXI_STREAM plaintext, AXI_STREAM ciphertext, AXI_STREAM key, unsigned int key_size, AXI_STREAM decryptedtext);
+void aes(AXI_STREAM *plaintext, AXI_STREAM *ciphertext, AXI_STREAM *key, unsigned int key_size, AXI_STREAM *decryptedtext);
 
 int main () {
     int ret = 0;
