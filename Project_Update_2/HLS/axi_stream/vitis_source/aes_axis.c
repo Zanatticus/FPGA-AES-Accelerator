@@ -1,12 +1,12 @@
-#include "aes_axis.h"
-
+#include "ap_axi_sdata.h"
+#include "hls_stream.h"
 
 void aes (
-    AXI_STREAM *plaintext,
-    AXI_STREAM *ciphertext,
-    AXI_STREAM *key,
+    hls::stream< ap_axis<32,2,5,6> > &plaintext,
+    hls::stream< ap_axis<32,2,5,6> > &ciphertext,
+    hls::stream< ap_axis<32,2,5,6> > &key,
     unsigned int key_size,
-    AXI_STREAM *decryptedtext
+    hls::stream< ap_axis<32,2,5,6> > &decryptedtext
 ) {
     #pragma HLS INTERFACE axis port=plaintext
     #pragma HLS INTERFACE axis port=ciphertext
@@ -23,21 +23,21 @@ void aes (
 
     int i = 0;
     while (1) {
-        if (key->last()) {
+        if (key.last()) {
             i = 0;
             break;
         }
         // Pipe AXI_STREAM *key to key
-        key_array[i] = key->data;
+        key_array[i] = key.data;
         i++;
     }
     while (1) {
-        if (plaintext->last()) {
+        if (plaintext.last()) {
             i = 0;
             break;
         }
         // Pipe AXI_STREAM *plaintext to plaintext
-        plaintext_array[i] = plaintext->data;
+        plaintext_array[i] = plaintext.data;
         i++;
     }
 
@@ -47,39 +47,53 @@ void aes (
 
     // Pipe ciphertext_array to AXI_STREAM *ciphertext
     for (i = 0; i < key_size; i++) {
-        ciphertext->data = ciphertext_array[i];
-        ciphertext->keep = plaintext->keep;
-        ciphertext->strb = plaintext->strb;
+        ciphertext.data = ciphertext_array[i];
+        ciphertext.keep = plaintext.keep;
+        ciphertext.strb = plaintext.strb;
         if (i == key_size - 1) {
-            ciphertext->last = 1;
+            ciphertext.last = 1;
         }
         else {
-            ciphertext->last = 0;
+            ciphertext.last = 0;
         }
-        ciphertext->dest = plaintext->dest;
-        ciphertext->id = plaintext->id;
-        ciphertext->user = plaintext->user;
+        ciphertext.dest = plaintext.dest;
+        ciphertext.id = plaintext.id;
+        ciphertext.user = plaintext.user;
     }
 
     // Pipe decryptedtext_array to AXI_STREAM *decryptedtext
     for (i = 0; i < key_size; i++) {
-        decryptedtext->data = decryptedtext_array[i];
-        decryptedtext->keep = plaintext->keep;
-        decryptedtext->strb = plaintext->strb;
+        decryptedtext.data = decryptedtext_array[i];
+        decryptedtext.keep = plaintext.keep;
+        decryptedtext.strb = plaintext.strb;
         if (i == key_size - 1) {
-            decryptedtext->last = 1;
+            decryptedtext.last = 1;
         }
         else {
-            decryptedtext->last = 0;
+            decryptedtext.last = 0;
         }
-        decryptedtext->dest = plaintext->dest;
-        decryptedtext->id = plaintext->id;
-        decryptedtext->user = plaintext->user;
+        decryptedtext.dest = plaintext.dest;
+        decryptedtext.id = plaintext.id;
+        decryptedtext.user = plaintext.user;
     }
 } 
 
 
 #define MAX_EXPANDED_KEY_SIZE 240
+
+enum keySize
+{
+    SIZE_16 = 16,
+    SIZE_24 = 24,
+    SIZE_32 = 32
+};
+
+enum errorCode
+{
+    SUCCESS = 0,
+    ERROR_AES_UNKNOWN_KEYSIZE,
+    ERROR_MEMORY_ALLOCATION_FAILED,
+};
 
 unsigned char sbox[256] = {
     // 0     1    2      3     4    5     6     7      8    9     A      B    C     D     E     F
