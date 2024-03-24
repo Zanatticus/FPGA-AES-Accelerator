@@ -26,11 +26,11 @@ void aes (
     while (1) {
         key.read(tmp1);
         plaintext.read(tmp2);
-        if (tmp1.last() || tmp2.last()) {
-            break;
-        }
         key_array[i] = tmp1.data;
         plaintext_array[i] = tmp2.data;
+        if (tmp1.last || tmp2.last) {
+            break;
+        }
         i++;
     }
 
