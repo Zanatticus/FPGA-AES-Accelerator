@@ -15,6 +15,9 @@ int main () {
     hls::stream< ap_axis<32,2,5,6> > plaintext_stream, ciphertext_stream, key_stream, decryptedtext_stream;
     ap_axis<32,2,5,6> tmp1, tmp2, tmp3, tmp4;
 
+    printf("\n\n*****AES_AXIS_TEST STARTED*****\n\n");
+
+
     printf("\nCipher Key (HEX format):\n");
     for (i = 0; i < data_size; i++)
     {
@@ -64,7 +67,7 @@ int main () {
     aes(plaintext_stream, ciphertext_stream, key_stream, 16, decryptedtext_stream);
 
     printf("\nCiphertext (HEX format):\n");
-    for (i = 0; i < data_size - 1; i++)
+    for (i = 0; i < data_size; i++)
     {
         ciphertext_stream.read(tmp3);
         ciphertext[i] = tmp3.data;
@@ -82,11 +85,11 @@ int main () {
     ret = system("diff -w output.dat output.golden.dat");
 
     if (ret != 0) {
-        printf("Encryption Test Failed !!!\n");
+        printf("\nEncryption Test Failed !!!\n");
         ret = 1;
     }
     else {
-        printf("Encryption Test Passed !!!\n");
+        printf("\nEncryption Test Passed !!!\n");
     }
 
     printf("\nDecrypted text (HEX format):\n");
@@ -108,13 +111,13 @@ int main () {
     ret = system("diff -w output2.dat output2.golden.dat");
 
     if (ret != 0) {
-        printf("Decryption Test Failed !!!\n");
+        printf("\nDecryption Test Failed !!!\n");
         ret = 1;
     }
     else {
-        printf("Decryption Test Passed !!!\n");
+        printf("\nDecryption Test Passed !!!\n");
     }
 
-
+    printf("\n\n*****AES_AXIS_TEST FINISHED*****\n\n");
     return ret;
 }
