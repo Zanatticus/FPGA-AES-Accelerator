@@ -61,7 +61,7 @@ int main () {
         plaintext_stream.write(tmp2);
     }   
 
-    aes(plaintext_stream, ciphertext_stream, key_stream, SIZE_16, decryptedtext_stream);
+    aes(plaintext_stream, ciphertext_stream, key_stream, 16, decryptedtext_stream);
 
     printf("\nCiphertext (HEX format):\n");
     for (i = 0; i < data_size - 1; i++)
