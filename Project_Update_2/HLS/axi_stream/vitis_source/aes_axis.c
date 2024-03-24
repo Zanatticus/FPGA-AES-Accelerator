@@ -20,61 +20,44 @@ void aes (
     unsigned char ciphertext_array[16];
     unsigned char key_array[16];
     unsigned char decryptedtext_array[16];
+    ap_axis<32,2,5,6> tmp1, tmp2, tmp3, tmp4;
 
     int i = 0;
     while (1) {
-        if (key.last()) {
-            i = 0;
+        key.read(tmp1);
+        plaintext.read(tmp2);
+        if (tmp1.last() || tmp2.last()) {
             break;
         }
-        // Pipe AXI_STREAM *key to key
-        key_array[i] = key.data;
+        key_array[i] = tmp1.data;
+        plaintext_array[i] = tmp2.data;
         i++;
     }
-    while (1) {
-        if (plaintext.last()) {
-            i = 0;
-            break;
-        }
-        // Pipe AXI_STREAM *plaintext to plaintext
-        plaintext_array[i] = plaintext.data;
-        i++;
-    }
-
 
     aes_encrypt(plaintext_array, ciphertext_array, key_array, key_size);
     aes_decrypt(ciphertext_array, decryptedtext_array, key_array, key_size);
 
     // Pipe ciphertext_array to AXI_STREAM *ciphertext
     for (i = 0; i < key_size; i++) {
-        ciphertext.data = ciphertext_array[i];
-        ciphertext.keep = plaintext.keep;
-        ciphertext.strb = plaintext.strb;
+        tmp3.data = ciphertext_array[i];
         if (i == key_size - 1) {
-            ciphertext.last = 1;
+            tmp3.last = 1;
         }
         else {
-            ciphertext.last = 0;
+            tmp3.last = 0;
         }
-        ciphertext.dest = plaintext.dest;
-        ciphertext.id = plaintext.id;
-        ciphertext.user = plaintext.user;
+        ciphertext.write(tmp3);
     }
 
-    // Pipe decryptedtext_array to AXI_STREAM *decryptedtext
     for (i = 0; i < key_size; i++) {
-        decryptedtext.data = decryptedtext_array[i];
-        decryptedtext.keep = plaintext.keep;
-        decryptedtext.strb = plaintext.strb;
+        tmp4.data = decryptedtext_array[i];
         if (i == key_size - 1) {
-            decryptedtext.last = 1;
+            tmp4.last = 1;
         }
         else {
-            decryptedtext.last = 0;
+            tmp4.last = 0;
         }
-        decryptedtext.dest = plaintext.dest;
-        decryptedtext.id = plaintext.id;
-        decryptedtext.user = plaintext.user;
+        decryptedtext.write(tmp4);
     }
 } 
 
