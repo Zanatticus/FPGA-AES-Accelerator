@@ -59,8 +59,8 @@ void aes (
     #pragma HLS INTERFACE axis port=key
     #pragma HLS INTERFACE mode=s_axilite port=key_size
     #pragma HLS INTERFACE axis port=decryptedtext
-    #pragma HLS INTERFACE ap_ctrl_none port=return
-    //#pragma HLS INTERFACE s_axilite port=return
+    //#pragma HLS INTERFACE ap_ctrl_none port=return
+    #pragma HLS INTERFACE s_axilite port=return
 
     unsigned char plaintext_array[16];
     unsigned char ciphertext_array[16];
