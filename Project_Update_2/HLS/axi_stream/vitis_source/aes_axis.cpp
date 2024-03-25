@@ -48,62 +48,57 @@ char aes_decrypt(unsigned char *input, unsigned char *output, unsigned char *key
 
 
 void aes (
-    hls::stream< ap_axis<32,2,5,6> > &plaintext,
-    hls::stream< ap_axis<32,2,5,6> > &ciphertext,
-    hls::stream< ap_axis<32,2,5,6> > &key,
-    unsigned int key_size,
-    hls::stream< ap_axis<32,2,5,6> > &decryptedtext
+    hls::stream< ap_axis<32,2,5,6> > &key_and_plaintext,
+    hls::stream< ap_axis<32,2,5,6> > &ciphertext_and_decryptedtext,
+    unsigned int key_size
 ) {
-    #pragma HLS INTERFACE axis port=plaintext
-    #pragma HLS INTERFACE axis port=ciphertext
-    #pragma HLS INTERFACE axis port=key
+    #pragma HLS INTERFACE axis port=key_and_plaintext
+    #pragma HLS INTERFACE axis port=ciphertext_and_decryptedtext
     #pragma HLS INTERFACE mode=s_axilite port=key_size
-    #pragma HLS INTERFACE axis port=decryptedtext
     //#pragma HLS INTERFACE ap_ctrl_none port=return
     #pragma HLS INTERFACE s_axilite port=return
 
+    unsigned char key_array[16];
     unsigned char plaintext_array[16];
     unsigned char ciphertext_array[16];
-    unsigned char key_array[16];
     unsigned char decryptedtext_array[16];
-    ap_axis<32,2,5,6> tmp1, tmp2, tmp3, tmp4;
+    ap_axis<32,2,5,6> tmp_k_and_p, tmp_c_and_d;
 
     int i = 0;
+    int j = 0;
     while (1) {
-        key.read(tmp1);
-        plaintext.read(tmp2);
-        key_array[i] = tmp1.data;
-        plaintext_array[i] = tmp2.data;
-        if (tmp1.last || tmp2.last) {
+		key_and_plaintext.read(tmp_k_and_p);
+    	if (i < key_size) {
+    		key_array[i] = tmp_k_and_p.data;
+            i++;
+    	}
+    	else {
+            plaintext_array[j] = tmp_k_and_p.data;
+            j++;
+    	}
+        if (tmp_k_and_p.last) {
             break;
         }
-        i++;
     }
 
     aes_encrypt(plaintext_array, ciphertext_array, key_array, SIZE_16);
     aes_decrypt(ciphertext_array, decryptedtext_array, key_array, SIZE_16);
 
-    // Pipe ciphertext_array to AXI_STREAM *ciphertext
     for (i = 0; i < key_size; i++) {
-        tmp3.data = ciphertext_array[i];
-        if (i == key_size - 1) {
-            tmp3.last = 1;
-        }
-        else {
-            tmp3.last = 0;
-        }
-        ciphertext.write(tmp3);
+    	tmp_c_and_d.data = ciphertext_array[i];
+    	tmp_c_and_d.last = 0;
+		ciphertext_and_decryptedtext.write(tmp_c_and_d);
     }
 
     for (i = 0; i < key_size; i++) {
-        tmp4.data = decryptedtext_array[i];
+    	tmp_c_and_d.data = decryptedtext_array[i];
         if (i == key_size - 1) {
-            tmp4.last = 1;
+        	tmp_c_and_d.last = 1;
         }
         else {
-            tmp4.last = 0;
+        	tmp_c_and_d.last = 0;
         }
-        decryptedtext.write(tmp4);
+        ciphertext_and_decryptedtext.write(tmp_c_and_d);
     }
 }
 
