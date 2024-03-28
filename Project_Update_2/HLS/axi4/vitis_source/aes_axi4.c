@@ -138,8 +138,10 @@ void expandKey(unsigned char *expandedKey,
         expandedKey[i] = key[i];
     currentSize += size;
 
+expandKeyLoop:
     while (currentSize < expandedKeySize)
     {
+        #pragma HLS PIPELINE II=15
         // assign the previous 4 bytes to the temporary value t
         for (i = 0; i < 4; i++)
         {
@@ -188,8 +190,11 @@ void shiftRows(unsigned char *state)
 {
     int i;
     // iterate over the 4 rows and call shiftRow() with that row
-    for (i = 0; i < 4; i++)
-        shiftRow(state + i * 4, i);
+shiftRowsLoop:
+    for (i = 0; i < 4; i++) {
+    #pragma HLS PIPELINE II=4
+    shiftRow(state + i * 4, i);
+    }
 }
 
 void shiftRow(unsigned char *state, unsigned char nbr)
@@ -237,8 +242,10 @@ void mixColumns(unsigned char *state)
     unsigned char column[4];
 
     // iterate over the 4 columns
+mixColumnsLoop:
     for (i = 0; i < 4; i++)
     {
+#       pragma HLS PIPELINE II=7
         // construct one column by iterating over the 4 rows
         for (j = 0; j < 4; j++)
         {
@@ -423,8 +430,10 @@ void invShiftRow(unsigned char *state, unsigned char nbr)
     int i, j;
     unsigned char tmp;
     // each iteration shifts the row to the right by 1
+invShiftRowLoop:
     for (i = 0; i < nbr; i++)
     {
+        #pragma HLS PIPELINE II=4
         tmp = state[3];
         for (j = 3; j > 0; j--)
             state[j] = state[j - 1];
@@ -438,8 +447,10 @@ void invMixColumns(unsigned char *state)
     unsigned char column[4];
 
     // iterate over the 4 columns
+invMixColumnsLoop:
     for (i = 0; i < 4; i++)
     {
+        #pragma HLS PIPELINE II=6
         // construct one column by iterating over the 4 rows
         for (j = 0; j < 4; j++)
         {
