@@ -1,11 +1,7 @@
-#ifndef AES_HLS_H_
-#define AES_HLS_H_
-#include <hls_stream.h>
-#include <ap_axi_sdata.h>
-
-#include <stdio.h>
-#include <stdlib.h>
-
+#ifndef AES_AXIS_H_
+#define AES_AXIS_H_
+#include "ap_axi_sdata.h"
+#include "hls_stream.h"
 
 enum errorCode
 {
@@ -19,6 +15,7 @@ enum keySize
     SIZE_24 = 24,
     SIZE_32 = 32
 };
+
 unsigned char getSBoxValue(unsigned char num);
 unsigned char getSBoxInvert(unsigned char num);
 void rotate(unsigned char *word);
@@ -50,14 +47,10 @@ void aes_invMain(unsigned char *state, unsigned char *expandedKey, int nbrRounds
 char aes_decrypt(unsigned char *input, unsigned char *output, unsigned char *key, enum keySize size);
 
 
-typedef hls::stream<ap_axis<64, 1, 1, 1> > AXI_STREAM;
-
 void aes (
-    AXI_STREAM *plaintext,
-    AXI_STREAM *ciphertext,
-    AXI_STREAM *key,
-    unsigned int key_size,
-    AXI_STREAM *decryptedtext
+	hls::stream< ap_axis<32,2,5,6> > &key_and_plaintext,
+	hls::stream< ap_axis<32,2,5,6> > &ciphertext_and_decryptedtext,
+	unsigned int key_size
 );
 
 #endif
