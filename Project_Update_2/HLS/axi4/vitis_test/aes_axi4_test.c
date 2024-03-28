@@ -8,6 +8,9 @@ int main () {
     unsigned char plaintext[16] = {'a', 'b', 'c', 'd', 'e', 'f', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0'};
     unsigned char ciphertext[16], decryptedtext[16];
 
+    printf("\n\n*****AES_AXI4_TEST STARTED*****\n\n");
+
+
     printf("\nCipher Key (HEX format):\n");
     for (i = 0; i < 16; i++) {
         // Print characters in HEX format, 16 chars per line
@@ -67,6 +70,7 @@ int main () {
         printf("\nDecryption Test Passed !!!\n");
     }
 
+    printf("\n\n*****AES_AXI4_TEST FINISHED*****\n\n");
 
     return ret;
 }
