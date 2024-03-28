@@ -37,11 +37,11 @@ int main () {
     ret = system("diff -w output.dat output.golden.dat");
 
     if (ret != 0) {
-        printf("Encryption Test Failed !!!\n");
+        printf("\nEncryption Test Failed !!!\n");
         ret = 1;
     }
     else {
-        printf("Encryption Test Passed !!!\n");
+        printf("\nEncryption Test Passed !!!\n");
     }
 
     printf("\nDecrypted text (HEX format):\n");
@@ -60,11 +60,11 @@ int main () {
     ret = system("diff -w output2.dat output2.golden.dat");
 
     if (ret != 0) {
-        printf("Decryption Test Failed !!!\n");
+        printf("\nDecryption Test Failed !!!\n");
         ret = 1;
     }
     else {
-        printf("Decryption Test Passed !!!\n");
+        printf("\nDecryption Test Passed !!!\n");
     }
 
 
