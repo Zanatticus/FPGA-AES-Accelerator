@@ -1,5 +1,5 @@
-#ifndef AES_HLS_H_
-#define AES_HLS_H_
+#ifndef AES_AXI4_H_
+#define AES_AXI4_H_
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -53,20 +53,11 @@ void aes_invRound(unsigned char *state, unsigned char *roundKey);
 void aes_invMain(unsigned char *state, unsigned char *expandedKey, int nbrRounds);
 char aes_decrypt(unsigned char *input, unsigned char *output, unsigned char *key, enum keySize size);
 
-// typedef ap_axis<32, 1, 1, 1> AXI_STREAM;
-
-// void aes (
-//     AXI_STREAM *in,
-//     AXI_STREAM *out,
-//     AXI_STREAM *key,
-//     AXI_STREAM *size
-// )
-
 void aes (
+    unsigned int key_size,
+    unsigned char *key,
     unsigned char *plaintext,
     unsigned char *ciphertext,
-    unsigned char *key,
-    unsigned int size,
     unsigned char *decryptedtext
 );
 

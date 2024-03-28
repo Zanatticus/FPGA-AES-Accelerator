@@ -1,11 +1,11 @@
-#include "aes_hls.h"
+#include "aes_axi4.h"
 
 
 void aes (
+    unsigned int key_size,
+    unsigned char *key,
     unsigned char *plaintext,
     unsigned char *ciphertext,
-    unsigned char *key,
-    unsigned int key_size,
     unsigned char *decryptedtext
 ) {
 	#pragma HLS INTERFACE ap_ctrl_none port=return
