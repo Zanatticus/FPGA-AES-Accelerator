@@ -1,2 +1,0 @@
-Using ILA to debug IP: https://discuss.pynq.io/t/using-ila-to-debug-ip/2855
-
