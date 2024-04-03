@@ -46,10 +46,11 @@ void aes_invRound(unsigned char *state, unsigned char *roundKey);
 void aes_invMain(unsigned char *state, unsigned char *expandedKey, int nbrRounds);
 char aes_decrypt(unsigned char *input, unsigned char *output, unsigned char *key, enum keySize size);
 
+typedef ap_axis<8,1,1,1> AXI_VAL;
 
 void aes (
-	hls::stream< ap_axis<8,1,1,1> > &key_and_plaintext,
-	hls::stream< ap_axis<8,1,1,1> > &ciphertext_and_decryptedtext,
+	hls::stream< AXI_VAL > &key_and_plaintext,
+	hls::stream< AXI_VAL > &ciphertext_and_decryptedtext,
 	unsigned int key_size
 );
 
