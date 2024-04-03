@@ -3,7 +3,9 @@
 #include "hls_stream.h"
 using namespace std;
 
-void aes(hls::stream< ap_axis<8,1,1,1> > &key_and_plaintext, hls::stream< ap_axis<8,1,1,1> > &ciphertext_and_decryptedtext, unsigned int key_size);
+typedef ap_axis<8,1,1,1> AXI_VAL;
+
+void aes(hls::stream< AXI_VAL > &key_and_plaintext, hls::stream< AXI_VAL > &ciphertext_and_decryptedtext, unsigned int key_size);
 
 int main () {
     int ret = 0;
@@ -12,8 +14,8 @@ int main () {
     unsigned char key_array[data_size] = {'k', 'k', 'k', 'k', 'e', 'e', 'e', 'e', 'y', 'y', 'y', 'y', '.', '.', '.', '.'};
     unsigned char plaintext_array[data_size] = {'a', 'b', 'c', 'd', 'e', 'f', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0'};
     unsigned char ciphertext_array[data_size], decryptedtext_array[data_size];
-    hls::stream< ap_axis<8,1,1,1> > key_and_plaintext_stream, ciphertext_and_decryptedtext_stream;
-    ap_axis<8,1,1,1> key, plaintext, ciphertext, decryptedtext;
+    hls::stream< AXI_VAL > key_and_plaintext_stream, ciphertext_and_decryptedtext_stream;
+    AXI_VAL key, plaintext, ciphertext, decryptedtext;
 
     printf("\n\n*****AES_AXIS_TEST STARTED*****\n\n");
 
