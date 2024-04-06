@@ -1,72 +1,63 @@
 #include "ap_axi_sdata.h"
 #include "hls_stream.h"
 #include "aes_axis.h"
-
-static unsigned char key_array[16] = {};
-static unsigned char plaintext_array[16] = {};
-static unsigned char ciphertext_array[16] = {};
-static unsigned char decryptedtext_array[16] = {};
-static int i = 0;
-static int j = 0;
+typedef ap_axis<8,1,1,1> AXI_VAL;
 
 void aes (
     hls::stream< AXI_VAL > &key_and_plaintext,
-    hls::stream< AXI_VAL > &ciphertext_and_decryptedtext,
-    unsigned int key_size
+    hls::stream< AXI_VAL > &ciphertext_and_decryptedtext
 ) {
-    #pragma HLS INTERFACE axis port=key_and_plaintext
-    #pragma HLS INTERFACE axis port=ciphertext_and_decryptedtext
-    #pragma HLS INTERFACE s_axilite port=key_size
-    #pragma HLS INTERFACE s_axilite port=return
+    #pragma HLS INTERFACE axis register both port=key_and_plaintext
+    #pragma HLS INTERFACE axis register both port=ciphertext_and_decryptedtext
+    #pragma HLS INTERFACE ap_ctrl_none port=return
 
-	AXI_VAL tmp_k_and_p, tmp_c_and_d;
+    unsigned char key_array[16];
+    unsigned char plaintext_array[16];
+    unsigned char ciphertext_array[16];
+    unsigned char decryptedtext_array[16];
+    AXI_VAL tmp_k_and_p, tmp_c_and_d;
 
+    int i = 0;
     while (1) {
-		key_and_plaintext.read(tmp_k_and_p);
-		ciphertext_and_decryptedtext.write(tmp_k_and_p);
+    	// Read input stream and convert to char arrays
+		for (i = 0; i < 16; i++) {
+			key_and_plaintext.read(tmp_k_and_p);
+			key_array[i] = tmp_k_and_p.data;
 
-    	if (i < key_size) {
-    		key_array[i] = tmp_k_and_p.data.to_char();
-            i++;
-    	}
-    	else {
-            plaintext_array[j] = tmp_k_and_p.data.to_char();
-            j++;
-    	}
-        if (tmp_k_and_p.last) {
-            break;
-        }
-    }
+		}
+		for (i = 0; i < 16; i++) {
+			key_and_plaintext.read(tmp_k_and_p);
+			plaintext_array[i] = tmp_k_and_p.data;
+		}
 
-    //aes_encrypt(plaintext_array, ciphertext_array, key_array, SIZE_16);
-    //aes_decrypt(ciphertext_array, decryptedtext_array, key_array, SIZE_16);
+		// Perform AES Computation
+		aes_encrypt(plaintext_array, ciphertext_array, key_array, SIZE_16);
+		aes_decrypt(ciphertext_array, decryptedtext_array, key_array, SIZE_16);
 
-    for (i = 0; i < key_size; i++) {
-        	tmp_c_and_d.data = key_array[i];
-        	tmp_c_and_d.last = 0;
-        	tmp_c_and_d.id = tmp_k_and_p.id;
-    		tmp_c_and_d.user = tmp_k_and_p.user;
-    		tmp_c_and_d.dest = tmp_k_and_p.dest;
-    		tmp_c_and_d.strb = tmp_k_and_p.strb;
-
-    		ciphertext_and_decryptedtext.write(tmp_c_and_d);
-        }
-
-	for (i = 0; i < key_size; i++) {
-		tmp_c_and_d.data = plaintext_array[i];
-		tmp_c_and_d.last = 0;
-		tmp_c_and_d.id = tmp_k_and_p.id;
-		tmp_c_and_d.user = tmp_k_and_p.user;
-		tmp_c_and_d.dest = tmp_k_and_p.dest;
-		tmp_c_and_d.strb = tmp_k_and_p.strb;
-
-		if (i == key_size - 1) {
+		// Write to output stream
+		for (i = 0; i < 16; i++) {
+			tmp_c_and_d.data = ciphertext_array[i];
+			tmp_c_and_d.keep = tmp_k_and_p.keep;
+			tmp_c_and_d.strb = tmp_k_and_p.strb;
+			tmp_c_and_d.dest = tmp_k_and_p.dest;
+			tmp_c_and_d.id = tmp_k_and_p.id;
+			tmp_c_and_d.user = tmp_k_and_p.user;
+			ciphertext_and_decryptedtext.write(tmp_c_and_d);
+		}
+		for (i = 0; i < 16; i++) {
+			tmp_c_and_d.data = decryptedtext_array[i];
+			tmp_c_and_d.keep = tmp_k_and_p.keep;
+			tmp_c_and_d.strb = tmp_k_and_p.strb;
+			tmp_c_and_d.dest = tmp_k_and_p.dest;
+			tmp_c_and_d.id = tmp_k_and_p.id;
+			tmp_c_and_d.user = tmp_k_and_p.user;
+			ciphertext_and_decryptedtext.write(tmp_c_and_d);
+		}
+		if (tmp_k_and_p.last) {
 			break;
 		}
-		ciphertext_and_decryptedtext.write(tmp_c_and_d);
-	}
-	tmp_c_and_d.last = 1;
-	ciphertext_and_decryptedtext.write(tmp_c_and_d);
+    }
+    tmp_c_and_d.last = 1;
 }
 
 

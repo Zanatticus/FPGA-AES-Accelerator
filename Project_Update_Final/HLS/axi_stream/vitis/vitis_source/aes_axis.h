@@ -3,6 +3,11 @@
 #include "ap_axi_sdata.h"
 #include "hls_stream.h"
 
+#include <string.h>
+#include <stdint.h>
+#include <stdio.h>
+
+
 enum errorCode
 {
     SUCCESS = 0,
@@ -46,12 +51,12 @@ void aes_invRound(unsigned char *state, unsigned char *roundKey);
 void aes_invMain(unsigned char *state, unsigned char *expandedKey, int nbrRounds);
 char aes_decrypt(unsigned char *input, unsigned char *output, unsigned char *key, enum keySize size);
 
+
 typedef ap_axis<8,1,1,1> AXI_VAL;
 
 void aes (
 	hls::stream< AXI_VAL > &key_and_plaintext,
-	hls::stream< AXI_VAL > &ciphertext_and_decryptedtext,
-	unsigned int key_size
+	hls::stream< AXI_VAL > &ciphertext_and_decryptedtext
 );
 
 #endif

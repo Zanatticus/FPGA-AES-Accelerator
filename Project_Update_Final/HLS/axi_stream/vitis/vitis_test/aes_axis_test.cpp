@@ -5,7 +5,7 @@ using namespace std;
 
 typedef ap_axis<8,1,1,1> AXI_VAL;
 
-void aes(hls::stream< AXI_VAL > &key_and_plaintext, hls::stream< AXI_VAL > &ciphertext_and_decryptedtext, unsigned int key_size);
+void aes(hls::stream< AXI_VAL > &key_and_plaintext, hls::stream< AXI_VAL > &ciphertext_and_decryptedtext);
 
 int main () {
     int ret = 0;
@@ -62,7 +62,7 @@ int main () {
     	}
     }
 
-    aes(key_and_plaintext_stream, ciphertext_and_decryptedtext_stream, 16);
+    aes(key_and_plaintext_stream, ciphertext_and_decryptedtext_stream);
 
     printf("\nCiphertext (HEX format):\n");
     for (i = 0; i < data_size; i++)
