@@ -3,12 +3,20 @@
 
 int main(int argc, char *argv[])
 {
+    // Initialize different cipher keys
+    unsigned char key_128[16] = {'k', 'k', 'k', 'k', 'e', 'e', 'e', 'e', 'y', 'y', 'y', 'y', '.', '.', '.', '.'};
+    unsigned char key_192[24] = {'k', 'k', 'k', 'k', 'e', 'e', 'e', 'e', 'y', 'y', 'y', 'y', '.', '.', '.', '.','1','2','3','4','5','6','7','8'};
+    unsigned char key_256[32] = {'k', 'k', 'k', 'k', 'e', 'e', 'e', 'e', 'y', 'y', 'y', 'y', '.', '.', '.', '.','1','2','3','4','5','6','7','8','A','B','C','D','E','F','G','H'};
+    
+    // Select which cipher key to use
+    unsigned char *key = key_128;
+
+
+    // AES-128 (16 bytes), AES-192 (24 bytes), AES-256 (32 bytes)
+    int block_size = 16;
+    // AES-128 (176), AES-192 (), AES-256 ()
     int expandedKeySize = 176;
     unsigned char expandedKey[expandedKeySize];
-
-    // the cipher key
-    unsigned char key[16] = {'k', 'k', 'k', 'k', 'e', 'e', 'e', 'e', 'y', 'y', 'y', 'y', '.', '.', '.', '.'};
-    enum keySize size = SIZE_16;
 
     unsigned char plaintext[16] = {'a', 'b', 'c', 'd', 'e', 'f', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0'};
     unsigned char ciphertext[16];
@@ -22,41 +30,41 @@ int main(int argc, char *argv[])
 
     printf("\nCipher Key (HEX format):\n");
 
-    for (i = 0; i < 16; i++)
+    for (i = 0; i < block_size; i++)
     {
         // Print characters in HEX format, 16 chars per line
         printf("%2.2x%c", key[i], ((i + 1) % 16) ? ' ' : '\n');
     }
 
     // Test the Key Expansion
-    expandKey(expandedKey, key, size, expandedKeySize);
+    expandKey(expandedKey, key, block_size, expandedKeySize);
 
     printf("\nExpanded Key (HEX format):\n");
 
     for (i = 0; i < expandedKeySize; i++)
     {
-        printf("%2.2x%c", expandedKey[i], ((i + 1) % 16) ? ' ' : '\n');
+        printf("%2.2x%c", expandedKey[i], ((i + 1) % block_size) ? ' ' : '\n');
     }
 
     printf("\nPlaintext (HEX format):\n");
 
-    for (i = 0; i < 16; i++)
+    for (i = 0; i < block_size; i++)
     {
-        printf("%2.2x%c", plaintext[i], ((i + 1) % 16) ? ' ' : '\n');
+        printf("%2.2x%c", plaintext[i], ((i + 1) % block_size) ? ' ' : '\n');
     }
 
     // AES Encryption
-    aes_encrypt(plaintext, ciphertext, key, SIZE_16);
+    aes_encrypt(plaintext, ciphertext, key, block_size);
 
     printf("\nCiphertext (HEX format):\n");
 
-    for (i = 0; i < 16; i++)
+    for (i = 0; i < block_size; i++)
     {
-        printf("%2.2x%c", ciphertext[i], ((i + 1) % 16) ? ' ' : '\n');
+        printf("%2.2x%c", ciphertext[i], ((i + 1) % block_size) ? ' ' : '\n');
     }
 
     FILE *fp = fopen("output.dat", "w");
-    for (int i = 0; i < 16; i++) {
+    for (int i = 0; i < block_size; i++) {
         fprintf(fp, "%02x ", ciphertext[i]);
     }
     fclose(fp);
@@ -74,23 +82,31 @@ int main(int argc, char *argv[])
 
 
     // AES Decryption
-    aes_decrypt(ciphertext, decryptedtext, key, SIZE_16);
+    aes_decrypt(ciphertext, decryptedtext, key, block_size);
 
     printf("\nDecrypted text (HEX format):\n");
 
-    for (i = 0; i < 16; i++)
+    for (i = 0; i < block_size; i++)
     {
-        printf("%2.2x%c", decryptedtext[i], ((i + 1) % 16) ? ' ' : '\n');
+        printf("%2.2x%c", decryptedtext[i], ((i + 1) % block_size) ? ' ' : '\n');
     }
 
     // Capture the output results of the function, write to a file
-    fp = fopen("output2.golden.dat", "w");
-    for (i = 0; i < 16; i++) {
+    fp = fopen("output2.dat", "w");
+    for (i = 0; i < block_size; i++) {
         fprintf(fp, "%02x ", decryptedtext[i]);
     }
     fclose(fp);
 
+    ret = system("diff -w output2.dat output2.golden.dat");
 
+    if (ret != 0) {
+        printf("Decryption Test Failed !!! %i\n", ret);
+        ret = 1;
+    }
+    else {
+        printf("Decryption Test Passed !!!\n");
+    }
 
     return 0;
 }
@@ -153,7 +169,7 @@ key is a pointer to a non-expanded key
 */
 void expandKey(unsigned char *expandedKey,
                unsigned char *key,
-               enum keySize size,
+               int size,
                size_t expandedKeySize)
 {
     // current expanded keySize, in bytes
@@ -184,7 +200,7 @@ void expandKey(unsigned char *expandedKey,
         }
 
         // For 256-bit keys, we add an extra sbox to the calculation
-        if (size == SIZE_32 && ((currentSize % size) == 16))
+        if (size == 32 && ((currentSize % size) == 16))
         {
             for (i = 0; i < 4; i++)
                 t[i] = getSBoxValue(t[i]);
@@ -358,7 +374,7 @@ void aes_main(unsigned char *state, unsigned char *expandedKey, int nbrRounds)
 char aes_encrypt(unsigned char *input,
                  unsigned char *output,
                  unsigned char *key,
-                 enum keySize size)
+                 int size)
 {
     // the expanded keySize
     int expandedKeySize;
@@ -377,13 +393,13 @@ char aes_encrypt(unsigned char *input,
     // set the number of rounds
     switch (size)
     {
-    case SIZE_16:
+    case 16:
         nbrRounds = 10;
         break;
-    case SIZE_24:
+    case 24:
         nbrRounds = 12;
         break;
-    case SIZE_32:
+    case 32:
         nbrRounds = 14;
         break;
     default:
@@ -557,7 +573,7 @@ void aes_invMain(unsigned char *state, unsigned char *expandedKey, int nbrRounds
 char aes_decrypt(unsigned char *input,
                  unsigned char *output,
                  unsigned char *key,
-                 enum keySize size)
+                 int size)
 {
     // the expanded keySize
     int expandedKeySize;
@@ -576,13 +592,13 @@ char aes_decrypt(unsigned char *input,
     // set the number of rounds
     switch (size)
     {
-    case SIZE_16:
+    case 16:
         nbrRounds = 10;
         break;
-    case SIZE_24:
+    case 24:
         nbrRounds = 12;
         break;
-    case SIZE_32:
+    case 32:
         nbrRounds = 14;
         break;
     default:
