@@ -200,14 +200,15 @@ void expandKey(unsigned char *expandedKey,
     unsigned char t[4] = {0}; // temporary 4-byte variable
 
     // set the 16, 24, 32 bytes of the expanded key to the input key
-    for (i = 0; i < size; i++)
+    for (i = 0; i < size; i++) {
         expandedKey[i] = key[i];
+    }
     currentSize += size;
 
 expandKeyLoop:
     while (currentSize < expandedKeySize)
     {
-		#pragma HLS PIPELINE II=7
+		#pragma HLS PIPELINE II=15
         // assign the previous 4 bytes to the temporary value t
         for (i = 0; i < 4; i++)
         {
