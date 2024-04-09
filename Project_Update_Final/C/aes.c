@@ -3,21 +3,48 @@
 
 int main(int argc, char *argv[])
 {
-    // Initialize different cipher keys
+    // Which AES Cipher to use? AES128 (128), AES192 (192), or AES256 (256)
+    int mode = 192;
+
+    // Initialize AES keys 
     unsigned char key_128[16] = {'k', 'k', 'k', 'k', 'e', 'e', 'e', 'e', 'y', 'y', 'y', 'y', '.', '.', '.', '.'};
     unsigned char key_192[24] = {'k', 'k', 'k', 'k', 'e', 'e', 'e', 'e', 'y', 'y', 'y', 'y', '.', '.', '.', '.','1','2','3','4','5','6','7','8'};
     unsigned char key_256[32] = {'k', 'k', 'k', 'k', 'e', 'e', 'e', 'e', 'y', 'y', 'y', 'y', '.', '.', '.', '.','1','2','3','4','5','6','7','8','A','B','C','D','E','F','G','H'};
     
-    // Select which cipher key to use
-    unsigned char *key = key_128;
+    int cipherkey_size, expandedKeySize;
+    unsigned char *key;
+    unsigned char *encrypted_golden;
 
+    switch (mode)
+    {
+        case 128:
+            key = key_128;
+            cipherkey_size = 16; // Bytes
+            expandedKeySize = 176; // Bytes
+            encrypted_golden = "encrypted128.golden.dat";
+            break;
+        case 192:
+            key = key_192;
+            cipherkey_size = 24; // Bytes
+            expandedKeySize = 208; // Bytes
+            encrypted_golden = "encrypted192.golden.dat";
+            break;
+        case 256:
+            key = key_256;
+            cipherkey_size = 32; // Bytes
+            expandedKeySize = 240; // Bytes
+            encrypted_golden = "encrypted256.golden.dat";
+            break;
+        default:
+            printf("Invalid mode\n");
+            return 1;
+    }
 
-    // AES-128 (16 bytes), AES-192 (24 bytes), AES-256 (32 bytes)
-    int block_size = 16;
-    // AES-128 (176), AES-192 (), AES-256 ()
-    int expandedKeySize = 176;
+    // AES-128 (176 bytes), AES-192 (208 bytes), AES-256 (240 bytes)
     unsigned char expandedKey[expandedKeySize];
 
+    // Text size
+    int text_size = 16;
     unsigned char plaintext[16] = {'a', 'b', 'c', 'd', 'e', 'f', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0'};
     unsigned char ciphertext[16];
     unsigned char decryptedtext[16];
@@ -30,78 +57,78 @@ int main(int argc, char *argv[])
 
     printf("\nCipher Key (HEX format):\n");
 
-    for (i = 0; i < block_size; i++)
+    for (i = 0; i < text_size; i++)
     {
         // Print characters in HEX format, 16 chars per line
-        printf("%2.2x%c", key[i], ((i + 1) % 16) ? ' ' : '\n');
+        printf("%2.2x%c", key[i], ((i + 1) % text_size) ? ' ' : '\n');
     }
 
     // Test the Key Expansion
-    expandKey(expandedKey, key, block_size, expandedKeySize);
+    expandKey(expandedKey, key, cipherkey_size, expandedKeySize);
 
     printf("\nExpanded Key (HEX format):\n");
 
     for (i = 0; i < expandedKeySize; i++)
     {
-        printf("%2.2x%c", expandedKey[i], ((i + 1) % block_size) ? ' ' : '\n');
+        printf("%2.2x%c", expandedKey[i], ((i + 1) % text_size) ? ' ' : '\n');
     }
 
     printf("\nPlaintext (HEX format):\n");
 
-    for (i = 0; i < block_size; i++)
+    for (i = 0; i < text_size; i++)
     {
-        printf("%2.2x%c", plaintext[i], ((i + 1) % block_size) ? ' ' : '\n');
+        printf("%2.2x%c", plaintext[i], ((i + 1) % text_size) ? ' ' : '\n');
     }
 
     // AES Encryption
-    aes_encrypt(plaintext, ciphertext, key, block_size);
+    aes_encrypt(plaintext, ciphertext, key, cipherkey_size);
 
     printf("\nCiphertext (HEX format):\n");
 
-    for (i = 0; i < block_size; i++)
+    for (i = 0; i < text_size; i++)
     {
-        printf("%2.2x%c", ciphertext[i], ((i + 1) % block_size) ? ' ' : '\n');
+        printf("%2.2x%c", ciphertext[i], ((i + 1) % text_size) ? ' ' : '\n');
     }
 
-    FILE *fp = fopen("output.dat", "w");
-    for (int i = 0; i < block_size; i++) {
+    FILE *fp = fopen("encrypted.dat", "w");
+    for (int i = 0; i < text_size; i++) {
         fprintf(fp, "%02x ", ciphertext[i]);
     }
     fclose(fp);
     
-
-    int ret = system("diff -w output.dat output.golden.dat");
-
+    char command[100];
+    sprintf(command, "diff -w encrypted.dat %s >/dev/null 2>&1", encrypted_golden);
+    int ret = system(command);
+    
     if (ret != 0) {
-        printf("Encryption Test Failed !!! %i\n", ret);
+        printf("Encryption Test Failed !!! err=%d\n", ret);
         ret = 1;
     }
     else {
         printf("Encryption Test Passed !!!\n");
     }
 
-
     // AES Decryption
-    aes_decrypt(ciphertext, decryptedtext, key, block_size);
+    aes_decrypt(ciphertext, decryptedtext, key, cipherkey_size);
 
     printf("\nDecrypted text (HEX format):\n");
 
-    for (i = 0; i < block_size; i++)
+    for (i = 0; i < text_size; i++)
     {
-        printf("%2.2x%c", decryptedtext[i], ((i + 1) % block_size) ? ' ' : '\n');
+        printf("%2.2x%c", decryptedtext[i], ((i + 1) % text_size) ? ' ' : '\n');
     }
 
     // Capture the output results of the function, write to a file
-    fp = fopen("output2.dat", "w");
-    for (i = 0; i < block_size; i++) {
+    fp = fopen("decrypted.dat", "w");
+    for (i = 0; i < text_size; i++) {
         fprintf(fp, "%02x ", decryptedtext[i]);
     }
     fclose(fp);
 
-    ret = system("diff -w output2.dat output2.golden.dat");
+    ret = system("diff -w decrypted.dat decrypted.golden.dat >/dev/null 2>&1");
 
     if (ret != 0) {
-        printf("Decryption Test Failed !!! %i\n", ret);
+        printf("Decryption Test Failed !!! err=%d\n", ret);
         ret = 1;
     }
     else {
