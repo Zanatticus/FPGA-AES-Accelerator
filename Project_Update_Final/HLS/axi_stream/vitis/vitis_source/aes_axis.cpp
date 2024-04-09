@@ -5,13 +5,36 @@ typedef ap_axis<8,1,1,1> AXI_VAL;
 
 void aes (
     hls::stream< AXI_VAL > &key_and_plaintext,
-    hls::stream< AXI_VAL > &ciphertext_and_decryptedtext
+    hls::stream< AXI_VAL > &ciphertext_and_decryptedtext,
+    int mode
 ) {
     #pragma HLS INTERFACE axis register both port=key_and_plaintext
     #pragma HLS INTERFACE axis register both port=ciphertext_and_decryptedtext
+    #pragma HLS INTERFACE s_axilite port=mode
     #pragma HLS INTERFACE ap_ctrl_none port=return
 
-    unsigned char key_array[16];
+    key_array128[16] = {};
+    key_array192[24] = {};
+    key_array256[32] = {};
+    unsigned char *key_array;
+
+    switch (mode)
+    {
+        case 128:
+            key_array = key_array128;
+            cipherkey_size = 16; // Bytes
+            break;
+        case 192:
+            key_array = key_array192;
+            cipherkey_size = 24; // Bytes
+            break;
+        case 256:
+            key_array = key_array256;
+            cipherkey_size = 32; // Bytes
+            break;
+        default:
+            return;
+
     unsigned char plaintext_array[16];
     unsigned char ciphertext_array[16];
     unsigned char decryptedtext_array[16];
@@ -20,7 +43,7 @@ void aes (
     int i = 0;
     while (1) {
     	// Read input stream and convert to char arrays
-		for (i = 0; i < 16; i++) {
+		for (i = 0; i < cipherkey_size; i++) {
 			key_and_plaintext.read(tmp_k_and_p);
 			key_array[i] = tmp_k_and_p.data;
 
@@ -31,8 +54,8 @@ void aes (
 		}
 
 		// Perform AES Computation
-		aes_encrypt(plaintext_array, ciphertext_array, key_array, SIZE_16);
-		aes_decrypt(ciphertext_array, decryptedtext_array, key_array, SIZE_16);
+		aes_encrypt(plaintext_array, ciphertext_array, key_array, cipherkey_size);
+		aes_decrypt(ciphertext_array, decryptedtext_array, key_array, cipherkey_size);
 
 		// Write to output stream
 		for (i = 0; i < 16; i++) {
@@ -166,7 +189,7 @@ key is a pointer to a non-expanded key
 */
 void expandKey(unsigned char *expandedKey,
                unsigned char *key,
-               enum keySize size,
+               int size,
                size_t expandedKeySize)
 {
     // current expanded keySize, in bytes
@@ -199,7 +222,7 @@ expandKeyLoop:
         }
 
         // For 256-bit keys, we add an extra sbox to the calculation
-        if (size == SIZE_32 && ((currentSize % size) == 16))
+        if (size == 32 && ((currentSize % size) == 16))
         {
             for (i = 0; i < 4; i++)
                 t[i] = getSBoxValue(t[i]);
@@ -378,7 +401,7 @@ void aes_main(unsigned char *state, unsigned char *expandedKey, int nbrRounds)
 char aes_encrypt(unsigned char *input,
                  unsigned char *output,
                  unsigned char *key,
-                 enum keySize size)
+                 int size)
 {
     // the expanded keySize
     int expandedKeySize;
@@ -397,13 +420,13 @@ char aes_encrypt(unsigned char *input,
     // set the number of rounds
     switch (size)
     {
-    case SIZE_16:
+    case 16:
         nbrRounds = 10;
         break;
-    case SIZE_24:
+    case 24:
         nbrRounds = 12;
         break;
-    case SIZE_32:
+    case 32:
         nbrRounds = 14;
         break;
     default:
@@ -568,7 +591,7 @@ void aes_invMain(unsigned char *state, unsigned char *expandedKey, int nbrRounds
 char aes_decrypt(unsigned char *input,
                  unsigned char *output,
                  unsigned char *key,
-                 enum keySize size)
+                 int size)
 {
     // the expanded keySize
     int expandedKeySize;
@@ -587,13 +610,13 @@ char aes_decrypt(unsigned char *input,
     // set the number of rounds
     switch (size)
     {
-    case SIZE_16:
+    case 16:
         nbrRounds = 10;
         break;
-    case SIZE_24:
+    case 24:
         nbrRounds = 12;
         break;
-    case SIZE_32:
+    case 32:
         nbrRounds = 14;
         break;
     default:
