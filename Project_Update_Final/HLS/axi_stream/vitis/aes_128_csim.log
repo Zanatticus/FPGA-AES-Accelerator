@@ -7,6 +7,7 @@ INFO: [SIM 4] CSIM will launch GCC as the compiler.
 
 *****AES_AXIS_TEST STARTED*****
 
+AES Mode: AES-128
 
 Cipher Key (HEX format):
 6b 6b 6b 6b 65 65 65 65 79 79 79 79 2e 2e 2e 2e
