@@ -9,7 +9,7 @@ void aes(hls::stream< AXI_VAL > &key_and_plaintext, hls::stream< AXI_VAL > &ciph
 
 int main () {
     // Which AES Cipher to use? AES128 (128), AES192 (192), or AES256 (256)
-    int mode = 256;
+    int mode = 128;
 
     // Initialize AES keys 
     unsigned char key_128[16] = {'k', 'k', 'k', 'k', 'e', 'e', 'e', 'e', 'y', 'y', 'y', 'y', '.', '.', '.', '.'};
