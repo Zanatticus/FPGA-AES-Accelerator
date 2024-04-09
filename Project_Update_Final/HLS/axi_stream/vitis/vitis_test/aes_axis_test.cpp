@@ -18,7 +18,7 @@ int main () {
     
     int cipherkey_size, expandedKeySize;
     unsigned char *key_array;
-    unsigned char *encrypted_golden;
+    char *encrypted_golden;
 
     switch (mode)
     {
@@ -26,25 +26,25 @@ int main () {
             key_array = key_128;
             cipherkey_size = 16; // Bytes
             expandedKeySize = 176; // Bytes
-            encrypted_golden = "encrypted128.golden.dat";
+            encrypted_golden = (char *)"encrypted128.golden.dat";
             break;
         case 192:
             key_array = key_192;
             cipherkey_size = 24; // Bytes
             expandedKeySize = 208; // Bytes
-            encrypted_golden = "encrypted192.golden.dat";
+            encrypted_golden = (char *)"encrypted192.golden.dat";
             break;
         case 256:
             key_array = key_256;
             cipherkey_size = 32; // Bytes
             expandedKeySize = 240; // Bytes
-            encrypted_golden = "encrypted256.golden.dat";
+            encrypted_golden = (char *)"encrypted256.golden.dat";
             break;
         default:
             printf("Invalid mode\n");
             return 1;
     }
-    
+
     int text_size = 16;
     unsigned char plaintext_array[text_size] = {'a', 'b', 'c', 'd', 'e', 'f', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0'};
     unsigned char ciphertext_array[text_size], decryptedtext_array[text_size];
@@ -57,17 +57,17 @@ int main () {
     printf("\n\n*****AES_AXIS_TEST STARTED*****\n\n");
 
     printf("\nCipher Key (HEX format):\n");
-    for (i = 0; i < text_size; i++)
+    for (i = 0; i < cipherkey_size; i++)
     {
         // Print characters in HEX format, [text_size] chars per line
-        printf("%2.2x%c", key_array[i], ((i + 1) % text_size) ? ' ' : '\n');
+        printf("%2.2x%c", key_array[i], ((i + 1) % cipherkey_size) ? ' ' : '\n');
 
         // Write the key to the key_stream
         key.data = key_array[i];
         key.keep = 1;
         key.strb = 1;
         key.dest = 1;
-        key.id = 1;
+        key.id = 0;
         key.user = 1;
         key.last = 0;
         key_and_plaintext_stream.write(key);
@@ -83,11 +83,13 @@ int main () {
         plaintext.keep = 1;
         plaintext.strb = 1;
         plaintext.dest = 1;
-        plaintext.id = 1;
+        plaintext.id = 0;
         plaintext.user = 1;
-        plaintext.last = 0;
         if (i == text_size - 1) {
-            plaintext.last = 1;
+        	plaintext.last = 1;
+        }
+        else {
+        	plaintext.last = 0;
         }
         key_and_plaintext_stream.write(plaintext);
     }
@@ -111,9 +113,8 @@ int main () {
 
     // Compare the results of the function against expected results
     char command[100];
-    sprintf(command, "diff -w encrypted.dat %s >/dev/null 2>&1", encrypted_golden);
+    sprintf(command, "diff -w encrypted.dat %s", encrypted_golden);
     ret = system(command);
-
     if (ret != 0) {
         printf("\nEncryption Test Failed !!!\n");
         ret = 1;

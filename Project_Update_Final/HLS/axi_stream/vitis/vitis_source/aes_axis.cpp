@@ -13,11 +13,11 @@ void aes (
     #pragma HLS INTERFACE s_axilite port=mode
     #pragma HLS INTERFACE ap_ctrl_none port=return
 
-    key_array128[16] = {};
-    key_array192[24] = {};
-    key_array256[32] = {};
+    unsigned char key_array128[16] = {};
+    unsigned char key_array192[24] = {};
+    unsigned char key_array256[32] = {};
     unsigned char *key_array;
-
+    int cipherkey_size;
     switch (mode)
     {
         case 128:
