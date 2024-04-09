@@ -56,6 +56,7 @@ int main () {
 
     printf("\n\n*****AES_AXIS_TEST STARTED*****\n\n");
 
+	printf("AES Mode: AES-%i\n", mode);
     printf("\nCipher Key (HEX format):\n");
     for (i = 0; i < cipherkey_size; i++)
     {
