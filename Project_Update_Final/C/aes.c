@@ -4,7 +4,7 @@
 int main(int argc, char *argv[])
 {
     // Which AES Cipher to use? AES128 (128), AES192 (192), or AES256 (256)
-    int mode = 192;
+    int mode = 256;
 
     // Initialize AES keys 
     unsigned char key_128[16] = {'k', 'k', 'k', 'k', 'e', 'e', 'e', 'e', 'y', 'y', 'y', 'y', '.', '.', '.', '.'};
