@@ -34,7 +34,7 @@ void aes (
             break;
         default:
             return;
-
+    }
     unsigned char plaintext_array[16];
     unsigned char ciphertext_array[16];
     unsigned char decryptedtext_array[16];
@@ -82,6 +82,7 @@ void aes (
     }
     tmp_c_and_d.last = 1;
 }
+
 
 
 #define MAX_EXPANDED_KEY_SIZE 240
