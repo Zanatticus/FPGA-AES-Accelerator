@@ -17,7 +17,7 @@ proc create_report { reportName command } {
   }
 }
 namespace eval ::optrace {
-  variable script "C:/Users/ingare.a/aes_axis/aes_axis.runs/impl_1/design_1_wrapper.tcl"
+  variable script "C:/Users/ingare.a/aes_axis_modes/aes_axis_modes.runs/impl_1/design_1_wrapper.tcl"
   variable category "vivado_impl"
 }
 
@@ -122,7 +122,7 @@ start_step init_design
 set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
-  set_param chipscope.maxJobs 4
+  set_param chipscope.maxJobs 1
 OPTRACE "create in-memory project" START { }
   create_project -in_memory -part xc7z020clg400-1
   set_property board_part tul.com.tw:pynq-z2:part0:1.0 [current_project]
@@ -130,19 +130,19 @@ OPTRACE "create in-memory project" START { }
   set_param project.singleFileAddWarning.threshold 0
 OPTRACE "create in-memory project" END { }
 OPTRACE "set parameters" START { }
-  set_property webtalk.parent_dir C:/Users/ingare.a/aes_axis/aes_axis.cache/wt [current_project]
-  set_property parent.project_path C:/Users/ingare.a/aes_axis/aes_axis.xpr [current_project]
-  set_property ip_repo_paths C:/Users/ingare.a/Documents/aes_axis [current_project]
+  set_property webtalk.parent_dir C:/Users/ingare.a/aes_axis_modes/aes_axis_modes.cache/wt [current_project]
+  set_property parent.project_path C:/Users/ingare.a/aes_axis_modes/aes_axis_modes.xpr [current_project]
+  set_property ip_repo_paths C:/Users/ingare.a/Documents/aes_axis_modes [current_project]
   update_ip_catalog
-  set_property ip_output_repo C:/Users/ingare.a/aes_axis/aes_axis.cache/ip [current_project]
+  set_property ip_output_repo C:/Users/ingare.a/aes_axis_modes/aes_axis_modes.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
   set_property XPM_LIBRARIES {XPM_CDC XPM_FIFO XPM_MEMORY} [current_project]
 OPTRACE "set parameters" END { }
 OPTRACE "add files" START { }
-  add_files -quiet C:/Users/ingare.a/aes_axis/aes_axis.runs/synth_1/design_1_wrapper.dcp
+  add_files -quiet C:/Users/ingare.a/aes_axis_modes/aes_axis_modes.runs/synth_1/design_1_wrapper.dcp
   set_msg_config -source 4 -id {BD 41-1661} -limit 0
   set_param project.isImplRun true
-  add_files C:/Users/ingare.a/aes_axis/aes_axis.srcs/sources_1/bd/design_1/design_1.bd
+  add_files C:/Users/ingare.a/aes_axis_modes/aes_axis_modes.srcs/sources_1/bd/design_1/design_1.bd
   set_param project.isImplRun false
 OPTRACE "read constraints: implementation" START { }
 OPTRACE "read constraints: implementation" END { }
