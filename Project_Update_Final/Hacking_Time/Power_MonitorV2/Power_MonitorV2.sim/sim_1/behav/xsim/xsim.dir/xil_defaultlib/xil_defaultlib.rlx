@@ -1,0 +1,6 @@
+0.7
+2020.2
+Apr 18 2022
+16:05:34
+Z:/Users/hiqbal/FPGA_HWSW/FPGA_AES_Accelerator/Hacking_Time/Power_MonitorV2/Power_MonitorV2.sim/sim_1/behav/xsim/glbl.v,1649976174,verilog,,,,glbl,,uvm,,,,,,
+Z:/Users/hiqbal/FPGA_HWSW/FPGA_AES_Accelerator/Hacking_Time/Power_MonitorV2/Power_MonitorV2.srcs/sources_1/new/Power_Monitor.sv,1712788040,systemVerilog,,,,Power_Monitor;and_1;calc_avg;counter;freq_ro;inv_1;one_to_100;reset_enable;ring_osc,,uvm,,,,,,

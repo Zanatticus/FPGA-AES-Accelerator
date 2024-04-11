@@ -1,0 +1,40 @@
+#-----------------------------------------------------------
+# Vivado v2022.1 (64-bit)
+# SW Build 3526262 on Mon Apr 18 15:48:16 MDT 2022
+# IP Build 3524634 on Mon Apr 18 20:55:01 MDT 2022
+# Start of session at: Mon Apr  8 15:55:06 2024
+# Process ID: 9072
+# Current directory: Z:/Users/hiqbal/FPGA_HWSW/FPGA_AES_Accelerator/Hacking_Time/Power_Monitor/Power_Monitor.runs/synth_1
+# Command line: vivado.exe -log Power_Monitor.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Power_Monitor.tcl
+# Log file: Z:/Users/hiqbal/FPGA_HWSW/FPGA_AES_Accelerator/Hacking_Time/Power_Monitor/Power_Monitor.runs/synth_1/Power_Monitor.vds
+# Journal file: Z:/Users/hiqbal/FPGA_HWSW/FPGA_AES_Accelerator/Hacking_Time/Power_Monitor/Power_Monitor.runs/synth_1\vivado.jou
+# Running On: X22-21, OS: Windows, CPU Frequency: 2594 MHz, CPU Physical cores: 4, Host memory: 17178 MB
+#-----------------------------------------------------------
+source Power_Monitor.tcl -notrace
+Command: synth_design -top Power_Monitor -part xc7z020clg400-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 6676
+ERROR: [Synth 8-9210] cannot access memory 'power_readings' directly [Z:/Users/hiqbal/FPGA_HWSW/FPGA_AES_Accelerator/Hacking_Time/Power_Monitor/Power_Monitor.srcs/sources_1/new/Power_Monitor.v:12]
+ERROR: [Synth 8-9210] cannot access memory 'power_readings' directly [Z:/Users/hiqbal/FPGA_HWSW/FPGA_AES_Accelerator/Hacking_Time/Power_Monitor/Power_Monitor.srcs/sources_1/new/Power_Monitor.v:13]
+INFO: [Synth 8-8750] module 'Power_Monitor' ignored due to previous errors [Z:/Users/hiqbal/FPGA_HWSW/FPGA_AES_Accelerator/Hacking_Time/Power_Monitor/Power_Monitor.srcs/sources_1/new/Power_Monitor.v:14]
+WARNING: [Synth 8-2292] literal value truncated to fit in 2 bits [Z:/Users/hiqbal/FPGA_HWSW/FPGA_AES_Accelerator/Hacking_Time/Power_Monitor/Power_Monitor.srcs/sources_1/new/Power_Monitor.v:31]
+ERROR: [Synth 8-9917] port 'power_readings' must not be declared to be an array [Z:/Users/hiqbal/FPGA_HWSW/FPGA_AES_Accelerator/Hacking_Time/Power_Monitor/Power_Monitor.srcs/sources_1/new/Power_Monitor.v:21]
+WARNING: [Synth 8-1958] event expressions must result in a singular type [Z:/Users/hiqbal/FPGA_HWSW/FPGA_AES_Accelerator/Hacking_Time/Power_Monitor/Power_Monitor.srcs/sources_1/new/Power_Monitor.v:26]
+INFO: [Synth 8-8750] module 'calc_avg' ignored due to previous errors [Z:/Users/hiqbal/FPGA_HWSW/FPGA_AES_Accelerator/Hacking_Time/Power_Monitor/Power_Monitor.srcs/sources_1/new/Power_Monitor.v:33]
+INFO: [Synth 8-8750] module 'one_to_100' ignored due to previous errors [Z:/Users/hiqbal/FPGA_HWSW/FPGA_AES_Accelerator/Hacking_Time/Power_Monitor/Power_Monitor.srcs/sources_1/new/Power_Monitor.v:48]
+INFO: [Synth 8-8750] module 'freq_ro' ignored due to previous errors [Z:/Users/hiqbal/FPGA_HWSW/FPGA_AES_Accelerator/Hacking_Time/Power_Monitor/Power_Monitor.srcs/sources_1/new/Power_Monitor.v:60]
+INFO: [Synth 8-8750] module 'ring_osc' ignored due to previous errors [Z:/Users/hiqbal/FPGA_HWSW/FPGA_AES_Accelerator/Hacking_Time/Power_Monitor/Power_Monitor.srcs/sources_1/new/Power_Monitor.v:71]
+INFO: [Synth 8-8750] module 'reset_enable' ignored due to previous errors [Z:/Users/hiqbal/FPGA_HWSW/FPGA_AES_Accelerator/Hacking_Time/Power_Monitor/Power_Monitor.srcs/sources_1/new/Power_Monitor.v:93]
+INFO: [Synth 8-8750] module 'counter' ignored due to previous errors [Z:/Users/hiqbal/FPGA_HWSW/FPGA_AES_Accelerator/Hacking_Time/Power_Monitor/Power_Monitor.srcs/sources_1/new/Power_Monitor.v:109]
+INFO: [Synth 8-8750] module 'and_1' ignored due to previous errors [Z:/Users/hiqbal/FPGA_HWSW/FPGA_AES_Accelerator/Hacking_Time/Power_Monitor/Power_Monitor.srcs/sources_1/new/Power_Monitor.v:119]
+INFO: [Synth 8-8750] module 'inv_1' ignored due to previous errors [Z:/Users/hiqbal/FPGA_HWSW/FPGA_AES_Accelerator/Hacking_Time/Power_Monitor/Power_Monitor.srcs/sources_1/new/Power_Monitor.v:127]
+Failed to read verilog 'Z:/Users/hiqbal/FPGA_HWSW/FPGA_AES_Accelerator/Hacking_Time/Power_Monitor/Power_Monitor.srcs/sources_1/new/Power_Monitor.v'
+INFO: [Common 17-83] Releasing license: Synthesis
+14 Infos, 2 Warnings, 0 Critical Warnings and 4 Errors encountered.
+synth_design failed
+ERROR: [Common 17-69] Command failed: Vivado Synthesis failed
+INFO: [Common 17-206] Exiting Vivado at Mon Apr  8 15:55:24 2024...

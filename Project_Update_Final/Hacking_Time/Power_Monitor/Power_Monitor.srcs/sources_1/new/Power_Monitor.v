@@ -11,6 +11,7 @@ module Power_Monitor(clk, enable, avg_ro_freq);
     one_to_100 clk_expand(.in(clk), .out(clks));
     freq_ro RO[99:0](.clk(clks), .ro_enable(enables), .freq(power_readings));
     calc_avg(.power_readings(power_readings), .power_avg(avg_ro_freq));
+endmodule
     
     
     
@@ -18,10 +19,10 @@ module Power_Monitor(clk, enable, avg_ro_freq);
 
 module calc_avg(power_readings, power_avg);
     input  [31:0] power_readings [99:0];
-    output [31:0] power_avg;
+    output reg [31:0] power_avg;
     
     reg [63:0] sum;
-    
+    integer i;
     always@(power_readings) begin
         for(i = 0; i < 100; i = i + 1) begin
             sum = sum + power_readings[i];
@@ -34,7 +35,9 @@ endmodule
 module one_to_100(in, out);
     
     input in;
-    output[99:0] out;
+    output reg [99:0] out; 
+    
+    integer i;
     
     always@(in) begin
         for(i = 0; i < 100; i = i+1) begin
@@ -45,7 +48,7 @@ module one_to_100(in, out);
 endmodule
 
 module freq_ro(clk, ro_enable, freq);
-    input clk, osc, ro_enable;
+    input clk, ro_enable;
     output[31:0] freq;
     
     wire ro_out;
@@ -54,22 +57,26 @@ module freq_ro(clk, ro_enable, freq);
     reset_enable(.clk(clk), .reset_out(internal_reset));
     counter(.trigger(ro_out), .reset(internal_reset), .count(freq));
     
-    
+endmodule
     
 module ring_osc(enable, osc);
-    input enable, clk;
-    output[31:0] osc;
+    input enable;
+    output osc;
     
-    wire inv_out, and_out;
+    wire and_out;
     
-    and_1(.a(enable), .b(inv_out), .out(and_out));
-    inv_1(.in(and_out), .out(inv_out));
+    and_1(.a(enable), .b(osc), .out(and_out));
+    inv_1(.in(and_out), .out(osc));
+
 endmodule
     
 module reset_enable(clk, reset_out);
     
+    input clk;
+    output reg reset_out;
+    
     reg [31:0] clk_cycles;
-    wire in_reset;
+    reg in_reset;
     
     counter(.trigger(clk), .reset(in_reset), .count(clk_cycles));
     
@@ -83,6 +90,7 @@ module reset_enable(clk, reset_out);
             in_reset = 1'b0;
         end
     end
+endmodule
     
 module counter (trigger, reset, count);
     input trigger;
@@ -104,7 +112,7 @@ endmodule
 
 module and_1(a, b, out);
     input a, b;
-    output out;
+    output reg out;
     always@(a, b) begin
         out = a & b;
     end
@@ -112,7 +120,7 @@ endmodule
 
 module inv_1(in, out);
     input in;
-    output out;
+    output reg out;
     always@(in) begin
         out = ~in;
     end
