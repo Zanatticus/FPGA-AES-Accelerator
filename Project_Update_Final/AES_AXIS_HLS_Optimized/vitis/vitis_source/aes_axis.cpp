@@ -11,7 +11,7 @@ void aes (
     #pragma HLS INTERFACE axis register both port=key_and_plaintext
     #pragma HLS INTERFACE axis register both port=ciphertext_and_decryptedtext
     #pragma HLS INTERFACE s_axilite port=mode
-    #pragma HLS INTERFACE ap_ctrl_none port=return
+    #pragma HLS INTERFACE s_axilite port=return
 
     unsigned char key_array128[16] = {};
     unsigned char key_array192[24] = {};
@@ -41,18 +41,15 @@ void aes (
     AXI_VAL tmp_k_and_p, tmp_c_and_d;
 
     int i = 0;
-mainLoop:
     while (1) {
 #pragma HLS LOOP_TRIPCOUNT min=1 max=1 avg=1
-
-cipherkeyLoop:
     	// Read input stream and convert to char arrays
 		for (i = 0; i < cipherkey_size; i++) {
-			#pragma HLS LOOP_TRIPCOUNT min=16 max=32 avg=24
+#pragma HLS LOOP_TRIPCOUNT min=16 max=32 avg=24
 			key_and_plaintext.read(tmp_k_and_p);
 			key_array[i] = tmp_k_and_p.data;
+
 		}
-plaintextLoop:
 		for (i = 0; i < 16; i++) {
 			key_and_plaintext.read(tmp_k_and_p);
 			plaintext_array[i] = tmp_k_and_p.data;
@@ -63,7 +60,6 @@ plaintextLoop:
 		aes_decrypt(ciphertext_array, decryptedtext_array, key_array, cipherkey_size);
 
 		// Write to output stream
-ciphertextLoop:
 		for (i = 0; i < 16; i++) {
 			tmp_c_and_d.data = ciphertext_array[i];
 			tmp_c_and_d.keep = tmp_k_and_p.keep;
@@ -73,7 +69,6 @@ ciphertextLoop:
 			tmp_c_and_d.user = tmp_k_and_p.user;
 			ciphertext_and_decryptedtext.write(tmp_c_and_d);
 		}
-decryptedtextLoop:
 		for (i = 0; i < 16; i++) {
 			tmp_c_and_d.data = decryptedtext_array[i];
 			tmp_c_and_d.keep = tmp_k_and_p.keep;
@@ -139,8 +134,9 @@ void rotate(unsigned char *word)
     int i;
 
     c = word[0];
-    for (i = 0; i < 3; i++)
+    for (i = 0; i < 3; i++) {
         word[i] = word[i + 1];
+    }
     word[3] = c;
 }
 
@@ -209,7 +205,6 @@ void expandKey(unsigned char *expandedKey,
     // set the 16, 24, 32 bytes of the expanded key to the input key
     for (i = 0; i < size; i++) {
 #pragma HLS LOOP_TRIPCOUNT min=16 max=32 avg=24
-
         expandedKey[i] = key[i];
     }
     currentSize += size;
@@ -237,8 +232,9 @@ expandKeyLoop:
         // For 256-bit keys, we add an extra sbox to the calculation
         if (size == 32 && ((currentSize % size) == 16))
         {
-            for (i = 0; i < 4; i++)
+            for (i = 0; i < 4; i++) {
                 t[i] = getSBoxValue(t[i]);
+            }
         }
 
         /* 
@@ -282,11 +278,11 @@ void shiftRow(unsigned char *state, unsigned char nbr)
     // shift the row to the left by 1 for each iteration
     for (i = 0; i < nbr; i++)
     {
-#pragma HLS LOOP_TRIPCOUNT min=0 max=3 avg=2
-
+#pragma HLS LOOP_TRIPCOUNT min=1 max=3 avg=2
         tmp = state[0];
-        for (j = 0; j < 3; j++)
+        for (j = 0; j < 3; j++) {
             state[j] = state[j + 1];
+        }
         state[3] = tmp;
     }
 }
@@ -294,8 +290,9 @@ void shiftRow(unsigned char *state, unsigned char nbr)
 void addRoundKey(unsigned char *state, unsigned char *roundKey)
 {
     int i;
-    for (i = 0; i < 16; i++)
+    for (i = 0; i < 16; i++) {
         state[i] = state[i] ^ roundKey[i];
+    }
 }
 
 unsigned char galois_multiplication(unsigned char a, unsigned char b)
@@ -404,7 +401,6 @@ void aes_main(unsigned char *state, unsigned char *expandedKey, int nbrRounds)
     for (i = 1; i < nbrRounds; i++)
     {
 #pragma HLS LOOP_TRIPCOUNT min=9 max=13 avg=11
-
         createRoundKey(expandedKey + 16 * i, roundKey);
         aes_round(state, roundKey);
     }
@@ -466,8 +462,9 @@ char aes_encrypt(unsigned char *input,
     for (i = 0; i < 4; i++)
     {
         // iterate over the rows
-        for (j = 0; j < 4; j++)
+        for (j = 0; j < 4; j++) {
             block[(i + (j * 4))] = input[(i * 4) + j];
+        }
     }
 
     // expand the key into an 176, 208, 240 bytes key
@@ -480,8 +477,9 @@ char aes_encrypt(unsigned char *input,
     for (i = 0; i < 4; i++)
     {
         // iterate over the rows
-        for (j = 0; j < 4; j++)
+        for (j = 0; j < 4; j++) {
             output[(i * 4) + j] = block[(i + (j * 4))];
+        }
     }
 
     return SUCCESS;
@@ -495,16 +493,18 @@ void invSubBytes(unsigned char *state)
     substitute all the values from the state with the value in the SBox
     using the state value as index for the SBox
     */
-    for (i = 0; i < 16; i++)
+    for (i = 0; i < 16; i++) {
         state[i] = getSBoxInvert(state[i]);
+    }
 }
 
 void invShiftRows(unsigned char *state)
 {
     int i;
     // iterate over the 4 rows and call invShiftRow() with that row
-    for (i = 0; i < 4; i++)
+    for (i = 0; i < 4; i++) {
         invShiftRow(state + i * 4, i);
+    }
 }
 
 void invShiftRow(unsigned char *state, unsigned char nbr)
@@ -515,12 +515,13 @@ void invShiftRow(unsigned char *state, unsigned char nbr)
 invShiftRowLoop:
     for (i = 0; i < nbr; i++)
     {
-#pragma HLS LOOP_TRIPCOUNT min=0 max=3 avg=2
+#pragma HLS LOOP_TRIPCOUNT min=1 max=3 avg=2
 
 		#pragma HLS PIPELINE II=5
         tmp = state[3];
-        for (j = 3; j > 0; j--)
+        for (j = 3; j > 0; j--) {
             state[j] = state[j - 1];
+        }
         state[0] = tmp;
     }
 }
@@ -597,6 +598,7 @@ void aes_invMain(unsigned char *state, unsigned char *expandedKey, int nbrRounds
 
     for (i = nbrRounds - 1; i > 0; i--)
     {
+#pragma HLS LOOP_TRIPCOUNT min=9 max=13 avg=11
         createRoundKey(expandedKey + 16 * i, roundKey);
         aes_invRound(state, roundKey);
     }
@@ -658,8 +660,9 @@ char aes_decrypt(unsigned char *input,
     for (i = 0; i < 4; i++)
     {
         // iterate over the rows
-        for (j = 0; j < 4; j++)
+        for (j = 0; j < 4; j++) {
             block[(i + (j * 4))] = input[(i * 4) + j];
+        }
     }
 
     // expand the key into an 176, 208, 240 bytes key
@@ -672,8 +675,9 @@ char aes_decrypt(unsigned char *input,
     for (i = 0; i < 4; i++)
     {
         // iterate over the rows
-        for (j = 0; j < 4; j++)
+        for (j = 0; j < 4; j++) {
             output[(i * 4) + j] = block[(i + (j * 4))];
+        }
     }
 
     return SUCCESS;
