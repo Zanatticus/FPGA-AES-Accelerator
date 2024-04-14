@@ -1,5 +1,3 @@
-import numpy   
-
 MAX_EXPANDED_KEY_SIZE = 240
 
 sbox = [
@@ -180,17 +178,15 @@ def galois_multiplication(a, b):
     Returns:
     p: The product of a and b in GF(2^8).
     """
-    a = numpy.uint8(a)
-    b = numpy.uint8(b)
-    p = numpy.uint8(0)
+    p = 0
     for counter in range(8):  # There are 8 bits to process
-        if (numpy.uint8(b) & 1) == 1:
-            p ^= numpy.uint8(a)  # Add a to p if the lowest bit of b is set
-        hi_bit_set = (numpy.uint8(a) & 0x80)  # Check the high bit of a
-        a = numpy.uint8(a) << 1  # Left shift a by 1
+        if (b & 1) == 1:
+            p ^= a  # Add a to p if the lowest bit of b is set
+        hi_bit_set = (a & 0x80)  # Check the high bit of a
+        a = a << 1  # Left shift a by 1
         if hi_bit_set == 0x80:
-            a = numpy.uint8(a) ^ 0x1b  # If high bit was set, perform modulo operation with the irreducible polynomial
-        b = numpy.uint8(b) >> 1  # Right shift b by 1
+            a = a ^ 0x1b  # If high bit was set, perform modulo operation with the irreducible polynomial
+        b = b >> 1  # Right shift b by 1
     return p
 
 def mix_column(column):
@@ -200,12 +196,12 @@ def mix_column(column):
     # Placeholder implementation, actual Galois multiplication needs to be defined.
     cpy = [None] * 4  # Make a copy to prevent modification during calculation
     for i in range(4):
-        cpy[i] = numpy.uint8(column[i])
+        cpy[i] = 0xFF & (column[i])
         
-    column[0] = numpy.uint8(galois_multiplication(cpy[0], 2) ^ galois_multiplication(cpy[3], 1) ^ galois_multiplication(cpy[2], 1) ^ galois_multiplication(cpy[1], 3))
-    column[1] = numpy.uint8(galois_multiplication(cpy[1], 2) ^ galois_multiplication(cpy[0], 1) ^ galois_multiplication(cpy[3], 1) ^ galois_multiplication(cpy[2], 3))
-    column[2] = numpy.uint8(galois_multiplication(cpy[2], 2) ^ galois_multiplication(cpy[1], 1) ^ galois_multiplication(cpy[0], 1) ^ galois_multiplication(cpy[3], 3))
-    column[3] = numpy.uint8(galois_multiplication(cpy[3], 2) ^ galois_multiplication(cpy[2], 1) ^ galois_multiplication(cpy[1], 1) ^ galois_multiplication(cpy[0], 3))
+    column[0] = 0xFF & (galois_multiplication(cpy[0], 2) ^ galois_multiplication(cpy[3], 1) ^ galois_multiplication(cpy[2], 1) ^ galois_multiplication(cpy[1], 3))
+    column[1] = 0xFF & (galois_multiplication(cpy[1], 2) ^ galois_multiplication(cpy[0], 1) ^ galois_multiplication(cpy[3], 1) ^ galois_multiplication(cpy[2], 3))
+    column[2] = 0xFF & (galois_multiplication(cpy[2], 2) ^ galois_multiplication(cpy[1], 1) ^ galois_multiplication(cpy[0], 1) ^ galois_multiplication(cpy[3], 3))
+    column[3] = 0xFF & (galois_multiplication(cpy[3], 2) ^ galois_multiplication(cpy[2], 1) ^ galois_multiplication(cpy[1], 1) ^ galois_multiplication(cpy[0], 3))
       
 def mix_columns(state):
     """
@@ -383,12 +379,12 @@ def inv_mix_column(column):
     """
     cpy = [None] * 4  # Make a copy to prevent modification during calculation
     for i in range(4):
-        cpy[i] = numpy.uint8(column[i])
+        cpy[i] = 0xFF & (column[i])
     
-    column[0] = numpy.uint8(galois_multiplication(cpy[0], 14) ^ galois_multiplication(cpy[3], 9) ^ galois_multiplication(cpy[2], 13) ^ galois_multiplication(cpy[1], 11))
-    column[1] = numpy.uint8(galois_multiplication(cpy[1], 14) ^ galois_multiplication(cpy[0], 9) ^ galois_multiplication(cpy[3], 13) ^ galois_multiplication(cpy[2], 11))
-    column[2] = numpy.uint8(galois_multiplication(cpy[2], 14) ^ galois_multiplication(cpy[1], 9) ^ galois_multiplication(cpy[0], 13) ^ galois_multiplication(cpy[3], 11))
-    column[3] = numpy.uint8(galois_multiplication(cpy[3], 14) ^ galois_multiplication(cpy[2], 9) ^ galois_multiplication(cpy[1], 13) ^ galois_multiplication(cpy[0], 11))
+    column[0] = 0xFF & (galois_multiplication(cpy[0], 14) ^ galois_multiplication(cpy[3], 9) ^ galois_multiplication(cpy[2], 13) ^ galois_multiplication(cpy[1], 11))
+    column[1] = 0xFF & (galois_multiplication(cpy[1], 14) ^ galois_multiplication(cpy[0], 9) ^ galois_multiplication(cpy[3], 13) ^ galois_multiplication(cpy[2], 11))
+    column[2] = 0xFF & (galois_multiplication(cpy[2], 14) ^ galois_multiplication(cpy[1], 9) ^ galois_multiplication(cpy[0], 13) ^ galois_multiplication(cpy[3], 11))
+    column[3] = 0xFF & (galois_multiplication(cpy[3], 14) ^ galois_multiplication(cpy[2], 9) ^ galois_multiplication(cpy[1], 13) ^ galois_multiplication(cpy[0], 11))
 
 def aes_inv_round(state, round_key):
     """
