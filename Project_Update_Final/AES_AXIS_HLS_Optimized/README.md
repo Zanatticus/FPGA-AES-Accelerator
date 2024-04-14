@@ -7,7 +7,35 @@ The AXI-Stream subfolder contains three directories:
 - `vitis`: Contains the source Vitis HLS C files and testbench files. Also contains the hardware register map file, simulation logs, and synthesis summary for reference.
 - `vivado`: Contains screenshots of the Vivado block design, bitstream-device layout, and TCL scripts for generating the respective block designs.
 
-All Vitis source code has base optimizations added to pipeline various loops with the lowest possible Initialization Interval value to resolve Initialization Interval Violations and Timing Violations that arise when just running the raw HLS C code.
+All Vitis source code has base optimizations added to pipeline various loops with the lowest possible Initialization Interval value to resolve Initialization Interval Violations and Timing Violations that arise when just running the raw HLS C code. This optimized vitis code also has additional optimizations detailed in the table below:
+
+### Compounding Optimizations
+
+|    Optimizations   	| Latency (cycles) 	| Latency (ns) 	| BRAM 	| DSP 	|  FF  	|  LUT  	| URAM 	|
+|:------------------:	|:----------------:	|:------------:	|:----:	|:---:	|:----:	|:-----:	|:----:	|
+|      Baseline      	|       11828      	|   1.18E+05   	|   9  	|  0  	| 1785 	|  7806 	|   0  	|
+|      expandKey     	|       10386      	|   1.04E+05   	|   9  	|  0  	| 4405 	| 10751 	|   0  	|
+|      subBytes      	|       10334      	|   1.03E+05   	|   9  	|  0  	| 4555 	| 11235 	|   0  	|
+|   createRoundKey   	|       9753       	|   9.75E+04   	|   9  	|  0  	| 4548 	| 11516 	|   0  	|
+|      aes_main      	|       8665       	|   8.67E+04   	|   9  	|  0  	| 4811 	| 12256 	|   0  	|
+|     invSubBytes    	|       8595       	|   8.60E+04   	|   8  	|  0  	| 4929 	| 12711 	|   0  	|
+|    invShiftRows    	|       8057       	|    8.06E04   	|   8  	|  0  	| 4990 	| 12703 	|   0  	|
+| shiftRow/shiftRows 	|       8025       	|   8.03E+04   	|   8  	|  0  	| 5003 	| 12770 	|   0  	|
+|    invMixColumns   	|       7973       	|   7.97E+04   	|   8  	|  0  	| 5018 	| 13011 	|   0  	|
+|     aes_invMain    	|       7379       	|   7.38E+04   	|   9  	|  0  	| 5169 	| 13126 	|   0  	|
+
+Each consecutive row of optimizations builds upon the previous optimizations. Since it's more important for encryption/decryption to be fast, reducing latency was prioritized in our hardware optimizations.
+
+Below are more detailed explanations of what each optimization entails. Since the baseline optimization is a combination of automatic optimizations made by Vitis and HLS Pipelining to get rid of Initiation Interval violations, it has been omitted. Important to note is the addition of `LOOP_TRIPCOUNT` directives for `PERFORMANCE` directive optimizations.
+- expandKey: Added `BIND_STORAGE` directives to make sbox, rsbox, and Rcon all 2 port ROMs. Also an array partition for the temporary array `t`, a performance directive for the first loop within the function, and a pipeline directive for the second loop.
+- subBytes: Added a loop unroll directive.
+- createRoundKey: Added a pipeline directive to the second loop within the function.
+- aes_main: Added a performance directive with `target_ti=500`.
+- invSubBytes: Added a loop unroll directive.
+- invShiftRows: Added a loop unroll directive.
+- shiftRow/shiftRows: Added loop pipelining and loop unrolling directives.
+- invMixColumns: Modified the baseline pipelining to have a lower initiation interval value.
+- aes_invMain: Added a performance directive with `target_ti=600`
 
 ## Vitis HLS Setup
 
