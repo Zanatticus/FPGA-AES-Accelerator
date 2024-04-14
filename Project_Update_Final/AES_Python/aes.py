@@ -141,7 +141,6 @@ def shift_row(row, nbr):
     """
     return row[nbr:] + row[:nbr]  # Slicing to rotate the list to the left.
 
-
 def shift_rows(state):
     """
     Applies the row shifting transformation to the state matrix in AES.
@@ -208,7 +207,6 @@ def mix_column(column):
     column[2] = numpy.uint8(galois_multiplication(cpy[2], 2) ^ galois_multiplication(cpy[1], 1) ^ galois_multiplication(cpy[0], 1) ^ galois_multiplication(cpy[3], 3))
     column[3] = numpy.uint8(galois_multiplication(cpy[3], 2) ^ galois_multiplication(cpy[2], 1) ^ galois_multiplication(cpy[1], 1) ^ galois_multiplication(cpy[0], 3))
       
-
 def mix_columns(state):
     """
     Applies the mixColumns transformation to the state matrix in AES.
@@ -239,17 +237,9 @@ def aes_round(state, round_key):
     This function sequentially applies subBytes, shiftRows, mixColumns, and addRoundKey transformations to the state.
     """
     sub_bytes(state)  # Substitute bytes based on S-box
-    # [print(f"{state[i]:02x}", end=' ' if i != 15 else '\n') for i in range(16)]
-
     shift_rows(state)  # Shift the rows of the state matrix
-    # [print(f"{state[i]:02x}", end=' ' if i != 15 else '\n') for i in range(16)]
-
     mix_columns(state)  # Mix the columns of the state matrix
-    # [print(f"{state[i]:02x}", end=' ' if i != 15 else '\n') for i in range(16)]
-
     add_round_key(state, round_key)  # Add the round key to the state
-    # [print(f"{state[i]:02x}", end=' ' if i != 15 else '\n') for i in range(16)]
-
     
 def create_round_key(expanded_key, round_key):
     """
@@ -278,14 +268,11 @@ def aes_main(state, expanded_key, nbr_rounds):
     create_round_key(expanded_key, round_key)
     add_round_key(state, round_key)
 
-
     # Main rounds
     for i in range(1, nbr_rounds):
         create_round_key(expanded_key[16 * i: 16 * (i + 1)], round_key)
         aes_round(state, round_key)
-        # [print(f"{state[i]:02x}", end=' ' if i != 15 else '\n') for i in range(16)]
 
-        
     # Final round (no mixColumns)
     create_round_key(expanded_key[16 * nbr_rounds: 16 * (nbr_rounds + 1)], round_key)
     sub_bytes(state)
@@ -315,20 +302,10 @@ def aes_encrypt(input, output, key, size):
 
     # Expand the key
     expand_key(expanded_key, key, size, expanded_key_size)
-    # expanded_key = [107, 107, 107, 107, 101, 101, 101, 101, 121, 121, 121, 121, 46, 46, 46, 46, 49, 50, 51, 52, 53, 54, 55, 56, 65, 66, 67, 68, 69, 70, 71, 72, 48, 203, 57, 5, 85, 174, 92, 96, 44, 215, 37, 25, 2, 249, 11, 55, 70, 171, 24, 174, 115, 157, 47, 150, 50, 223, 108, 210, 119, 153, 43, 154, 220, 58, 129, 240, 137, 148, 221, 144, 165, 67, 248, 137, 167, 186, 243, 190, 26, 95, 21, 0, 105, 194, 58, 150, 91, 29, 86, 68, 44, 132, 125, 222, 135, 197, 156, 129, 14, 81, 65, 17, 171, 18, 185, 152, 12, 168, 74, 38, 228, 157, 195, 247, 141, 95, 249, 97, 214, 66, 175, 37, 250, 198, 210, 251, 59, 112, 147, 172, 53, 33, 210, 189, 158, 51, 107, 37, 146, 155, 33, 3, 171, 137, 62, 140, 38, 214, 199, 237, 240, 148, 104, 200, 10, 82, 186, 51, 43, 132, 80, 203, 30, 165, 130, 118, 128, 150, 233, 83, 18, 13, 200, 80, 98, 94, 214, 223, 68, 136, 17, 50, 180, 28, 121, 250, 190, 78, 195, 201, 36, 170, 141, 101, 58, 15, 15, 19, 186, 153, 230, 64, 168, 148, 46, 16, 160, 124, 231, 21, 228, 244, 246, 39, 80, 232, 143, 221, 238, 166, 76, 20, 64, 131, 119, 77, 122, 140, 120, 94, 192, 21, 158, 30, 104, 129, 176, 14]
-    # print("Expanded Key:")
-    # for i in range(nbr_rounds + 1):
-    #     for j in range(16):
-    #         print(f"{expanded_key[j + 16*i]:02x}", end=' ')
-    #     print()
-    # print()
-        
+
     # Encrypt the block using the expanded key
     aes_main(block, expanded_key, nbr_rounds)
     
-
-    # [print(f"{block[i]:02x}", end=' ' if i != 15 else '\n') for i in range(16)]
-
     # Prepare output (convert block back to the appropriate order)
     for i in range(4):  # columns
         for j in range(4):  # rows
@@ -429,7 +406,6 @@ def aes_inv_round(state, round_key):
     add_round_key(state, round_key)  # Add the round key to the state
     inv_mix_columns(state)  # Apply inverse mix columns transformation
 
-
 def aes_inv_main(state, expanded_key, nbr_rounds):
     """
     The main AES decryption function.
@@ -498,33 +474,3 @@ def aes_decrypt(input, output, key, size):
     for i in range(4):  # columns
         for j in range(4):  # rows
             output[(i * 4) + j] = block[i + (j * 4)]
-
-
-
-# Example usage:
-
-mode = 192 # ONLY CHANGE THIS VARIABLE
-
-if mode == 128:
-    key = [ord(i) for i in "kkkkeeeeyyyy...."]
-    size = 16
-elif mode == 192:
-    key = [ord(i) for i in "kkkkeeeeyyyy....12345678"]
-    size = 24
-elif mode == 256:
-    key = [ord(i) for i in "kkkkeeeeyyyy....12345678ABCDEFGH"]
-    size = 32
-
-plaintext = [ord(i) for i in "abcdef1234567890"]
-ciphertext = [None] * 16
-decryptedtext = [None] * 16
-
-aes_encrypt(plaintext, ciphertext, key, size)
-aes_decrypt(ciphertext, decryptedtext, key, size)
-
-print("\nPlaintext:")
-[print(f"{plaintext[i]:02x}", end='\n' if i==15 else ' ') for i in range(16)]
-print("\nCiphertext:")
-[print(f"{ciphertext[i]:02x}", end='\n' if i==15 else ' ') for i in range(16)]
-print("\nDecryptedtext:")
-[print(f"{decryptedtext[i]:02x}", end='\n' if i==15 else ' ') for i in range(16)]
