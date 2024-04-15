@@ -17,7 +17,7 @@ proc create_report { reportName command } {
   }
 }
 namespace eval ::optrace {
-  variable script "C:/Users/ingare.a/aes_axis_modes/aes_axis_modes.runs/impl_1/design_1_wrapper.tcl"
+  variable script "C:/Users/ingare.a/aes_axis_optimized/aes_axis_optimized.runs/impl_1/aes_axis_dma_wrapper.tcl"
   variable category "vivado_impl"
 }
 
@@ -122,7 +122,7 @@ start_step init_design
 set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
-  set_param chipscope.maxJobs 1
+  set_param chipscope.maxJobs 4
 OPTRACE "create in-memory project" START { }
   create_project -in_memory -part xc7z020clg400-1
   set_property board_part tul.com.tw:pynq-z2:part0:1.0 [current_project]
@@ -130,26 +130,26 @@ OPTRACE "create in-memory project" START { }
   set_param project.singleFileAddWarning.threshold 0
 OPTRACE "create in-memory project" END { }
 OPTRACE "set parameters" START { }
-  set_property webtalk.parent_dir C:/Users/ingare.a/aes_axis_modes/aes_axis_modes.cache/wt [current_project]
-  set_property parent.project_path C:/Users/ingare.a/aes_axis_modes/aes_axis_modes.xpr [current_project]
-  set_property ip_repo_paths C:/Users/ingare.a/Documents/aes_axis_modes [current_project]
+  set_property webtalk.parent_dir C:/Users/ingare.a/aes_axis_optimized/aes_axis_optimized.cache/wt [current_project]
+  set_property parent.project_path C:/Users/ingare.a/aes_axis_optimized/aes_axis_optimized.xpr [current_project]
+  set_property ip_repo_paths C:/Users/ingare.a/Documents/aes_axis_optimized [current_project]
   update_ip_catalog
-  set_property ip_output_repo C:/Users/ingare.a/aes_axis_modes/aes_axis_modes.cache/ip [current_project]
+  set_property ip_output_repo C:/Users/ingare.a/aes_axis_optimized/aes_axis_optimized.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
   set_property XPM_LIBRARIES {XPM_CDC XPM_FIFO XPM_MEMORY} [current_project]
 OPTRACE "set parameters" END { }
 OPTRACE "add files" START { }
-  add_files -quiet C:/Users/ingare.a/aes_axis_modes/aes_axis_modes.runs/synth_1/design_1_wrapper.dcp
+  add_files -quiet C:/Users/ingare.a/aes_axis_optimized/aes_axis_optimized.runs/synth_1/aes_axis_dma_wrapper.dcp
   set_msg_config -source 4 -id {BD 41-1661} -limit 0
   set_param project.isImplRun true
-  add_files C:/Users/ingare.a/aes_axis_modes/aes_axis_modes.srcs/sources_1/bd/design_1/design_1.bd
+  add_files C:/Users/ingare.a/aes_axis_optimized/aes_axis_optimized.srcs/sources_1/bd/aes_axis_dma/aes_axis_dma.bd
   set_param project.isImplRun false
 OPTRACE "read constraints: implementation" START { }
 OPTRACE "read constraints: implementation" END { }
 OPTRACE "add files" END { }
 OPTRACE "link_design" START { }
   set_param project.isImplRun true
-  link_design -top design_1_wrapper -part xc7z020clg400-1 
+  link_design -top aes_axis_dma_wrapper -part xc7z020clg400-1 
 OPTRACE "link_design" END { }
   set_param project.isImplRun false
 OPTRACE "gray box cells" START { }
@@ -182,10 +182,10 @@ OPTRACE "opt_design" END { }
 OPTRACE "read constraints: opt_design_post" START { }
 OPTRACE "read constraints: opt_design_post" END { }
 OPTRACE "Opt Design: write_checkpoint" START { CHECKPOINT }
-  write_checkpoint -force design_1_wrapper_opt.dcp
+  write_checkpoint -force aes_axis_dma_wrapper_opt.dcp
 OPTRACE "Opt Design: write_checkpoint" END { }
 OPTRACE "opt_design reports" START { REPORT }
-  create_report "impl_1_opt_report_drc_0" "report_drc -file design_1_wrapper_drc_opted.rpt -pb design_1_wrapper_drc_opted.pb -rpx design_1_wrapper_drc_opted.rpx"
+  create_report "impl_1_opt_report_drc_0" "report_drc -file aes_axis_dma_wrapper_drc_opted.rpt -pb aes_axis_dma_wrapper_drc_opted.pb -rpx aes_axis_dma_wrapper_drc_opted.rpx"
 OPTRACE "opt_design reports" END { }
   close_msg_db -file opt_design.pb
 } RESULT]
@@ -216,12 +216,12 @@ OPTRACE "place_design" END { }
 OPTRACE "read constraints: place_design_post" START { }
 OPTRACE "read constraints: place_design_post" END { }
 OPTRACE "Place Design: write_checkpoint" START { CHECKPOINT }
-  write_checkpoint -force design_1_wrapper_placed.dcp
+  write_checkpoint -force aes_axis_dma_wrapper_placed.dcp
 OPTRACE "Place Design: write_checkpoint" END { }
 OPTRACE "place_design reports" START { REPORT }
-  create_report "impl_1_place_report_io_0" "report_io -file design_1_wrapper_io_placed.rpt"
-  create_report "impl_1_place_report_utilization_0" "report_utilization -file design_1_wrapper_utilization_placed.rpt -pb design_1_wrapper_utilization_placed.pb"
-  create_report "impl_1_place_report_control_sets_0" "report_control_sets -verbose -file design_1_wrapper_control_sets_placed.rpt"
+  create_report "impl_1_place_report_io_0" "report_io -file aes_axis_dma_wrapper_io_placed.rpt"
+  create_report "impl_1_place_report_utilization_0" "report_utilization -file aes_axis_dma_wrapper_utilization_placed.rpt -pb aes_axis_dma_wrapper_utilization_placed.pb"
+  create_report "impl_1_place_report_control_sets_0" "report_control_sets -verbose -file aes_axis_dma_wrapper_control_sets_placed.rpt"
 OPTRACE "place_design reports" END { }
   close_msg_db -file place_design.pb
 } RESULT]
@@ -247,7 +247,7 @@ OPTRACE "phys_opt_design" END { }
 OPTRACE "read constraints: phys_opt_design_post" START { }
 OPTRACE "read constraints: phys_opt_design_post" END { }
 OPTRACE "Post-Place Phys Opt Design: write_checkpoint" START { CHECKPOINT }
-  write_checkpoint -force design_1_wrapper_physopt.dcp
+  write_checkpoint -force aes_axis_dma_wrapper_physopt.dcp
 OPTRACE "Post-Place Phys Opt Design: write_checkpoint" END { }
 OPTRACE "phys_opt_design report" START { REPORT }
 OPTRACE "phys_opt_design report" END { }
@@ -275,17 +275,17 @@ OPTRACE "route_design" END { }
 OPTRACE "read constraints: route_design_post" START { }
 OPTRACE "read constraints: route_design_post" END { }
 OPTRACE "Route Design: write_checkpoint" START { CHECKPOINT }
-  write_checkpoint -force design_1_wrapper_routed.dcp
+  write_checkpoint -force aes_axis_dma_wrapper_routed.dcp
 OPTRACE "Route Design: write_checkpoint" END { }
 OPTRACE "route_design reports" START { REPORT }
-  create_report "impl_1_route_report_drc_0" "report_drc -file design_1_wrapper_drc_routed.rpt -pb design_1_wrapper_drc_routed.pb -rpx design_1_wrapper_drc_routed.rpx"
-  create_report "impl_1_route_report_methodology_0" "report_methodology -file design_1_wrapper_methodology_drc_routed.rpt -pb design_1_wrapper_methodology_drc_routed.pb -rpx design_1_wrapper_methodology_drc_routed.rpx"
-  create_report "impl_1_route_report_power_0" "report_power -file design_1_wrapper_power_routed.rpt -pb design_1_wrapper_power_summary_routed.pb -rpx design_1_wrapper_power_routed.rpx"
-  create_report "impl_1_route_report_route_status_0" "report_route_status -file design_1_wrapper_route_status.rpt -pb design_1_wrapper_route_status.pb"
-  create_report "impl_1_route_report_timing_summary_0" "report_timing_summary -max_paths 10 -report_unconstrained -file design_1_wrapper_timing_summary_routed.rpt -pb design_1_wrapper_timing_summary_routed.pb -rpx design_1_wrapper_timing_summary_routed.rpx -warn_on_violation "
-  create_report "impl_1_route_report_incremental_reuse_0" "report_incremental_reuse -file design_1_wrapper_incremental_reuse_routed.rpt"
-  create_report "impl_1_route_report_clock_utilization_0" "report_clock_utilization -file design_1_wrapper_clock_utilization_routed.rpt"
-  create_report "impl_1_route_report_bus_skew_0" "report_bus_skew -warn_on_violation -file design_1_wrapper_bus_skew_routed.rpt -pb design_1_wrapper_bus_skew_routed.pb -rpx design_1_wrapper_bus_skew_routed.rpx"
+  create_report "impl_1_route_report_drc_0" "report_drc -file aes_axis_dma_wrapper_drc_routed.rpt -pb aes_axis_dma_wrapper_drc_routed.pb -rpx aes_axis_dma_wrapper_drc_routed.rpx"
+  create_report "impl_1_route_report_methodology_0" "report_methodology -file aes_axis_dma_wrapper_methodology_drc_routed.rpt -pb aes_axis_dma_wrapper_methodology_drc_routed.pb -rpx aes_axis_dma_wrapper_methodology_drc_routed.rpx"
+  create_report "impl_1_route_report_power_0" "report_power -file aes_axis_dma_wrapper_power_routed.rpt -pb aes_axis_dma_wrapper_power_summary_routed.pb -rpx aes_axis_dma_wrapper_power_routed.rpx"
+  create_report "impl_1_route_report_route_status_0" "report_route_status -file aes_axis_dma_wrapper_route_status.rpt -pb aes_axis_dma_wrapper_route_status.pb"
+  create_report "impl_1_route_report_timing_summary_0" "report_timing_summary -max_paths 10 -report_unconstrained -file aes_axis_dma_wrapper_timing_summary_routed.rpt -pb aes_axis_dma_wrapper_timing_summary_routed.pb -rpx aes_axis_dma_wrapper_timing_summary_routed.rpx -warn_on_violation "
+  create_report "impl_1_route_report_incremental_reuse_0" "report_incremental_reuse -file aes_axis_dma_wrapper_incremental_reuse_routed.rpt"
+  create_report "impl_1_route_report_clock_utilization_0" "report_clock_utilization -file aes_axis_dma_wrapper_clock_utilization_routed.rpt"
+  create_report "impl_1_route_report_bus_skew_0" "report_bus_skew -warn_on_violation -file aes_axis_dma_wrapper_bus_skew_routed.rpt -pb aes_axis_dma_wrapper_bus_skew_routed.pb -rpx aes_axis_dma_wrapper_bus_skew_routed.rpx"
 OPTRACE "route_design reports" END { }
 OPTRACE "route_design misc" START { }
   close_msg_db -file route_design.pb
@@ -293,7 +293,7 @@ OPTRACE "route_design misc" START { }
 if {$rc} {
 OPTRACE "route_design write_checkpoint" START { CHECKPOINT }
 OPTRACE "route_design write_checkpoint" END { }
-  write_checkpoint -force design_1_wrapper_routed_error.dcp
+  write_checkpoint -force aes_axis_dma_wrapper_routed_error.dcp
   step_failed route_design
   return -code error $RESULT
 } else {
@@ -312,16 +312,16 @@ set rc [catch {
 OPTRACE "read constraints: write_bitstream" START { }
 OPTRACE "read constraints: write_bitstream" END { }
   set_property XPM_LIBRARIES {XPM_CDC XPM_FIFO XPM_MEMORY} [current_project]
-  catch { write_mem_info -force -no_partial_mmi design_1_wrapper.mmi }
+  catch { write_mem_info -force -no_partial_mmi aes_axis_dma_wrapper.mmi }
 OPTRACE "write_bitstream setup" END { }
 OPTRACE "write_bitstream" START { }
-  write_bitstream -force design_1_wrapper.bit 
+  write_bitstream -force aes_axis_dma_wrapper.bit 
 OPTRACE "write_bitstream" END { }
 OPTRACE "write_bitstream misc" START { }
 OPTRACE "read constraints: write_bitstream_post" START { }
 OPTRACE "read constraints: write_bitstream_post" END { }
-  catch {write_debug_probes -quiet -force design_1_wrapper}
-  catch {file copy -force design_1_wrapper.ltx debug_nets.ltx}
+  catch {write_debug_probes -quiet -force aes_axis_dma_wrapper}
+  catch {file copy -force aes_axis_dma_wrapper.ltx debug_nets.ltx}
   close_msg_db -file write_bitstream.pb
 } RESULT]
 if {$rc} {
