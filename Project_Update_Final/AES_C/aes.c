@@ -1,5 +1,5 @@
 #include "aes.h"
-
+#include "time.h"
 
 int main(int argc, char *argv[])
 {
@@ -80,8 +80,16 @@ int main(int argc, char *argv[])
         printf("%2.2x%c", plaintext[i], ((i + 1) % text_size) ? ' ' : '\n');
     }
 
+    // set a start time and end time around these two encryp/decrypt functions
+    clock_t start, end;
+    double cpu_time_used;
+    start = clock();
     // AES Encryption
     aes_encrypt(plaintext, ciphertext, key, cipherkey_size);
+    // AES Decryption
+    aes_decrypt(ciphertext, decryptedtext, key, cipherkey_size);
+    end = clock();
+    cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
 
     printf("\nCiphertext (HEX format):\n");
 
@@ -108,9 +116,6 @@ int main(int argc, char *argv[])
         printf("Encryption Test Passed !!!\n");
     }
 
-    // AES Decryption
-    aes_decrypt(ciphertext, decryptedtext, key, cipherkey_size);
-
     printf("\nDecrypted text (HEX format):\n");
 
     for (i = 0; i < text_size; i++)
@@ -134,6 +139,8 @@ int main(int argc, char *argv[])
     else {
         printf("Decryption Test Passed !!!\n");
     }
+
+    printf("Time taken: %f\n", cpu_time_used);
 
     return 0;
 }
