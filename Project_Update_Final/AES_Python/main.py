@@ -1,4 +1,5 @@
 from aes import aes_encrypt, aes_decrypt
+import time
 
 # ONLY CHANGE THIS VARIABLE TO TEST DIFFERENT AES MODES
 mode = 256
@@ -17,8 +18,10 @@ plaintext = [ord(i) for i in "abcdef1234567890"]
 ciphertext = [None] * 16
 decryptedtext = [None] * 16
 
+start_time = time.time()
 aes_encrypt(plaintext, ciphertext, key, size)
 aes_decrypt(ciphertext, decryptedtext, key, size)
+end_time = time.time()
 
 print(f"\nPerforming AES-{mode} encryption and decryption:")
 print("\nPlaintext:")
@@ -27,3 +30,5 @@ print("\nCiphertext:")
 [print(f"{ciphertext[i]:02x}", end='\n' if i==15 else ' ') for i in range(16)]
 print("\nDecryptedtext:")
 [print(f"{decryptedtext[i]:02x}", end='\n' if i==15 else ' ') for i in range(16)]
+
+print(f"\nTime taken: {end_time - start_time:f} seconds\n")
