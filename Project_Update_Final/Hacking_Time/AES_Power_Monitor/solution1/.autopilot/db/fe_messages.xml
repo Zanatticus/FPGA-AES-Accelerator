@@ -1,0 +1,417 @@
+<xilinx:hls_fe_msgs>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_int_ref.h:724:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="and_reduce" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_int_ref.h:738:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="or_reduce" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_int_ref.h:752:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="xor_reduce" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:122:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="get_user_ptr" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:126:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="get_id_ptr" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:130:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="get_dest_ptr" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:160:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="get_strb_ptr" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:164:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="get_user_ptr" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:168:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="get_id_ptr" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:172:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="get_dest_ptr" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:178:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="get_data" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:182:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="get_keep" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:186:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="get_last" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:191:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="set_data" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:195:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="set_keep" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:199:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="set_last" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:203:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="keep_all" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:209:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="qdma_axis&lt;WData, 0, 0, 0&gt;" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:213:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="qdma_axis&lt;WData, 0, 0, 0&gt;" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:217:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="qdma_axis&lt;WData, 0, 0, 0&gt;" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:222:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="qdma_axis&lt;WData, 0, 0, 0&gt;" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:227:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="qdma_axis&lt;WData, 0, 0, 0&gt;" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:231:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="operator=" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:266:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="empty" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:273:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="full" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:281:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="read" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:291:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="read" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:302:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="write" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:312:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="read_nb" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:327:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="write_nb" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:363:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="empty" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:370:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="full" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:378:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="read" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:388:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="read" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:399:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="write" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:409:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="read_nb" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:425:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="write_nb" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="Z:/Users/hiqbal/AES_Power_Monitor/solution1/csynth.tcl:20:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="aes" ARG_PragmaIsValid="1" ARG_PragmaOptions="name=aes" ARG_PragmaType="top" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="Z:/Users/hiqbal/AES_Power_Monitor/solution1/directives.tcl:6:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="aes" ARG_PragmaIsValid="1" ARG_PragmaOptions="name=aes" ARG_PragmaType="top" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:17:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="aes" ARG_PragmaIsValid="1" ARG_PragmaOptions="ap_ctrl_none port=return" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:18:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="aes" ARG_PragmaIsValid="1" ARG_PragmaOptions="axis port=key_and_plaintext" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:19:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="aes" ARG_PragmaIsValid="1" ARG_PragmaOptions="axis port=ciphertext_and_decryptedtext" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:20:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="aes" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=mode bundle=CTRL_BUS" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:21:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="aes" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=enable_out" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:22:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="aes" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=power_reading_in" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:23:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="aes" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=enable_in bundle=CTRL_BUS" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:24:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="aes" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=power_reading_out bundle=CTRL_BUS" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:25:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="aes" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=return bundle=CTRL_BUS" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:235:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="expandKey" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=15" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:286:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="shiftRows" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=4" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:339:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mixColumns" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=7" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:527:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="invShiftRow" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=5" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:544:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="invMixColumns" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=8" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:283:50" msg_body="Inlining function 'hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;::get_user_ptr()' into 'hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;::read(hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;&amp;)'">
+        <args Callee="hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;::get_user_ptr()" Caller="hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;::read(hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;&amp;)"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:286:25" msg_body="Inlining function 'hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;::get_dest_ptr()' into 'hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;::read(hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;&amp;)'">
+        <args Callee="hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;::get_dest_ptr()" Caller="hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;::read(hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;&amp;)"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:285:67" msg_body="Inlining function 'hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;::get_id_ptr()' into 'hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;::read(hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;&amp;)'">
+        <args Callee="hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;::get_id_ptr()" Caller="hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;::read(hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;&amp;)"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:285:36" msg_body="Inlining function 'hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;::get_user_ptr()' into 'hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;::read(hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;&amp;)'">
+        <args Callee="hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;::get_user_ptr()" Caller="hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;::read(hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;&amp;)"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:284:39" msg_body="Inlining function 'hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;::get_dest_ptr()' into 'hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;::read(hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;&amp;)'">
+        <args Callee="hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;::get_dest_ptr()" Caller="hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;::read(hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;&amp;)"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:284:23" msg_body="Inlining function 'hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;::get_id_ptr()' into 'hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;::read(hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;&amp;)'">
+        <args Callee="hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;::get_id_ptr()" Caller="hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;::read(hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;&amp;)"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_int_base.h:257:77" msg_body="Inlining function 'ssdm_int&lt;8, true&gt;::ssdm_int(signed char)' into 'ap_int_base&lt;8, true&gt;::ap_int_base(unsigned char)'">
+        <args Callee="ssdm_int&lt;8, true&gt;::ssdm_int(signed char)" Caller="ap_int_base&lt;8, true&gt;::ap_int_base(unsigned char)"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_int.h:176:67" msg_body="Inlining function 'ap_int_base&lt;8, true&gt;::ap_int_base(unsigned char)' into 'ap_int&lt;8&gt;::ap_int(unsigned char)'">
+        <args Callee="ap_int_base&lt;8, true&gt;::ap_int_base(unsigned char)" Caller="ap_int&lt;8&gt;::ap_int(unsigned char)"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:304:51" msg_body="Inlining function 'hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;::get_user_ptr()' into 'hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;::write(hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt; const&amp;)'">
+        <args Callee="hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;::get_user_ptr()" Caller="hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;::write(hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt; const&amp;)"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:307:26" msg_body="Inlining function 'hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;::get_dest_ptr()' into 'hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;::write(hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt; const&amp;)'">
+        <args Callee="hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;::get_dest_ptr()" Caller="hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;::write(hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt; const&amp;)"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:306:68" msg_body="Inlining function 'hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;::get_id_ptr()' into 'hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;::write(hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt; const&amp;)'">
+        <args Callee="hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;::get_id_ptr()" Caller="hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;::write(hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt; const&amp;)"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:306:37" msg_body="Inlining function 'hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;::get_user_ptr()' into 'hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;::write(hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt; const&amp;)'">
+        <args Callee="hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;::get_user_ptr()" Caller="hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;::write(hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt; const&amp;)"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:305:40" msg_body="Inlining function 'hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;::get_dest_ptr()' into 'hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;::write(hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt; const&amp;)'">
+        <args Callee="hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;::get_dest_ptr()" Caller="hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;::write(hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt; const&amp;)"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:305:24" msg_body="Inlining function 'hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;::get_id_ptr()' into 'hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;::write(hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt; const&amp;)'">
+        <args Callee="hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;::get_id_ptr()" Caller="hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;::write(hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt; const&amp;)"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_int_base.h:260:67" msg_body="Inlining function '_ZN8ssdm_intILi1ELb0EEC2EDq1_j' into 'ap_int_base&lt;1, false&gt;::ap_int_base(int)'">
+        <args Callee="_ZN8ssdm_intILi1ELb0EEC2EDq1_j" Caller="ap_int_base&lt;1, false&gt;::ap_int_base(int)"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_int.h:333:58" msg_body="Inlining function 'ap_int_base&lt;1, false&gt;::ap_int_base(int)' into 'ap_uint&lt;1&gt;::ap_uint(int)'">
+        <args Callee="ap_int_base&lt;1, false&gt;::ap_int_base(int)" Caller="ap_uint&lt;1&gt;::ap_uint(int)"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:71:22" msg_body="Inlining function 'hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;::read(hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;&amp;)' into 'aes(hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;&amp;, hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;&amp;, int, unsigned char, unsigned char, unsigned int, unsigned int)'">
+        <args Callee="hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;::read(hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;&amp;)" Caller="aes(hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;&amp;, hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;&amp;, int, unsigned char, unsigned char, unsigned int, unsigned int)"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:103:7" msg_body="Inlining function 'ap_int_base&lt;1, false&gt;::operator unsigned long long() const' into 'aes(hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;&amp;, hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;&amp;, int, unsigned char, unsigned char, unsigned int, unsigned int)'">
+        <args Callee="ap_int_base&lt;1, false&gt;::operator unsigned long long() const" Caller="aes(hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;&amp;, hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;&amp;, int, unsigned char, unsigned char, unsigned int, unsigned int)"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:101:33" msg_body="Inlining function 'hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;::write(hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt; const&amp;)' into 'aes(hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;&amp;, hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;&amp;, int, unsigned char, unsigned char, unsigned int, unsigned int)'">
+        <args Callee="hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;::write(hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt; const&amp;)" Caller="aes(hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;&amp;, hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;&amp;, int, unsigned char, unsigned char, unsigned int, unsigned int)"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:92:33" msg_body="Inlining function 'hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;::write(hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt; const&amp;)' into 'aes(hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;&amp;, hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;&amp;, int, unsigned char, unsigned char, unsigned int, unsigned int)'">
+        <args Callee="hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;::write(hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt; const&amp;)" Caller="aes(hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;&amp;, hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;&amp;, int, unsigned char, unsigned char, unsigned int, unsigned int)"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:72:19" msg_body="Inlining function 'ap_int_base&lt;8, true&gt;::operator long long() const' into 'aes(hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;&amp;, hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;&amp;, int, unsigned char, unsigned char, unsigned int, unsigned int)'">
+        <args Callee="ap_int_base&lt;8, true&gt;::operator long long() const" Caller="aes(hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;&amp;, hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;&amp;, int, unsigned char, unsigned char, unsigned int, unsigned int)"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:76:22" msg_body="Inlining function 'hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;::read(hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;&amp;)' into 'aes(hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;&amp;, hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;&amp;, int, unsigned char, unsigned char, unsigned int, unsigned int)'">
+        <args Callee="hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;::read(hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;&amp;)" Caller="aes(hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;&amp;, hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;&amp;, int, unsigned char, unsigned char, unsigned int, unsigned int)"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:77:25" msg_body="Inlining function 'ap_int_base&lt;8, true&gt;::operator long long() const' into 'aes(hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;&amp;, hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;&amp;, int, unsigned char, unsigned char, unsigned int, unsigned int)'">
+        <args Callee="ap_int_base&lt;8, true&gt;::operator long long() const" Caller="aes(hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;&amp;, hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;&amp;, int, unsigned char, unsigned char, unsigned int, unsigned int)"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:546:20" msg_body="Loop 'VITIS_LOOP_546_1' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="VITIS_LOOP_546_1"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:555:27" msg_body="Loop 'VITIS_LOOP_555_2' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="VITIS_LOOP_555_2"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:566:23" msg_body="Loop 'VITIS_LOOP_566_1' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="VITIS_LOOP_566_1"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:529:27" msg_body="Loop 'VITIS_LOOP_529_1' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="VITIS_LOOP_529_1"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:341:20" msg_body="Loop 'VITIS_LOOP_341_1' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="VITIS_LOOP_341_1"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:350:27" msg_body="Loop 'VITIS_LOOP_350_2' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="VITIS_LOOP_350_2"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:361:23" msg_body="Loop 'VITIS_LOOP_361_1' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="VITIS_LOOP_361_1"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:317:23" msg_body="Loop 'VITIS_LOOP_317_1' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="VITIS_LOOP_317_1"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:296:23" msg_body="Loop 'VITIS_LOOP_296_1' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="VITIS_LOOP_296_1"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:299:27" msg_body="Loop 'VITIS_LOOP_299_2' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="VITIS_LOOP_299_2"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:237:20" msg_body="Loop 'VITIS_LOOP_237_2' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="VITIS_LOOP_237_2"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:253:31" msg_body="Loop 'VITIS_LOOP_253_3' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="VITIS_LOOP_253_3"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:261:27" msg_body="Loop 'VITIS_LOOP_261_4' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="VITIS_LOOP_261_4"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:200:23" msg_body="Loop 'VITIS_LOOP_200_1' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="VITIS_LOOP_200_1"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:159:23" msg_body="Loop 'VITIS_LOOP_159_1' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="VITIS_LOOP_159_1"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:536:0" msg_body="Unrolling loop 'VITIS_LOOP_546_1' (AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:546:20) in function 'invMixColumns' completely with a factor of 4">
+        <args Factor="4" LoopLoc="AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:546:20" LoopName="VITIS_LOOP_546_1"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:536:0" msg_body="Unrolling loop 'VITIS_LOOP_555_2' (AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:555:27) in function 'invMixColumns' completely with a factor of 4">
+        <args Factor="4" LoopLoc="AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:555:27" LoopName="VITIS_LOOP_555_2"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:563:0" msg_body="Unrolling loop 'VITIS_LOOP_566_1' (AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:566:23) in function 'invMixColumn' completely with a factor of 4">
+        <args Factor="4" LoopLoc="AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:566:23" LoopName="VITIS_LOOP_566_1"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:520:0" msg_body="Unrolling loop 'VITIS_LOOP_529_1' (AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:529:27) in function 'invShiftRow' completely with a factor of 3">
+        <args Factor="3" LoopLoc="AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:529:27" LoopName="VITIS_LOOP_529_1"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:331:0" msg_body="Unrolling loop 'VITIS_LOOP_341_1' (AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:341:20) in function 'mixColumns' completely with a factor of 4">
+        <args Factor="4" LoopLoc="AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:341:20" LoopName="VITIS_LOOP_341_1"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:331:0" msg_body="Unrolling loop 'VITIS_LOOP_350_2' (AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:350:27) in function 'mixColumns' completely with a factor of 4">
+        <args Factor="4" LoopLoc="AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:350:27" LoopName="VITIS_LOOP_350_2"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:358:0" msg_body="Unrolling loop 'VITIS_LOOP_361_1' (AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:361:23) in function 'mixColumn' completely with a factor of 4">
+        <args Factor="4" LoopLoc="AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:361:23" LoopName="VITIS_LOOP_361_1"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:313:0" msg_body="Unrolling loop 'VITIS_LOOP_317_1' (AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:317:23) in function 'galois_multiplication' completely with a factor of 8">
+        <args Factor="8" LoopLoc="AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:317:23" LoopName="VITIS_LOOP_317_1"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:292:0" msg_body="Unrolling loop 'VITIS_LOOP_299_2' (AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:299:27) in function 'shiftRow' completely with a factor of 3">
+        <args Factor="3" LoopLoc="AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:299:27" LoopName="VITIS_LOOP_299_2"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:219:0" msg_body="Unrolling loop 'VITIS_LOOP_237_2' (AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:237:20) in function 'expandKey' completely with a factor of 4">
+        <args Factor="4" LoopLoc="AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:237:20" LoopName="VITIS_LOOP_237_2"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:219:0" msg_body="Unrolling loop 'VITIS_LOOP_253_3' (AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:253:31) in function 'expandKey' completely with a factor of 4">
+        <args Factor="4" LoopLoc="AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:253:31" LoopName="VITIS_LOOP_253_3"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:219:0" msg_body="Unrolling loop 'VITIS_LOOP_261_4' (AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:261:27) in function 'expandKey' completely with a factor of 4">
+        <args Factor="4" LoopLoc="AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:261:27" LoopName="VITIS_LOOP_261_4"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:193:0" msg_body="Unrolling loop 'VITIS_LOOP_200_1' (AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:200:23) in function 'core' completely with a factor of 4">
+        <args Factor="4" LoopLoc="AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:200:23" LoopName="VITIS_LOOP_200_1"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:154:0" msg_body="Unrolling loop 'VITIS_LOOP_159_1' (AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:159:23) in function 'rotate' completely with a factor of 3">
+        <args Factor="3" LoopLoc="AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:159:23" LoopName="VITIS_LOOP_159_1"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:193:0" msg_body="Inlining function 'rotate(unsigned char*)' into 'core(unsigned char*, int)'">
+        <args Callee="rotate(unsigned char*)" Caller="core(unsigned char*, int)"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:193:0" msg_body="Inlining function 'getSBoxValue(unsigned char)' into 'core(unsigned char*, int)'">
+        <args Callee="getSBoxValue(unsigned char)" Caller="core(unsigned char*, int)"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:193:0" msg_body="Inlining function 'getRconValue(unsigned char)' into 'core(unsigned char*, int)'">
+        <args Callee="getRconValue(unsigned char)" Caller="core(unsigned char*, int)"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:219:0" msg_body="Inlining function 'core(unsigned char*, int)' into 'expandKey(unsigned char*, unsigned char*, int, unsigned long)'">
+        <args Callee="core(unsigned char*, int)" Caller="expandKey(unsigned char*, unsigned char*, int, unsigned long)"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:219:0" msg_body="Inlining function 'getSBoxValue(unsigned char)' into 'expandKey(unsigned char*, unsigned char*, int, unsigned long)'">
+        <args Callee="getSBoxValue(unsigned char)" Caller="expandKey(unsigned char*, unsigned char*, int, unsigned long)"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:270:0" msg_body="Inlining function 'getSBoxValue(unsigned char)' into 'subBytes(unsigned char*)'">
+        <args Callee="getSBoxValue(unsigned char)" Caller="subBytes(unsigned char*)"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:281:0" msg_body="Inlining function 'shiftRow(unsigned char*, unsigned char)' into 'shiftRows(unsigned char*)'">
+        <args Callee="shiftRow(unsigned char*, unsigned char)" Caller="shiftRows(unsigned char*)"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:331:0" msg_body="Inlining function 'mixColumn(unsigned char*)' into 'mixColumns(unsigned char*)'">
+        <args Callee="mixColumn(unsigned char*)" Caller="mixColumns(unsigned char*)"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:387:0" msg_body="Inlining function 'subBytes(unsigned char*)' into 'aes_round(unsigned char*, unsigned char*)'">
+        <args Callee="subBytes(unsigned char*)" Caller="aes_round(unsigned char*, unsigned char*)"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:387:0" msg_body="Inlining function 'shiftRows(unsigned char*)' into 'aes_round(unsigned char*, unsigned char*)'">
+        <args Callee="shiftRows(unsigned char*)" Caller="aes_round(unsigned char*, unsigned char*)"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:387:0" msg_body="Inlining function 'mixColumns(unsigned char*)' into 'aes_round(unsigned char*, unsigned char*)'">
+        <args Callee="mixColumns(unsigned char*)" Caller="aes_round(unsigned char*, unsigned char*)"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:387:0" msg_body="Inlining function 'addRoundKey(unsigned char*, unsigned char*)' into 'aes_round(unsigned char*, unsigned char*)'">
+        <args Callee="addRoundKey(unsigned char*, unsigned char*)" Caller="aes_round(unsigned char*, unsigned char*)"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:407:0" msg_body="Inlining function 'createRoundKey(unsigned char*, unsigned char*)' into 'aes_main(unsigned char*, unsigned char*, int)'">
+        <args Callee="createRoundKey(unsigned char*, unsigned char*)" Caller="aes_main(unsigned char*, unsigned char*, int)"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:407:0" msg_body="Inlining function 'addRoundKey(unsigned char*, unsigned char*)' into 'aes_main(unsigned char*, unsigned char*, int)'">
+        <args Callee="addRoundKey(unsigned char*, unsigned char*)" Caller="aes_main(unsigned char*, unsigned char*, int)"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:407:0" msg_body="Inlining function 'subBytes(unsigned char*)' into 'aes_main(unsigned char*, unsigned char*, int)'">
+        <args Callee="subBytes(unsigned char*)" Caller="aes_main(unsigned char*, unsigned char*, int)"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:407:0" msg_body="Inlining function 'shiftRows(unsigned char*)' into 'aes_main(unsigned char*, unsigned char*, int)'">
+        <args Callee="shiftRows(unsigned char*)" Caller="aes_main(unsigned char*, unsigned char*, int)"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:512:0" msg_body="Inlining function 'invShiftRow(unsigned char*, unsigned char)' into 'invShiftRows(unsigned char*)'">
+        <args Callee="invShiftRow(unsigned char*, unsigned char)" Caller="invShiftRows(unsigned char*)"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:500:0" msg_body="Inlining function 'getSBoxInvert(unsigned char)' into 'invSubBytes(unsigned char*)'">
+        <args Callee="getSBoxInvert(unsigned char)" Caller="invSubBytes(unsigned char*)"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:536:0" msg_body="Inlining function 'invMixColumn(unsigned char*)' into 'invMixColumns(unsigned char*)'">
+        <args Callee="invMixColumn(unsigned char*)" Caller="invMixColumns(unsigned char*)"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:589:0" msg_body="Inlining function 'invShiftRows(unsigned char*)' into 'aes_invRound(unsigned char*, unsigned char*)'">
+        <args Callee="invShiftRows(unsigned char*)" Caller="aes_invRound(unsigned char*, unsigned char*)"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:589:0" msg_body="Inlining function 'invSubBytes(unsigned char*)' into 'aes_invRound(unsigned char*, unsigned char*)'">
+        <args Callee="invSubBytes(unsigned char*)" Caller="aes_invRound(unsigned char*, unsigned char*)"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:589:0" msg_body="Inlining function 'addRoundKey(unsigned char*, unsigned char*)' into 'aes_invRound(unsigned char*, unsigned char*)'">
+        <args Callee="addRoundKey(unsigned char*, unsigned char*)" Caller="aes_invRound(unsigned char*, unsigned char*)"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:589:0" msg_body="Inlining function 'invMixColumns(unsigned char*)' into 'aes_invRound(unsigned char*, unsigned char*)'">
+        <args Callee="invMixColumns(unsigned char*)" Caller="aes_invRound(unsigned char*, unsigned char*)"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:597:0" msg_body="Inlining function 'createRoundKey(unsigned char*, unsigned char*)' into 'aes_invMain(unsigned char*, unsigned char*, int)'">
+        <args Callee="createRoundKey(unsigned char*, unsigned char*)" Caller="aes_invMain(unsigned char*, unsigned char*, int)"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:597:0" msg_body="Inlining function 'addRoundKey(unsigned char*, unsigned char*)' into 'aes_invMain(unsigned char*, unsigned char*, int)'">
+        <args Callee="addRoundKey(unsigned char*, unsigned char*)" Caller="aes_invMain(unsigned char*, unsigned char*, int)"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:597:0" msg_body="Inlining function 'invShiftRows(unsigned char*)' into 'aes_invMain(unsigned char*, unsigned char*, int)'">
+        <args Callee="invShiftRows(unsigned char*)" Caller="aes_invMain(unsigned char*, unsigned char*, int)"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:597:0" msg_body="Inlining function 'invSubBytes(unsigned char*)' into 'aes_invMain(unsigned char*, unsigned char*, int)'">
+        <args Callee="invSubBytes(unsigned char*)" Caller="aes_invMain(unsigned char*, unsigned char*, int)"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:15:0" msg_body="Inlining function 'aes_encrypt(unsigned char*, unsigned char*, unsigned char*, int)' into 'aes(hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;&amp;, hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;&amp;, int, unsigned char, unsigned char, unsigned int, unsigned int)'">
+        <args Callee="aes_encrypt(unsigned char*, unsigned char*, unsigned char*, int)" Caller="aes(hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;&amp;, hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;&amp;, int, unsigned char, unsigned char, unsigned int, unsigned int)"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:15:0" msg_body="Inlining function 'aes_decrypt(unsigned char*, unsigned char*, unsigned char*, int)' into 'aes(hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;&amp;, hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;&amp;, int, unsigned char, unsigned char, unsigned int, unsigned int)'">
+        <args Callee="aes_decrypt(unsigned char*, unsigned char*, unsigned char*, int)" Caller="aes(hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;&amp;, hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;&amp;, int, unsigned char, unsigned char, unsigned int, unsigned int)"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:283:5" msg_body="Inlining function '_llvm.fpga.unpack.none.s_struct.ap_int&lt;8&gt;s.i8' into 'aes(hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;&amp;, hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;&amp;, int, unsigned char, unsigned char, unsigned int, unsigned int)'">
+        <args Callee="_llvm.fpga.unpack.none.s_struct.ap_int&lt;8&gt;s.i8" Caller="aes(hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;&amp;, hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;&amp;, int, unsigned char, unsigned char, unsigned int, unsigned int)"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:304:5" msg_body="Inlining function '_llvm.fpga.pack.none.i1.s_struct.ap_uint&lt;1&gt;s' into 'aes(hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;&amp;, hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;&amp;, int, unsigned char, unsigned char, unsigned int, unsigned int)'">
+        <args Callee="_llvm.fpga.pack.none.i1.s_struct.ap_uint&lt;1&gt;s" Caller="aes(hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;&amp;, hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;&amp;, int, unsigned char, unsigned char, unsigned int, unsigned int)"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:304:5" msg_body="Inlining function '_llvm.fpga.pack.none.i8.s_struct.ap_int&lt;8&gt;s' into 'aes(hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;&amp;, hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;&amp;, int, unsigned char, unsigned char, unsigned int, unsigned int)'">
+        <args Callee="_llvm.fpga.pack.none.i8.s_struct.ap_int&lt;8&gt;s" Caller="aes(hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;&amp;, hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;&amp;, int, unsigned char, unsigned char, unsigned int, unsigned int)"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:283:5" msg_body="Inlining function '_llvm.fpga.unpack.none.s_struct.ap_uint&lt;1&gt;s.i1' into 'aes(hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;&amp;, hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;&amp;, int, unsigned char, unsigned char, unsigned int, unsigned int)'">
+        <args Callee="_llvm.fpga.unpack.none.s_struct.ap_uint&lt;1&gt;s.i1" Caller="aes(hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;&amp;, hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;&amp;, int, unsigned char, unsigned char, unsigned int, unsigned int)"/>
+    </msg>
+</xilinx:hls_fe_msgs>
+

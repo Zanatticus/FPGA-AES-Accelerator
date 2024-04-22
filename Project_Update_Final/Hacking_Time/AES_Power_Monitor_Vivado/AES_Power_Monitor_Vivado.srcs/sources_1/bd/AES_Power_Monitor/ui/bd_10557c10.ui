@@ -1,0 +1,43 @@
+{
+   "ActiveEmotionalView":"Default View",
+   "Default View_ScaleFactor":"0.897391",
+   "Default View_TopLeft":"0,-52",
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 7.0r6  2020-01-29 bk=1.5227 VDI=41 GEI=36 GUI=JA:10.0 non-TLS
+#  -string -flagsOSRD
+preplace port DDR -pg 1 -lvl 5 -x 2000 -y 20 -defaultsOSRD
+preplace port FIXED_IO -pg 1 -lvl 5 -x 2000 -y 40 -defaultsOSRD
+preplace inst axi_dma -pg 1 -lvl 2 -x 980 -y 170 -defaultsOSRD
+preplace inst axi_mem_intercon -pg 1 -lvl 2 -x 980 -y 440 -defaultsOSRD
+preplace inst axi_mem_intercon_1 -pg 1 -lvl 2 -x 980 -y 660 -defaultsOSRD
+preplace inst processing_system7_0 -pg 1 -lvl 2 -x 980 -y 880 -defaultsOSRD
+preplace inst ps7_0_axi_periph -pg 1 -lvl 4 -x 1810 -y 910 -defaultsOSRD
+preplace inst rst_ps7_0_100M -pg 1 -lvl 3 -x 1470 -y 960 -defaultsOSRD
+preplace inst aes_0 -pg 1 -lvl 1 -x 450 -y 90 -defaultsOSRD
+preplace inst Power_Monitor_0 -pg 1 -lvl 1 -x 450 -y 310 -defaultsOSRD
+preplace netloc processing_system7_0_FCLK_CLK0 1 0 4 50 -10 710 1010 1300 860 1650
+preplace netloc processing_system7_0_FCLK_RESET0_N 1 2 1 1260 930n
+preplace netloc rst_ps7_0_100M_peripheral_aresetn 1 0 4 60 190 680 1060 NJ 1060 1660
+preplace netloc Power_Monitor_0_avg_ro_freq 1 1 2 690J -30 1240
+preplace netloc axi_dma_m_axis_mm2s_tdata 1 0 3 20 -40 NJ -40 1250
+preplace netloc axi_dma_M_AXI_MM2S 1 1 2 720 -20 1220
+preplace netloc axi_dma_M_AXI_S2MM 1 1 2 750 -10 1210
+preplace netloc axi_mem_intercon_1_M00_AXI 1 1 2 750 1000 1210
+preplace netloc axi_mem_intercon_M00_AXI 1 1 2 740 0 1230
+preplace netloc processing_system7_0_DDR 1 2 3 1270 20 NJ 20 NJ
+preplace netloc processing_system7_0_FIXED_IO 1 2 3 1280 40 NJ 40 NJ
+preplace netloc processing_system7_0_M_AXI_GP0 1 2 2 1290J 850 1640
+preplace netloc ps7_0_axi_periph_M00_AXI 1 1 4 730 -60 NJ -60 NJ -60 1960
+preplace netloc ps7_0_axi_periph_M01_AXI 1 0 5 30 -80 NJ -80 NJ -80 NJ -80 1980
+preplace netloc ps7_0_axi_periph_M02_AXI 1 0 5 60 -50 NJ -50 NJ -50 NJ -50 1970
+preplace netloc aes_0_ciphertext_and_decryptedtext 1 1 1 700 90n
+preplace netloc axi_dma_M_AXIS_MM2S 1 0 3 40 -70 N -70 1260
+levelinfo -pg 1 0 450 980 1470 1810 2000
+pagesize -pg 1 -db -bbox -sgen 0 -180 2120 1190
+"
+}
+{
+   "da_axi4_cnt":"5",
+   "da_clkrst_cnt":"2",
+   "da_ps7_cnt":"1"
+}

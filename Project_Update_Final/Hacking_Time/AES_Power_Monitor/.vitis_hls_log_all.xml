@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vivadoHLSLog:LogRoot xmlns:vivadoHLSLog="www.xilinx.com/vivadoHLSLog">
+  <errorLogs>
+    <logs>
+      <synLog/>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </errorLogs>
+  <warningLogs>
+    <logs>
+      <synLog>
+        <logs message="WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low." projectName="AES_Power_Monitor" solutionName="solution1" date="2024-04-17T16:02:52.361-0400" type="Warning"/>
+        <logs message="WARNING: [SCHED 204-65] Unable to satisfy pipeline directive for loop 'shiftRowsLoop': contains subloop(s) that are not unrolled or flattened." projectName="AES_Power_Monitor" solutionName="solution1" date="2024-04-17T16:01:56.568-0400" type="Warning"/>
+        <logs message="WARNING: [SCHED 204-65] Unable to satisfy pipeline directive for loop 'shiftRowsLoop': contains subloop(s) that are not unrolled or flattened." projectName="AES_Power_Monitor" solutionName="solution1" date="2024-04-17T16:01:52.517-0400" type="Warning"/>
+        <logs message="WARNING: [HLS 200-960] Cannot flatten loop 'VITIS_LOOP_64_1' (AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:61:13) in function 'aes' more than one sub loop.&#xD;&#xA;Resolution: For help on HLS 200-960 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.1;t=hls+guidance;d=200-960.html" projectName="AES_Power_Monitor" solutionName="solution1" date="2024-04-17T16:01:36.752-0400" type="Warning"/>
+        <logs message="WARNING: [HLS 200-960] Cannot flatten loop 'VITIS_LOOP_515_1' (AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:513:9) in function 'aes_invMain' the outer loop is not a perfect loop because there is nontrivial logic before entering the inner loop.&#xD;&#xA;Resolution: For help on HLS 200-960 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.1;t=hls+guidance;d=200-960.html" projectName="AES_Power_Monitor" solutionName="solution1" date="2024-04-17T16:01:36.526-0400" type="Warning"/>
+        <logs message="WARNING: [HLS 200-960] Cannot flatten loop 'VITIS_LOOP_515_1' (AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:513:9) in function 'aes_invRound' the outer loop is not a perfect loop because there is nontrivial logic before entering the inner loop.&#xD;&#xA;Resolution: For help on HLS 200-960 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.1;t=hls+guidance;d=200-960.html" projectName="AES_Power_Monitor" solutionName="solution1" date="2024-04-17T16:01:36.463-0400" type="Warning"/>
+        <logs message="WARNING: [HLS 200-960] Cannot flatten loop 'shiftRowsLoop' (AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:282:9) in function 'aes_main' the outer loop is not a perfect loop because there is nontrivial logic before entering the inner loop.&#xD;&#xA;Resolution: For help on HLS 200-960 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.1;t=hls+guidance;d=200-960.html" projectName="AES_Power_Monitor" solutionName="solution1" date="2024-04-17T16:01:36.435-0400" type="Warning"/>
+        <logs message="WARNING: [HLS 200-960] Cannot flatten loop 'shiftRowsLoop' (AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:282:9) in function 'aes_round' the outer loop is not a perfect loop because there is nontrivial logic before entering the inner loop.&#xD;&#xA;Resolution: For help on HLS 200-960 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.1;t=hls+guidance;d=200-960.html" projectName="AES_Power_Monitor" solutionName="solution1" date="2024-04-17T16:01:36.361-0400" type="Warning"/>
+        <logs message="WARNING: [HLS 200-936] Cannot unroll loop 'VITIS_LOOP_296_1' (AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:293) in function 'aes_round': cannot completely unroll a loop with a variable trip count.&#xD;&#xA;Resolution: For help on HLS 200-936 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.1;t=hls+guidance;d=200-936.html" projectName="AES_Power_Monitor" solutionName="solution1" date="2024-04-17T16:01:35.938-0400" type="Warning"/>
+        <logs message="WARNING: [HLS 200-936] Cannot unroll loop 'VITIS_LOOP_296_1' (AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:293) in function 'aes_main': cannot completely unroll a loop with a variable trip count.&#xD;&#xA;Resolution: For help on HLS 200-936 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.1;t=hls+guidance;d=200-936.html" projectName="AES_Power_Monitor" solutionName="solution1" date="2024-04-17T16:01:35.528-0400" type="Warning"/>
+      </synLog>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </warningLogs>
+</vivadoHLSLog:LogRoot>
