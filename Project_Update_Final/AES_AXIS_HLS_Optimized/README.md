@@ -3,7 +3,7 @@
 This final project update contains the optimized AXI-Stream implementation for a hardware overlay.
 
 The AXI-Stream subfolder contains three directories:
-- `overlay_files`: Contains Jupyter notebook files (for each AES mode) and the necessary hardware overlay files needed to run the IP on the PYNQ board.
+- `overlay_files`: Contains Jupyter notebook files (for each AES mode) and the necessary hardware overlay files needed to run the IP on the PYNQ board. Also contains a Notebook to generate a Pareto graph based on the optimization synthesis results.
 - `vitis`: Contains the source Vitis HLS C files and testbench files. Also contains the hardware register map file, simulation logs, and synthesis summary for reference.
 - `vivado`: Contains screenshots of the Vivado block design, bitstream-device layout, and TCL scripts for generating the respective block designs.
 
