@@ -5,7 +5,7 @@ This final project update contains the optimized AXI-Stream implementation for a
 The AXI-Stream subfolder contains three directories:
 - `overlay_files`: Contains Jupyter Notebook files (for each AES mode) and the necessary hardware overlay files needed to run the IP on the PYNQ board. This also contains a Notebook to generate a Pareto graph based on the optimization synthesis results.
 - `vitis`: Contains the source Vitis HLS C files and testbench files. This also contains the hardware register map file, simulation logs, and synthesis summary for reference.
-- `vivado`: Contains screenshots of the Vivado block design, bitstream-device layout, and TCL scripts for generating the respective block designs.
+- `vivado`: Contains screenshots of the Vivado block design, chip floorplanning, and TCL scripts for generating the respective block designs.
 
 All Vitis source code has base optimizations added to pipeline various loops with the lowest possible Initialization Interval value to resolve Initialization Interval Violations and Timing Violations that arise when just running the raw HLS C code. This optimized Vitis code also has additional optimizations detailed in the table below:
 
