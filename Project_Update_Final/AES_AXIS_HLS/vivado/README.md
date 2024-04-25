@@ -9,4 +9,4 @@ Alternatively, this block design was built upon the example TCL script `./axi-dm
 - Stream Data Width: 8
 - Max Burst Size: 64
 
-Create an HDL Wrapper for the Design Source and Generate Bitstream. After bitstream generation completes, copy the `.hwh`, `.bit`, and `.tcl` files to the PYNQ-Z2 board to enable the hardware overlay.
+Create an HDL Wrapper for the Design Source and Generate Bitstream. After bitstream generation completes, copy the `.hwh` and `.bit` files to the PYNQ-Z2 board to use the hardware overlay.
