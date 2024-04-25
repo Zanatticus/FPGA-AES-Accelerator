@@ -1,4 +1,4 @@
-# AXI Implementations
+# Optimized AXI-Stream Implementation
 
 This final project update contains the optimized AXI-Stream implementation for a hardware overlay.
 
