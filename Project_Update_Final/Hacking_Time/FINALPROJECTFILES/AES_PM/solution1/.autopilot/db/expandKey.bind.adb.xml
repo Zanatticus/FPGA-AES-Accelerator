@@ -1,0 +1,295 @@
+<stg><name>expandKey</name>
+
+
+<trans_list>
+
+<trans id="14" from="1" to="2">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="15" from="2" to="3">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="16" from="3" to="4">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+</trans_list>
+
+
+
+<state_list>
+
+<state id="1" st_id="1">
+
+<operation id="5" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="10" bw="6" op_0_bw="6" op_1_bw="6">
+<![CDATA[
+entry:1 %size_read = read i6 @_ssdm_op_Read.ap_auto.i6, i6 %size
+
+]]></Node>
+<StgValue><ssdm name="size_read"/></StgValue>
+</operation>
+
+<operation id="6" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="11" bw="11" op_0_bw="11" op_1_bw="11">
+<![CDATA[
+entry:2 %key_read = read i11 @_ssdm_op_Read.ap_auto.i11, i11 %key
+
+]]></Node>
+<StgValue><ssdm name="key_read"/></StgValue>
+</operation>
+
+<operation id="7" st_id="1" stage="2" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="12" bw="0" op_0_bw="0" op_1_bw="6" op_2_bw="11" op_3_bw="8" op_4_bw="8" op_5_bw="8">
+<![CDATA[
+entry:3 %call_ln0 = call void @expandKey_Pipeline_expandKeyLoop1, i6 %size_read, i11 %key_read, i8 %key_array128, i8 %expandedKey_1, i8 %expandedKey_0
+
+]]></Node>
+<StgValue><ssdm name="call_ln0"/></StgValue>
+</operation>
+</state>
+
+<state id="2" st_id="2">
+
+<operation id="8" st_id="2" stage="1" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="12" bw="0" op_0_bw="0" op_1_bw="6" op_2_bw="11" op_3_bw="8" op_4_bw="8" op_5_bw="8">
+<![CDATA[
+entry:3 %call_ln0 = call void @expandKey_Pipeline_expandKeyLoop1, i6 %size_read, i11 %key_read, i8 %key_array128, i8 %expandedKey_1, i8 %expandedKey_0
+
+]]></Node>
+<StgValue><ssdm name="call_ln0"/></StgValue>
+</operation>
+</state>
+
+<state id="3" st_id="3">
+
+<operation id="9" st_id="3" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="9" bw="8" op_0_bw="8" op_1_bw="8">
+<![CDATA[
+entry:0 %expandedKeySize_read = read i8 @_ssdm_op_Read.ap_auto.i8, i8 %expandedKeySize
+
+]]></Node>
+<StgValue><ssdm name="expandedKeySize_read"/></StgValue>
+</operation>
+
+<operation id="10" st_id="3" stage="1" lat="1">
+<core>Cmp</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="13" bw="1" op_0_bw="6" op_1_bw="6">
+<![CDATA[
+entry:4 %cmp17 = icmp_eq  i6 %size_read, i6 32
+
+]]></Node>
+<StgValue><ssdm name="cmp17"/></StgValue>
+</operation>
+
+<operation id="11" st_id="3" stage="2" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="14" bw="0" op_0_bw="0" op_1_bw="6" op_2_bw="8" op_3_bw="8" op_4_bw="8" op_5_bw="6" op_6_bw="6" op_7_bw="1" op_8_bw="8" op_9_bw="8" op_10_bw="0" op_11_bw="0">
+<![CDATA[
+entry:5 %call_ln0 = call void @expandKey_Pipeline_expandKeyLoop2, i6 %size_read, i8 %expandedKey_1, i8 %expandedKey_0, i8 %expandedKeySize_read, i6 %size_read, i6 %size_read, i1 %cmp17, i8 %sbox, i8 %Rcon
+
+]]></Node>
+<StgValue><ssdm name="call_ln0"/></StgValue>
+</operation>
+</state>
+
+<state id="4" st_id="4">
+
+<operation id="12" st_id="4" stage="1" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="14" bw="0" op_0_bw="0" op_1_bw="6" op_2_bw="8" op_3_bw="8" op_4_bw="8" op_5_bw="6" op_6_bw="6" op_7_bw="1" op_8_bw="8" op_9_bw="8" op_10_bw="0" op_11_bw="0">
+<![CDATA[
+entry:5 %call_ln0 = call void @expandKey_Pipeline_expandKeyLoop2, i6 %size_read, i8 %expandedKey_1, i8 %expandedKey_0, i8 %expandedKeySize_read, i6 %size_read, i6 %size_read, i1 %cmp17, i8 %sbox, i8 %Rcon
+
+]]></Node>
+<StgValue><ssdm name="call_ln0"/></StgValue>
+</operation>
+
+<operation id="13" st_id="4" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="15" bw="0">
+<![CDATA[
+entry:6 %ret_ln293 = ret
+
+]]></Node>
+<StgValue><ssdm name="ret_ln293"/></StgValue>
+</operation>
+</state>
+</state_list>
+
+
+<ports>
+<port id="17" name="expandedKey_0" dir="2" iftype="1">
+<core>RAM</core><StgValue><ssdm name="expandedKey_0"/><MemPortTyVec>2 2 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="18" name="expandedKey_1" dir="2" iftype="1">
+<core>RAM</core><StgValue><ssdm name="expandedKey_1"/><MemPortTyVec>2 2 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="19" name="key_array128" dir="0" iftype="1">
+<core>RAM_1WnR</core><StgValue><ssdm name="key_array128"/><MemPortTyVec>1 1 1 1 3 3 3 3 3 3 3 3 3 3 3 3 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="20" name="key" dir="0" iftype="0">
+<core>NULL</core><StgValue><ssdm name="key"/></StgValue>
+</port>
+<port id="21" name="size" dir="0" iftype="0">
+<core>NULL</core><StgValue><ssdm name="size"/></StgValue>
+</port>
+<port id="22" name="expandedKeySize" dir="0" iftype="0">
+<core>NULL</core><StgValue><ssdm name="expandedKeySize"/></StgValue>
+</port>
+<port id="23" name="sbox" dir="0" iftype="1">
+<core>ROM_2P</core><StgValue><ssdm name="sbox"/><MemPortTyVec>1 1 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="24" name="Rcon" dir="0" iftype="1">
+<core>ROM_2P</core><StgValue><ssdm name="Rcon"/><MemPortTyVec>1 3 </MemPortTyVec>
+</StgValue>
+</port>
+</ports>
+
+
+<dataflows>
+<dataflow id="26" from="_ssdm_op_Read.ap_auto.i6" to="size_read" fromId="25" toId="5">
+</dataflow>
+<dataflow id="27" from="size" to="size_read" fromId="21" toId="5">
+</dataflow>
+<dataflow id="29" from="_ssdm_op_Read.ap_auto.i11" to="key_read" fromId="28" toId="6">
+</dataflow>
+<dataflow id="30" from="key" to="key_read" fromId="20" toId="6">
+</dataflow>
+<dataflow id="32" from="expandKey_Pipeline_expandKeyLoop1" to="call_ln0" fromId="31" toId="7">
+</dataflow>
+<dataflow id="33" from="size_read" to="call_ln0" fromId="5" toId="7">
+</dataflow>
+<dataflow id="34" from="key_read" to="call_ln0" fromId="6" toId="7">
+</dataflow>
+<dataflow id="35" from="key_array128" to="call_ln0" fromId="19" toId="7">
+</dataflow>
+<dataflow id="36" from="expandedKey_1" to="call_ln0" fromId="18" toId="7">
+</dataflow>
+<dataflow id="37" from="expandedKey_0" to="call_ln0" fromId="17" toId="7">
+</dataflow>
+<dataflow id="38" from="expandKey_Pipeline_expandKeyLoop1" to="call_ln0" fromId="31" toId="8">
+</dataflow>
+<dataflow id="39" from="size_read" to="call_ln0" fromId="5" toId="8">
+</dataflow>
+<dataflow id="40" from="key_read" to="call_ln0" fromId="6" toId="8">
+</dataflow>
+<dataflow id="41" from="key_array128" to="call_ln0" fromId="19" toId="8">
+</dataflow>
+<dataflow id="42" from="expandedKey_1" to="call_ln0" fromId="18" toId="8">
+</dataflow>
+<dataflow id="43" from="expandedKey_0" to="call_ln0" fromId="17" toId="8">
+</dataflow>
+<dataflow id="45" from="_ssdm_op_Read.ap_auto.i8" to="expandedKeySize_read" fromId="44" toId="9">
+</dataflow>
+<dataflow id="46" from="expandedKeySize" to="expandedKeySize_read" fromId="22" toId="9">
+</dataflow>
+<dataflow id="47" from="size_read" to="cmp17" fromId="5" toId="10">
+</dataflow>
+<dataflow id="49" from="StgValue_48" to="cmp17" fromId="48" toId="10">
+</dataflow>
+<dataflow id="51" from="expandKey_Pipeline_expandKeyLoop2" to="call_ln0" fromId="50" toId="11">
+</dataflow>
+<dataflow id="52" from="size_read" to="call_ln0" fromId="5" toId="11">
+</dataflow>
+<dataflow id="53" from="expandedKey_1" to="call_ln0" fromId="18" toId="11">
+</dataflow>
+<dataflow id="54" from="expandedKey_0" to="call_ln0" fromId="17" toId="11">
+</dataflow>
+<dataflow id="55" from="expandedKeySize_read" to="call_ln0" fromId="9" toId="11">
+</dataflow>
+<dataflow id="56" from="size_read" to="call_ln0" fromId="5" toId="11">
+</dataflow>
+<dataflow id="57" from="size_read" to="call_ln0" fromId="5" toId="11">
+</dataflow>
+<dataflow id="58" from="cmp17" to="call_ln0" fromId="10" toId="11">
+</dataflow>
+<dataflow id="59" from="sbox" to="call_ln0" fromId="23" toId="11">
+</dataflow>
+<dataflow id="60" from="Rcon" to="call_ln0" fromId="24" toId="11">
+</dataflow>
+<dataflow id="61" from="expandKey_Pipeline_expandKeyLoop2" to="call_ln0" fromId="50" toId="12">
+</dataflow>
+<dataflow id="62" from="size_read" to="call_ln0" fromId="5" toId="12">
+</dataflow>
+<dataflow id="63" from="expandedKey_1" to="call_ln0" fromId="18" toId="12">
+</dataflow>
+<dataflow id="64" from="expandedKey_0" to="call_ln0" fromId="17" toId="12">
+</dataflow>
+<dataflow id="65" from="expandedKeySize_read" to="call_ln0" fromId="9" toId="12">
+</dataflow>
+<dataflow id="66" from="size_read" to="call_ln0" fromId="5" toId="12">
+</dataflow>
+<dataflow id="67" from="size_read" to="call_ln0" fromId="5" toId="12">
+</dataflow>
+<dataflow id="68" from="cmp17" to="call_ln0" fromId="10" toId="12">
+</dataflow>
+<dataflow id="69" from="sbox" to="call_ln0" fromId="23" toId="12">
+</dataflow>
+<dataflow id="70" from="Rcon" to="call_ln0" fromId="24" toId="12">
+</dataflow>
+</dataflows>
+
+
+</stg>

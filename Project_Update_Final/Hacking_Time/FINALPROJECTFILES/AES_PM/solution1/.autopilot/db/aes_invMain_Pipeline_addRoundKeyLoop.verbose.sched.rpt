@@ -1,0 +1,148 @@
+
+
+================================================================
+== Vitis HLS Report for 'aes_invMain_Pipeline_addRoundKeyLoop'
+================================================================
+* Date:           Thu Apr 25 11:55:41 2024
+
+* Version:        2022.1 (Build 3526262 on Mon Apr 18 15:48:16 MDT 2022)
+* Project:        AES_PM
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  5.634 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |       18|       18|  0.180 us|  0.180 us|   18|   18|       no|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |                   |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |     Loop Name     |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +-------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- addRoundKeyLoop  |       16|       16|         2|          1|          1|    16|       yes|
+        +-------------------+---------+---------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 2
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 2
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 2
+* Pipeline : 1
+  Pipeline-0 : II = 1, D = 2, States = { 1 2 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 3.36>
+ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%i_9 = alloca i32 1"   --->   Operation 5 'alloca' 'i_9' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 6 [1/1] (1.58ns)   --->   "%store_ln0 = store i5 0, i5 %i_9"   --->   Operation 6 'store' 'store_ln0' <Predicate = true> <Delay = 1.58>
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%br_ln0 = br void %for.inc.i7"   --->   Operation 7 'br' 'br_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%i = load i5 %i_9" [Downloads/aes_axis.cpp:340]   --->   Operation 8 'load' 'i' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%specpipeline_ln0 = specpipeline void @_ssdm_op_SpecPipeline, i32 4294967295, i32 0, i32 1, i32 0, void @p_str"   --->   Operation 9 'specpipeline' 'specpipeline_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 10 [1/1] (1.36ns)   --->   "%icmp_ln340 = icmp_eq  i5 %i, i5 16" [Downloads/aes_axis.cpp:340]   --->   Operation 10 'icmp' 'icmp_ln340' <Predicate = true> <Delay = 1.36> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.36> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%speclooptripcount_ln0 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64 16, i64 16, i64 16"   --->   Operation 11 'speclooptripcount' 'speclooptripcount_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 12 [1/1] (1.78ns)   --->   "%add_ln340 = add i5 %i, i5 1" [Downloads/aes_axis.cpp:340]   --->   Operation 12 'add' 'add_ln340' <Predicate = true> <Delay = 1.78> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%br_ln340 = br i1 %icmp_ln340, void %for.inc.i7.split, void %_Z11addRoundKeyPhS_.exit.exitStub" [Downloads/aes_axis.cpp:340]   --->   Operation 13 'br' 'br_ln340' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%i_9_cast = zext i5 %i" [Downloads/aes_axis.cpp:340]   --->   Operation 14 'zext' 'i_9_cast' <Predicate = (!icmp_ln340)> <Delay = 0.00>
+ST_1 : Operation 15 [1/1] (0.00ns)   --->   "%state_addr = getelementptr i8 %state, i64 0, i64 %i_9_cast" [Downloads/aes_axis.cpp:341]   --->   Operation 15 'getelementptr' 'state_addr' <Predicate = (!icmp_ln340)> <Delay = 0.00>
+ST_1 : Operation 16 [2/2] (2.32ns)   --->   "%state_load = load i4 %state_addr" [Downloads/aes_axis.cpp:341]   --->   Operation 16 'load' 'state_load' <Predicate = (!icmp_ln340)> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_1 : Operation 17 [1/1] (0.00ns)   --->   "%roundKey_addr = getelementptr i8 %roundKey, i64 0, i64 %i_9_cast" [Downloads/aes_axis.cpp:341]   --->   Operation 17 'getelementptr' 'roundKey_addr' <Predicate = (!icmp_ln340)> <Delay = 0.00>
+ST_1 : Operation 18 [2/2] (2.32ns)   --->   "%roundKey_load = load i4 %roundKey_addr" [Downloads/aes_axis.cpp:341]   --->   Operation 18 'load' 'roundKey_load' <Predicate = (!icmp_ln340)> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_1 : Operation 19 [1/1] (1.58ns)   --->   "%store_ln340 = store i5 %add_ln340, i5 %i_9" [Downloads/aes_axis.cpp:340]   --->   Operation 19 'store' 'store_ln340' <Predicate = (!icmp_ln340)> <Delay = 1.58>
+ST_1 : Operation 26 [1/1] (0.00ns)   --->   "%ret_ln0 = ret"   --->   Operation 26 'ret' 'ret_ln0' <Predicate = (icmp_ln340)> <Delay = 0.00>
+
+State 2 <SV = 1> <Delay = 5.63>
+ST_2 : Operation 20 [1/1] (0.00ns)   --->   "%specloopname_ln340 = specloopname void @_ssdm_op_SpecLoopName, void @empty_18" [Downloads/aes_axis.cpp:340]   --->   Operation 20 'specloopname' 'specloopname_ln340' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 21 [1/2] (2.32ns)   --->   "%state_load = load i4 %state_addr" [Downloads/aes_axis.cpp:341]   --->   Operation 21 'load' 'state_load' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_2 : Operation 22 [1/2] (2.32ns)   --->   "%roundKey_load = load i4 %roundKey_addr" [Downloads/aes_axis.cpp:341]   --->   Operation 22 'load' 'roundKey_load' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_2 : Operation 23 [1/1] (0.99ns)   --->   "%xor_ln341 = xor i8 %roundKey_load, i8 %state_load" [Downloads/aes_axis.cpp:341]   --->   Operation 23 'xor' 'xor_ln341' <Predicate = true> <Delay = 0.99> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 24 [1/1] (2.32ns)   --->   "%store_ln341 = store i8 %xor_ln341, i4 %state_addr" [Downloads/aes_axis.cpp:341]   --->   Operation 24 'store' 'store_ln341' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_2 : Operation 25 [1/1] (0.00ns)   --->   "%br_ln340 = br void %for.inc.i7" [Downloads/aes_axis.cpp:340]   --->   Operation 25 'br' 'br_ln340' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 2.7ns.
+
+ <State 1>: 3.37ns
+The critical path consists of the following:
+	'alloca' operation ('i') [3]  (0 ns)
+	'load' operation ('i', Downloads/aes_axis.cpp:340) on local variable 'i' [7]  (0 ns)
+	'add' operation ('add_ln340', Downloads/aes_axis.cpp:340) [11]  (1.78 ns)
+	'store' operation ('store_ln340', Downloads/aes_axis.cpp:340) of variable 'add_ln340', Downloads/aes_axis.cpp:340 on local variable 'i' [22]  (1.59 ns)
+
+ <State 2>: 5.63ns
+The critical path consists of the following:
+	'load' operation ('state_load', Downloads/aes_axis.cpp:341) on array 'state' [17]  (2.32 ns)
+	'xor' operation ('xor_ln341', Downloads/aes_axis.cpp:341) [20]  (0.99 ns)
+	'store' operation ('store_ln341', Downloads/aes_axis.cpp:341) of variable 'xor_ln341', Downloads/aes_axis.cpp:341 on array 'state' [21]  (2.32 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

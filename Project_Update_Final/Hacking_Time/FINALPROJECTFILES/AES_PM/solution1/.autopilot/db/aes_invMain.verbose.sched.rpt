@@ -1,0 +1,495 @@
+
+
+================================================================
+== Vitis HLS Report for 'aes_invMain'
+================================================================
+* Date:           Thu Apr 25 11:55:44 2024
+
+* Version:        2022.1 (Build 3526262 on Mon Apr 18 15:48:16 MDT 2022)
+* Project:        AES_PM
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  6.867 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |      513|      697|  5.130 us|  6.970 us|  513|  697|       no|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 26
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 
+4 --> 5 
+5 --> 6 
+6 --> 7 
+7 --> 8 
+8 --> 9 
+9 --> 10 
+10 --> 11 
+11 --> 12 
+12 --> 13 
+13 --> 14 
+14 --> 15 
+15 --> 16 
+16 --> 17 
+17 --> 18 
+18 --> 19 
+19 --> 20 
+20 --> 21 
+21 --> 22 
+22 --> 23 
+23 --> 24 
+24 --> 25 
+25 --> 26 
+26 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 4.23>
+ST_1 : Operation 27 [1/1] (0.00ns)   --->   "%nbrRounds_read = read i4 @_ssdm_op_Read.ap_auto.i4, i4 %nbrRounds"   --->   Operation 27 'read' 'nbrRounds_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 28 [1/1] (0.00ns)   --->   "%tmp_128_loc = alloca i64 1"   --->   Operation 28 'alloca' 'tmp_128_loc' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 29 [1/1] (0.00ns)   --->   "%num_assign_68_loc = alloca i64 1"   --->   Operation 29 'alloca' 'num_assign_68_loc' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 30 [1/1] (0.00ns)   --->   "%num_assign_67_loc = alloca i64 1"   --->   Operation 30 'alloca' 'num_assign_67_loc' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 31 [1/1] (0.00ns)   --->   "%num_assign_66_loc = alloca i64 1"   --->   Operation 31 'alloca' 'num_assign_66_loc' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 32 [1/1] (0.00ns)   --->   "%tmp_127_loc = alloca i64 1"   --->   Operation 32 'alloca' 'tmp_127_loc' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 33 [1/1] (0.00ns)   --->   "%num_assign_64_loc = alloca i64 1"   --->   Operation 33 'alloca' 'num_assign_64_loc' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 34 [1/1] (0.00ns)   --->   "%num_assign_63_loc = alloca i64 1"   --->   Operation 34 'alloca' 'num_assign_63_loc' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 35 [1/1] (0.00ns)   --->   "%num_assign_62_loc = alloca i64 1"   --->   Operation 35 'alloca' 'num_assign_62_loc' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 36 [1/1] (0.00ns)   --->   "%roundKey = alloca i64 1" [Downloads/aes_axis.cpp:654]   --->   Operation 36 'alloca' 'roundKey' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 37 [2/2] (4.23ns)   --->   "%call_ln0 = call void @aes_invMain_Pipeline_createRoundKeyLoop1_createRoundKeyLoop2, i4 %nbrRounds_read, i8 %expandedKey_0, i8 %expandedKey_1, i8 %roundKey"   --->   Operation 37 'call' 'call_ln0' <Predicate = true> <Delay = 4.23> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 2 <SV = 1> <Delay = 0.00>
+ST_2 : Operation 38 [1/2] (0.00ns)   --->   "%call_ln0 = call void @aes_invMain_Pipeline_createRoundKeyLoop1_createRoundKeyLoop2, i4 %nbrRounds_read, i8 %expandedKey_0, i8 %expandedKey_1, i8 %roundKey"   --->   Operation 38 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 3 <SV = 2> <Delay = 0.00>
+ST_3 : Operation 39 [2/2] (0.00ns)   --->   "%call_ln0 = call void @aes_invMain_Pipeline_addRoundKeyLoop, i8 %state, i8 %roundKey"   --->   Operation 39 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 4 <SV = 3> <Delay = 0.00>
+ST_4 : Operation 40 [1/2] (0.00ns)   --->   "%call_ln0 = call void @aes_invMain_Pipeline_addRoundKeyLoop, i8 %state, i8 %roundKey"   --->   Operation 40 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 5 <SV = 4> <Delay = 6.69>
+ST_5 : Operation 41 [1/1] (1.73ns)   --->   "%add_ln660 = add i4 %nbrRounds_read, i4 15" [Downloads/aes_axis.cpp:660]   --->   Operation 41 'add' 'add_ln660' <Predicate = true> <Delay = 1.73> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.73> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 42 [2/2] (4.95ns)   --->   "%call_ln660 = call void @aes_invMain_Pipeline_aesInvMainLoop, i4 %add_ln660, i8 %roundKey, i8 %expandedKey_0, i8 %expandedKey_1, i8 %state, i8 %rsbox" [Downloads/aes_axis.cpp:660]   --->   Operation 42 'call' 'call_ln660' <Predicate = true> <Delay = 4.95> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 6 <SV = 5> <Delay = 0.00>
+ST_6 : Operation 43 [1/2] (0.00ns)   --->   "%call_ln660 = call void @aes_invMain_Pipeline_aesInvMainLoop, i4 %add_ln660, i8 %roundKey, i8 %expandedKey_0, i8 %expandedKey_1, i8 %state, i8 %rsbox" [Downloads/aes_axis.cpp:660]   --->   Operation 43 'call' 'call_ln660' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 7 <SV = 6> <Delay = 2.32>
+ST_7 : Operation 44 [1/1] (0.00ns)   --->   "%state_addr_51 = getelementptr i8 %state, i64 0, i64 11"   --->   Operation 44 'getelementptr' 'state_addr_51' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 45 [1/1] (0.00ns)   --->   "%state_addr_52 = getelementptr i8 %state, i64 0, i64 10" [Downloads/aes_axis.cpp:585]   --->   Operation 45 'getelementptr' 'state_addr_52' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 46 [2/2] (2.32ns)   --->   "%state_load_27 = load i4 %state_addr_51" [Downloads/aes_axis.cpp:582]   --->   Operation 46 'load' 'state_load_27' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_7 : Operation 47 [2/2] (2.32ns)   --->   "%state_load_28 = load i4 %state_addr_52" [Downloads/aes_axis.cpp:585]   --->   Operation 47 'load' 'state_load_28' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+
+State 8 <SV = 7> <Delay = 2.32>
+ST_8 : Operation 48 [1/1] (0.00ns)   --->   "%state_addr_50 = getelementptr i8 %state, i64 0, i64 8" [Downloads/aes_axis.cpp:569]   --->   Operation 48 'getelementptr' 'state_addr_50' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 49 [1/1] (0.00ns)   --->   "%state_addr_53 = getelementptr i8 %state, i64 0, i64 9"   --->   Operation 49 'getelementptr' 'state_addr_53' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 50 [1/2] (2.32ns)   --->   "%state_load_27 = load i4 %state_addr_51" [Downloads/aes_axis.cpp:582]   --->   Operation 50 'load' 'state_load_27' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_8 : Operation 51 [1/2] (2.32ns)   --->   "%state_load_28 = load i4 %state_addr_52" [Downloads/aes_axis.cpp:585]   --->   Operation 51 'load' 'state_load_28' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_8 : Operation 52 [2/2] (2.32ns)   --->   "%state_load_29 = load i4 %state_addr_53" [Downloads/aes_axis.cpp:585]   --->   Operation 52 'load' 'state_load_29' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_8 : Operation 53 [2/2] (2.32ns)   --->   "%state_load = load i4 %state_addr_50" [Downloads/aes_axis.cpp:585]   --->   Operation 53 'load' 'state_load' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+
+State 9 <SV = 8> <Delay = 2.32>
+ST_9 : Operation 54 [1/2] (2.32ns)   --->   "%state_load_29 = load i4 %state_addr_53" [Downloads/aes_axis.cpp:585]   --->   Operation 54 'load' 'state_load_29' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_9 : Operation 55 [1/2] (2.32ns)   --->   "%state_load = load i4 %state_addr_50" [Downloads/aes_axis.cpp:585]   --->   Operation 55 'load' 'state_load' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_9 : Operation 56 [1/1] (0.00ns)   --->   "%state_addr_55 = getelementptr i8 %state, i64 0, i64 15"   --->   Operation 56 'getelementptr' 'state_addr_55' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 57 [1/1] (0.00ns)   --->   "%state_addr_56 = getelementptr i8 %state, i64 0, i64 14" [Downloads/aes_axis.cpp:585]   --->   Operation 57 'getelementptr' 'state_addr_56' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 58 [2/2] (2.32ns)   --->   "%state_load_30 = load i4 %state_addr_55" [Downloads/aes_axis.cpp:582]   --->   Operation 58 'load' 'state_load_30' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_9 : Operation 59 [2/2] (2.32ns)   --->   "%state_load_31 = load i4 %state_addr_56" [Downloads/aes_axis.cpp:585]   --->   Operation 59 'load' 'state_load_31' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+
+State 10 <SV = 9> <Delay = 2.32>
+ST_10 : Operation 60 [1/1] (0.00ns)   --->   "%state_addr_54 = getelementptr i8 %state, i64 0, i64 12" [Downloads/aes_axis.cpp:569]   --->   Operation 60 'getelementptr' 'state_addr_54' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 61 [1/1] (0.00ns)   --->   "%state_addr_57 = getelementptr i8 %state, i64 0, i64 13"   --->   Operation 61 'getelementptr' 'state_addr_57' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 62 [1/2] (2.32ns)   --->   "%state_load_30 = load i4 %state_addr_55" [Downloads/aes_axis.cpp:582]   --->   Operation 62 'load' 'state_load_30' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_10 : Operation 63 [1/2] (2.32ns)   --->   "%state_load_31 = load i4 %state_addr_56" [Downloads/aes_axis.cpp:585]   --->   Operation 63 'load' 'state_load_31' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_10 : Operation 64 [2/2] (2.32ns)   --->   "%state_load_32 = load i4 %state_addr_57" [Downloads/aes_axis.cpp:585]   --->   Operation 64 'load' 'state_load_32' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_10 : Operation 65 [2/2] (2.32ns)   --->   "%state_load_49 = load i4 %state_addr_54" [Downloads/aes_axis.cpp:585]   --->   Operation 65 'load' 'state_load_49' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+
+State 11 <SV = 10> <Delay = 3.91>
+ST_11 : Operation 66 [2/2] (0.00ns)   --->   "%call_ln0 = call void @aes_invMain_Pipeline_createRoundKeyLoop1_createRoundKeyLoop24, i8 %expandedKey_0, i8 %expandedKey_1, i8 %roundKey"   --->   Operation 66 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_11 : Operation 67 [2/2] (1.58ns)   --->   "%call_ln585 = call void @aes_invMain_Pipeline_invShiftRowLoop1, i8 %state_load, i8 %state_load_29, i8 %state_load_28, i8 %state_load_27, i8 %num_assign_62_loc, i8 %num_assign_63_loc, i8 %num_assign_64_loc, i8 %tmp_127_loc" [Downloads/aes_axis.cpp:585]   --->   Operation 67 'call' 'call_ln585' <Predicate = true> <Delay = 1.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_11 : Operation 68 [1/2] (2.32ns)   --->   "%state_load_32 = load i4 %state_addr_57" [Downloads/aes_axis.cpp:585]   --->   Operation 68 'load' 'state_load_32' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_11 : Operation 69 [1/2] (2.32ns)   --->   "%state_load_49 = load i4 %state_addr_54" [Downloads/aes_axis.cpp:585]   --->   Operation 69 'load' 'state_load_49' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_11 : Operation 70 [2/2] (1.58ns)   --->   "%call_ln585 = call void @aes_invMain_Pipeline_invShiftRowLoop15, i8 %state_load_49, i8 %state_load_32, i8 %state_load_31, i8 %state_load_30, i8 %num_assign_66_loc, i8 %num_assign_67_loc, i8 %num_assign_68_loc, i8 %tmp_128_loc" [Downloads/aes_axis.cpp:585]   --->   Operation 70 'call' 'call_ln585' <Predicate = true> <Delay = 1.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 12 <SV = 11> <Delay = 0.95>
+ST_12 : Operation 71 [1/2] (0.00ns)   --->   "%call_ln0 = call void @aes_invMain_Pipeline_createRoundKeyLoop1_createRoundKeyLoop24, i8 %expandedKey_0, i8 %expandedKey_1, i8 %roundKey"   --->   Operation 71 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_12 : Operation 72 [1/2] (0.95ns)   --->   "%call_ln585 = call void @aes_invMain_Pipeline_invShiftRowLoop1, i8 %state_load, i8 %state_load_29, i8 %state_load_28, i8 %state_load_27, i8 %num_assign_62_loc, i8 %num_assign_63_loc, i8 %num_assign_64_loc, i8 %tmp_127_loc" [Downloads/aes_axis.cpp:585]   --->   Operation 72 'call' 'call_ln585' <Predicate = true> <Delay = 0.95> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_12 : Operation 73 [1/2] (0.95ns)   --->   "%call_ln585 = call void @aes_invMain_Pipeline_invShiftRowLoop15, i8 %state_load_49, i8 %state_load_32, i8 %state_load_31, i8 %state_load_30, i8 %num_assign_66_loc, i8 %num_assign_67_loc, i8 %num_assign_68_loc, i8 %tmp_128_loc" [Downloads/aes_axis.cpp:585]   --->   Operation 73 'call' 'call_ln585' <Predicate = true> <Delay = 0.95> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 13 <SV = 12> <Delay = 3.25>
+ST_13 : Operation 74 [1/1] (0.00ns)   --->   "%state_addr_47 = getelementptr i8 %state, i64 0, i64 7"   --->   Operation 74 'getelementptr' 'state_addr_47' <Predicate = true> <Delay = 0.00>
+ST_13 : Operation 75 [1/1] (0.00ns)   --->   "%state_addr_48 = getelementptr i8 %state, i64 0, i64 6" [Downloads/aes_axis.cpp:585]   --->   Operation 75 'getelementptr' 'state_addr_48' <Predicate = true> <Delay = 0.00>
+ST_13 : Operation 76 [2/2] (2.32ns)   --->   "%tmp = load i4 %state_addr_47" [Downloads/aes_axis.cpp:582]   --->   Operation 76 'load' 'tmp' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_13 : Operation 77 [2/2] (2.32ns)   --->   "%state_load_46 = load i4 %state_addr_48" [Downloads/aes_axis.cpp:585]   --->   Operation 77 'load' 'state_load_46' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_13 : Operation 78 [1/1] (0.00ns)   --->   "%num_assign_62_loc_load = load i8 %num_assign_62_loc"   --->   Operation 78 'load' 'num_assign_62_loc_load' <Predicate = true> <Delay = 0.00>
+ST_13 : Operation 79 [1/1] (0.00ns)   --->   "%num_assign_63_loc_load = load i8 %num_assign_63_loc"   --->   Operation 79 'load' 'num_assign_63_loc_load' <Predicate = true> <Delay = 0.00>
+ST_13 : Operation 80 [1/1] (0.00ns)   --->   "%zext_ln148_23 = zext i8 %num_assign_62_loc_load" [Downloads/aes_axis.cpp:148]   --->   Operation 80 'zext' 'zext_ln148_23' <Predicate = true> <Delay = 0.00>
+ST_13 : Operation 81 [1/1] (0.00ns)   --->   "%rsbox_addr_23 = getelementptr i8 %rsbox, i64 0, i64 %zext_ln148_23" [Downloads/aes_axis.cpp:148]   --->   Operation 81 'getelementptr' 'rsbox_addr_23' <Predicate = true> <Delay = 0.00>
+ST_13 : Operation 82 [2/2] (3.25ns)   --->   "%rsbox_load_23 = load i8 %rsbox_addr_23" [Downloads/aes_axis.cpp:148]   --->   Operation 82 'load' 'rsbox_load_23' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM_2P">   --->   Core 99 'ROM_2P' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 2> <Width = 8> <Depth = 256> <ROM>
+ST_13 : Operation 83 [1/1] (0.00ns)   --->   "%zext_ln148_24 = zext i8 %num_assign_63_loc_load" [Downloads/aes_axis.cpp:148]   --->   Operation 83 'zext' 'zext_ln148_24' <Predicate = true> <Delay = 0.00>
+ST_13 : Operation 84 [1/1] (0.00ns)   --->   "%rsbox_addr_24 = getelementptr i8 %rsbox, i64 0, i64 %zext_ln148_24" [Downloads/aes_axis.cpp:148]   --->   Operation 84 'getelementptr' 'rsbox_addr_24' <Predicate = true> <Delay = 0.00>
+ST_13 : Operation 85 [2/2] (3.25ns)   --->   "%rsbox_load_24 = load i8 %rsbox_addr_24" [Downloads/aes_axis.cpp:148]   --->   Operation 85 'load' 'rsbox_load_24' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM_2P">   --->   Core 99 'ROM_2P' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 2> <Width = 8> <Depth = 256> <ROM>
+
+State 14 <SV = 13> <Delay = 5.57>
+ST_14 : Operation 86 [1/1] (0.00ns)   --->   "%state_addr_46 = getelementptr i8 %state, i64 0, i64 4" [Downloads/aes_axis.cpp:569]   --->   Operation 86 'getelementptr' 'state_addr_46' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 87 [1/1] (0.00ns)   --->   "%state_addr_49 = getelementptr i8 %state, i64 0, i64 5"   --->   Operation 87 'getelementptr' 'state_addr_49' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 88 [1/2] (2.32ns)   --->   "%tmp = load i4 %state_addr_47" [Downloads/aes_axis.cpp:582]   --->   Operation 88 'load' 'tmp' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_14 : Operation 89 [1/2] (2.32ns)   --->   "%state_load_46 = load i4 %state_addr_48" [Downloads/aes_axis.cpp:585]   --->   Operation 89 'load' 'state_load_46' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_14 : Operation 90 [2/2] (2.32ns)   --->   "%state_load_47 = load i4 %state_addr_49" [Downloads/aes_axis.cpp:585]   --->   Operation 90 'load' 'state_load_47' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_14 : Operation 91 [2/2] (2.32ns)   --->   "%state_load_48 = load i4 %state_addr_46" [Downloads/aes_axis.cpp:585]   --->   Operation 91 'load' 'state_load_48' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_14 : Operation 92 [1/1] (0.00ns)   --->   "%zext_ln148_19 = zext i8 %tmp" [Downloads/aes_axis.cpp:148]   --->   Operation 92 'zext' 'zext_ln148_19' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 93 [1/1] (0.00ns)   --->   "%rsbox_addr_19 = getelementptr i8 %rsbox, i64 0, i64 %zext_ln148_19" [Downloads/aes_axis.cpp:148]   --->   Operation 93 'getelementptr' 'rsbox_addr_19' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 94 [2/2] (3.25ns)   --->   "%rsbox_load_19 = load i8 %rsbox_addr_19" [Downloads/aes_axis.cpp:148]   --->   Operation 94 'load' 'rsbox_load_19' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM_2P">   --->   Core 99 'ROM_2P' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 2> <Width = 8> <Depth = 256> <ROM>
+ST_14 : Operation 95 [1/1] (0.00ns)   --->   "%zext_ln148_22 = zext i8 %state_load_46" [Downloads/aes_axis.cpp:148]   --->   Operation 95 'zext' 'zext_ln148_22' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 96 [1/1] (0.00ns)   --->   "%rsbox_addr_22 = getelementptr i8 %rsbox, i64 0, i64 %zext_ln148_22" [Downloads/aes_axis.cpp:148]   --->   Operation 96 'getelementptr' 'rsbox_addr_22' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 97 [2/2] (3.25ns)   --->   "%rsbox_load_22 = load i8 %rsbox_addr_22" [Downloads/aes_axis.cpp:148]   --->   Operation 97 'load' 'rsbox_load_22' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM_2P">   --->   Core 99 'ROM_2P' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 2> <Width = 8> <Depth = 256> <ROM>
+ST_14 : Operation 98 [1/2] (3.25ns)   --->   "%rsbox_load_23 = load i8 %rsbox_addr_23" [Downloads/aes_axis.cpp:148]   --->   Operation 98 'load' 'rsbox_load_23' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM_2P">   --->   Core 99 'ROM_2P' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 2> <Width = 8> <Depth = 256> <ROM>
+ST_14 : Operation 99 [1/2] (3.25ns)   --->   "%rsbox_load_24 = load i8 %rsbox_addr_24" [Downloads/aes_axis.cpp:148]   --->   Operation 99 'load' 'rsbox_load_24' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM_2P">   --->   Core 99 'ROM_2P' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 2> <Width = 8> <Depth = 256> <ROM>
+
+State 15 <SV = 14> <Delay = 5.57>
+ST_15 : Operation 100 [1/1] (0.00ns)   --->   "%state_addr = getelementptr i8 %state, i64 0, i64 0" [Downloads/aes_axis.cpp:337]   --->   Operation 100 'getelementptr' 'state_addr' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 101 [1/2] (2.32ns)   --->   "%state_load_47 = load i4 %state_addr_49" [Downloads/aes_axis.cpp:585]   --->   Operation 101 'load' 'state_load_47' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_15 : Operation 102 [1/2] (2.32ns)   --->   "%state_load_48 = load i4 %state_addr_46" [Downloads/aes_axis.cpp:585]   --->   Operation 102 'load' 'state_load_48' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_15 : Operation 103 [2/2] (2.32ns)   --->   "%state_load_50 = load i4 %state_addr" [Downloads/aes_axis.cpp:559]   --->   Operation 103 'load' 'state_load_50' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_15 : Operation 104 [1/1] (0.00ns)   --->   "%state_addr_58 = getelementptr i8 %state, i64 0, i64 1" [Downloads/aes_axis.cpp:559]   --->   Operation 104 'getelementptr' 'state_addr_58' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 105 [2/2] (2.32ns)   --->   "%state_load_51 = load i4 %state_addr_58" [Downloads/aes_axis.cpp:559]   --->   Operation 105 'load' 'state_load_51' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_15 : Operation 106 [1/2] (3.25ns)   --->   "%rsbox_load_19 = load i8 %rsbox_addr_19" [Downloads/aes_axis.cpp:148]   --->   Operation 106 'load' 'rsbox_load_19' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM_2P">   --->   Core 99 'ROM_2P' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 2> <Width = 8> <Depth = 256> <ROM>
+ST_15 : Operation 107 [1/1] (0.00ns)   --->   "%zext_ln148_20 = zext i8 %state_load_48" [Downloads/aes_axis.cpp:148]   --->   Operation 107 'zext' 'zext_ln148_20' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 108 [1/1] (0.00ns)   --->   "%rsbox_addr_20 = getelementptr i8 %rsbox, i64 0, i64 %zext_ln148_20" [Downloads/aes_axis.cpp:148]   --->   Operation 108 'getelementptr' 'rsbox_addr_20' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 109 [2/2] (3.25ns)   --->   "%rsbox_load_20 = load i8 %rsbox_addr_20" [Downloads/aes_axis.cpp:148]   --->   Operation 109 'load' 'rsbox_load_20' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM_2P">   --->   Core 99 'ROM_2P' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 2> <Width = 8> <Depth = 256> <ROM>
+ST_15 : Operation 110 [1/1] (0.00ns)   --->   "%zext_ln148_21 = zext i8 %state_load_47" [Downloads/aes_axis.cpp:148]   --->   Operation 110 'zext' 'zext_ln148_21' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 111 [1/1] (0.00ns)   --->   "%rsbox_addr_21 = getelementptr i8 %rsbox, i64 0, i64 %zext_ln148_21" [Downloads/aes_axis.cpp:148]   --->   Operation 111 'getelementptr' 'rsbox_addr_21' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 112 [2/2] (3.25ns)   --->   "%rsbox_load_21 = load i8 %rsbox_addr_21" [Downloads/aes_axis.cpp:148]   --->   Operation 112 'load' 'rsbox_load_21' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM_2P">   --->   Core 99 'ROM_2P' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 2> <Width = 8> <Depth = 256> <ROM>
+ST_15 : Operation 113 [1/2] (3.25ns)   --->   "%rsbox_load_22 = load i8 %rsbox_addr_22" [Downloads/aes_axis.cpp:148]   --->   Operation 113 'load' 'rsbox_load_22' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM_2P">   --->   Core 99 'ROM_2P' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 2> <Width = 8> <Depth = 256> <ROM>
+
+State 16 <SV = 15> <Delay = 5.57>
+ST_16 : Operation 114 [1/2] (2.32ns)   --->   "%state_load_50 = load i4 %state_addr" [Downloads/aes_axis.cpp:559]   --->   Operation 114 'load' 'state_load_50' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_16 : Operation 115 [1/1] (0.00ns)   --->   "%zext_ln148 = zext i8 %state_load_50" [Downloads/aes_axis.cpp:148]   --->   Operation 115 'zext' 'zext_ln148' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 116 [1/1] (0.00ns)   --->   "%rsbox_addr = getelementptr i8 %rsbox, i64 0, i64 %zext_ln148" [Downloads/aes_axis.cpp:148]   --->   Operation 116 'getelementptr' 'rsbox_addr' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 117 [2/2] (3.25ns)   --->   "%rsbox_load = load i8 %rsbox_addr" [Downloads/aes_axis.cpp:148]   --->   Operation 117 'load' 'rsbox_load' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM_2P">   --->   Core 99 'ROM_2P' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 2> <Width = 8> <Depth = 256> <ROM>
+ST_16 : Operation 118 [1/2] (2.32ns)   --->   "%state_load_51 = load i4 %state_addr_58" [Downloads/aes_axis.cpp:559]   --->   Operation 118 'load' 'state_load_51' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_16 : Operation 119 [1/1] (0.00ns)   --->   "%zext_ln148_16 = zext i8 %state_load_51" [Downloads/aes_axis.cpp:148]   --->   Operation 119 'zext' 'zext_ln148_16' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 120 [1/1] (0.00ns)   --->   "%rsbox_addr_16 = getelementptr i8 %rsbox, i64 0, i64 %zext_ln148_16" [Downloads/aes_axis.cpp:148]   --->   Operation 120 'getelementptr' 'rsbox_addr_16' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 121 [2/2] (3.25ns)   --->   "%rsbox_load_16 = load i8 %rsbox_addr_16" [Downloads/aes_axis.cpp:148]   --->   Operation 121 'load' 'rsbox_load_16' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM_2P">   --->   Core 99 'ROM_2P' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 2> <Width = 8> <Depth = 256> <ROM>
+ST_16 : Operation 122 [1/1] (0.00ns)   --->   "%state_addr_59 = getelementptr i8 %state, i64 0, i64 2" [Downloads/aes_axis.cpp:559]   --->   Operation 122 'getelementptr' 'state_addr_59' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 123 [2/2] (2.32ns)   --->   "%state_load_52 = load i4 %state_addr_59" [Downloads/aes_axis.cpp:559]   --->   Operation 123 'load' 'state_load_52' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_16 : Operation 124 [1/1] (0.00ns)   --->   "%state_addr_60 = getelementptr i8 %state, i64 0, i64 3" [Downloads/aes_axis.cpp:559]   --->   Operation 124 'getelementptr' 'state_addr_60' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 125 [2/2] (2.32ns)   --->   "%state_load_53 = load i4 %state_addr_60" [Downloads/aes_axis.cpp:559]   --->   Operation 125 'load' 'state_load_53' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_16 : Operation 126 [1/2] (3.25ns)   --->   "%rsbox_load_20 = load i8 %rsbox_addr_20" [Downloads/aes_axis.cpp:148]   --->   Operation 126 'load' 'rsbox_load_20' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM_2P">   --->   Core 99 'ROM_2P' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 2> <Width = 8> <Depth = 256> <ROM>
+ST_16 : Operation 127 [1/2] (3.25ns)   --->   "%rsbox_load_21 = load i8 %rsbox_addr_21" [Downloads/aes_axis.cpp:148]   --->   Operation 127 'load' 'rsbox_load_21' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM_2P">   --->   Core 99 'ROM_2P' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 2> <Width = 8> <Depth = 256> <ROM>
+
+State 17 <SV = 16> <Delay = 5.57>
+ST_17 : Operation 128 [1/2] (3.25ns)   --->   "%rsbox_load = load i8 %rsbox_addr" [Downloads/aes_axis.cpp:148]   --->   Operation 128 'load' 'rsbox_load' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM_2P">   --->   Core 99 'ROM_2P' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 2> <Width = 8> <Depth = 256> <ROM>
+ST_17 : Operation 129 [1/1] (2.32ns)   --->   "%store_ln559 = store i8 %rsbox_load, i4 %state_addr" [Downloads/aes_axis.cpp:559]   --->   Operation 129 'store' 'store_ln559' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_17 : Operation 130 [1/2] (3.25ns)   --->   "%rsbox_load_16 = load i8 %rsbox_addr_16" [Downloads/aes_axis.cpp:148]   --->   Operation 130 'load' 'rsbox_load_16' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM_2P">   --->   Core 99 'ROM_2P' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 2> <Width = 8> <Depth = 256> <ROM>
+ST_17 : Operation 131 [1/1] (2.32ns)   --->   "%store_ln559 = store i8 %rsbox_load_16, i4 %state_addr_58" [Downloads/aes_axis.cpp:559]   --->   Operation 131 'store' 'store_ln559' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_17 : Operation 132 [1/2] (2.32ns)   --->   "%state_load_52 = load i4 %state_addr_59" [Downloads/aes_axis.cpp:559]   --->   Operation 132 'load' 'state_load_52' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_17 : Operation 133 [1/1] (0.00ns)   --->   "%zext_ln148_17 = zext i8 %state_load_52" [Downloads/aes_axis.cpp:148]   --->   Operation 133 'zext' 'zext_ln148_17' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 134 [1/1] (0.00ns)   --->   "%rsbox_addr_17 = getelementptr i8 %rsbox, i64 0, i64 %zext_ln148_17" [Downloads/aes_axis.cpp:148]   --->   Operation 134 'getelementptr' 'rsbox_addr_17' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 135 [2/2] (3.25ns)   --->   "%rsbox_load_17 = load i8 %rsbox_addr_17" [Downloads/aes_axis.cpp:148]   --->   Operation 135 'load' 'rsbox_load_17' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM_2P">   --->   Core 99 'ROM_2P' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 2> <Width = 8> <Depth = 256> <ROM>
+ST_17 : Operation 136 [1/2] (2.32ns)   --->   "%state_load_53 = load i4 %state_addr_60" [Downloads/aes_axis.cpp:559]   --->   Operation 136 'load' 'state_load_53' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_17 : Operation 137 [1/1] (0.00ns)   --->   "%zext_ln148_18 = zext i8 %state_load_53" [Downloads/aes_axis.cpp:148]   --->   Operation 137 'zext' 'zext_ln148_18' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 138 [1/1] (0.00ns)   --->   "%rsbox_addr_18 = getelementptr i8 %rsbox, i64 0, i64 %zext_ln148_18" [Downloads/aes_axis.cpp:148]   --->   Operation 138 'getelementptr' 'rsbox_addr_18' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 139 [2/2] (3.25ns)   --->   "%rsbox_load_18 = load i8 %rsbox_addr_18" [Downloads/aes_axis.cpp:148]   --->   Operation 139 'load' 'rsbox_load_18' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM_2P">   --->   Core 99 'ROM_2P' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 2> <Width = 8> <Depth = 256> <ROM>
+
+State 18 <SV = 17> <Delay = 5.57>
+ST_18 : Operation 140 [1/2] (3.25ns)   --->   "%rsbox_load_17 = load i8 %rsbox_addr_17" [Downloads/aes_axis.cpp:148]   --->   Operation 140 'load' 'rsbox_load_17' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM_2P">   --->   Core 99 'ROM_2P' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 2> <Width = 8> <Depth = 256> <ROM>
+ST_18 : Operation 141 [1/1] (2.32ns)   --->   "%store_ln559 = store i8 %rsbox_load_17, i4 %state_addr_59" [Downloads/aes_axis.cpp:559]   --->   Operation 141 'store' 'store_ln559' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_18 : Operation 142 [1/2] (3.25ns)   --->   "%rsbox_load_18 = load i8 %rsbox_addr_18" [Downloads/aes_axis.cpp:148]   --->   Operation 142 'load' 'rsbox_load_18' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM_2P">   --->   Core 99 'ROM_2P' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 2> <Width = 8> <Depth = 256> <ROM>
+ST_18 : Operation 143 [1/1] (2.32ns)   --->   "%store_ln559 = store i8 %rsbox_load_18, i4 %state_addr_60" [Downloads/aes_axis.cpp:559]   --->   Operation 143 'store' 'store_ln559' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+
+State 19 <SV = 18> <Delay = 2.32>
+ST_19 : Operation 144 [1/1] (2.32ns)   --->   "%store_ln559 = store i8 %rsbox_load_19, i4 %state_addr_46" [Downloads/aes_axis.cpp:559]   --->   Operation 144 'store' 'store_ln559' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_19 : Operation 145 [1/1] (2.32ns)   --->   "%store_ln559 = store i8 %rsbox_load_20, i4 %state_addr_49" [Downloads/aes_axis.cpp:559]   --->   Operation 145 'store' 'store_ln559' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+
+State 20 <SV = 19> <Delay = 2.32>
+ST_20 : Operation 146 [1/1] (2.32ns)   --->   "%store_ln559 = store i8 %rsbox_load_21, i4 %state_addr_48" [Downloads/aes_axis.cpp:559]   --->   Operation 146 'store' 'store_ln559' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_20 : Operation 147 [1/1] (2.32ns)   --->   "%store_ln559 = store i8 %rsbox_load_22, i4 %state_addr_47" [Downloads/aes_axis.cpp:559]   --->   Operation 147 'store' 'store_ln559' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+
+State 21 <SV = 20> <Delay = 3.25>
+ST_21 : Operation 148 [1/1] (0.00ns)   --->   "%num_assign_64_loc_load = load i8 %num_assign_64_loc"   --->   Operation 148 'load' 'num_assign_64_loc_load' <Predicate = true> <Delay = 0.00>
+ST_21 : Operation 149 [1/1] (0.00ns)   --->   "%tmp_127_loc_load = load i8 %tmp_127_loc"   --->   Operation 149 'load' 'tmp_127_loc_load' <Predicate = true> <Delay = 0.00>
+ST_21 : Operation 150 [1/1] (2.32ns)   --->   "%store_ln559 = store i8 %rsbox_load_23, i4 %state_addr_50" [Downloads/aes_axis.cpp:559]   --->   Operation 150 'store' 'store_ln559' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_21 : Operation 151 [1/1] (2.32ns)   --->   "%store_ln559 = store i8 %rsbox_load_24, i4 %state_addr_53" [Downloads/aes_axis.cpp:559]   --->   Operation 151 'store' 'store_ln559' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_21 : Operation 152 [1/1] (0.00ns)   --->   "%zext_ln148_25 = zext i8 %num_assign_64_loc_load" [Downloads/aes_axis.cpp:148]   --->   Operation 152 'zext' 'zext_ln148_25' <Predicate = true> <Delay = 0.00>
+ST_21 : Operation 153 [1/1] (0.00ns)   --->   "%rsbox_addr_25 = getelementptr i8 %rsbox, i64 0, i64 %zext_ln148_25" [Downloads/aes_axis.cpp:148]   --->   Operation 153 'getelementptr' 'rsbox_addr_25' <Predicate = true> <Delay = 0.00>
+ST_21 : Operation 154 [2/2] (3.25ns)   --->   "%rsbox_load_25 = load i8 %rsbox_addr_25" [Downloads/aes_axis.cpp:148]   --->   Operation 154 'load' 'rsbox_load_25' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM_2P">   --->   Core 99 'ROM_2P' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 2> <Width = 8> <Depth = 256> <ROM>
+ST_21 : Operation 155 [1/1] (0.00ns)   --->   "%zext_ln148_26 = zext i8 %tmp_127_loc_load" [Downloads/aes_axis.cpp:148]   --->   Operation 155 'zext' 'zext_ln148_26' <Predicate = true> <Delay = 0.00>
+ST_21 : Operation 156 [1/1] (0.00ns)   --->   "%rsbox_addr_26 = getelementptr i8 %rsbox, i64 0, i64 %zext_ln148_26" [Downloads/aes_axis.cpp:148]   --->   Operation 156 'getelementptr' 'rsbox_addr_26' <Predicate = true> <Delay = 0.00>
+ST_21 : Operation 157 [2/2] (3.25ns)   --->   "%rsbox_load_26 = load i8 %rsbox_addr_26" [Downloads/aes_axis.cpp:148]   --->   Operation 157 'load' 'rsbox_load_26' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM_2P">   --->   Core 99 'ROM_2P' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 2> <Width = 8> <Depth = 256> <ROM>
+
+State 22 <SV = 21> <Delay = 5.57>
+ST_22 : Operation 158 [1/1] (0.00ns)   --->   "%num_assign_66_loc_load = load i8 %num_assign_66_loc"   --->   Operation 158 'load' 'num_assign_66_loc_load' <Predicate = true> <Delay = 0.00>
+ST_22 : Operation 159 [1/1] (0.00ns)   --->   "%num_assign_67_loc_load = load i8 %num_assign_67_loc"   --->   Operation 159 'load' 'num_assign_67_loc_load' <Predicate = true> <Delay = 0.00>
+ST_22 : Operation 160 [1/2] (3.25ns)   --->   "%rsbox_load_25 = load i8 %rsbox_addr_25" [Downloads/aes_axis.cpp:148]   --->   Operation 160 'load' 'rsbox_load_25' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM_2P">   --->   Core 99 'ROM_2P' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 2> <Width = 8> <Depth = 256> <ROM>
+ST_22 : Operation 161 [1/1] (2.32ns)   --->   "%store_ln559 = store i8 %rsbox_load_25, i4 %state_addr_52" [Downloads/aes_axis.cpp:559]   --->   Operation 161 'store' 'store_ln559' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_22 : Operation 162 [1/2] (3.25ns)   --->   "%rsbox_load_26 = load i8 %rsbox_addr_26" [Downloads/aes_axis.cpp:148]   --->   Operation 162 'load' 'rsbox_load_26' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM_2P">   --->   Core 99 'ROM_2P' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 2> <Width = 8> <Depth = 256> <ROM>
+ST_22 : Operation 163 [1/1] (2.32ns)   --->   "%store_ln559 = store i8 %rsbox_load_26, i4 %state_addr_51" [Downloads/aes_axis.cpp:559]   --->   Operation 163 'store' 'store_ln559' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_22 : Operation 164 [1/1] (0.00ns)   --->   "%zext_ln148_27 = zext i8 %num_assign_66_loc_load" [Downloads/aes_axis.cpp:148]   --->   Operation 164 'zext' 'zext_ln148_27' <Predicate = true> <Delay = 0.00>
+ST_22 : Operation 165 [1/1] (0.00ns)   --->   "%rsbox_addr_27 = getelementptr i8 %rsbox, i64 0, i64 %zext_ln148_27" [Downloads/aes_axis.cpp:148]   --->   Operation 165 'getelementptr' 'rsbox_addr_27' <Predicate = true> <Delay = 0.00>
+ST_22 : Operation 166 [2/2] (3.25ns)   --->   "%rsbox_load_27 = load i8 %rsbox_addr_27" [Downloads/aes_axis.cpp:148]   --->   Operation 166 'load' 'rsbox_load_27' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM_2P">   --->   Core 99 'ROM_2P' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 2> <Width = 8> <Depth = 256> <ROM>
+ST_22 : Operation 167 [1/1] (0.00ns)   --->   "%zext_ln148_28 = zext i8 %num_assign_67_loc_load" [Downloads/aes_axis.cpp:148]   --->   Operation 167 'zext' 'zext_ln148_28' <Predicate = true> <Delay = 0.00>
+ST_22 : Operation 168 [1/1] (0.00ns)   --->   "%rsbox_addr_28 = getelementptr i8 %rsbox, i64 0, i64 %zext_ln148_28" [Downloads/aes_axis.cpp:148]   --->   Operation 168 'getelementptr' 'rsbox_addr_28' <Predicate = true> <Delay = 0.00>
+ST_22 : Operation 169 [2/2] (3.25ns)   --->   "%rsbox_load_28 = load i8 %rsbox_addr_28" [Downloads/aes_axis.cpp:148]   --->   Operation 169 'load' 'rsbox_load_28' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM_2P">   --->   Core 99 'ROM_2P' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 2> <Width = 8> <Depth = 256> <ROM>
+
+State 23 <SV = 22> <Delay = 5.57>
+ST_23 : Operation 170 [1/1] (0.00ns)   --->   "%num_assign_68_loc_load = load i8 %num_assign_68_loc"   --->   Operation 170 'load' 'num_assign_68_loc_load' <Predicate = true> <Delay = 0.00>
+ST_23 : Operation 171 [1/1] (0.00ns)   --->   "%tmp_128_loc_load = load i8 %tmp_128_loc"   --->   Operation 171 'load' 'tmp_128_loc_load' <Predicate = true> <Delay = 0.00>
+ST_23 : Operation 172 [1/2] (3.25ns)   --->   "%rsbox_load_27 = load i8 %rsbox_addr_27" [Downloads/aes_axis.cpp:148]   --->   Operation 172 'load' 'rsbox_load_27' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM_2P">   --->   Core 99 'ROM_2P' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 2> <Width = 8> <Depth = 256> <ROM>
+ST_23 : Operation 173 [1/1] (2.32ns)   --->   "%store_ln559 = store i8 %rsbox_load_27, i4 %state_addr_54" [Downloads/aes_axis.cpp:559]   --->   Operation 173 'store' 'store_ln559' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_23 : Operation 174 [1/2] (3.25ns)   --->   "%rsbox_load_28 = load i8 %rsbox_addr_28" [Downloads/aes_axis.cpp:148]   --->   Operation 174 'load' 'rsbox_load_28' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM_2P">   --->   Core 99 'ROM_2P' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 2> <Width = 8> <Depth = 256> <ROM>
+ST_23 : Operation 175 [1/1] (2.32ns)   --->   "%store_ln559 = store i8 %rsbox_load_28, i4 %state_addr_57" [Downloads/aes_axis.cpp:559]   --->   Operation 175 'store' 'store_ln559' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_23 : Operation 176 [1/1] (0.00ns)   --->   "%zext_ln148_29 = zext i8 %num_assign_68_loc_load" [Downloads/aes_axis.cpp:148]   --->   Operation 176 'zext' 'zext_ln148_29' <Predicate = true> <Delay = 0.00>
+ST_23 : Operation 177 [1/1] (0.00ns)   --->   "%rsbox_addr_29 = getelementptr i8 %rsbox, i64 0, i64 %zext_ln148_29" [Downloads/aes_axis.cpp:148]   --->   Operation 177 'getelementptr' 'rsbox_addr_29' <Predicate = true> <Delay = 0.00>
+ST_23 : Operation 178 [2/2] (3.25ns)   --->   "%rsbox_load_29 = load i8 %rsbox_addr_29" [Downloads/aes_axis.cpp:148]   --->   Operation 178 'load' 'rsbox_load_29' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM_2P">   --->   Core 99 'ROM_2P' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 2> <Width = 8> <Depth = 256> <ROM>
+ST_23 : Operation 179 [1/1] (0.00ns)   --->   "%zext_ln148_30 = zext i8 %tmp_128_loc_load" [Downloads/aes_axis.cpp:148]   --->   Operation 179 'zext' 'zext_ln148_30' <Predicate = true> <Delay = 0.00>
+ST_23 : Operation 180 [1/1] (0.00ns)   --->   "%rsbox_addr_30 = getelementptr i8 %rsbox, i64 0, i64 %zext_ln148_30" [Downloads/aes_axis.cpp:148]   --->   Operation 180 'getelementptr' 'rsbox_addr_30' <Predicate = true> <Delay = 0.00>
+ST_23 : Operation 181 [2/2] (3.25ns)   --->   "%rsbox_load_30 = load i8 %rsbox_addr_30" [Downloads/aes_axis.cpp:148]   --->   Operation 181 'load' 'rsbox_load_30' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM_2P">   --->   Core 99 'ROM_2P' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 2> <Width = 8> <Depth = 256> <ROM>
+
+State 24 <SV = 23> <Delay = 5.57>
+ST_24 : Operation 182 [1/2] (3.25ns)   --->   "%rsbox_load_29 = load i8 %rsbox_addr_29" [Downloads/aes_axis.cpp:148]   --->   Operation 182 'load' 'rsbox_load_29' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM_2P">   --->   Core 99 'ROM_2P' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 2> <Width = 8> <Depth = 256> <ROM>
+ST_24 : Operation 183 [1/1] (2.32ns)   --->   "%store_ln559 = store i8 %rsbox_load_29, i4 %state_addr_56" [Downloads/aes_axis.cpp:559]   --->   Operation 183 'store' 'store_ln559' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_24 : Operation 184 [1/2] (3.25ns)   --->   "%rsbox_load_30 = load i8 %rsbox_addr_30" [Downloads/aes_axis.cpp:148]   --->   Operation 184 'load' 'rsbox_load_30' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM_2P">   --->   Core 99 'ROM_2P' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 2> <Width = 8> <Depth = 256> <ROM>
+ST_24 : Operation 185 [1/1] (2.32ns)   --->   "%store_ln559 = store i8 %rsbox_load_30, i4 %state_addr_55" [Downloads/aes_axis.cpp:559]   --->   Operation 185 'store' 'store_ln559' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+
+State 25 <SV = 24> <Delay = 0.00>
+ST_25 : Operation 186 [2/2] (0.00ns)   --->   "%call_ln0 = call void @aes_invMain_Pipeline_addRoundKeyLoop6, i8 %state, i8 %roundKey"   --->   Operation 186 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 26 <SV = 25> <Delay = 0.00>
+ST_26 : Operation 187 [1/1] (0.00ns)   --->   "%specmemcore_ln147 = specmemcore void @_ssdm_op_SpecMemCore, i8 %rsbox, i64 666, i64 216, i64 18446744073709551615" [Downloads/aes_axis.cpp:147]   --->   Operation 187 'specmemcore' 'specmemcore_ln147' <Predicate = true> <Delay = 0.00>
+ST_26 : Operation 188 [1/1] (0.00ns)   --->   "%specmemcore_ln147 = specmemcore void @_ssdm_op_SpecMemCore, i8 %rsbox, i64 666, i64 216, i64 18446744073709551615" [Downloads/aes_axis.cpp:147]   --->   Operation 188 'specmemcore' 'specmemcore_ln147' <Predicate = true> <Delay = 0.00>
+ST_26 : Operation 189 [1/1] (0.00ns)   --->   "%specmemcore_ln147 = specmemcore void @_ssdm_op_SpecMemCore, i8 %rsbox, i64 666, i64 216, i64 18446744073709551615" [Downloads/aes_axis.cpp:147]   --->   Operation 189 'specmemcore' 'specmemcore_ln147' <Predicate = true> <Delay = 0.00>
+ST_26 : Operation 190 [1/1] (0.00ns)   --->   "%specmemcore_ln147 = specmemcore void @_ssdm_op_SpecMemCore, i8 %rsbox, i64 666, i64 216, i64 18446744073709551615" [Downloads/aes_axis.cpp:147]   --->   Operation 190 'specmemcore' 'specmemcore_ln147' <Predicate = true> <Delay = 0.00>
+ST_26 : Operation 191 [1/1] (0.00ns)   --->   "%specmemcore_ln147 = specmemcore void @_ssdm_op_SpecMemCore, i8 %rsbox, i64 666, i64 216, i64 18446744073709551615" [Downloads/aes_axis.cpp:147]   --->   Operation 191 'specmemcore' 'specmemcore_ln147' <Predicate = true> <Delay = 0.00>
+ST_26 : Operation 192 [1/1] (0.00ns)   --->   "%specmemcore_ln147 = specmemcore void @_ssdm_op_SpecMemCore, i8 %rsbox, i64 666, i64 216, i64 18446744073709551615" [Downloads/aes_axis.cpp:147]   --->   Operation 192 'specmemcore' 'specmemcore_ln147' <Predicate = true> <Delay = 0.00>
+ST_26 : Operation 193 [1/1] (0.00ns)   --->   "%specmemcore_ln147 = specmemcore void @_ssdm_op_SpecMemCore, i8 %rsbox, i64 666, i64 216, i64 18446744073709551615" [Downloads/aes_axis.cpp:147]   --->   Operation 193 'specmemcore' 'specmemcore_ln147' <Predicate = true> <Delay = 0.00>
+ST_26 : Operation 194 [1/1] (0.00ns)   --->   "%specmemcore_ln147 = specmemcore void @_ssdm_op_SpecMemCore, i8 %rsbox, i64 666, i64 216, i64 18446744073709551615" [Downloads/aes_axis.cpp:147]   --->   Operation 194 'specmemcore' 'specmemcore_ln147' <Predicate = true> <Delay = 0.00>
+ST_26 : Operation 195 [1/1] (0.00ns)   --->   "%specmemcore_ln147 = specmemcore void @_ssdm_op_SpecMemCore, i8 %rsbox, i64 666, i64 216, i64 18446744073709551615" [Downloads/aes_axis.cpp:147]   --->   Operation 195 'specmemcore' 'specmemcore_ln147' <Predicate = true> <Delay = 0.00>
+ST_26 : Operation 196 [1/1] (0.00ns)   --->   "%specmemcore_ln147 = specmemcore void @_ssdm_op_SpecMemCore, i8 %rsbox, i64 666, i64 216, i64 18446744073709551615" [Downloads/aes_axis.cpp:147]   --->   Operation 196 'specmemcore' 'specmemcore_ln147' <Predicate = true> <Delay = 0.00>
+ST_26 : Operation 197 [1/1] (0.00ns)   --->   "%specmemcore_ln147 = specmemcore void @_ssdm_op_SpecMemCore, i8 %rsbox, i64 666, i64 216, i64 18446744073709551615" [Downloads/aes_axis.cpp:147]   --->   Operation 197 'specmemcore' 'specmemcore_ln147' <Predicate = true> <Delay = 0.00>
+ST_26 : Operation 198 [1/1] (0.00ns)   --->   "%specmemcore_ln147 = specmemcore void @_ssdm_op_SpecMemCore, i8 %rsbox, i64 666, i64 216, i64 18446744073709551615" [Downloads/aes_axis.cpp:147]   --->   Operation 198 'specmemcore' 'specmemcore_ln147' <Predicate = true> <Delay = 0.00>
+ST_26 : Operation 199 [1/1] (0.00ns)   --->   "%specmemcore_ln147 = specmemcore void @_ssdm_op_SpecMemCore, i8 %rsbox, i64 666, i64 216, i64 18446744073709551615" [Downloads/aes_axis.cpp:147]   --->   Operation 199 'specmemcore' 'specmemcore_ln147' <Predicate = true> <Delay = 0.00>
+ST_26 : Operation 200 [1/1] (0.00ns)   --->   "%specmemcore_ln147 = specmemcore void @_ssdm_op_SpecMemCore, i8 %rsbox, i64 666, i64 216, i64 18446744073709551615" [Downloads/aes_axis.cpp:147]   --->   Operation 200 'specmemcore' 'specmemcore_ln147' <Predicate = true> <Delay = 0.00>
+ST_26 : Operation 201 [1/1] (0.00ns)   --->   "%specmemcore_ln147 = specmemcore void @_ssdm_op_SpecMemCore, i8 %rsbox, i64 666, i64 216, i64 18446744073709551615" [Downloads/aes_axis.cpp:147]   --->   Operation 201 'specmemcore' 'specmemcore_ln147' <Predicate = true> <Delay = 0.00>
+ST_26 : Operation 202 [1/1] (0.00ns)   --->   "%specmemcore_ln147 = specmemcore void @_ssdm_op_SpecMemCore, i8 %rsbox, i64 666, i64 216, i64 18446744073709551615" [Downloads/aes_axis.cpp:147]   --->   Operation 202 'specmemcore' 'specmemcore_ln147' <Predicate = true> <Delay = 0.00>
+ST_26 : Operation 203 [1/2] (0.00ns)   --->   "%call_ln0 = call void @aes_invMain_Pipeline_addRoundKeyLoop6, i8 %state, i8 %roundKey"   --->   Operation 203 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_26 : Operation 204 [1/1] (0.00ns)   --->   "%ret_ln672 = ret" [Downloads/aes_axis.cpp:672]   --->   Operation 204 'ret' 'ret_ln672' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 2.7ns.
+
+ <State 1>: 4.24ns
+The critical path consists of the following:
+	wire read operation ('nbrRounds_read') on port 'nbrRounds' [6]  (0 ns)
+	'call' operation ('call_ln0') to 'aes_invMain_Pipeline_createRoundKeyLoop1_createRoundKeyLoop2' [17]  (4.24 ns)
+
+ <State 2>: 0ns
+The critical path consists of the following:
+
+ <State 3>: 0ns
+The critical path consists of the following:
+
+ <State 4>: 0ns
+The critical path consists of the following:
+
+ <State 5>: 6.69ns
+The critical path consists of the following:
+	'add' operation ('add_ln660', Downloads/aes_axis.cpp:660) [19]  (1.74 ns)
+	'call' operation ('call_ln660', Downloads/aes_axis.cpp:660) to 'aes_invMain_Pipeline_aesInvMainLoop' [20]  (4.96 ns)
+
+ <State 6>: 0ns
+The critical path consists of the following:
+
+ <State 7>: 2.32ns
+The critical path consists of the following:
+	'getelementptr' operation ('state_addr_51') [31]  (0 ns)
+	'load' operation ('state_load_27', Downloads/aes_axis.cpp:582) on array 'state' [34]  (2.32 ns)
+
+ <State 8>: 2.32ns
+The critical path consists of the following:
+	'load' operation ('state_load_27', Downloads/aes_axis.cpp:582) on array 'state' [34]  (2.32 ns)
+
+ <State 9>: 2.32ns
+The critical path consists of the following:
+	'load' operation ('state_load_29', Downloads/aes_axis.cpp:585) on array 'state' [36]  (2.32 ns)
+
+ <State 10>: 2.32ns
+The critical path consists of the following:
+	'load' operation ('state_load_30', Downloads/aes_axis.cpp:582) on array 'state' [47]  (2.32 ns)
+
+ <State 11>: 3.91ns
+The critical path consists of the following:
+	'load' operation ('state_load_32', Downloads/aes_axis.cpp:585) on array 'state' [49]  (2.32 ns)
+	'call' operation ('call_ln585', Downloads/aes_axis.cpp:585) to 'aes_invMain_Pipeline_invShiftRowLoop15' [51]  (1.59 ns)
+
+ <State 12>: 0.959ns
+The critical path consists of the following:
+	'call' operation ('call_ln585', Downloads/aes_axis.cpp:585) to 'aes_invMain_Pipeline_invShiftRowLoop1' [38]  (0.959 ns)
+
+ <State 13>: 3.25ns
+The critical path consists of the following:
+	'load' operation ('num_assign_62_loc_load') on local variable 'num_assign_62_loc' [39]  (0 ns)
+	'getelementptr' operation ('rsbox_addr_23', Downloads/aes_axis.cpp:148) [105]  (0 ns)
+	'load' operation ('rsbox_load_23', Downloads/aes_axis.cpp:148) on array 'rsbox' [106]  (3.25 ns)
+
+ <State 14>: 5.58ns
+The critical path consists of the following:
+	'load' operation ('tmp', Downloads/aes_axis.cpp:582) on array 'state' [26]  (2.32 ns)
+	'getelementptr' operation ('rsbox_addr_19', Downloads/aes_axis.cpp:148) [85]  (0 ns)
+	'load' operation ('rsbox_load_19', Downloads/aes_axis.cpp:148) on array 'rsbox' [86]  (3.25 ns)
+
+ <State 15>: 5.58ns
+The critical path consists of the following:
+	'load' operation ('num', Downloads/aes_axis.cpp:585) on array 'state' [29]  (2.32 ns)
+	'getelementptr' operation ('rsbox_addr_20', Downloads/aes_axis.cpp:148) [90]  (0 ns)
+	'load' operation ('rsbox_load_20', Downloads/aes_axis.cpp:148) on array 'rsbox' [91]  (3.25 ns)
+
+ <State 16>: 5.58ns
+The critical path consists of the following:
+	'load' operation ('num', Downloads/aes_axis.cpp:559) on array 'state' [56]  (2.32 ns)
+	'getelementptr' operation ('rsbox_addr', Downloads/aes_axis.cpp:148) [59]  (0 ns)
+	'load' operation ('rsbox_load', Downloads/aes_axis.cpp:148) on array 'rsbox' [60]  (3.25 ns)
+
+ <State 17>: 5.58ns
+The critical path consists of the following:
+	'load' operation ('rsbox_load', Downloads/aes_axis.cpp:148) on array 'rsbox' [60]  (3.25 ns)
+	'store' operation ('store_ln559', Downloads/aes_axis.cpp:559) of variable 'rsbox_load', Downloads/aes_axis.cpp:148 on array 'state' [61]  (2.32 ns)
+
+ <State 18>: 5.58ns
+The critical path consists of the following:
+	'load' operation ('rsbox_load_17', Downloads/aes_axis.cpp:148) on array 'rsbox' [74]  (3.25 ns)
+	'store' operation ('store_ln559', Downloads/aes_axis.cpp:559) of variable 'rsbox_load_17', Downloads/aes_axis.cpp:148 on array 'state' [75]  (2.32 ns)
+
+ <State 19>: 2.32ns
+The critical path consists of the following:
+	'store' operation ('store_ln559', Downloads/aes_axis.cpp:559) of variable 'rsbox_load_19', Downloads/aes_axis.cpp:148 on array 'state' [87]  (2.32 ns)
+
+ <State 20>: 2.32ns
+The critical path consists of the following:
+	'store' operation ('store_ln559', Downloads/aes_axis.cpp:559) of variable 'rsbox_load_21', Downloads/aes_axis.cpp:148 on array 'state' [97]  (2.32 ns)
+
+ <State 21>: 3.25ns
+The critical path consists of the following:
+	'load' operation ('num_assign_64_loc_load') on local variable 'num_assign_64_loc' [41]  (0 ns)
+	'getelementptr' operation ('rsbox_addr_25', Downloads/aes_axis.cpp:148) [115]  (0 ns)
+	'load' operation ('rsbox_load_25', Downloads/aes_axis.cpp:148) on array 'rsbox' [116]  (3.25 ns)
+
+ <State 22>: 5.58ns
+The critical path consists of the following:
+	'load' operation ('rsbox_load_25', Downloads/aes_axis.cpp:148) on array 'rsbox' [116]  (3.25 ns)
+	'store' operation ('store_ln559', Downloads/aes_axis.cpp:559) of variable 'rsbox_load_25', Downloads/aes_axis.cpp:148 on array 'state' [117]  (2.32 ns)
+
+ <State 23>: 5.58ns
+The critical path consists of the following:
+	'load' operation ('rsbox_load_27', Downloads/aes_axis.cpp:148) on array 'rsbox' [126]  (3.25 ns)
+	'store' operation ('store_ln559', Downloads/aes_axis.cpp:559) of variable 'rsbox_load_27', Downloads/aes_axis.cpp:148 on array 'state' [127]  (2.32 ns)
+
+ <State 24>: 5.58ns
+The critical path consists of the following:
+	'load' operation ('rsbox_load_29', Downloads/aes_axis.cpp:148) on array 'rsbox' [136]  (3.25 ns)
+	'store' operation ('store_ln559', Downloads/aes_axis.cpp:559) of variable 'rsbox_load_29', Downloads/aes_axis.cpp:148 on array 'state' [137]  (2.32 ns)
+
+ <State 25>: 0ns
+The critical path consists of the following:
+
+ <State 26>: 0ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+	State 19
+	State 20
+	State 21
+	State 22
+	State 23
+	State 24
+	State 25
+	State 26
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

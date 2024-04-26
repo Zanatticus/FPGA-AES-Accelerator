@@ -1,0 +1,93 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2022.1 (win64) Build 3526262 Mon Apr 18 15:48:16 MDT 2022
+| Date         : Thu Apr 25 15:51:05 2024
+| Host         : WFXA4BB6DBB3E15 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z020clg400-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'aes_0'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the upgrade of aes_0 (xilinx.com:hls:aes:1.0) from (Rev. 2113518545) to (Rev. 2113529816)
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Interface Information
+------------------------
+
+Detected external interface differences while upgrading 'aes_0'.
+
+
+-Upgrade has added interface 'interrupt' (xilinx.com:signal:interrupt:1.0)
+
+
+3. Connection Warnings
+----------------------
+
+Detected external port differences while upgrading 'aes_0'. These changes may impact your design.
+
+
+-Upgraded port 's_axi_CTRL_BUS_ARADDR' width 5 differs from original width 6
+
+-Upgraded port 's_axi_CTRL_BUS_AWADDR' width 5 differs from original width 6
+
+-Upgraded port 's_axi_control_ARADDR' width 6 differs from original width 5
+
+-Upgraded port 's_axi_control_AWADDR' width 6 differs from original width 5
+
+-Upgrade has added port 'interrupt'
+
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2022.1 (win64) Build 3526262 Mon Apr 18 15:48:16 MDT 2022
+| Date         : Thu Apr 25 15:51:04 2024
+| Host         : WFXA4BB6DBB3E15 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z020clg400-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'AES_PM_aes_0_3'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the upgrade of AES_PM_aes_0_3 (xilinx.com:hls:aes:1.0) from (Rev. 2113518545) to (Rev. 2113529816)
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Interface Information
+------------------------
+
+Detected external interface differences while upgrading 'AES_PM_aes_0_3'.
+
+
+-Upgrade has added interface 'interrupt' (xilinx.com:signal:interrupt:1.0)
+
+
+3. Connection Warnings
+----------------------
+
+Detected external port differences while upgrading 'AES_PM_aes_0_3'. These changes may impact your design.
+
+
+-Upgraded port 's_axi_CTRL_BUS_ARADDR' width 5 differs from original width 6
+
+-Upgraded port 's_axi_CTRL_BUS_AWADDR' width 5 differs from original width 6
+
+-Upgraded port 's_axi_control_ARADDR' width 6 differs from original width 5
+
+-Upgraded port 's_axi_control_AWADDR' width 6 differs from original width 5
+
+-Upgrade has added port 'interrupt'
+
+

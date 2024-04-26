@@ -1,0 +1,690 @@
+<xilinx:hls_fe_msgs>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_int_ref.h:724:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="and_reduce" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_int_ref.h:738:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="or_reduce" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_int_ref.h:752:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="xor_reduce" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:122:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="get_user_ptr" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:126:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="get_id_ptr" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:130:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="get_dest_ptr" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:160:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="get_strb_ptr" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:164:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="get_user_ptr" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:168:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="get_id_ptr" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:172:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="get_dest_ptr" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:178:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="get_data" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:182:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="get_keep" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:186:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="get_last" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:191:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="set_data" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:195:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="set_keep" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:199:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="set_last" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:203:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="keep_all" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:209:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="qdma_axis&lt;WData, 0, 0, 0&gt;" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:213:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="qdma_axis&lt;WData, 0, 0, 0&gt;" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:217:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="qdma_axis&lt;WData, 0, 0, 0&gt;" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:222:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="qdma_axis&lt;WData, 0, 0, 0&gt;" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:227:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="qdma_axis&lt;WData, 0, 0, 0&gt;" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:231:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="operator=" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:266:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="empty" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:273:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="full" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:281:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="read" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:291:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="read" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:302:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="write" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:312:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="read_nb" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:327:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="write_nb" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:363:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="empty" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:370:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="full" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:378:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="read" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:388:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="read" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:399:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="write" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:409:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="read_nb" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:425:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="write_nb" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="C:/Users/iqbal.ha/AES_PM/solution1/csynth.tcl:14:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="aes" ARG_PragmaIsValid="1" ARG_PragmaOptions="name=aes" ARG_PragmaType="top" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="Downloads/aes_axis.cpp:15:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="aes" ARG_PragmaIsValid="1" ARG_PragmaOptions="axis register both port=key_and_plaintext" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="Downloads/aes_axis.cpp:16:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="aes" ARG_PragmaIsValid="1" ARG_PragmaOptions="axis register both port=ciphertext_and_decryptedtext" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="Downloads/aes_axis.cpp:17:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="aes" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=mode" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="Downloads/aes_axis.cpp:18:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="aes" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=enable_out" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="Downloads/aes_axis.cpp:19:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="aes" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=power_reading_in" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="Downloads/aes_axis.cpp:20:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="aes" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=enable_in bundle=CTRL_BUS" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="Downloads/aes_axis.cpp:21:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="aes" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=power_reading_out bundle=CTRL_BUS" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="Downloads/aes_axis.cpp:22:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="aes" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=return bundle=CTRL_BUS" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="Downloads/aes_axis.cpp:66:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="aes" ARG_PragmaIsValid="1" ARG_PragmaOptions="min=1 max=1 avg=1" ARG_PragmaType="loop_tripcount" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="Downloads/aes_axis.cpp:70:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="aes" ARG_PragmaIsValid="1" ARG_PragmaOptions="min=16 max=32 avg=24" ARG_PragmaType="loop_tripcount" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="Downloads/aes_axis.cpp:138:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="getSBoxValue" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=sbox type=rom_2p" ARG_PragmaType="bind_storage" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="Downloads/aes_axis.cpp:147:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="getSBoxInvert" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=rsbox type=rom_2p" ARG_PragmaType="bind_storage" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="Downloads/aes_axis.cpp:166:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="rotate" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="Downloads/aes_axis.cpp:197:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="getRconValue" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=Rcon type=rom_2p" ARG_PragmaType="bind_storage" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="Downloads/aes_axis.cpp:212:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="core" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="Downloads/aes_axis.cpp:236:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="expandKey" ARG_PragmaIsValid="1" ARG_PragmaOptions="dim=1 type=complete variable=t" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="Downloads/aes_axis.cpp:242:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="expandKey" ARG_PragmaIsValid="1" ARG_PragmaOptions="min=16 max=32 avg=24" ARG_PragmaType="loop_tripcount" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="Downloads/aes_axis.cpp:243:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="expandKey" ARG_PragmaIsValid="1" ARG_PragmaOptions="target_ti=8" ARG_PragmaType="performance" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="Downloads/aes_axis.cpp:251:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="expandKey" ARG_PragmaIsValid="1" ARG_PragmaOptions="min=128 max=240 avg=192" ARG_PragmaType="loop_tripcount" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="Downloads/aes_axis.cpp:252:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="expandKey" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=12" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="Downloads/aes_axis.cpp:259:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="expandKey" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="Downloads/aes_axis.cpp:276:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="expandKey" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="Downloads/aes_axis.cpp:288:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="expandKey" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="Downloads/aes_axis.cpp:303:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="subBytes" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="Downloads/aes_axis.cpp:313:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="shiftRows" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="Downloads/aes_axis.cpp:326:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="shiftRow" ARG_PragmaIsValid="1" ARG_PragmaOptions="min=1 max=3 avg=2" ARG_PragmaType="loop_tripcount" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="Downloads/aes_axis.cpp:327:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="shiftRow" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=6" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="Downloads/aes_axis.cpp:373:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mixColumns" ARG_PragmaIsValid="1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="Downloads/aes_axis.cpp:399:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mixColumn" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="Downloads/aes_axis.cpp:441:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="createRoundKey" ARG_PragmaIsValid="1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="Downloads/aes_axis.cpp:459:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="aes_main" ARG_PragmaIsValid="1" ARG_PragmaOptions="min=9 max=13 avg=11" ARG_PragmaType="loop_tripcount" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="Downloads/aes_axis.cpp:460:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="aes_main" ARG_PragmaIsValid="1" ARG_PragmaOptions="target_ti=500" ARG_PragmaType="performance" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="Downloads/aes_axis.cpp:558:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="invSubBytes" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="Downloads/aes_axis.cpp:568:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="invShiftRows" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="Downloads/aes_axis.cpp:579:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="invShiftRow" ARG_PragmaIsValid="1" ARG_PragmaOptions="min=1 max=3 avg=2" ARG_PragmaType="loop_tripcount" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="Downloads/aes_axis.cpp:581:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="invShiftRow" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=5" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="Downloads/aes_axis.cpp:599:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="invMixColumns" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=6" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="Downloads/aes_axis.cpp:662:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="aes_invMain" ARG_PragmaIsValid="1" ARG_PragmaOptions="min=9 max=13 avg=11" ARG_PragmaType="loop_tripcount" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="Downloads/aes_axis.cpp:663:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="aes_invMain" ARG_PragmaIsValid="1" ARG_PragmaOptions="target_ti=600" ARG_PragmaType="performance" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:283:50" msg_body="Inlining function 'hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;::get_user_ptr()' into 'hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;::read(hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;&amp;)'">
+        <args Callee="hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;::get_user_ptr()" Caller="hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;::read(hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;&amp;)"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:286:25" msg_body="Inlining function 'hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;::get_dest_ptr()' into 'hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;::read(hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;&amp;)'">
+        <args Callee="hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;::get_dest_ptr()" Caller="hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;::read(hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;&amp;)"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:285:67" msg_body="Inlining function 'hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;::get_id_ptr()' into 'hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;::read(hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;&amp;)'">
+        <args Callee="hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;::get_id_ptr()" Caller="hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;::read(hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;&amp;)"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:285:36" msg_body="Inlining function 'hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;::get_user_ptr()' into 'hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;::read(hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;&amp;)'">
+        <args Callee="hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;::get_user_ptr()" Caller="hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;::read(hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;&amp;)"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:284:39" msg_body="Inlining function 'hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;::get_dest_ptr()' into 'hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;::read(hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;&amp;)'">
+        <args Callee="hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;::get_dest_ptr()" Caller="hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;::read(hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;&amp;)"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:284:23" msg_body="Inlining function 'hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;::get_id_ptr()' into 'hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;::read(hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;&amp;)'">
+        <args Callee="hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;::get_id_ptr()" Caller="hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;::read(hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;&amp;)"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_int_base.h:257:77" msg_body="Inlining function 'ssdm_int&lt;8, true&gt;::ssdm_int(signed char)' into 'ap_int_base&lt;8, true&gt;::ap_int_base(unsigned char)'">
+        <args Callee="ssdm_int&lt;8, true&gt;::ssdm_int(signed char)" Caller="ap_int_base&lt;8, true&gt;::ap_int_base(unsigned char)"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_int.h:176:67" msg_body="Inlining function 'ap_int_base&lt;8, true&gt;::ap_int_base(unsigned char)' into 'ap_int&lt;8&gt;::ap_int(unsigned char)'">
+        <args Callee="ap_int_base&lt;8, true&gt;::ap_int_base(unsigned char)" Caller="ap_int&lt;8&gt;::ap_int(unsigned char)"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:304:51" msg_body="Inlining function 'hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;::get_user_ptr()' into 'hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;::write(hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt; const&amp;)'">
+        <args Callee="hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;::get_user_ptr()" Caller="hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;::write(hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt; const&amp;)"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:307:26" msg_body="Inlining function 'hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;::get_dest_ptr()' into 'hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;::write(hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt; const&amp;)'">
+        <args Callee="hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;::get_dest_ptr()" Caller="hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;::write(hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt; const&amp;)"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:306:68" msg_body="Inlining function 'hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;::get_id_ptr()' into 'hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;::write(hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt; const&amp;)'">
+        <args Callee="hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;::get_id_ptr()" Caller="hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;::write(hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt; const&amp;)"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:306:37" msg_body="Inlining function 'hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;::get_user_ptr()' into 'hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;::write(hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt; const&amp;)'">
+        <args Callee="hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;::get_user_ptr()" Caller="hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;::write(hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt; const&amp;)"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:305:40" msg_body="Inlining function 'hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;::get_dest_ptr()' into 'hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;::write(hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt; const&amp;)'">
+        <args Callee="hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;::get_dest_ptr()" Caller="hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;::write(hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt; const&amp;)"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:305:24" msg_body="Inlining function 'hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;::get_id_ptr()' into 'hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;::write(hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt; const&amp;)'">
+        <args Callee="hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;::get_id_ptr()" Caller="hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;::write(hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt; const&amp;)"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_int_base.h:260:67" msg_body="Inlining function '_ZN8ssdm_intILi1ELb0EEC2EDq1_j' into 'ap_int_base&lt;1, false&gt;::ap_int_base(int)'">
+        <args Callee="_ZN8ssdm_intILi1ELb0EEC2EDq1_j" Caller="ap_int_base&lt;1, false&gt;::ap_int_base(int)"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_int.h:333:58" msg_body="Inlining function 'ap_int_base&lt;1, false&gt;::ap_int_base(int)' into 'ap_uint&lt;1&gt;::ap_uint(int)'">
+        <args Callee="ap_int_base&lt;1, false&gt;::ap_int_base(int)" Caller="ap_uint&lt;1&gt;::ap_uint(int)"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:71:20" msg_body="Inlining function 'hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;::read(hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;&amp;)' into 'aes(hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;&amp;, hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;&amp;, int, unsigned char, unsigned char, unsigned int, unsigned int)'">
+        <args Callee="hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;::read(hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;&amp;)" Caller="aes(hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;&amp;, hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;&amp;, int, unsigned char, unsigned char, unsigned int, unsigned int)"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:106:7" msg_body="Inlining function 'ap_int_base&lt;1, false&gt;::operator unsigned long long() const' into 'aes(hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;&amp;, hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;&amp;, int, unsigned char, unsigned char, unsigned int, unsigned int)'">
+        <args Callee="ap_int_base&lt;1, false&gt;::operator unsigned long long() const" Caller="aes(hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;&amp;, hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;&amp;, int, unsigned char, unsigned char, unsigned int, unsigned int)"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:104:33" msg_body="Inlining function 'hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;::write(hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt; const&amp;)' into 'aes(hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;&amp;, hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;&amp;, int, unsigned char, unsigned char, unsigned int, unsigned int)'">
+        <args Callee="hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;::write(hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt; const&amp;)" Caller="aes(hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;&amp;, hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;&amp;, int, unsigned char, unsigned char, unsigned int, unsigned int)"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:94:33" msg_body="Inlining function 'hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;::write(hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt; const&amp;)' into 'aes(hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;&amp;, hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;&amp;, int, unsigned char, unsigned char, unsigned int, unsigned int)'">
+        <args Callee="hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;::write(hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt; const&amp;)" Caller="aes(hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;&amp;, hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;&amp;, int, unsigned char, unsigned char, unsigned int, unsigned int)"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:72:19" msg_body="Inlining function 'ap_int_base&lt;8, true&gt;::operator long long() const' into 'aes(hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;&amp;, hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;&amp;, int, unsigned char, unsigned char, unsigned int, unsigned int)'">
+        <args Callee="ap_int_base&lt;8, true&gt;::operator long long() const" Caller="aes(hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;&amp;, hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;&amp;, int, unsigned char, unsigned char, unsigned int, unsigned int)"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:77:22" msg_body="Inlining function 'hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;::read(hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;&amp;)' into 'aes(hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;&amp;, hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;&amp;, int, unsigned char, unsigned char, unsigned int, unsigned int)'">
+        <args Callee="hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;::read(hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;&amp;)" Caller="aes(hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;&amp;, hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;&amp;, int, unsigned char, unsigned char, unsigned int, unsigned int)"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:78:25" msg_body="Inlining function 'ap_int_base&lt;8, true&gt;::operator long long() const' into 'aes(hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;&amp;, hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;&amp;, int, unsigned char, unsigned char, unsigned int, unsigned int)'">
+        <args Callee="ap_int_base&lt;8, true&gt;::operator long long() const" Caller="aes(hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;&amp;, hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;&amp;, int, unsigned char, unsigned char, unsigned int, unsigned int)"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:602:9" msg_body="Loop 'invMixColumnsLoop2' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="invMixColumnsLoop2"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:611:9" msg_body="Loop 'invMixColumnsLoop3' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="invMixColumnsLoop3"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:622:5" msg_body="Loop 'invMixColumnLoop' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="invMixColumnLoop"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:584:9" msg_body="Loop 'invShiftRowLoop2' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="invShiftRowLoop2"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:376:9" msg_body="Loop 'mixColumnsLoop2' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="mixColumnsLoop2"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:385:9" msg_body="Loop 'mixColumnsLoop3' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="mixColumnsLoop3"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:397:5" msg_body="Loop 'mixColumnLoop' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="mixColumnLoop"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:351:5" msg_body="Loop 'galoisMultiplicationLoop' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="galoisMultiplicationLoop"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:330:9" msg_body="Loop 'shiftRowLoop2' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="shiftRowLoop2"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:257:9" msg_body="Loop 'expandKeyLoop3' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="expandKeyLoop3"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:275:13" msg_body="Loop 'expandKeyLoop4' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="expandKeyLoop4"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:286:9" msg_body="Loop 'expandKeyLoop5' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="expandKeyLoop5"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:210:5" msg_body="Loop 'coreLoop' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="coreLoop"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:165:5" msg_body="Loop 'rotateLoop' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="rotateLoop"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:592:0" msg_body="Unrolling loop 'invMixColumnsLoop2' (Downloads/aes_axis.cpp:602:9) in function 'invMixColumns' completely with a factor of 4">
+        <args Factor="4" LoopLoc="Downloads/aes_axis.cpp:602:9" LoopName="invMixColumnsLoop2"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:592:0" msg_body="Unrolling loop 'invMixColumnsLoop3' (Downloads/aes_axis.cpp:611:9) in function 'invMixColumns' completely with a factor of 4">
+        <args Factor="4" LoopLoc="Downloads/aes_axis.cpp:611:9" LoopName="invMixColumnsLoop3"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:619:0" msg_body="Unrolling loop 'invMixColumnLoop' (Downloads/aes_axis.cpp:622:5) in function 'invMixColumn' completely with a factor of 4">
+        <args Factor="4" LoopLoc="Downloads/aes_axis.cpp:622:5" LoopName="invMixColumnLoop"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:549:0" msg_body="Unrolling loop 'invSubBytesLoop' (Downloads/aes_axis.cpp:557:5) in function 'invSubBytes' completely with a factor of 16">
+        <args Factor="16" LoopLoc="Downloads/aes_axis.cpp:557:5" LoopName="invSubBytesLoop"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:564:0" msg_body="Unrolling loop 'invShiftRowsLoop' (Downloads/aes_axis.cpp:567:5) in function 'invShiftRows' completely with a factor of 4">
+        <args Factor="4" LoopLoc="Downloads/aes_axis.cpp:567:5" LoopName="invShiftRowsLoop"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:574:0" msg_body="Unrolling loop 'invShiftRowLoop2' (Downloads/aes_axis.cpp:584:9) in function 'invShiftRow' completely with a factor of 3">
+        <args Factor="3" LoopLoc="Downloads/aes_axis.cpp:584:9" LoopName="invShiftRowLoop2"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:365:0" msg_body="Unrolling loop 'mixColumnsLoop2' (Downloads/aes_axis.cpp:376:9) in function 'mixColumns' completely with a factor of 4">
+        <args Factor="4" LoopLoc="Downloads/aes_axis.cpp:376:9" LoopName="mixColumnsLoop2"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:365:0" msg_body="Unrolling loop 'mixColumnsLoop3' (Downloads/aes_axis.cpp:385:9) in function 'mixColumns' completely with a factor of 4">
+        <args Factor="4" LoopLoc="Downloads/aes_axis.cpp:385:9" LoopName="mixColumnsLoop3"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:393:0" msg_body="Unrolling loop 'mixColumnLoop' (Downloads/aes_axis.cpp:397:5) in function 'mixColumn' completely with a factor of 4">
+        <args Factor="4" LoopLoc="Downloads/aes_axis.cpp:397:5" LoopName="mixColumnLoop"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:346:0" msg_body="Unrolling loop 'galoisMultiplicationLoop' (Downloads/aes_axis.cpp:351:5) in function 'galois_multiplication' completely with a factor of 8">
+        <args Factor="8" LoopLoc="Downloads/aes_axis.cpp:351:5" LoopName="galoisMultiplicationLoop"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:309:0" msg_body="Unrolling loop 'shiftRowsLoop' (Downloads/aes_axis.cpp:312:5) in function 'shiftRows' completely with a factor of 4">
+        <args Factor="4" LoopLoc="Downloads/aes_axis.cpp:312:5" LoopName="shiftRowsLoop"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:319:0" msg_body="Unrolling loop 'shiftRowLoop2' (Downloads/aes_axis.cpp:330:9) in function 'shiftRow' completely with a factor of 3">
+        <args Factor="3" LoopLoc="Downloads/aes_axis.cpp:330:9" LoopName="shiftRowLoop2"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:296:0" msg_body="Unrolling loop 'subBytesLoop' (Downloads/aes_axis.cpp:302:5) in function 'subBytes' completely with a factor of 16">
+        <args Factor="16" LoopLoc="Downloads/aes_axis.cpp:302:5" LoopName="subBytesLoop"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:230:0" msg_body="Unrolling loop 'expandKeyLoop3' (Downloads/aes_axis.cpp:257:9) in function 'expandKey' completely with a factor of 4">
+        <args Factor="4" LoopLoc="Downloads/aes_axis.cpp:257:9" LoopName="expandKeyLoop3"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:230:0" msg_body="Unrolling loop 'expandKeyLoop4' (Downloads/aes_axis.cpp:275:13) in function 'expandKey' completely with a factor of 4">
+        <args Factor="4" LoopLoc="Downloads/aes_axis.cpp:275:13" LoopName="expandKeyLoop4"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:230:0" msg_body="Unrolling loop 'expandKeyLoop5' (Downloads/aes_axis.cpp:286:9) in function 'expandKey' completely with a factor of 4">
+        <args Factor="4" LoopLoc="Downloads/aes_axis.cpp:286:9" LoopName="expandKeyLoop5"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:202:0" msg_body="Unrolling loop 'coreLoop' (Downloads/aes_axis.cpp:210:5) in function 'core' completely with a factor of 4">
+        <args Factor="4" LoopLoc="Downloads/aes_axis.cpp:210:5" LoopName="coreLoop"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:159:0" msg_body="Unrolling loop 'rotateLoop' (Downloads/aes_axis.cpp:165:5) in function 'rotate' completely with a factor of 3">
+        <args Factor="3" LoopLoc="Downloads/aes_axis.cpp:165:5" LoopName="rotateLoop"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:202:0" msg_body="Inlining function 'rotate(unsigned char*)' into 'core(unsigned char*, int)'">
+        <args Callee="rotate(unsigned char*)" Caller="core(unsigned char*, int)"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:202:0" msg_body="Inlining function 'getSBoxValue(unsigned char)' into 'core(unsigned char*, int)'">
+        <args Callee="getSBoxValue(unsigned char)" Caller="core(unsigned char*, int)"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:202:0" msg_body="Inlining function 'getRconValue(unsigned char)' into 'core(unsigned char*, int)'">
+        <args Callee="getRconValue(unsigned char)" Caller="core(unsigned char*, int)"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:230:0" msg_body="Inlining function 'core(unsigned char*, int)' into 'expandKey(unsigned char*, unsigned char*, int, unsigned long)'">
+        <args Callee="core(unsigned char*, int)" Caller="expandKey(unsigned char*, unsigned char*, int, unsigned long)"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:230:0" msg_body="Inlining function 'getSBoxValue(unsigned char)' into 'expandKey(unsigned char*, unsigned char*, int, unsigned long)'">
+        <args Callee="getSBoxValue(unsigned char)" Caller="expandKey(unsigned char*, unsigned char*, int, unsigned long)"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:296:0" msg_body="Inlining function 'getSBoxValue(unsigned char)' into 'subBytes(unsigned char*)'">
+        <args Callee="getSBoxValue(unsigned char)" Caller="subBytes(unsigned char*)"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:309:0" msg_body="Inlining function 'shiftRow(unsigned char*, unsigned char)' into 'shiftRows(unsigned char*)'">
+        <args Callee="shiftRow(unsigned char*, unsigned char)" Caller="shiftRows(unsigned char*)"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:365:0" msg_body="Inlining function 'mixColumn(unsigned char*)' into 'mixColumns(unsigned char*)'">
+        <args Callee="mixColumn(unsigned char*)" Caller="mixColumns(unsigned char*)"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:424:0" msg_body="Inlining function 'subBytes(unsigned char*)' into 'aes_round(unsigned char*, unsigned char*)'">
+        <args Callee="subBytes(unsigned char*)" Caller="aes_round(unsigned char*, unsigned char*)"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:424:0" msg_body="Inlining function 'shiftRows(unsigned char*)' into 'aes_round(unsigned char*, unsigned char*)'">
+        <args Callee="shiftRows(unsigned char*)" Caller="aes_round(unsigned char*, unsigned char*)"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:424:0" msg_body="Inlining function 'mixColumns(unsigned char*)' into 'aes_round(unsigned char*, unsigned char*)'">
+        <args Callee="mixColumns(unsigned char*)" Caller="aes_round(unsigned char*, unsigned char*)"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:424:0" msg_body="Inlining function 'addRoundKey(unsigned char*, unsigned char*)' into 'aes_round(unsigned char*, unsigned char*)'">
+        <args Callee="addRoundKey(unsigned char*, unsigned char*)" Caller="aes_round(unsigned char*, unsigned char*)"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:448:0" msg_body="Inlining function 'createRoundKey(unsigned char*, unsigned char*)' into 'aes_main(unsigned char*, unsigned char*, int)'">
+        <args Callee="createRoundKey(unsigned char*, unsigned char*)" Caller="aes_main(unsigned char*, unsigned char*, int)"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:448:0" msg_body="Inlining function 'addRoundKey(unsigned char*, unsigned char*)' into 'aes_main(unsigned char*, unsigned char*, int)'">
+        <args Callee="addRoundKey(unsigned char*, unsigned char*)" Caller="aes_main(unsigned char*, unsigned char*, int)"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:448:0" msg_body="Inlining function 'subBytes(unsigned char*)' into 'aes_main(unsigned char*, unsigned char*, int)'">
+        <args Callee="subBytes(unsigned char*)" Caller="aes_main(unsigned char*, unsigned char*, int)"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:448:0" msg_body="Inlining function 'shiftRows(unsigned char*)' into 'aes_main(unsigned char*, unsigned char*, int)'">
+        <args Callee="shiftRows(unsigned char*)" Caller="aes_main(unsigned char*, unsigned char*, int)"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:564:0" msg_body="Inlining function 'invShiftRow(unsigned char*, unsigned char)' into 'invShiftRows(unsigned char*)'">
+        <args Callee="invShiftRow(unsigned char*, unsigned char)" Caller="invShiftRows(unsigned char*)"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:549:0" msg_body="Inlining function 'getSBoxInvert(unsigned char)' into 'invSubBytes(unsigned char*)'">
+        <args Callee="getSBoxInvert(unsigned char)" Caller="invSubBytes(unsigned char*)"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:592:0" msg_body="Inlining function 'invMixColumn(unsigned char*)' into 'invMixColumns(unsigned char*)'">
+        <args Callee="invMixColumn(unsigned char*)" Caller="invMixColumns(unsigned char*)"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:645:0" msg_body="Inlining function 'invShiftRows(unsigned char*)' into 'aes_invRound(unsigned char*, unsigned char*)'">
+        <args Callee="invShiftRows(unsigned char*)" Caller="aes_invRound(unsigned char*, unsigned char*)"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:645:0" msg_body="Inlining function 'invSubBytes(unsigned char*)' into 'aes_invRound(unsigned char*, unsigned char*)'">
+        <args Callee="invSubBytes(unsigned char*)" Caller="aes_invRound(unsigned char*, unsigned char*)"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:645:0" msg_body="Inlining function 'addRoundKey(unsigned char*, unsigned char*)' into 'aes_invRound(unsigned char*, unsigned char*)'">
+        <args Callee="addRoundKey(unsigned char*, unsigned char*)" Caller="aes_invRound(unsigned char*, unsigned char*)"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:645:0" msg_body="Inlining function 'invMixColumns(unsigned char*)' into 'aes_invRound(unsigned char*, unsigned char*)'">
+        <args Callee="invMixColumns(unsigned char*)" Caller="aes_invRound(unsigned char*, unsigned char*)"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:653:0" msg_body="Inlining function 'createRoundKey(unsigned char*, unsigned char*)' into 'aes_invMain(unsigned char*, unsigned char*, int)'">
+        <args Callee="createRoundKey(unsigned char*, unsigned char*)" Caller="aes_invMain(unsigned char*, unsigned char*, int)"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:653:0" msg_body="Inlining function 'addRoundKey(unsigned char*, unsigned char*)' into 'aes_invMain(unsigned char*, unsigned char*, int)'">
+        <args Callee="addRoundKey(unsigned char*, unsigned char*)" Caller="aes_invMain(unsigned char*, unsigned char*, int)"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:653:0" msg_body="Inlining function 'invShiftRows(unsigned char*)' into 'aes_invMain(unsigned char*, unsigned char*, int)'">
+        <args Callee="invShiftRows(unsigned char*)" Caller="aes_invMain(unsigned char*, unsigned char*, int)"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:653:0" msg_body="Inlining function 'invSubBytes(unsigned char*)' into 'aes_invMain(unsigned char*, unsigned char*, int)'">
+        <args Callee="invSubBytes(unsigned char*)" Caller="aes_invMain(unsigned char*, unsigned char*, int)"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:14:0" msg_body="Inlining function 'aes_encrypt(unsigned char*, unsigned char*, unsigned char*, int)' into 'aes(hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;&amp;, hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;&amp;, int, unsigned char, unsigned char, unsigned int, unsigned int)'">
+        <args Callee="aes_encrypt(unsigned char*, unsigned char*, unsigned char*, int)" Caller="aes(hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;&amp;, hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;&amp;, int, unsigned char, unsigned char, unsigned int, unsigned int)"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:14:0" msg_body="Inlining function 'aes_decrypt(unsigned char*, unsigned char*, unsigned char*, int)' into 'aes(hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;&amp;, hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;&amp;, int, unsigned char, unsigned char, unsigned int, unsigned int)'">
+        <args Callee="aes_decrypt(unsigned char*, unsigned char*, unsigned char*, int)" Caller="aes(hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;&amp;, hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;&amp;, int, unsigned char, unsigned char, unsigned int, unsigned int)"/>
+    </msg>
+    <msg msg_groups="AUTOMATION PRAGMA_PIPELINE" msg_id="214-269" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:460:9" msg_body="Inferring pragma 'pipeline II=38' for loop 'aesMainLoop' in function 'aes_main' due to performance pragma">
+        <args II="38" LoopName="aesMainLoop" PragmaType="pipeline"/>
+    </msg>
+    <msg msg_groups="AUTOMATION_VERBOSE_PASSED" msg_id="214-335" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:0:1" msg_body="pipeline II=38 1 aes_main Downloads/aes_axis.cpp:460:9aesMainLoop Downloads/aes_axis.cpp:457:5">
+        <args LoopLoc="Downloads/aes_axis.cpp:457:5" LoopName="aesMainLoop" PragmaFunction="aes_main" PragmaIsAuto="1" PragmaOptions="II=38" PragmaSrcLoc="Downloads/aes_axis.cpp:460:9" PragmaType="pipeline"/>
+    </msg>
+    <msg msg_groups="AUTOMATION PRAGMA_UNROLL" msg_id="214-268" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:460:9" msg_body="Inferring pragma 'unroll' for loop 'createRoundKeyLoop2' in function 'aes_main' due to performance pragma">
+        <args LoopName="createRoundKeyLoop2" PragmaType="unroll"/>
+    </msg>
+    <msg msg_groups="AUTOMATION_VERBOSE_PASSED" msg_id="214-335" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:0:2" msg_body="unroll COMPLETE 1 aes_main Downloads/aes_axis.cpp:460:9createRoundKeyLoop2 Downloads/aes_axis.cpp:440:9">
+        <args LoopLoc="Downloads/aes_axis.cpp:440:9" LoopName="createRoundKeyLoop2" PragmaFunction="aes_main" PragmaIsAuto="1" PragmaOptions="COMPLETE" PragmaSrcLoc="Downloads/aes_axis.cpp:460:9" PragmaType="unroll"/>
+    </msg>
+    <msg msg_groups="AUTOMATION PRAGMA_UNROLL" msg_id="214-268" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:460:9" msg_body="Inferring pragma 'unroll' for loop 'createRoundKeyLoop1' in function 'aes_main' due to performance pragma">
+        <args LoopName="createRoundKeyLoop1" PragmaType="unroll"/>
+    </msg>
+    <msg msg_groups="AUTOMATION_VERBOSE_PASSED" msg_id="214-335" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:0:3" msg_body="unroll COMPLETE 1 aes_main Downloads/aes_axis.cpp:460:9createRoundKeyLoop1 Downloads/aes_axis.cpp:436:5">
+        <args LoopLoc="Downloads/aes_axis.cpp:436:5" LoopName="createRoundKeyLoop1" PragmaFunction="aes_main" PragmaIsAuto="1" PragmaOptions="COMPLETE" PragmaSrcLoc="Downloads/aes_axis.cpp:460:9" PragmaType="unroll"/>
+    </msg>
+    <msg msg_groups="AUTOMATION PRAGMA_UNROLL" msg_id="214-268" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:460:9" msg_body="Inferring pragma 'unroll' for loop 'addRoundKeyLoop' in function 'aes_round' due to performance pragma">
+        <args LoopName="addRoundKeyLoop" PragmaType="unroll"/>
+    </msg>
+    <msg msg_groups="AUTOMATION_VERBOSE_PASSED" msg_id="214-335" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:0:4" msg_body="unroll COMPLETE 1 aes_round Downloads/aes_axis.cpp:460:9addRoundKeyLoop Downloads/aes_axis.cpp:340:2">
+        <args LoopLoc="Downloads/aes_axis.cpp:340:2" LoopName="addRoundKeyLoop" PragmaFunction="aes_round" PragmaIsAuto="1" PragmaOptions="COMPLETE" PragmaSrcLoc="Downloads/aes_axis.cpp:460:9" PragmaType="unroll"/>
+    </msg>
+    <msg msg_groups="AUTOMATION PRAGMA_UNROLL" msg_id="214-268" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:460:9" msg_body="Inferring pragma 'unroll' for loop 'mixColumnsLoop1' in function 'aes_round' due to performance pragma">
+        <args LoopName="mixColumnsLoop1" PragmaType="unroll"/>
+    </msg>
+    <msg msg_groups="AUTOMATION_VERBOSE_PASSED" msg_id="214-335" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:0:5" msg_body="unroll COMPLETE 1 aes_round Downloads/aes_axis.cpp:460:9mixColumnsLoop1 Downloads/aes_axis.cpp:371:5">
+        <args LoopLoc="Downloads/aes_axis.cpp:371:5" LoopName="mixColumnsLoop1" PragmaFunction="aes_round" PragmaIsAuto="1" PragmaOptions="COMPLETE" PragmaSrcLoc="Downloads/aes_axis.cpp:460:9" PragmaType="unroll"/>
+    </msg>
+    <msg msg_groups="AUTOMATION PRAGMA_UNROLL" msg_id="214-268" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:460:9" msg_body="Inferring pragma 'unroll' for loop 'shiftRowLoop1' in function 'aes_round' due to performance pragma">
+        <args LoopName="shiftRowLoop1" PragmaType="unroll"/>
+    </msg>
+    <msg msg_groups="AUTOMATION_VERBOSE_PASSED" msg_id="214-335" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:0:6" msg_body="unroll COMPLETE 1 aes_round Downloads/aes_axis.cpp:460:9shiftRowLoop1 Downloads/aes_axis.cpp:324:5">
+        <args LoopLoc="Downloads/aes_axis.cpp:324:5" LoopName="shiftRowLoop1" PragmaFunction="aes_round" PragmaIsAuto="1" PragmaOptions="COMPLETE" PragmaSrcLoc="Downloads/aes_axis.cpp:460:9" PragmaType="unroll"/>
+    </msg>
+    <msg msg_groups="AUTOMATION_VERBOSE_PASSED" msg_id="214-335" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:0:7" msg_body="unroll COMPLETE 1 aes_round Downloads/aes_axis.cpp:460:9shiftRowLoop1 Downloads/aes_axis.cpp:324:5">
+        <args LoopLoc="Downloads/aes_axis.cpp:324:5" LoopName="shiftRowLoop1" PragmaFunction="aes_round" PragmaIsAuto="1" PragmaOptions="COMPLETE" PragmaSrcLoc="Downloads/aes_axis.cpp:460:9" PragmaType="unroll"/>
+    </msg>
+    <msg msg_groups="AUTOMATION" msg_id="214-301" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:460:9" msg_body="Met performance pragma target_ti=500 cycles for loop 'aesMainLoop' in function 'aes_main'">
+        <args LoopName="aesMainLoop" target_option_name="target_ti" target_option_value="500 cycles"/>
+    </msg>
+    <msg msg_groups="AUTOMATION PRAGMA_PIPELINE" msg_id="214-269" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:663:9" msg_body="Inferring pragma 'pipeline II=46' for loop 'aesInvMainLoop' in function 'aes_invMain' due to performance pragma">
+        <args II="46" LoopName="aesInvMainLoop" PragmaType="pipeline"/>
+    </msg>
+    <msg msg_groups="AUTOMATION_VERBOSE_PASSED" msg_id="214-335" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:0:8" msg_body="pipeline II=46 1 aes_invMain Downloads/aes_axis.cpp:663:9aesInvMainLoop Downloads/aes_axis.cpp:660:5">
+        <args LoopLoc="Downloads/aes_axis.cpp:660:5" LoopName="aesInvMainLoop" PragmaFunction="aes_invMain" PragmaIsAuto="1" PragmaOptions="II=46" PragmaSrcLoc="Downloads/aes_axis.cpp:663:9" PragmaType="pipeline"/>
+    </msg>
+    <msg msg_groups="AUTOMATION PRAGMA_UNROLL" msg_id="214-268" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:663:9" msg_body="Inferring pragma 'unroll' for loop 'createRoundKeyLoop2' in function 'aes_invMain' due to performance pragma">
+        <args LoopName="createRoundKeyLoop2" PragmaType="unroll"/>
+    </msg>
+    <msg msg_groups="AUTOMATION_VERBOSE_PASSED" msg_id="214-335" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:0:9" msg_body="unroll COMPLETE 1 aes_invMain Downloads/aes_axis.cpp:663:9createRoundKeyLoop2 Downloads/aes_axis.cpp:440:9">
+        <args LoopLoc="Downloads/aes_axis.cpp:440:9" LoopName="createRoundKeyLoop2" PragmaFunction="aes_invMain" PragmaIsAuto="1" PragmaOptions="COMPLETE" PragmaSrcLoc="Downloads/aes_axis.cpp:663:9" PragmaType="unroll"/>
+    </msg>
+    <msg msg_groups="AUTOMATION PRAGMA_UNROLL" msg_id="214-268" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:663:9" msg_body="Inferring pragma 'unroll' for loop 'createRoundKeyLoop1' in function 'aes_invMain' due to performance pragma">
+        <args LoopName="createRoundKeyLoop1" PragmaType="unroll"/>
+    </msg>
+    <msg msg_groups="AUTOMATION_VERBOSE_PASSED" msg_id="214-335" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:0:10" msg_body="unroll COMPLETE 1 aes_invMain Downloads/aes_axis.cpp:663:9createRoundKeyLoop1 Downloads/aes_axis.cpp:436:5">
+        <args LoopLoc="Downloads/aes_axis.cpp:436:5" LoopName="createRoundKeyLoop1" PragmaFunction="aes_invMain" PragmaIsAuto="1" PragmaOptions="COMPLETE" PragmaSrcLoc="Downloads/aes_axis.cpp:663:9" PragmaType="unroll"/>
+    </msg>
+    <msg msg_groups="AUTOMATION PRAGMA_UNROLL" msg_id="214-268" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:663:9" msg_body="Inferring pragma 'unroll' for loop 'invMixColumnsLoop1' in function 'aes_invRound' due to performance pragma">
+        <args LoopName="invMixColumnsLoop1" PragmaType="unroll"/>
+    </msg>
+    <msg msg_groups="AUTOMATION_VERBOSE_PASSED" msg_id="214-335" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:0:11" msg_body="unroll COMPLETE 1 aes_invRound Downloads/aes_axis.cpp:663:9invMixColumnsLoop1 Downloads/aes_axis.cpp:597:5">
+        <args LoopLoc="Downloads/aes_axis.cpp:597:5" LoopName="invMixColumnsLoop1" PragmaFunction="aes_invRound" PragmaIsAuto="1" PragmaOptions="COMPLETE" PragmaSrcLoc="Downloads/aes_axis.cpp:663:9" PragmaType="unroll"/>
+    </msg>
+    <msg msg_groups="AUTOMATION PRAGMA_UNROLL" msg_id="214-268" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:663:9" msg_body="Inferring pragma 'unroll' for loop 'addRoundKeyLoop' in function 'aes_invRound' due to performance pragma">
+        <args LoopName="addRoundKeyLoop" PragmaType="unroll"/>
+    </msg>
+    <msg msg_groups="AUTOMATION_VERBOSE_PASSED" msg_id="214-335" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:0:12" msg_body="unroll COMPLETE 1 aes_invRound Downloads/aes_axis.cpp:663:9addRoundKeyLoop Downloads/aes_axis.cpp:340:2">
+        <args LoopLoc="Downloads/aes_axis.cpp:340:2" LoopName="addRoundKeyLoop" PragmaFunction="aes_invRound" PragmaIsAuto="1" PragmaOptions="COMPLETE" PragmaSrcLoc="Downloads/aes_axis.cpp:663:9" PragmaType="unroll"/>
+    </msg>
+    <msg msg_groups="AUTOMATION PRAGMA_UNROLL" msg_id="214-268" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:663:9" msg_body="Inferring pragma 'unroll' for loop 'invShiftRowLoop1' in function 'aes_invRound' due to performance pragma">
+        <args LoopName="invShiftRowLoop1" PragmaType="unroll"/>
+    </msg>
+    <msg msg_groups="AUTOMATION_VERBOSE_PASSED" msg_id="214-335" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:0:13" msg_body="unroll COMPLETE 1 aes_invRound Downloads/aes_axis.cpp:663:9invShiftRowLoop1 Downloads/aes_axis.cpp:577:5">
+        <args LoopLoc="Downloads/aes_axis.cpp:577:5" LoopName="invShiftRowLoop1" PragmaFunction="aes_invRound" PragmaIsAuto="1" PragmaOptions="COMPLETE" PragmaSrcLoc="Downloads/aes_axis.cpp:663:9" PragmaType="unroll"/>
+    </msg>
+    <msg msg_groups="AUTOMATION_VERBOSE_PASSED" msg_id="214-335" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:0:14" msg_body="unroll COMPLETE 1 aes_invRound Downloads/aes_axis.cpp:663:9invShiftRowLoop1 Downloads/aes_axis.cpp:577:5">
+        <args LoopLoc="Downloads/aes_axis.cpp:577:5" LoopName="invShiftRowLoop1" PragmaFunction="aes_invRound" PragmaIsAuto="1" PragmaOptions="COMPLETE" PragmaSrcLoc="Downloads/aes_axis.cpp:663:9" PragmaType="unroll"/>
+    </msg>
+    <msg msg_groups="AUTOMATION" msg_id="214-301" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:663:9" msg_body="Met performance pragma target_ti=600 cycles for loop 'aesInvMainLoop' in function 'aes_invMain'">
+        <args LoopName="aesInvMainLoop" target_option_name="target_ti" target_option_value="600 cycles"/>
+    </msg>
+    <msg msg_groups="AUTOMATION PRAGMA_UNROLL" msg_id="214-268" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:243:9" msg_body="Inferring pragma 'unroll factor=4' for loop 'expandKeyLoop1' in function 'expandKey' due to performance pragma">
+        <args Factor="4" LoopName="expandKeyLoop1" PragmaType="unroll"/>
+    </msg>
+    <msg msg_groups="AUTOMATION_VERBOSE_PASSED" msg_id="214-335" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:0:15" msg_body="unroll FACTOR=4 1 expandKey Downloads/aes_axis.cpp:243:9expandKeyLoop1 Downloads/aes_axis.cpp:241:5">
+        <args LoopLoc="Downloads/aes_axis.cpp:241:5" LoopName="expandKeyLoop1" PragmaFunction="expandKey" PragmaIsAuto="1" PragmaOptions="FACTOR=4" PragmaSrcLoc="Downloads/aes_axis.cpp:243:9" PragmaType="unroll"/>
+    </msg>
+    <msg msg_groups="AUTOMATION PRAGMA_PIPELINE" msg_id="214-269" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:243:9" msg_body="Inferring pragma 'pipeline II=1' for loop 'expandKeyLoop1' in function 'expandKey' due to performance pragma">
+        <args II="1" LoopName="expandKeyLoop1" PragmaType="pipeline"/>
+    </msg>
+    <msg msg_groups="AUTOMATION_VERBOSE_PASSED" msg_id="214-335" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:0:16" msg_body="pipeline II=1 1 expandKey Downloads/aes_axis.cpp:243:9expandKeyLoop1 Downloads/aes_axis.cpp:241:5">
+        <args LoopLoc="Downloads/aes_axis.cpp:241:5" LoopName="expandKeyLoop1" PragmaFunction="expandKey" PragmaIsAuto="1" PragmaOptions="II=1" PragmaSrcLoc="Downloads/aes_axis.cpp:243:9" PragmaType="pipeline"/>
+    </msg>
+    <msg msg_groups="AUTOMATION" msg_id="214-301" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:243:9" msg_body="Met performance pragma target_ti=8 cycles for loop 'expandKeyLoop1' in function 'expandKey'">
+        <args LoopName="expandKeyLoop1" target_option_name="target_ti" target_option_value="8 cycles"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:436:5" msg_body="Loop 'createRoundKeyLoop1' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="createRoundKeyLoop1"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:440:9" msg_body="Loop 'createRoundKeyLoop2' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="createRoundKeyLoop2"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:597:5" msg_body="Loop 'invMixColumnsLoop1' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="invMixColumnsLoop1"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:340:2" msg_body="Loop 'addRoundKeyLoop' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="addRoundKeyLoop"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:577:5" msg_body="Loop 'invShiftRowLoop1' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="invShiftRowLoop1"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:371:5" msg_body="Loop 'mixColumnsLoop1' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="mixColumnsLoop1"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:324:5" msg_body="Loop 'shiftRowLoop1' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="shiftRowLoop1"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:653:0" msg_body="Unrolling loop 'createRoundKeyLoop1' (Downloads/aes_axis.cpp:436:5) in function 'aes_invMain' completely with a factor of 4">
+        <args Factor="4" LoopLoc="Downloads/aes_axis.cpp:436:5" LoopName="createRoundKeyLoop1"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:653:0" msg_body="Unrolling loop 'createRoundKeyLoop2' (Downloads/aes_axis.cpp:440:9) in function 'aes_invMain' completely with a factor of 4">
+        <args Factor="4" LoopLoc="Downloads/aes_axis.cpp:440:9" LoopName="createRoundKeyLoop2"/>
+    </msg>
+    <msg msg_groups="PRAGMA_PIPELINE" msg_id="214-189" msg_severity="WARNING" msg_loc="Downloads/aes_axis.cpp:653:0" msg_body="Pipeline directive for loop 'createRoundKeyLoop2' (Downloads/aes_axis.cpp:440:9) in function 'aes_invMain' has been removed because the loop is unrolled completely">
+        <args LoopLoc="Downloads/aes_axis.cpp:440:9" LoopName="createRoundKeyLoop2"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:645:0" msg_body="Unrolling loop 'invMixColumnsLoop1' (Downloads/aes_axis.cpp:597:5) in function 'aes_invRound' completely with a factor of 4">
+        <args Factor="4" LoopLoc="Downloads/aes_axis.cpp:597:5" LoopName="invMixColumnsLoop1"/>
+    </msg>
+    <msg msg_groups="PRAGMA_PIPELINE" msg_id="214-189" msg_severity="WARNING" msg_loc="Downloads/aes_axis.cpp:645:0" msg_body="Pipeline directive for loop 'invMixColumnsLoop1' (Downloads/aes_axis.cpp:597:5) in function 'aes_invRound' has been removed because the loop is unrolled completely">
+        <args LoopLoc="Downloads/aes_axis.cpp:597:5" LoopName="invMixColumnsLoop1"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:645:0" msg_body="Unrolling loop 'addRoundKeyLoop' (Downloads/aes_axis.cpp:340:2) in function 'aes_invRound' completely with a factor of 16">
+        <args Factor="16" LoopLoc="Downloads/aes_axis.cpp:340:2" LoopName="addRoundKeyLoop"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:645:0" msg_body="Unrolling loop 'invShiftRowLoop1' (Downloads/aes_axis.cpp:577:5) in function 'aes_invRound' completely with a factor of 3">
+        <args Factor="3" LoopLoc="Downloads/aes_axis.cpp:577:5" LoopName="invShiftRowLoop1"/>
+    </msg>
+    <msg msg_groups="PRAGMA_PIPELINE" msg_id="214-189" msg_severity="WARNING" msg_loc="Downloads/aes_axis.cpp:645:0" msg_body="Pipeline directive for loop 'invShiftRowLoop1' (Downloads/aes_axis.cpp:577:5) in function 'aes_invRound' has been removed because the loop is unrolled completely">
+        <args LoopLoc="Downloads/aes_axis.cpp:577:5" LoopName="invShiftRowLoop1"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:645:0" msg_body="Unrolling loop 'invShiftRowLoop1' (Downloads/aes_axis.cpp:577:5) in function 'aes_invRound' completely with a factor of 2">
+        <args Factor="2" LoopLoc="Downloads/aes_axis.cpp:577:5" LoopName="invShiftRowLoop1"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:448:0" msg_body="Unrolling loop 'createRoundKeyLoop1' (Downloads/aes_axis.cpp:436:5) in function 'aes_main' completely with a factor of 4">
+        <args Factor="4" LoopLoc="Downloads/aes_axis.cpp:436:5" LoopName="createRoundKeyLoop1"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:448:0" msg_body="Unrolling loop 'createRoundKeyLoop2' (Downloads/aes_axis.cpp:440:9) in function 'aes_main' completely with a factor of 4">
+        <args Factor="4" LoopLoc="Downloads/aes_axis.cpp:440:9" LoopName="createRoundKeyLoop2"/>
+    </msg>
+    <msg msg_groups="PRAGMA_PIPELINE" msg_id="214-189" msg_severity="WARNING" msg_loc="Downloads/aes_axis.cpp:448:0" msg_body="Pipeline directive for loop 'createRoundKeyLoop2' (Downloads/aes_axis.cpp:440:9) in function 'aes_main' has been removed because the loop is unrolled completely">
+        <args LoopLoc="Downloads/aes_axis.cpp:440:9" LoopName="createRoundKeyLoop2"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:424:0" msg_body="Unrolling loop 'addRoundKeyLoop' (Downloads/aes_axis.cpp:340:2) in function 'aes_round' completely with a factor of 16">
+        <args Factor="16" LoopLoc="Downloads/aes_axis.cpp:340:2" LoopName="addRoundKeyLoop"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:424:0" msg_body="Unrolling loop 'mixColumnsLoop1' (Downloads/aes_axis.cpp:371:5) in function 'aes_round' completely with a factor of 4">
+        <args Factor="4" LoopLoc="Downloads/aes_axis.cpp:371:5" LoopName="mixColumnsLoop1"/>
+    </msg>
+    <msg msg_groups="PRAGMA_PIPELINE" msg_id="214-189" msg_severity="WARNING" msg_loc="Downloads/aes_axis.cpp:424:0" msg_body="Pipeline directive for loop 'mixColumnsLoop1' (Downloads/aes_axis.cpp:371:5) in function 'aes_round' has been removed because the loop is unrolled completely">
+        <args LoopLoc="Downloads/aes_axis.cpp:371:5" LoopName="mixColumnsLoop1"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:424:0" msg_body="Unrolling loop 'shiftRowLoop1' (Downloads/aes_axis.cpp:324:5) in function 'aes_round' completely with a factor of 3">
+        <args Factor="3" LoopLoc="Downloads/aes_axis.cpp:324:5" LoopName="shiftRowLoop1"/>
+    </msg>
+    <msg msg_groups="PRAGMA_PIPELINE" msg_id="214-189" msg_severity="WARNING" msg_loc="Downloads/aes_axis.cpp:424:0" msg_body="Pipeline directive for loop 'shiftRowLoop1' (Downloads/aes_axis.cpp:324:5) in function 'aes_round' has been removed because the loop is unrolled completely">
+        <args LoopLoc="Downloads/aes_axis.cpp:324:5" LoopName="shiftRowLoop1"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:424:0" msg_body="Unrolling loop 'shiftRowLoop1' (Downloads/aes_axis.cpp:324:5) in function 'aes_round' completely with a factor of 2">
+        <args Factor="2" LoopLoc="Downloads/aes_axis.cpp:324:5" LoopName="shiftRowLoop1"/>
+    </msg>
+    <msg msg_groups="AUTOMATION_VERBOSE_PASSED" msg_id="214-335" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:0:17" msg_body="array_partition dim=1 type=cyclic factor=2 variable=expandedKey.i 1 aes Downloads/aes_axis.cpp:483:19 Downloads/aes_axis.cpp:0:16expandedKey.i">
+        <args PragmaFunction="aes" PragmaIsAuto="1" PragmaOptions="dim=1 type=cyclic factor=2 variable=expandedKey.i" PragmaSrcLoc="Downloads/aes_axis.cpp:0:16" PragmaType="array_partition" VarName="expandedKey.i" varLoc="Downloads/aes_axis.cpp:483:19"/>
+    </msg>
+    <msg msg_groups="AUTOMATION PRAGMA_MISC" msg_id="214-270" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:483:19" msg_body="Inferring pragma 'array_partition type=cyclic factor=2 dim=1' for array 'expandedKey.i' due to pipeline pragma">
+        <args Dim="1" Factor="2" Mode="cyclic" Name="expandedKey.i" PragmaType="array_partition"/>
+    </msg>
+    <msg msg_groups="AUTOMATION_VERBOSE_PASSED" msg_id="214-335" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:0:18" msg_body="array_partition dim=1 type=cyclic factor=2 variable=expandedKey.i336 1 aes Downloads/aes_axis.cpp:686:19 Downloads/aes_axis.cpp:0:16expandedKey.i336">
+        <args PragmaFunction="aes" PragmaIsAuto="1" PragmaOptions="dim=1 type=cyclic factor=2 variable=expandedKey.i336" PragmaSrcLoc="Downloads/aes_axis.cpp:0:16" PragmaType="array_partition" VarName="expandedKey.i336" varLoc="Downloads/aes_axis.cpp:686:19"/>
+    </msg>
+    <msg msg_groups="AUTOMATION PRAGMA_MISC" msg_id="214-270" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:686:19" msg_body="Inferring pragma 'array_partition type=cyclic factor=2 dim=1' for array 'expandedKey.i336' due to pipeline pragma">
+        <args Dim="1" Factor="2" Mode="cyclic" Name="expandedKey.i336" PragmaType="array_partition"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:686:19" msg_body="Applying array_partition to 'expandedKey.i336': Cyclic partitioning with factor 2 on dimension 1.">
+        <args Dim="1" Factor="2" Mode="Cyclic" UOName="expandedKey.i336"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="Downloads/aes_axis.cpp:483:19" msg_body="Applying array_partition to 'expandedKey.i': Cyclic partitioning with factor 2 on dimension 1.">
+        <args Dim="1" Factor="2" Mode="Cyclic" UOName="expandedKey.i"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:283:5" msg_body="Inlining function '_llvm.fpga.unpack.none.s_struct.ap_int&lt;8&gt;s.i8' into 'aes(hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;&amp;, hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;&amp;, int, unsigned char, unsigned char, unsigned int, unsigned int)'">
+        <args Callee="_llvm.fpga.unpack.none.s_struct.ap_int&lt;8&gt;s.i8" Caller="aes(hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;&amp;, hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;&amp;, int, unsigned char, unsigned char, unsigned int, unsigned int)"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:304:5" msg_body="Inlining function '_llvm.fpga.pack.none.i1.s_struct.ap_uint&lt;1&gt;s' into 'aes(hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;&amp;, hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;&amp;, int, unsigned char, unsigned char, unsigned int, unsigned int)'">
+        <args Callee="_llvm.fpga.pack.none.i1.s_struct.ap_uint&lt;1&gt;s" Caller="aes(hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;&amp;, hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;&amp;, int, unsigned char, unsigned char, unsigned int, unsigned int)"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:304:5" msg_body="Inlining function '_llvm.fpga.pack.none.i8.s_struct.ap_int&lt;8&gt;s' into 'aes(hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;&amp;, hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;&amp;, int, unsigned char, unsigned char, unsigned int, unsigned int)'">
+        <args Callee="_llvm.fpga.pack.none.i8.s_struct.ap_int&lt;8&gt;s" Caller="aes(hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;&amp;, hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;&amp;, int, unsigned char, unsigned char, unsigned int, unsigned int)"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:283:5" msg_body="Inlining function '_llvm.fpga.unpack.none.s_struct.ap_uint&lt;1&gt;s.i1' into 'aes(hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;&amp;, hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;&amp;, int, unsigned char, unsigned char, unsigned int, unsigned int)'">
+        <args Callee="_llvm.fpga.unpack.none.s_struct.ap_uint&lt;1&gt;s.i1" Caller="aes(hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;&amp;, hls::stream&lt;hls::axis&lt;ap_int&lt;8&gt;, 1ul, 1ul, 1ul&gt;, 0&gt;&amp;, int, unsigned char, unsigned char, unsigned int, unsigned int)"/>
+    </msg>
+</xilinx:hls_fe_msgs>
+

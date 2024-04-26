@@ -1,0 +1,68 @@
+verilog xil_defaultlib --include "C:/Xilinx/Vivado/2022.1/data/xilinx_vip/include" --include "../../../../project_1.gen/sources_1/bd/AES_PowerMon/ipshared/ec67/hdl" --include "../../../../project_1.gen/sources_1/bd/AES_PowerMon/ipshared/5765/hdl" --include "../../../../project_1.gen/sources_1/bd/AES_PowerMon/ipshared/fff7/hdl/verilog" --include "../../../../project_1.gen/sources_1/bd/AES_PowerMon/ip/AES_PowerMon_aes_0_0/drivers/aes_v1_0/src" \
+"../../../bd/AES_PowerMon/ip/AES_PowerMon_processing_system7_0_0/sim/AES_PowerMon_processing_system7_0_0.v" \
+"../../../bd/AES_PowerMon/ip/AES_PowerMon_xbar_0/sim/AES_PowerMon_xbar_0.v" \
+"../../../../project_1.gen/sources_1/bd/AES_PowerMon/ipshared/fff7/hdl/verilog/aes_aes_invMain.v" \
+"../../../../project_1.gen/sources_1/bd/AES_PowerMon/ipshared/fff7/hdl/verilog/aes_aes_invMain_Pipeline_addRoundKeyLoop.v" \
+"../../../../project_1.gen/sources_1/bd/AES_PowerMon/ipshared/fff7/hdl/verilog/aes_aes_invMain_Pipeline_addRoundKeyLoop6.v" \
+"../../../../project_1.gen/sources_1/bd/AES_PowerMon/ipshared/fff7/hdl/verilog/aes_aes_invMain_Pipeline_aesInvMainLoop.v" \
+"../../../../project_1.gen/sources_1/bd/AES_PowerMon/ipshared/fff7/hdl/verilog/aes_aes_invMain_Pipeline_createRoundKeyLoop1_createRoundKeyLoop2.v" \
+"../../../../project_1.gen/sources_1/bd/AES_PowerMon/ipshared/fff7/hdl/verilog/aes_aes_invMain_Pipeline_createRoundKeyLoop1_createRoundKeyLoop24.v" \
+"../../../../project_1.gen/sources_1/bd/AES_PowerMon/ipshared/fff7/hdl/verilog/aes_aes_invMain_Pipeline_invShiftRowLoop1.v" \
+"../../../../project_1.gen/sources_1/bd/AES_PowerMon/ipshared/fff7/hdl/verilog/aes_aes_invMain_Pipeline_invShiftRowLoop15.v" \
+"../../../../project_1.gen/sources_1/bd/AES_PowerMon/ipshared/fff7/hdl/verilog/aes_aes_invMain_roundKey_RAM_AUTO_1R1W.v" \
+"../../../../project_1.gen/sources_1/bd/AES_PowerMon/ipshared/fff7/hdl/verilog/aes_aes_invRound.v" \
+"../../../../project_1.gen/sources_1/bd/AES_PowerMon/ipshared/fff7/hdl/verilog/aes_aes_invRound_rsbox_ROM_2P_AUTO_1R.v" \
+"../../../../project_1.gen/sources_1/bd/AES_PowerMon/ipshared/fff7/hdl/verilog/aes_aes_main.v" \
+"../../../../project_1.gen/sources_1/bd/AES_PowerMon/ipshared/fff7/hdl/verilog/aes_aes_main_Pipeline_addRoundKeyLoop.v" \
+"../../../../project_1.gen/sources_1/bd/AES_PowerMon/ipshared/fff7/hdl/verilog/aes_aes_main_Pipeline_addRoundKeyLoop3.v" \
+"../../../../project_1.gen/sources_1/bd/AES_PowerMon/ipshared/fff7/hdl/verilog/aes_aes_main_Pipeline_aesMainLoop.v" \
+"../../../../project_1.gen/sources_1/bd/AES_PowerMon/ipshared/fff7/hdl/verilog/aes_aes_main_Pipeline_createRoundKeyLoop1_createRoundKeyLoop2.v" \
+"../../../../project_1.gen/sources_1/bd/AES_PowerMon/ipshared/fff7/hdl/verilog/aes_aes_main_Pipeline_createRoundKeyLoop1_createRoundKeyLoop21.v" \
+"../../../../project_1.gen/sources_1/bd/AES_PowerMon/ipshared/fff7/hdl/verilog/aes_aes_main_Pipeline_shiftRowLoop1.v" \
+"../../../../project_1.gen/sources_1/bd/AES_PowerMon/ipshared/fff7/hdl/verilog/aes_aes_main_Pipeline_shiftRowLoop12.v" \
+"../../../../project_1.gen/sources_1/bd/AES_PowerMon/ipshared/fff7/hdl/verilog/aes_aes_main_roundKey_RAM_AUTO_1R1W.v" \
+"../../../../project_1.gen/sources_1/bd/AES_PowerMon/ipshared/fff7/hdl/verilog/aes_aes_Pipeline_1.v" \
+"../../../../project_1.gen/sources_1/bd/AES_PowerMon/ipshared/fff7/hdl/verilog/aes_aes_Pipeline_2.v" \
+"../../../../project_1.gen/sources_1/bd/AES_PowerMon/ipshared/fff7/hdl/verilog/aes_aes_Pipeline_3.v" \
+"../../../../project_1.gen/sources_1/bd/AES_PowerMon/ipshared/fff7/hdl/verilog/aes_aes_Pipeline_aesDecryptLoop1_aesDecryptLoop2.v" \
+"../../../../project_1.gen/sources_1/bd/AES_PowerMon/ipshared/fff7/hdl/verilog/aes_aes_Pipeline_aesDecryptLoop3_aesDecryptLoop4.v" \
+"../../../../project_1.gen/sources_1/bd/AES_PowerMon/ipshared/fff7/hdl/verilog/aes_aes_Pipeline_aesEncryptLoop1_aesEncryptLoop2.v" \
+"../../../../project_1.gen/sources_1/bd/AES_PowerMon/ipshared/fff7/hdl/verilog/aes_aes_Pipeline_aesEncryptLoop3_aesEncryptLoop4.v" \
+"../../../../project_1.gen/sources_1/bd/AES_PowerMon/ipshared/fff7/hdl/verilog/aes_aes_Pipeline_cipherkeyLoop.v" \
+"../../../../project_1.gen/sources_1/bd/AES_PowerMon/ipshared/fff7/hdl/verilog/aes_aes_Pipeline_ciphertextLoop.v" \
+"../../../../project_1.gen/sources_1/bd/AES_PowerMon/ipshared/fff7/hdl/verilog/aes_aes_Pipeline_decryptedTextLoop.v" \
+"../../../../project_1.gen/sources_1/bd/AES_PowerMon/ipshared/fff7/hdl/verilog/aes_aes_Pipeline_plaintextLoop.v" \
+"../../../../project_1.gen/sources_1/bd/AES_PowerMon/ipshared/fff7/hdl/verilog/aes_aes_round.v" \
+"../../../../project_1.gen/sources_1/bd/AES_PowerMon/ipshared/fff7/hdl/verilog/aes_block_RAM_AUTO_1R1W.v" \
+"../../../../project_1.gen/sources_1/bd/AES_PowerMon/ipshared/fff7/hdl/verilog/aes_control_s_axi.v" \
+"../../../../project_1.gen/sources_1/bd/AES_PowerMon/ipshared/fff7/hdl/verilog/aes_CTRL_BUS_s_axi.v" \
+"../../../../project_1.gen/sources_1/bd/AES_PowerMon/ipshared/fff7/hdl/verilog/aes_expandedKey_RAM_AUTO_1R1W.v" \
+"../../../../project_1.gen/sources_1/bd/AES_PowerMon/ipshared/fff7/hdl/verilog/aes_expandKey.v" \
+"../../../../project_1.gen/sources_1/bd/AES_PowerMon/ipshared/fff7/hdl/verilog/aes_expandKey_Pipeline_expandKeyLoop1.v" \
+"../../../../project_1.gen/sources_1/bd/AES_PowerMon/ipshared/fff7/hdl/verilog/aes_expandKey_Pipeline_expandKeyLoop2.v" \
+"../../../../project_1.gen/sources_1/bd/AES_PowerMon/ipshared/fff7/hdl/verilog/aes_expandKey_Pipeline_expandKeyLoop2_Rcon_ROM_2P_AUTO_1R.v" \
+"../../../../project_1.gen/sources_1/bd/AES_PowerMon/ipshared/fff7/hdl/verilog/aes_expandKey_Pipeline_expandKeyLoop2_sbox_ROM_2P_AUTO_1R.v" \
+"../../../../project_1.gen/sources_1/bd/AES_PowerMon/ipshared/fff7/hdl/verilog/aes_flow_control_loop_pipe_sequential_init.v" \
+"../../../../project_1.gen/sources_1/bd/AES_PowerMon/ipshared/fff7/hdl/verilog/aes_galois_multiplication.v" \
+"../../../../project_1.gen/sources_1/bd/AES_PowerMon/ipshared/fff7/hdl/verilog/aes_hls_deadlock_idx0_monitor.v" \
+"../../../../project_1.gen/sources_1/bd/AES_PowerMon/ipshared/fff7/hdl/verilog/aes_key_array128_RAM_1WNR_AUTO_1R1W.v" \
+"../../../../project_1.gen/sources_1/bd/AES_PowerMon/ipshared/fff7/hdl/verilog/aes_mux_21_8_1_1.v" \
+"../../../../project_1.gen/sources_1/bd/AES_PowerMon/ipshared/fff7/hdl/verilog/aes_plaintext_array_RAM_AUTO_1R1W.v" \
+"../../../../project_1.gen/sources_1/bd/AES_PowerMon/ipshared/fff7/hdl/verilog/aes_regslice_both.v" \
+"../../../../project_1.gen/sources_1/bd/AES_PowerMon/ipshared/fff7/hdl/verilog/aes_srem_32ns_7ns_6_36_1.v" \
+"../../../../project_1.gen/sources_1/bd/AES_PowerMon/ipshared/fff7/hdl/verilog/aes.v" \
+"../../../bd/AES_PowerMon/ip/AES_PowerMon_aes_0_0/sim/AES_PowerMon_aes_0_0.v" \
+
+sv xil_defaultlib --include "C:/Xilinx/Vivado/2022.1/data/xilinx_vip/include" --include "../../../../project_1.gen/sources_1/bd/AES_PowerMon/ipshared/ec67/hdl" --include "../../../../project_1.gen/sources_1/bd/AES_PowerMon/ipshared/5765/hdl" --include "../../../../project_1.gen/sources_1/bd/AES_PowerMon/ipshared/fff7/hdl/verilog" --include "../../../../project_1.gen/sources_1/bd/AES_PowerMon/ip/AES_PowerMon_aes_0_0/drivers/aes_v1_0/src" \
+"../../../bd/AES_PowerMon/ipshared/f1d1/Power_Monitor/Power_Monitor.srcs/sources_1/new/Power_Monitor.sv" \
+"../../../bd/AES_PowerMon/ip/AES_PowerMon_Power_Monitor_0_0/sim/AES_PowerMon_Power_Monitor_0_0.sv" \
+
+verilog xil_defaultlib --include "C:/Xilinx/Vivado/2022.1/data/xilinx_vip/include" --include "../../../../project_1.gen/sources_1/bd/AES_PowerMon/ipshared/ec67/hdl" --include "../../../../project_1.gen/sources_1/bd/AES_PowerMon/ipshared/5765/hdl" --include "../../../../project_1.gen/sources_1/bd/AES_PowerMon/ipshared/fff7/hdl/verilog" --include "../../../../project_1.gen/sources_1/bd/AES_PowerMon/ip/AES_PowerMon_aes_0_0/drivers/aes_v1_0/src" \
+"../../../bd/AES_PowerMon/ip/AES_PowerMon_auto_pc_0/sim/AES_PowerMon_auto_pc_0.v" \
+"../../../bd/AES_PowerMon/ip/AES_PowerMon_auto_pc_1/sim/AES_PowerMon_auto_pc_1.v" \
+"../../../bd/AES_PowerMon/ip/AES_PowerMon_auto_pc_2/sim/AES_PowerMon_auto_pc_2.v" \
+"../../../bd/AES_PowerMon/sim/AES_PowerMon.v" \
+
+verilog xil_defaultlib "glbl.v"
+
+nosort

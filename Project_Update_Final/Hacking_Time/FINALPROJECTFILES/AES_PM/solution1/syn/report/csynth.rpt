@@ -1,0 +1,398 @@
+
+
+================================================================
+== Synthesis Summary Report of 'aes'
+================================================================
++ General Information: 
+    * Date:           Thu Apr 25 11:55:55 2024
+    * Version:        2022.1 (Build 3526262 on Mon Apr 18 15:48:16 MDT 2022)
+    * Project:        AES_PM
+    * Solution:       solution1 (Vivado IP Flow Target)
+    * Product family: zynq
+    * Target device:  xc7z020-clg400-1
+    
+
++ Performance & Resource Estimates: 
+    
+    PS: '+' for module; 'o' for loop; '*' for dataflow
+    +--------------------------------------------------------------------+------+------+---------+-----------+----------+---------+------+----------+---------+----+-----------+-------------+-----+
+    |                               Modules                              | Issue|      | Latency |  Latency  | Iteration|         | Trip |          |         |    |           |             |     |
+    |                               & Loops                              | Type | Slack| (cycles)|    (ns)   |  Latency | Interval| Count| Pipelined|  BRAM   | DSP|     FF    |     LUT     | URAM|
+    +--------------------------------------------------------------------+------+------+---------+-----------+----------+---------+------+----------+---------+----+-----------+-------------+-----+
+    |+ aes                                                               |     -|  0.14|     7379|  7.379e+04|         -|     7380|     -|        no|   9 (3%)|   -|  5303 (4%)|  13326 (25%)|    -|
+    | + aes_Pipeline_1                                                   |     -|  2.68|       18|    180.000|         -|       18|     -|        no|        -|   -|    7 (~0%)|     50 (~0%)|    -|
+    |  o Loop 1                                                          |     -|  7.30|       16|    160.000|         1|        1|    16|       yes|        -|   -|          -|            -|    -|
+    | + aes_Pipeline_2                                                   |     -|  2.68|       26|    260.000|         -|       26|     -|        no|        -|   -|    7 (~0%)|     49 (~0%)|    -|
+    |  o Loop 1                                                          |     -|  7.30|       24|    240.000|         1|        1|    24|       yes|        -|   -|          -|            -|    -|
+    | + aes_Pipeline_3                                                   |     -|  2.62|       34|    340.000|         -|       34|     -|        no|        -|   -|    8 (~0%)|     51 (~0%)|    -|
+    |  o Loop 1                                                          |     -|  7.30|       32|    320.000|         1|        1|    32|       yes|        -|   -|          -|            -|    -|
+    | o VITIS_LOOP_61_1                                                  |     -|  7.30|     7294|  7.294e+04|      7274|        -|     1|        no|        -|   -|          -|            -|    -|
+    |  + aes_Pipeline_cipherkeyLoop                                      |     -|  2.62|       34|    340.000|         -|       34|     -|        no|        -|   -|    8 (~0%)|     64 (~0%)|    -|
+    |   o cipherkeyLoop                                                  |     -|  7.30|       32|    320.000|         1|        1|    32|       yes|        -|   -|          -|            -|    -|
+    |  + aes_Pipeline_plaintextLoop                                      |     -|  3.61|       18|    180.000|         -|       18|     -|        no|        -|   -|   13 (~0%)|     63 (~0%)|    -|
+    |   o plaintextLoop                                                  |     -|  7.30|       16|    160.000|         1|        1|    16|       yes|        -|   -|          -|            -|    -|
+    |  + aes_Pipeline_aesEncryptLoop1_aesEncryptLoop2                    |     -|  0.61|       18|    180.000|         -|       18|     -|        no|        -|   -|   18 (~0%)|    160 (~0%)|    -|
+    |   o aesEncryptLoop1_aesEncryptLoop2                                |     -|  7.30|       16|    160.000|         2|        1|    16|       yes|        -|   -|          -|            -|    -|
+    |  + expandKey                                                       |     -|  0.14|     2927|  2.927e+04|         -|     2927|     -|        no|  2 (~0%)|   -|  3070 (2%)|    3538 (6%)|    -|
+    |   + expandKey_Pipeline_expandKeyLoop1                              |     -|  1.72|       11|    110.000|         -|       11|     -|        no|        -|   -|   86 (~0%)|    507 (~0%)|    -|
+    |    o expandKeyLoop1                                                |     -|  7.30|        9|     90.000|         2|        1|     8|       yes|        -|   -|          -|            -|    -|
+    |   + expandKey_Pipeline_expandKeyLoop2                              |     -|  0.14|     2913|  2.913e+04|         -|     2913|     -|        no|  2 (~0%)|   -|  2977 (2%)|    2810 (5%)|    -|
+    |    o expandKeyLoop2                                                |     -|  7.30|     2911|  2.911e+04|        44|       12|   240|       yes|        -|   -|          -|            -|    -|
+    |  + aes_main                                                        |     -|  0.43|      578|  5.780e+03|         -|      578|     -|        no|  1 (~0%)|   -|  882 (~0%)|    3565 (6%)|    -|
+    |   + aes_main_Pipeline_createRoundKeyLoop1_createRoundKeyLoop2      |     -|  0.70|       18|    180.000|         -|       18|     -|        no|        -|   -|   19 (~0%)|    167 (~0%)|    -|
+    |    o createRoundKeyLoop1_createRoundKeyLoop2                       |     -|  7.30|       16|    160.000|         2|        1|    16|       yes|        -|   -|          -|            -|    -|
+    |   + aes_main_Pipeline_addRoundKeyLoop                              |     -|  1.67|       18|    180.000|         -|       18|     -|        no|        -|   -|   12 (~0%)|     69 (~0%)|    -|
+    |    o addRoundKeyLoop                                               |     -|  7.30|       16|    160.000|         2|        1|    16|       yes|        -|   -|          -|            -|    -|
+    |   + aes_main_Pipeline_aesMainLoop                                  |     -|  1.32|      483|  4.830e+03|         -|      483|     -|        no|  1 (~0%)|   -|  611 (~0%)|    2077 (3%)|    -|
+    |    o aesMainLoop                                                   |     -|  7.30|      481|  4.810e+03|        37|       37|    13|       yes|        -|   -|          -|            -|    -|
+    |     + aes_round                                                    |     -|  1.32|       27|    270.000|         -|       28|     -|       yes|  1 (~0%)|   -|  500 (~0%)|    1479 (2%)|    -|
+    |      + galois_multiplication                                       |     -|  2.31|        0|      0.000|         -|        1|     -|       yes|        -|   -|          -|    104 (~0%)|    -|
+    |      + galois_multiplication                                       |     -|  2.31|        0|      0.000|         -|        1|     -|       yes|        -|   -|          -|    104 (~0%)|    -|
+    |   + aes_main_Pipeline_createRoundKeyLoop1_createRoundKeyLoop21     |     -|  0.43|       18|    180.000|         -|       18|     -|        no|        -|   -|   19 (~0%)|    171 (~0%)|    -|
+    |    o createRoundKeyLoop1_createRoundKeyLoop2                       |     -|  7.30|       16|    160.000|         2|        1|    16|       yes|        -|   -|          -|            -|    -|
+    |   + aes_main_Pipeline_shiftRowLoop1                                |     -|  4.15|        4|     40.000|         -|        4|     -|        no|        -|   -|   37 (~0%)|     83 (~0%)|    -|
+    |    o shiftRowLoop1                                                 |     -|  7.30|        2|     20.000|         1|        1|     2|       yes|        -|   -|          -|            -|    -|
+    |   + aes_main_Pipeline_shiftRowLoop12                               |     -|  4.15|        5|     50.000|         -|        5|     -|        no|        -|   -|   37 (~0%)|     83 (~0%)|    -|
+    |    o shiftRowLoop1                                                 |     -|  7.30|        3|     30.000|         1|        1|     3|       yes|        -|   -|          -|            -|    -|
+    |   + aes_main_Pipeline_addRoundKeyLoop3                             |     -|  1.67|       18|    180.000|         -|       18|     -|        no|        -|   -|   12 (~0%)|     69 (~0%)|    -|
+    |    o addRoundKeyLoop                                               |     -|  7.30|       16|    160.000|         2|        1|    16|       yes|        -|   -|          -|            -|    -|
+    |  + aes_Pipeline_aesEncryptLoop3_aesEncryptLoop4                    |     -|  0.61|       18|    180.000|         -|       18|     -|        no|        -|   -|   18 (~0%)|    160 (~0%)|    -|
+    |   o aesEncryptLoop3_aesEncryptLoop4                                |     -|  7.30|       16|    160.000|         2|        1|    16|       yes|        -|   -|          -|            -|    -|
+    |  + aes_Pipeline_aesDecryptLoop1_aesDecryptLoop2                    |     -|  0.61|       18|    180.000|         -|       18|     -|        no|        -|   -|   18 (~0%)|    160 (~0%)|    -|
+    |   o aesDecryptLoop1_aesDecryptLoop2                                |     -|  7.30|       16|    160.000|         2|        1|    16|       yes|        -|   -|          -|            -|    -|
+    |  + aes_invMain                                                     |     -|  0.43|      697|  6.970e+03|         -|      697|     -|        no|  2 (~0%)|   -|  835 (~0%)|    3580 (6%)|    -|
+    |   + aes_invMain_Pipeline_createRoundKeyLoop1_createRoundKeyLoop2   |     -|  0.43|       18|    180.000|         -|       18|     -|        no|        -|   -|   19 (~0%)|    171 (~0%)|    -|
+    |    o createRoundKeyLoop1_createRoundKeyLoop2                       |     -|  7.30|       16|    160.000|         2|        1|    16|       yes|        -|   -|          -|            -|    -|
+    |   + aes_invMain_Pipeline_addRoundKeyLoop                           |     -|  1.67|       18|    180.000|         -|       18|     -|        no|        -|   -|   12 (~0%)|     69 (~0%)|    -|
+    |    o addRoundKeyLoop                                               |     -|  7.30|       16|    160.000|         2|        1|    16|       yes|        -|   -|          -|            -|    -|
+    |   + aes_invMain_Pipeline_aesInvMainLoop                            |     -|  1.32|      600|  6.000e+03|         -|      600|     -|        no|  1 (~0%)|   -|  534 (~0%)|    2114 (3%)|    -|
+    |    o aesInvMainLoop                                                |     -|  7.30|      598|  5.980e+03|        46|       46|    13|       yes|        -|   -|          -|            -|    -|
+    |     + aes_invRound                                                 |     -|  1.32|       36|    360.000|         -|       37|     -|       yes|  1 (~0%)|   -|  413 (~0%)|    1479 (2%)|    -|
+    |      + galois_multiplication                                       |     -|  2.31|        0|      0.000|         -|        1|     -|       yes|        -|   -|          -|    104 (~0%)|    -|
+    |      + galois_multiplication                                       |     -|  2.31|        0|      0.000|         -|        1|     -|       yes|        -|   -|          -|    104 (~0%)|    -|
+    |   + aes_invMain_Pipeline_createRoundKeyLoop1_createRoundKeyLoop24  |     -|  0.70|       18|    180.000|         -|       18|     -|        no|        -|   -|   19 (~0%)|    167 (~0%)|    -|
+    |    o createRoundKeyLoop1_createRoundKeyLoop2                       |     -|  7.30|       16|    160.000|         2|        1|    16|       yes|        -|   -|          -|            -|    -|
+    |   + aes_invMain_Pipeline_invShiftRowLoop1                          |     -|  4.15|        4|     40.000|         -|        4|     -|        no|        -|   -|   37 (~0%)|     83 (~0%)|    -|
+    |    o invShiftRowLoop1                                              |     -|  7.30|        2|     20.000|         1|        1|     2|       yes|        -|   -|          -|            -|    -|
+    |   + aes_invMain_Pipeline_invShiftRowLoop15                         |     -|  4.15|        5|     50.000|         -|        5|     -|        no|        -|   -|   37 (~0%)|     83 (~0%)|    -|
+    |    o invShiftRowLoop1                                              |     -|  7.30|        3|     30.000|         1|        1|     3|       yes|        -|   -|          -|            -|    -|
+    |   + aes_invMain_Pipeline_addRoundKeyLoop6                          |     -|  1.67|       18|    180.000|         -|       18|     -|        no|        -|   -|   12 (~0%)|     69 (~0%)|    -|
+    |    o addRoundKeyLoop                                               |     -|  7.30|       16|    160.000|         2|        1|    16|       yes|        -|   -|          -|            -|    -|
+    |  + aes_Pipeline_aesDecryptLoop3_aesDecryptLoop4                    |     -|  0.61|       18|    180.000|         -|       18|     -|        no|        -|   -|   18 (~0%)|    160 (~0%)|    -|
+    |   o aesDecryptLoop3_aesDecryptLoop4                                |     -|  7.30|       16|    160.000|         2|        1|    16|       yes|        -|   -|          -|            -|    -|
+    |  + aes_Pipeline_ciphertextLoop                                     |     -|  3.93|       18|    180.000|         -|       18|     -|        no|        -|   -|    8 (~0%)|     72 (~0%)|    -|
+    |   o ciphertextLoop                                                 |     -|  7.30|       16|    160.000|         2|        1|    16|       yes|        -|   -|          -|            -|    -|
+    |  + aes_Pipeline_decryptedTextLoop                                  |     -|  3.93|       18|    180.000|         -|       18|     -|        no|        -|   -|    8 (~0%)|     72 (~0%)|    -|
+    |   o decryptedTextLoop                                              |     -|  7.30|       16|    160.000|         2|        1|    16|       yes|        -|   -|          -|            -|    -|
+    +--------------------------------------------------------------------+------+------+---------+-----------+----------+---------+------+----------+---------+----+-----------+-------------+-----+
+
+
+================================================================
+== HW Interfaces
+================================================================
+* S_AXILITE Interfaces
++----------------+------------+---------------+--------+----------+
+| Interface      | Data Width | Address Width | Offset | Register |
++----------------+------------+---------------+--------+----------+
+| s_axi_CTRL_BUS | 32         | 5             | 16     | 0        |
+| s_axi_control  | 32         | 6             | 16     | 0        |
++----------------+------------+---------------+--------+----------+
+
+* S_AXILITE Registers
++----------------+-------------------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+| Interface      | Register          | Offset | Width | Access | Description                      | Bit Fields                                                           |
++----------------+-------------------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+| s_axi_CTRL_BUS | CTRL              | 0x00   | 32    | RW     | Control signals                  | 0=AP_START 1=AP_DONE 2=AP_IDLE 3=AP_READY 7=AUTO_RESTART 9=INTERRUPT |
+| s_axi_CTRL_BUS | GIER              | 0x04   | 32    | RW     | Global Interrupt Enable Register | 0=Enable                                                             |
+| s_axi_CTRL_BUS | IP_IER            | 0x08   | 32    | RW     | IP Interrupt Enable Register     | 0=CHAN0_INT_EN 1=CHAN1_INT_EN                                        |
+| s_axi_CTRL_BUS | IP_ISR            | 0x0c   | 32    | RW     | IP Interrupt Status Register     | 0=CHAN0_INT_ST 1=CHAN1_INT_ST                                        |
+| s_axi_CTRL_BUS | enable_in         | 0x10   | 32    | W      | Data signal of enable_in         |                                                                      |
+| s_axi_CTRL_BUS | power_reading_out | 0x18   | 32    | W      | Data signal of power_reading_out |                                                                      |
+| s_axi_control  | mode              | 0x10   | 32    | W      | Data signal of mode              |                                                                      |
+| s_axi_control  | enable_out        | 0x18   | 32    | W      | Data signal of enable_out        |                                                                      |
+| s_axi_control  | power_reading_in  | 0x20   | 32    | W      | Data signal of power_reading_in  |                                                                      |
++----------------+-------------------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+
+* AXIS
++------------------------------+---------------+-------+-------+-----+-------+-------+--------+-------+-------+--------+
+| Interface                    | Register Mode | TDATA | TDEST | TID | TKEEP | TLAST | TREADY | TSTRB | TUSER | TVALID |
++------------------------------+---------------+-------+-------+-----+-------+-------+--------+-------+-------+--------+
+| ciphertext_and_decryptedtext | both          | 8     | 1     | 1   | 1     | 1     | 1      | 1     | 1     | 1      |
+| key_and_plaintext            | both          | 8     | 1     | 1   | 1     | 1     | 1      | 1     | 1     | 1      |
++------------------------------+---------------+-------+-------+-----+-------+-------+--------+-------+-------+--------+
+
+* TOP LEVEL CONTROL
++-----------+------------+-----------+
+| Interface | Type       | Ports     |
++-----------+------------+-----------+
+| ap_clk    | clock      | ap_clk    |
+| ap_rst_n  | reset      | ap_rst_n  |
+| interrupt | interrupt  | interrupt |
+| ap_ctrl   | ap_ctrl_hs |           |
++-----------+------------+-----------+
+
+
+================================================================
+== SW I/O Information
+================================================================
+* Top Function Arguments
++------------------------------+-----------+-------------------------------------------+
+| Argument                     | Direction | Datatype                                  |
++------------------------------+-----------+-------------------------------------------+
+| key_and_plaintext            | in        | stream<hls::axis<ap_int<8>, 1, 1, 1>, 0>& |
+| ciphertext_and_decryptedtext | out       | stream<hls::axis<ap_int<8>, 1, 1, 1>, 0>& |
+| mode                         | in        | int                                       |
+| enable_in                    | in        | unsigned char                             |
+| enable_out                   | in        | unsigned char                             |
+| power_reading_in             | in        | unsigned int                              |
+| power_reading_out            | in        | unsigned int                              |
++------------------------------+-----------+-------------------------------------------+
+
+* SW-to-HW Mapping
++------------------------------+------------------------------+-----------+---------------------------------------------+
+| Argument                     | HW Interface                 | HW Type   | HW Info                                     |
++------------------------------+------------------------------+-----------+---------------------------------------------+
+| key_and_plaintext            | key_and_plaintext            | interface |                                             |
+| ciphertext_and_decryptedtext | ciphertext_and_decryptedtext | interface |                                             |
+| mode                         | s_axi_control                | register  | name=mode offset=0x10 range=32              |
+| enable_in                    | s_axi_CTRL_BUS               | register  | name=enable_in offset=0x10 range=32         |
+| enable_out                   | s_axi_control                | register  | name=enable_out offset=0x18 range=32        |
+| power_reading_in             | s_axi_control                | register  | name=power_reading_in offset=0x20 range=32  |
+| power_reading_out            | s_axi_CTRL_BUS               | register  | name=power_reading_out offset=0x18 range=32 |
++------------------------------+------------------------------+-----------+---------------------------------------------+
+
+
+================================================================
+== M_AXI Burst Information
+================================================================
+ Note: All burst requests might be further partitioned into multiple requests during RTL generation based on max_read_burst_length or max_write_burst_length settings.
+
+  No burst in design
+
+================================================================
+== Bind Op Report
+================================================================
++-------------------------------------------------------------------+-----+--------+-----------------+-----+--------+---------+
+| Name                                                              | DSP | Pragma | Variable        | Op  | Impl   | Latency |
++-------------------------------------------------------------------+-----+--------+-----------------+-----+--------+---------+
+| + aes                                                             | 0   |        |                 |     |        |         |
+|  + aes_Pipeline_1                                                 | 0   |        |                 |     |        |         |
+|    empty_42_fu_58_p2                                              | -   |        | empty_42        | add | fabric | 0       |
+|  + aes_Pipeline_2                                                 | 0   |        |                 |     |        |         |
+|    empty_41_fu_62_p2                                              | -   |        | empty_41        | add | fabric | 0       |
+|  + aes_Pipeline_3                                                 | 0   |        |                 |     |        |         |
+|    empty_40_fu_62_p2                                              | -   |        | empty_40        | add | fabric | 0       |
+|  + aes_Pipeline_cipherkeyLoop                                     | 0   |        |                 |     |        |         |
+|    add_ln69_fu_131_p2                                             | -   |        | add_ln69        | add | fabric | 0       |
+|  + aes_Pipeline_plaintextLoop                                     | 0   |        |                 |     |        |         |
+|    add_ln76_fu_181_p2                                             | -   |        | add_ln76        | add | fabric | 0       |
+|  + aes_Pipeline_aesEncryptLoop1_aesEncryptLoop2                   | 0   |        |                 |     |        |         |
+|    add_ln519_fu_105_p2                                            | -   |        | add_ln519       | add | fabric | 0       |
+|    add_ln519_1_fu_131_p2                                          | -   |        | add_ln519_1     | add | fabric | 0       |
+|    add_ln524_fu_165_p2                                            | -   |        | add_ln524       | add | fabric | 0       |
+|    add_ln524_1_fu_188_p2                                          | -   |        | add_ln524_1     | add | fabric | 0       |
+|    add_ln523_fu_194_p2                                            | -   |        | add_ln523       | add | fabric | 0       |
+|  + expandKey                                                      | 0   |        |                 |     |        |         |
+|   + expandKey_Pipeline_expandKeyLoop1                             | 0   |        |                 |     |        |         |
+|     add_ln244_fu_194_p2                                           | -   |        | add_ln244       | add | fabric | 0       |
+|     add_ln244_1_fu_231_p2                                         | -   |        | add_ln244_1     | add | fabric | 0       |
+|     add_ln244_2_fu_258_p2                                         | -   |        | add_ln244_2     | add | fabric | 0       |
+|     add_ln244_3_fu_285_p2                                         | -   |        | add_ln244_3     | add | fabric | 0       |
+|     add_ln241_fu_295_p2                                           | -   |        | add_ln241       | add | fabric | 0       |
+|   + expandKey_Pipeline_expandKeyLoop2                             | 0   |        |                 |     |        |         |
+|     empty_fu_541_p2                                               | -   |        | empty           | add | fabric | 0       |
+|     add_ln260_fu_562_p2                                           | -   |        | add_ln260       | add | fabric | 0       |
+|     add_ln260_1_fu_601_p2                                         | -   |        | add_ln260_1     | add | fabric | 0       |
+|     add_ln260_2_fu_622_p2                                         | -   |        | add_ln260_2     | add | fabric | 0       |
+|     rconIteration_2_fu_710_p2                                     | -   |        | rconIteration_2 | add | fabric | 0       |
+|     sub_ln272_fu_461_p2                                           | -   |        | sub_ln272       | sub | fabric | 0       |
+|     sub_ln272_1_fu_475_p2                                         | -   |        | sub_ln272_1     | sub | fabric | 0       |
+|     sub_ln289_fu_681_p2                                           | -   |        | sub_ln289       | sub | fabric | 0       |
+|     add_ln290_fu_809_p2                                           | -   |        | add_ln290       | add | fabric | 0       |
+|     sub_ln289_1_fu_814_p2                                         | -   |        | sub_ln289_1     | sub | fabric | 0       |
+|     add_ln290_1_fu_869_p2                                         | -   |        | add_ln290_1     | add | fabric | 0       |
+|     sub_ln289_2_fu_874_p2                                         | -   |        | sub_ln289_2     | sub | fabric | 0       |
+|     add_ln290_2_fu_916_p2                                         | -   |        | add_ln290_2     | add | fabric | 0       |
+|     sub_ln289_3_fu_921_p2                                         | -   |        | sub_ln289_3     | sub | fabric | 0       |
+|     add_ln290_3_fu_518_p2                                         | -   |        | add_ln290_3     | add | fabric | 0       |
+|  + aes_main                                                       | 0   |        |                 |     |        |         |
+|   + aes_main_Pipeline_createRoundKeyLoop1_createRoundKeyLoop2     | 0   |        |                 |     |        |         |
+|     add_ln436_1_fu_125_p2                                         | -   |        | add_ln436_1     | add | fabric | 0       |
+|     add_ln436_fu_151_p2                                           | -   |        | add_ln436       | add | fabric | 0       |
+|     add_ln442_fu_193_p2                                           | -   |        | add_ln442       | add | fabric | 0       |
+|     add_ln442_1_fu_217_p2                                         | -   |        | add_ln442_1     | add | fabric | 0       |
+|     add_ln440_fu_223_p2                                           | -   |        | add_ln440       | add | fabric | 0       |
+|   + aes_main_Pipeline_addRoundKeyLoop                             | 0   |        |                 |     |        |         |
+|     add_ln340_fu_78_p2                                            | -   |        | add_ln340       | add | fabric | 0       |
+|   + aes_main_Pipeline_aesMainLoop                                 | 0   |        |                 |     |        |         |
+|     add_ln457_fu_453_p2                                           | -   |        | add_ln457       | add | fabric | 0       |
+|   + aes_main_Pipeline_createRoundKeyLoop1_createRoundKeyLoop21    | 0   |        |                 |     |        |         |
+|     add_ln436_fu_139_p2                                           | -   |        | add_ln436       | add | fabric | 0       |
+|     add_ln436_1_fu_165_p2                                         | -   |        | add_ln436_1     | add | fabric | 0       |
+|     add_ln442_fu_213_p2                                           | -   |        | add_ln442       | add | fabric | 0       |
+|     add_ln442_1_fu_247_p2                                         | -   |        | add_ln442_1     | add | fabric | 0       |
+|     add_ln440_fu_253_p2                                           | -   |        | add_ln440       | add | fabric | 0       |
+|   + aes_main_Pipeline_shiftRowLoop1                               | 0   |        |                 |     |        |         |
+|     i_4_fu_162_p2                                                 | -   |        | i_4             | add | fabric | 0       |
+|   + aes_main_Pipeline_shiftRowLoop12                              | 0   |        |                 |     |        |         |
+|     i_2_fu_162_p2                                                 | -   |        | i_2             | add | fabric | 0       |
+|   + aes_main_Pipeline_addRoundKeyLoop3                            | 0   |        |                 |     |        |         |
+|     add_ln340_fu_78_p2                                            | -   |        | add_ln340       | add | fabric | 0       |
+|  + aes_Pipeline_aesEncryptLoop3_aesEncryptLoop4                   | 0   |        |                 |     |        |         |
+|    add_ln536_fu_105_p2                                            | -   |        | add_ln536       | add | fabric | 0       |
+|    add_ln536_1_fu_131_p2                                          | -   |        | add_ln536_1     | add | fabric | 0       |
+|    add_ln541_fu_177_p2                                            | -   |        | add_ln541       | add | fabric | 0       |
+|    add_ln541_1_fu_188_p2                                          | -   |        | add_ln541_1     | add | fabric | 0       |
+|    add_ln540_fu_194_p2                                            | -   |        | add_ln540       | add | fabric | 0       |
+|  + aes_Pipeline_aesDecryptLoop1_aesDecryptLoop2                   | 0   |        |                 |     |        |         |
+|    add_ln723_fu_105_p2                                            | -   |        | add_ln723       | add | fabric | 0       |
+|    add_ln723_1_fu_131_p2                                          | -   |        | add_ln723_1     | add | fabric | 0       |
+|    add_ln728_fu_165_p2                                            | -   |        | add_ln728       | add | fabric | 0       |
+|    add_ln728_1_fu_188_p2                                          | -   |        | add_ln728_1     | add | fabric | 0       |
+|    add_ln727_fu_194_p2                                            | -   |        | add_ln727       | add | fabric | 0       |
+|  + aes_invMain                                                    | 0   |        |                 |     |        |         |
+|    add_ln660_fu_477_p2                                            | -   |        | add_ln660       | add | fabric | 0       |
+|   + aes_invMain_Pipeline_createRoundKeyLoop1_createRoundKeyLoop2  | 0   |        |                 |     |        |         |
+|     add_ln436_fu_139_p2                                           | -   |        | add_ln436       | add | fabric | 0       |
+|     add_ln436_3_fu_165_p2                                         | -   |        | add_ln436_3     | add | fabric | 0       |
+|     add_ln442_fu_213_p2                                           | -   |        | add_ln442       | add | fabric | 0       |
+|     add_ln442_3_fu_247_p2                                         | -   |        | add_ln442_3     | add | fabric | 0       |
+|     add_ln440_fu_253_p2                                           | -   |        | add_ln440       | add | fabric | 0       |
+|   + aes_invMain_Pipeline_addRoundKeyLoop                          | 0   |        |                 |     |        |         |
+|     add_ln340_fu_78_p2                                            | -   |        | add_ln340       | add | fabric | 0       |
+|   + aes_invMain_Pipeline_aesInvMainLoop                           | 0   |        |                 |     |        |         |
+|     add_ln660_fu_463_p2                                           | -   |        | add_ln660       | add | fabric | 0       |
+|   + aes_invMain_Pipeline_createRoundKeyLoop1_createRoundKeyLoop24 | 0   |        |                 |     |        |         |
+|     add_ln436_fu_125_p2                                           | -   |        | add_ln436       | add | fabric | 0       |
+|     add_ln436_2_fu_151_p2                                         | -   |        | add_ln436_2     | add | fabric | 0       |
+|     add_ln442_fu_193_p2                                           | -   |        | add_ln442       | add | fabric | 0       |
+|     add_ln442_2_fu_217_p2                                         | -   |        | add_ln442_2     | add | fabric | 0       |
+|     add_ln440_fu_223_p2                                           | -   |        | add_ln440       | add | fabric | 0       |
+|   + aes_invMain_Pipeline_invShiftRowLoop1                         | 0   |        |                 |     |        |         |
+|     i_9_fu_162_p2                                                 | -   |        | i_9             | add | fabric | 0       |
+|   + aes_invMain_Pipeline_invShiftRowLoop15                        | 0   |        |                 |     |        |         |
+|     i_7_fu_162_p2                                                 | -   |        | i_7             | add | fabric | 0       |
+|   + aes_invMain_Pipeline_addRoundKeyLoop6                         | 0   |        |                 |     |        |         |
+|     add_ln340_fu_78_p2                                            | -   |        | add_ln340       | add | fabric | 0       |
+|  + aes_Pipeline_aesDecryptLoop3_aesDecryptLoop4                   | 0   |        |                 |     |        |         |
+|    add_ln741_fu_105_p2                                            | -   |        | add_ln741       | add | fabric | 0       |
+|    add_ln741_1_fu_131_p2                                          | -   |        | add_ln741_1     | add | fabric | 0       |
+|    add_ln746_fu_177_p2                                            | -   |        | add_ln746       | add | fabric | 0       |
+|    add_ln746_1_fu_188_p2                                          | -   |        | add_ln746_1     | add | fabric | 0       |
+|    add_ln745_fu_194_p2                                            | -   |        | add_ln745       | add | fabric | 0       |
+|  + aes_Pipeline_ciphertextLoop                                    | 0   |        |                 |     |        |         |
+|    add_ln87_fu_154_p2                                             | -   |        | add_ln87        | add | fabric | 0       |
+|  + aes_Pipeline_decryptedTextLoop                                 | 0   |        |                 |     |        |         |
+|    add_ln97_fu_154_p2                                             | -   |        | add_ln97        | add | fabric | 0       |
++-------------------------------------------------------------------+-----+--------+-----------------+-----+--------+---------+
+
+
+================================================================
+== Bind Storage Report
+================================================================
++-----------------------------------------+------+------+--------+---------------------+---------+------+---------+
+| Name                                    | BRAM | URAM | Pragma | Variable            | Storage | Impl | Latency |
++-----------------------------------------+------+------+--------+---------------------+---------+------+---------+
+| + aes                                   | 9    | 0    |        |                     |         |      |         |
+|   key_array128_U                        | 1    | -    |        | key_array128        | rom_np  | auto | 1       |
+|   expandedKey_U                         | -    | -    |        | expandedKey         | ram_t2p | auto | 1       |
+|   expandedKey_1_U                       | -    | -    |        | expandedKey_1       | ram_t2p | auto | 1       |
+|   block_U                               | -    | -    |        | block               | ram_t2p | auto | 1       |
+|   expandedKey_2_U                       | -    | -    |        | expandedKey_2       | ram_t2p | auto | 1       |
+|   expandedKey_3_U                       | -    | -    |        | expandedKey_3       | ram_t2p | auto | 1       |
+|   block_1_U                             | -    | -    |        | block_1             | ram_t2p | auto | 1       |
+|   plaintext_array_U                     | -    | -    |        | plaintext_array     | ram_1p  | auto | 1       |
+|   ciphertext_array_U                    | -    | -    |        | ciphertext_array    | ram_1p  | auto | 1       |
+|   decryptedtext_array_U                 | -    | -    |        | decryptedtext_array | ram_1p  | auto | 1       |
+|   sbox_U                                | 1    | -    |        | sbox                | rom_2p  | auto | 1       |
+|  + expandKey                            | 2    | 0    |        |                     |         |      |         |
+|   + expandKey_Pipeline_expandKeyLoop2   | 2    | 0    |        |                     |         |      |         |
+|     sbox_U                              | 1    | -    | pragma | sbox                | rom_2p  | auto | 1       |
+|     Rcon_U                              | 1    | -    | pragma | Rcon                | rom_2p  | auto | 1       |
+|  + aes_main                             | 1    | 0    |        |                     |         |      |         |
+|    roundKey_U                           | -    | -    |        | roundKey            | ram_t2p | auto | 1       |
+|   + aes_main_Pipeline_aesMainLoop       | 1    | 0    |        |                     |         |      |         |
+|    + aes_round                          | 1    | 0    |        |                     |         |      |         |
+|      sbox_U                             | 1    | -    | pragma | sbox                | rom_2p  | auto | 1       |
+|  + aes_invMain                          | 2    | 0    |        |                     |         |      |         |
+|    roundKey_U                           | -    | -    |        | roundKey            | ram_t2p | auto | 1       |
+|    rsbox_U                              | 1    | -    | pragma | rsbox               | rom_2p  | auto | 1       |
+|   + aes_invMain_Pipeline_aesInvMainLoop | 1    | 0    |        |                     |         |      |         |
+|    + aes_invRound                       | 1    | 0    |        |                     |         |      |         |
+|      rsbox_U                            | 1    | -    | pragma | rsbox               | rom_2p  | auto | 1       |
++-----------------------------------------+------+------+--------+---------------------+---------+------+---------+
+
+
+================================================================
+== Pragma Report
+================================================================
+* Valid Pragma Syntax
++-----------------+------------------------------------------------------+----------------------------------------------------------------+
+| Type            | Options                                              | Location                                                       |
++-----------------+------------------------------------------------------+----------------------------------------------------------------+
+| interface       | axis register both port=key_and_plaintext            | Downloads/aes_axis.cpp:15 in aes, key_and_plaintext            |
+| interface       | axis register both port=ciphertext_and_decryptedtext | Downloads/aes_axis.cpp:16 in aes, ciphertext_and_decryptedtext |
+| interface       | s_axilite port=mode                                  | Downloads/aes_axis.cpp:17 in aes, mode                         |
+| interface       | s_axilite port=enable_out                            | Downloads/aes_axis.cpp:18 in aes, enable_out                   |
+| interface       | s_axilite port=power_reading_in                      | Downloads/aes_axis.cpp:19 in aes, power_reading_in             |
+| interface       | s_axilite port=enable_in bundle=CTRL_BUS             | Downloads/aes_axis.cpp:20 in aes, enable_in                    |
+| interface       | s_axilite port=power_reading_out bundle=CTRL_BUS     | Downloads/aes_axis.cpp:21 in aes, power_reading_out            |
+| interface       | s_axilite port=return bundle=CTRL_BUS                | Downloads/aes_axis.cpp:22 in aes, return                       |
+| loop_tripcount  | min=1 max=1 avg=1                                    | Downloads/aes_axis.cpp:66 in aes                               |
+| loop_tripcount  | min=16 max=32 avg=24                                 | Downloads/aes_axis.cpp:70 in aes                               |
+| bind_storage    | variable=sbox type=rom_2p                            | Downloads/aes_axis.cpp:138 in getsboxvalue, sbox               |
+| bind_storage    | variable=rsbox type=rom_2p                           | Downloads/aes_axis.cpp:147 in getsboxinvert, rsbox             |
+| unroll          |                                                      | Downloads/aes_axis.cpp:166 in rotate                           |
+| bind_storage    | variable=Rcon type=rom_2p                            | Downloads/aes_axis.cpp:197 in getrconvalue, Rcon               |
+| unroll          |                                                      | Downloads/aes_axis.cpp:212 in core                             |
+| array_partition | dim=1 type=complete variable=t                       | Downloads/aes_axis.cpp:236 in expandkey, t                     |
+| loop_tripcount  | min=16 max=32 avg=24                                 | Downloads/aes_axis.cpp:242 in expandkey                        |
+| performance     | target_ti=8                                          | Downloads/aes_axis.cpp:243 in expandkey                        |
+| loop_tripcount  | min=128 max=240 avg=192                              | Downloads/aes_axis.cpp:251 in expandkey                        |
+| pipeline        | II=12                                                | Downloads/aes_axis.cpp:252 in expandkey                        |
+| unroll          |                                                      | Downloads/aes_axis.cpp:259 in expandkey                        |
+| unroll          |                                                      | Downloads/aes_axis.cpp:276 in expandkey                        |
+| unroll          |                                                      | Downloads/aes_axis.cpp:288 in expandkey                        |
+| unroll          |                                                      | Downloads/aes_axis.cpp:303 in subbytes                         |
+| unroll          |                                                      | Downloads/aes_axis.cpp:313 in shiftrows                        |
+| loop_tripcount  | min=1 max=3 avg=2                                    | Downloads/aes_axis.cpp:326 in shiftrow                         |
+| pipeline        | II=6                                                 | Downloads/aes_axis.cpp:327 in shiftrow                         |
+| pipeline        |                                                      | Downloads/aes_axis.cpp:373 in mixcolumns                       |
+| unroll          |                                                      | Downloads/aes_axis.cpp:399 in mixcolumn                        |
+| pipeline        |                                                      | Downloads/aes_axis.cpp:441 in createroundkey                   |
+| loop_tripcount  | min=9 max=13 avg=11                                  | Downloads/aes_axis.cpp:459 in aes_main                         |
+| performance     | target_ti=500                                        | Downloads/aes_axis.cpp:460 in aes_main                         |
+| unroll          |                                                      | Downloads/aes_axis.cpp:558 in invsubbytes                      |
+| unroll          |                                                      | Downloads/aes_axis.cpp:568 in invshiftrows                     |
+| loop_tripcount  | min=1 max=3 avg=2                                    | Downloads/aes_axis.cpp:579 in invshiftrow                      |
+| pipeline        | II=5                                                 | Downloads/aes_axis.cpp:581 in invshiftrow                      |
+| pipeline        | II=6                                                 | Downloads/aes_axis.cpp:599 in invmixcolumns                    |
+| loop_tripcount  | min=9 max=13 avg=11                                  | Downloads/aes_axis.cpp:662 in aes_invmain                      |
+| performance     | target_ti=600                                        | Downloads/aes_axis.cpp:663 in aes_invmain                      |
++-----------------+------------------------------------------------------+----------------------------------------------------------------+
+
+* Inferred Pragmas
++----------------------------------------+-----------------+------------------------------------------------------+---------------------------------------------------------------+
+| Source Pragma                          | Inferred Pragma | Options                                              | Location                                                      |
++----------------------------------------+-----------------+------------------------------------------------------+---------------------------------------------------------------+
+| performance Downloads/aes_axis.cpp:243 | unroll          | FACTOR=4                                             | Downloads/aes_axis.cpp:241 expandKeyLoop1 in expandkey        |
+| performance Downloads/aes_axis.cpp:243 | pipeline        | II=1                                                 | Downloads/aes_axis.cpp:241 expandKeyLoop1 in expandkey        |
+| performance Downloads/aes_axis.cpp:243 | array_partition | dim=1 type=cyclic factor=2 variable=expandedKey.i    | variable expandedKey.i in aes                                 |
+| performance Downloads/aes_axis.cpp:243 | array_partition | dim=1 type=cyclic factor=2 variable=expandedKey.i336 | variable expandedKey.i336 in aes                              |
+| performance Downloads/aes_axis.cpp:460 | pipeline        | II=38                                                | Downloads/aes_axis.cpp:457 aesMainLoop in aes_main            |
+| performance Downloads/aes_axis.cpp:460 | unroll          | COMPLETE                                             | Downloads/aes_axis.cpp:440 createRoundKeyLoop2 in aes_main    |
+| performance Downloads/aes_axis.cpp:460 | unroll          | COMPLETE                                             | Downloads/aes_axis.cpp:436 createRoundKeyLoop1 in aes_main    |
+| performance Downloads/aes_axis.cpp:460 | unroll          | COMPLETE                                             | Downloads/aes_axis.cpp:340 addRoundKeyLoop in aes_round       |
+| performance Downloads/aes_axis.cpp:460 | unroll          | COMPLETE                                             | Downloads/aes_axis.cpp:371 mixColumnsLoop1 in aes_round       |
+| performance Downloads/aes_axis.cpp:460 | unroll          | COMPLETE                                             | Downloads/aes_axis.cpp:324 shiftRowLoop1 in aes_round         |
+| performance Downloads/aes_axis.cpp:460 | unroll          | COMPLETE                                             | Downloads/aes_axis.cpp:324 shiftRowLoop1 in aes_round         |
+| performance Downloads/aes_axis.cpp:663 | pipeline        | II=46                                                | Downloads/aes_axis.cpp:660 aesInvMainLoop in aes_invmain      |
+| performance Downloads/aes_axis.cpp:663 | unroll          | COMPLETE                                             | Downloads/aes_axis.cpp:440 createRoundKeyLoop2 in aes_invmain |
+| performance Downloads/aes_axis.cpp:663 | unroll          | COMPLETE                                             | Downloads/aes_axis.cpp:436 createRoundKeyLoop1 in aes_invmain |
+| performance Downloads/aes_axis.cpp:663 | unroll          | COMPLETE                                             | Downloads/aes_axis.cpp:597 invMixColumnsLoop1 in aes_invround |
+| performance Downloads/aes_axis.cpp:663 | unroll          | COMPLETE                                             | Downloads/aes_axis.cpp:340 addRoundKeyLoop in aes_invround    |
+| performance Downloads/aes_axis.cpp:663 | unroll          | COMPLETE                                             | Downloads/aes_axis.cpp:577 invShiftRowLoop1 in aes_invround   |
+| performance Downloads/aes_axis.cpp:663 | unroll          | COMPLETE                                             | Downloads/aes_axis.cpp:577 invShiftRowLoop1 in aes_invround   |
++----------------------------------------+-----------------+------------------------------------------------------+---------------------------------------------------------------+
+
+

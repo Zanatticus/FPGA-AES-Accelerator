@@ -1,0 +1,645 @@
+
+*** Running vivado
+    with args -log Power_Monitor.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source Power_Monitor.tcl
+
+
+
+****** Vivado v2022.1 (64-bit)
+  **** SW Build 3526262 on Mon Apr 18 15:48:16 MDT 2022
+  **** IP Build 3524634 on Mon Apr 18 20:55:01 MDT 2022
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+
+source Power_Monitor.tcl -notrace
+Command: read_checkpoint -auto_incremental -incremental C:/Users/iqbal.ha/Power_Monitor/Power_Monitor.srcs/utils_1/imports/synth_1/Power_Monitor.dcp
+INFO: [Vivado 12-5825] Read reference checkpoint from C:/Users/iqbal.ha/Power_Monitor/Power_Monitor.srcs/utils_1/imports/synth_1/Power_Monitor.dcp for incremental synthesis
+INFO: [Vivado 12-7989] Please ensure there are no constraint changes
+Command: synth_design -top Power_Monitor -part xc7z020clg400-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Device 21-403] Loading part xc7z020clg400-1
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 7304
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1617.852 ; gain = 0.000
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'Power_Monitor' [C:/Users/iqbal.ha/Power_Monitor/Power_Monitor.srcs/sources_1/new/Power_Monitor.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'one_to_100' [C:/Users/iqbal.ha/Power_Monitor/Power_Monitor.srcs/sources_1/new/Power_Monitor.sv:41]
+INFO: [Synth 8-6155] done synthesizing module 'one_to_100' (0#1) [C:/Users/iqbal.ha/Power_Monitor/Power_Monitor.srcs/sources_1/new/Power_Monitor.sv:41]
+INFO: [Synth 8-6157] synthesizing module 'freq_ro' [C:/Users/iqbal.ha/Power_Monitor/Power_Monitor.srcs/sources_1/new/Power_Monitor.sv:57]
+INFO: [Synth 8-6157] synthesizing module 'ring_osc' [C:/Users/iqbal.ha/Power_Monitor/Power_Monitor.srcs/sources_1/new/Power_Monitor.sv:70]
+INFO: [Synth 8-6157] synthesizing module 'and_1' [C:/Users/iqbal.ha/Power_Monitor/Power_Monitor.srcs/sources_1/new/Power_Monitor.sv:122]
+INFO: [Synth 8-6155] done synthesizing module 'and_1' (0#1) [C:/Users/iqbal.ha/Power_Monitor/Power_Monitor.srcs/sources_1/new/Power_Monitor.sv:122]
+INFO: [Synth 8-6157] synthesizing module 'inv_1' [C:/Users/iqbal.ha/Power_Monitor/Power_Monitor.srcs/sources_1/new/Power_Monitor.sv:133]
+INFO: [Synth 8-6157] synthesizing module 'LUT1' [C:/Xilinx/Vivado/2022.1/scripts/rt/data/unisim_comp.v:62648]
+	Parameter INIT bound to: 2'b01 
+INFO: [Synth 8-6155] done synthesizing module 'LUT1' (0#1) [C:/Xilinx/Vivado/2022.1/scripts/rt/data/unisim_comp.v:62648]
+INFO: [Synth 8-6155] done synthesizing module 'inv_1' (0#1) [C:/Users/iqbal.ha/Power_Monitor/Power_Monitor.srcs/sources_1/new/Power_Monitor.sv:133]
+INFO: [Synth 8-6155] done synthesizing module 'ring_osc' (0#1) [C:/Users/iqbal.ha/Power_Monitor/Power_Monitor.srcs/sources_1/new/Power_Monitor.sv:70]
+INFO: [Synth 8-6157] synthesizing module 'reset_enable' [C:/Users/iqbal.ha/Power_Monitor/Power_Monitor.srcs/sources_1/new/Power_Monitor.sv:82]
+INFO: [Synth 8-6157] synthesizing module 'counter' [C:/Users/iqbal.ha/Power_Monitor/Power_Monitor.srcs/sources_1/new/Power_Monitor.sv:105]
+INFO: [Synth 8-6155] done synthesizing module 'counter' (0#1) [C:/Users/iqbal.ha/Power_Monitor/Power_Monitor.srcs/sources_1/new/Power_Monitor.sv:105]
+INFO: [Synth 8-6155] done synthesizing module 'reset_enable' (0#1) [C:/Users/iqbal.ha/Power_Monitor/Power_Monitor.srcs/sources_1/new/Power_Monitor.sv:82]
+INFO: [Synth 8-6155] done synthesizing module 'freq_ro' (0#1) [C:/Users/iqbal.ha/Power_Monitor/Power_Monitor.srcs/sources_1/new/Power_Monitor.sv:57]
+INFO: [Synth 8-6157] synthesizing module 'calc_avg' [C:/Users/iqbal.ha/Power_Monitor/Power_Monitor.srcs/sources_1/new/Power_Monitor.sv:25]
+INFO: [Synth 8-6155] done synthesizing module 'calc_avg' (0#1) [C:/Users/iqbal.ha/Power_Monitor/Power_Monitor.srcs/sources_1/new/Power_Monitor.sv:25]
+INFO: [Synth 8-6155] done synthesizing module 'Power_Monitor' (0#1) [C:/Users/iqbal.ha/Power_Monitor/Power_Monitor.srcs/sources_1/new/Power_Monitor.sv:3]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1639.496 ; gain = 21.645
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1639.496 ; gain = 21.645
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1639.496 ; gain = 21.645
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.012 . Memory (MB): peak = 1639.496 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [C:/Users/iqbal.ha/Power_Monitor/Power_Monitor.srcs/constrs_1/new/Power_Monitor_Const.xdc]
+CRITICAL WARNING: [Designutils 20-1307] Command 'DRC' is not supported in the xdc constraint file. [C:/Users/iqbal.ha/Power_Monitor/Power_Monitor.srcs/constrs_1/new/Power_Monitor_Const.xdc:1]
+Finished Parsing XDC File [C:/Users/iqbal.ha/Power_Monitor/Power_Monitor.srcs/constrs_1/new/Power_Monitor_Const.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1704.449 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1704.449 ; gain = 0.000
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1704.449 ; gain = 86.598
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z020clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1704.449 ; gain = 86.598
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1704.449 ; gain = 86.598
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1704.449 ; gain = 86.598
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	  11 Input   64 Bit       Adders := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 220 (col length:60)
+BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1704.449 ; gain = 86.598
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1704.449 ; gain = 86.598
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1704.449 ; gain = 86.598
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+      : bingbong/sum_inferred__0/out[52]
+      : bingbong/sum_inferred__0/in0[52]
+      : bingbong/sum_inferred/out[52]
+      : bingbong/sum_inferred/in0[52]
+      : bingbong/sum_inferred__0/out[48]
+      : bingbong/sum_inferred__0/in0[48]
+      : bingbong/sum_inferred/out[48]
+      : bingbong/sum_inferred/in0[48]
+      : bingbong/sum_inferred__0/out[44]
+      : bingbong/sum_inferred__0/in0[44]
+      : bingbong/sum_inferred/out[44]
+      : bingbong/sum_inferred/in0[44]
+      : bingbong/sum_inferred__0/out[40]
+      : bingbong/sum_inferred__0/in0[40]
+      : bingbong/sum_inferred/out[40]
+      : bingbong/sum_inferred/in0[40]
+      : bingbong/sum_inferred__0/out[36]
+      : bingbong/sum_inferred__0/in0[36]
+      : bingbong/sum_inferred/out[36]
+      : bingbong/sum_inferred/in0[36]
+      : bingbong/sum_inferred__0/out[0]
+      : bingbong/sum_inferred__0/in0[0]
+      : bingbong/sum_inferred/out[0]
+      : bingbong/sum_inferred/in0[0]
+      : bingbong/sum_inferred__0/out[1]
+      : bingbong/sum_inferred__0/in0[1]
+      : bingbong/sum_inferred/out[1]
+      : bingbong/sum_inferred/in0[1]
+      : bingbong/sum_inferred__0/out[2]
+      : bingbong/sum_inferred__0/in0[2]
+      : bingbong/sum_inferred/out[2]
+      : bingbong/sum_inferred/in0[2]
+      : bingbong/sum_inferred__0/out[3]
+      : bingbong/sum_inferred__0/in0[3]
+      : bingbong/sum_inferred/out[3]
+      : bingbong/sum_inferred/in0[3]
+      : bingbong/sum_inferred__0/out[4]
+      : bingbong/sum_inferred__0/in0[4]
+      : bingbong/sum_inferred/out[4]
+      : bingbong/sum_inferred/in0[4]
+      : bingbong/sum_inferred__0/out[5]
+      : bingbong/sum_inferred__0/in0[5]
+      : bingbong/sum_inferred/out[5]
+      : bingbong/sum_inferred/in0[5]
+      : bingbong/sum_inferred__0/out[6]
+      : bingbong/sum_inferred__0/in0[6]
+      : bingbong/sum_inferred/out[6]
+      : bingbong/sum_inferred/in0[6]
+      : bingbong/sum_inferred__0/out[7]
+      : bingbong/sum_inferred__0/in0[7]
+      : bingbong/sum_inferred/out[7]
+      : bingbong/sum_inferred/in0[7]
+      : bingbong/sum_inferred__0/out[8]
+      : bingbong/sum_inferred__0/in0[8]
+      : bingbong/sum_inferred/out[8]
+      : bingbong/sum_inferred/in0[8]
+      : bingbong/sum_inferred__0/out[9]
+      : bingbong/sum_inferred__0/in0[9]
+      : bingbong/sum_inferred/out[9]
+      : bingbong/sum_inferred/in0[9]
+      : bingbong/sum_inferred__0/out[10]
+      : bingbong/sum_inferred__0/in0[10]
+      : bingbong/sum_inferred/out[10]
+      : bingbong/sum_inferred/in0[10]
+      : bingbong/sum_inferred__0/out[11]
+      : bingbong/sum_inferred__0/in0[11]
+      : bingbong/sum_inferred/out[11]
+      : bingbong/sum_inferred/in0[11]
+      : bingbong/sum_inferred__0/out[12]
+      : bingbong/sum_inferred__0/in0[12]
+      : bingbong/sum_inferred/out[12]
+      : bingbong/sum_inferred/in0[12]
+      : bingbong/sum_inferred__0/out[13]
+      : bingbong/sum_inferred__0/in0[13]
+      : bingbong/sum_inferred/out[13]
+      : bingbong/sum_inferred/in0[13]
+      : bingbong/sum_inferred__0/out[14]
+      : bingbong/sum_inferred__0/in0[14]
+      : bingbong/sum_inferred/out[14]
+      : bingbong/sum_inferred/in0[14]
+      : bingbong/sum_inferred__0/out[15]
+      : bingbong/sum_inferred__0/in0[15]
+      : bingbong/sum_inferred/out[15]
+      : bingbong/sum_inferred/in0[15]
+      : bingbong/sum_inferred__0/out[16]
+      : bingbong/sum_inferred__0/in0[16]
+      : bingbong/sum_inferred/out[16]
+      : bingbong/sum_inferred/in0[16]
+      : bingbong/sum_inferred__0/out[17]
+      : bingbong/sum_inferred__0/in0[17]
+      : bingbong/sum_inferred/out[17]
+      : bingbong/sum_inferred/in0[17]
+      : bingbong/sum_inferred__0/out[18]
+      : bingbong/sum_inferred__0/in0[18]
+      : bingbong/sum_inferred/out[18]
+      : bingbong/sum_inferred/in0[18]
+      : bingbong/sum_inferred__0/out[19]
+      : bingbong/sum_inferred__0/in0[19]
+      : bingbong/sum_inferred/out[19]
+      : bingbong/sum_inferred/in0[19]
+      : bingbong/sum_inferred__0/out[20]
+      : bingbong/sum_inferred__0/in0[20]
+      : bingbong/sum_inferred/out[20]
+      : bingbong/sum_inferred/in0[20]
+      : bingbong/sum_inferred__0/out[21]
+      : bingbong/sum_inferred__0/in0[21]
+      : bingbong/sum_inferred/out[21]
+      : bingbong/sum_inferred/in0[21]
+      : bingbong/sum_inferred__0/out[22]
+      : bingbong/sum_inferred__0/in0[22]
+      : bingbong/sum_inferred/out[22]
+      : bingbong/sum_inferred/in0[22]
+      : bingbong/sum_inferred__0/out[23]
+      : bingbong/sum_inferred__0/in0[23]
+      : bingbong/sum_inferred/out[23]
+      : bingbong/sum_inferred/in0[23]
+      : bingbong/sum_inferred__0/out[24]
+      : bingbong/sum_inferred__0/in0[24]
+      : bingbong/sum_inferred/out[24]
+      : bingbong/sum_inferred/in0[24]
+      : bingbong/sum_inferred__0/out[25]
+      : bingbong/sum_inferred__0/in0[25]
+      : bingbong/sum_inferred/out[25]
+      : bingbong/sum_inferred/in0[25]
+      : bingbong/sum_inferred__0/out[26]
+      : bingbong/sum_inferred__0/in0[26]
+      : bingbong/sum_inferred/out[26]
+      : bingbong/sum_inferred/in0[26]
+      : bingbong/sum_inferred__0/out[27]
+      : bingbong/sum_inferred__0/in0[27]
+      : bingbong/sum_inferred/out[27]
+      : bingbong/sum_inferred/in0[27]
+      : bingbong/sum_inferred__0/out[28]
+      : bingbong/sum_inferred__0/in0[28]
+      : bingbong/sum_inferred/out[28]
+      : bingbong/sum_inferred/in0[28]
+      : bingbong/sum_inferred__0/out[29]
+      : bingbong/sum_inferred__0/in0[29]
+      : bingbong/sum_inferred/out[29]
+      : bingbong/sum_inferred/in0[29]
+      : bingbong/sum_inferred__0/out[30]
+      : bingbong/sum_inferred__0/in0[30]
+      : bingbong/sum_inferred/out[30]
+      : bingbong/sum_inferred/in0[30]
+      : bingbong/sum_inferred__0/out[31]
+      : bingbong/sum_inferred__0/in0[31]
+      : bingbong/sum_inferred/out[31]
+      : bingbong/sum_inferred/in0[31]
+      : bingbong/sum_inferred__0/out[32]
+      : bingbong/sum_inferred__0/in0[32]
+      : bingbong/sum_inferred/out[32]
+      : bingbong/sum_inferred/in0[32]
+      : bingbong/sum_inferred__0/out[33]
+      : bingbong/sum_inferred__0/in0[33]
+      : bingbong/sum_inferred/out[33]
+      : bingbong/sum_inferred/in0[33]
+      : bingbong/sum_inferred__0/out[34]
+      : bingbong/sum_inferred__0/in0[34]
+      : bingbong/sum_inferred/out[34]
+      : bingbong/sum_inferred/in0[34]
+      : bingbong/sum_inferred__0/out[35]
+      : bingbong/sum_inferred__0/in0[35]
+      : bingbong/sum_inferred/out[35]
+      : bingbong/sum_inferred/in0[35]
+      : bingbong/sum_inferred__0/out[37]
+      : bingbong/sum_inferred__0/in0[37]
+      : bingbong/sum_inferred/out[37]
+      : bingbong/sum_inferred/in0[37]
+      : bingbong/sum_inferred__0/out[38]
+      : bingbong/sum_inferred__0/in0[38]
+      : bingbong/sum_inferred/out[38]
+      : bingbong/sum_inferred/in0[38]
+      : bingbong/sum_inferred__0/out[39]
+      : bingbong/sum_inferred__0/in0[39]
+      : bingbong/sum_inferred/out[39]
+      : bingbong/sum_inferred/in0[39]
+      : bingbong/sum_inferred__0/out[41]
+      : bingbong/sum_inferred__0/in0[41]
+      : bingbong/sum_inferred/out[41]
+      : bingbong/sum_inferred/in0[41]
+      : bingbong/sum_inferred__0/out[42]
+      : bingbong/sum_inferred__0/in0[42]
+      : bingbong/sum_inferred/out[42]
+      : bingbong/sum_inferred/in0[42]
+      : bingbong/sum_inferred__0/out[43]
+      : bingbong/sum_inferred__0/in0[43]
+      : bingbong/sum_inferred/out[43]
+      : bingbong/sum_inferred/in0[43]
+      : bingbong/sum_inferred__0/out[45]
+      : bingbong/sum_inferred__0/in0[45]
+      : bingbong/sum_inferred/out[45]
+      : bingbong/sum_inferred/in0[45]
+      : bingbong/sum_inferred__0/out[46]
+      : bingbong/sum_inferred__0/in0[46]
+      : bingbong/sum_inferred/out[46]
+      : bingbong/sum_inferred/in0[46]
+      : bingbong/sum_inferred__0/out[47]
+      : bingbong/sum_inferred__0/in0[47]
+      : bingbong/sum_inferred/out[47]
+      : bingbong/sum_inferred/in0[47]
+      : bingbong/sum_inferred__0/out[49]
+      : bingbong/sum_inferred__0/in0[49]
+      : bingbong/sum_inferred/out[49]
+      : bingbong/sum_inferred/in0[49]
+      : bingbong/sum_inferred__0/out[50]
+      : bingbong/sum_inferred__0/in0[50]
+      : bingbong/sum_inferred/out[50]
+      : bingbong/sum_inferred/in0[50]
+      : bingbong/sum_inferred__0/out[51]
+      : bingbong/sum_inferred__0/in0[51]
+      : bingbong/sum_inferred/out[51]
+      : bingbong/sum_inferred/in0[51]
+      : bingbong/sum_inferred__0/out[53]
+      : bingbong/sum_inferred__0/in0[53]
+      : bingbong/sum_inferred/out[53]
+      : bingbong/sum_inferred/in0[53]
+      : bingbong/sum_inferred__0/out[56]
+      : bingbong/sum_inferred__0/in0[56]
+      : bingbong/sum_inferred/out[56]
+      : bingbong/sum_inferred/in0[56]
+      : bingbong/sum_inferred__0/out[54]
+      : bingbong/sum_inferred__0/in0[54]
+      : bingbong/sum_inferred/out[54]
+      : bingbong/sum_inferred/in0[54]
+      : bingbong/sum_inferred__0/out[55]
+      : bingbong/sum_inferred__0/in0[55]
+      : bingbong/sum_inferred/out[55]
+      : bingbong/sum_inferred/in0[55]
+      : bingbong/sum_inferred__0/out[57]
+      : bingbong/sum_inferred__0/in0[57]
+      : bingbong/sum_inferred/out[57]
+      : bingbong/sum_inferred/in0[57]
+      : bingbong/sum_inferred__0/out[58]
+      : bingbong/sum_inferred__0/in0[58]
+      : bingbong/sum_inferred/out[58]
+      : bingbong/sum_inferred/in0[58]
+      : bingbong/sum_inferred__0/out[59]
+      : bingbong/sum_inferred__0/in0[59]
+      : bingbong/sum_inferred/out[59]
+      : bingbong/sum_inferred/in0[59]
+      : bingbong/sum_inferred__0/out[60]
+      : bingbong/sum_inferred__0/in0[60]
+      : bingbong/sum_inferred/out[60]
+      : bingbong/sum_inferred/in0[60]
+      : bingbong/sum_inferred__0/out[61]
+      : bingbong/sum_inferred__0/in0[61]
+      : bingbong/sum_inferred/out[61]
+      : bingbong/sum_inferred/in0[61]
+      : bingbong/sum_inferred__0/out[62]
+      : bingbong/sum_inferred__0/in0[62]
+      : bingbong/sum_inferred/out[62]
+      : bingbong/sum_inferred/in0[62]
+      : bingbong/sum_inferred__0/out[63]
+      : bingbong/sum_inferred__0/in0[63]
+      : bingbong/sum_inferred/out[63]
+      : bingbong/sum_inferred/in0[63]
+Found timing loop:
+     0: \RO[9] /nolabel_line64/nolabel_line78/LUT1_inst/O (LUT1)
+      [C:/Users/iqbal.ha/Power_Monitor/Power_Monitor.srcs/sources_1/new/Power_Monitor.sv:141]
+     1: \RO[9] /nolabel_line64/nolabel_line78/LUT1_inst/I0 (LUT1)
+      : \RO[9] /nolabel_line64/nolabel_line78/in
+      : \RO[9] /nolabel_line64/nolabel_line77/out
+     2: \RO[9] /nolabel_line64/nolabel_line77/i_0/O (LUT2)
+      [C:/Users/iqbal.ha/Power_Monitor/Power_Monitor.srcs/sources_1/new/Power_Monitor.sv:127]
+     3: \RO[9] /nolabel_line64/nolabel_line77/i_0/I1 (LUT2)
+      : \RO[9] /nolabel_line64/nolabel_line77/b
+      : \RO[9] /nolabel_line64/nolabel_line78/out
+     4: \RO[9] /nolabel_line64/nolabel_line78/LUT1_inst/O (LUT1)
+      [C:/Users/iqbal.ha/Power_Monitor/Power_Monitor.srcs/sources_1/new/Power_Monitor.sv:141]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/Users/iqbal.ha/Power_Monitor/Power_Monitor.srcs/sources_1/new/Power_Monitor.sv:122]
+Inferred a: "set_disable_timing -from I0 -to O \RO[9] /nolabel_line64/nolabel_line78/LUT1_inst"
+Found timing loop:
+     0: \RO[8] /nolabel_line64/nolabel_line78/LUT1_inst/O (LUT1)
+      [C:/Users/iqbal.ha/Power_Monitor/Power_Monitor.srcs/sources_1/new/Power_Monitor.sv:141]
+     1: \RO[8] /nolabel_line64/nolabel_line78/LUT1_inst/I0 (LUT1)
+      : \RO[8] /nolabel_line64/nolabel_line78/in
+      : \RO[8] /nolabel_line64/nolabel_line77/out
+     2: \RO[8] /nolabel_line64/nolabel_line77/i_0/O (LUT2)
+      [C:/Users/iqbal.ha/Power_Monitor/Power_Monitor.srcs/sources_1/new/Power_Monitor.sv:127]
+     3: \RO[8] /nolabel_line64/nolabel_line77/i_0/I1 (LUT2)
+      : \RO[8] /nolabel_line64/nolabel_line77/b
+      : \RO[8] /nolabel_line64/nolabel_line78/out
+     4: \RO[8] /nolabel_line64/nolabel_line78/LUT1_inst/O (LUT1)
+      [C:/Users/iqbal.ha/Power_Monitor/Power_Monitor.srcs/sources_1/new/Power_Monitor.sv:141]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/Users/iqbal.ha/Power_Monitor/Power_Monitor.srcs/sources_1/new/Power_Monitor.sv:122]
+Inferred a: "set_disable_timing -from I0 -to O \RO[8] /nolabel_line64/nolabel_line78/LUT1_inst"
+Found timing loop:
+     0: \RO[7] /nolabel_line64/nolabel_line78/LUT1_inst/O (LUT1)
+      [C:/Users/iqbal.ha/Power_Monitor/Power_Monitor.srcs/sources_1/new/Power_Monitor.sv:141]
+     1: \RO[7] /nolabel_line64/nolabel_line78/LUT1_inst/I0 (LUT1)
+      : \RO[7] /nolabel_line64/nolabel_line78/in
+      : \RO[7] /nolabel_line64/nolabel_line77/out
+     2: \RO[7] /nolabel_line64/nolabel_line77/i_0/O (LUT2)
+      [C:/Users/iqbal.ha/Power_Monitor/Power_Monitor.srcs/sources_1/new/Power_Monitor.sv:127]
+     3: \RO[7] /nolabel_line64/nolabel_line77/i_0/I1 (LUT2)
+      : \RO[7] /nolabel_line64/nolabel_line77/b
+      : \RO[7] /nolabel_line64/nolabel_line78/out
+     4: \RO[7] /nolabel_line64/nolabel_line78/LUT1_inst/O (LUT1)
+      [C:/Users/iqbal.ha/Power_Monitor/Power_Monitor.srcs/sources_1/new/Power_Monitor.sv:141]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/Users/iqbal.ha/Power_Monitor/Power_Monitor.srcs/sources_1/new/Power_Monitor.sv:122]
+Inferred a: "set_disable_timing -from I0 -to O \RO[7] /nolabel_line64/nolabel_line78/LUT1_inst"
+Found timing loop:
+     0: \RO[6] /nolabel_line64/nolabel_line78/LUT1_inst/O (LUT1)
+      [C:/Users/iqbal.ha/Power_Monitor/Power_Monitor.srcs/sources_1/new/Power_Monitor.sv:141]
+     1: \RO[6] /nolabel_line64/nolabel_line78/LUT1_inst/I0 (LUT1)
+      : \RO[6] /nolabel_line64/nolabel_line78/in
+      : \RO[6] /nolabel_line64/nolabel_line77/out
+     2: \RO[6] /nolabel_line64/nolabel_line77/i_0/O (LUT2)
+      [C:/Users/iqbal.ha/Power_Monitor/Power_Monitor.srcs/sources_1/new/Power_Monitor.sv:127]
+     3: \RO[6] /nolabel_line64/nolabel_line77/i_0/I1 (LUT2)
+      : \RO[6] /nolabel_line64/nolabel_line77/b
+      : \RO[6] /nolabel_line64/nolabel_line78/out
+     4: \RO[6] /nolabel_line64/nolabel_line78/LUT1_inst/O (LUT1)
+      [C:/Users/iqbal.ha/Power_Monitor/Power_Monitor.srcs/sources_1/new/Power_Monitor.sv:141]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/Users/iqbal.ha/Power_Monitor/Power_Monitor.srcs/sources_1/new/Power_Monitor.sv:122]
+Inferred a: "set_disable_timing -from I0 -to O \RO[6] /nolabel_line64/nolabel_line78/LUT1_inst"
+Found timing loop:
+     0: \RO[5] /nolabel_line64/nolabel_line78/LUT1_inst/O (LUT1)
+      [C:/Users/iqbal.ha/Power_Monitor/Power_Monitor.srcs/sources_1/new/Power_Monitor.sv:141]
+     1: \RO[5] /nolabel_line64/nolabel_line78/LUT1_inst/I0 (LUT1)
+      : \RO[5] /nolabel_line64/nolabel_line78/in
+      : \RO[5] /nolabel_line64/nolabel_line77/out
+     2: \RO[5] /nolabel_line64/nolabel_line77/i_0/O (LUT2)
+      [C:/Users/iqbal.ha/Power_Monitor/Power_Monitor.srcs/sources_1/new/Power_Monitor.sv:127]
+     3: \RO[5] /nolabel_line64/nolabel_line77/i_0/I1 (LUT2)
+      : \RO[5] /nolabel_line64/nolabel_line77/b
+      : \RO[5] /nolabel_line64/nolabel_line78/out
+     4: \RO[5] /nolabel_line64/nolabel_line78/LUT1_inst/O (LUT1)
+      [C:/Users/iqbal.ha/Power_Monitor/Power_Monitor.srcs/sources_1/new/Power_Monitor.sv:141]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/Users/iqbal.ha/Power_Monitor/Power_Monitor.srcs/sources_1/new/Power_Monitor.sv:122]
+Inferred a: "set_disable_timing -from I0 -to O \RO[5] /nolabel_line64/nolabel_line78/LUT1_inst"
+Found timing loop:
+     0: \RO[4] /nolabel_line64/nolabel_line78/LUT1_inst/O (LUT1)
+      [C:/Users/iqbal.ha/Power_Monitor/Power_Monitor.srcs/sources_1/new/Power_Monitor.sv:141]
+     1: \RO[4] /nolabel_line64/nolabel_line78/LUT1_inst/I0 (LUT1)
+      : \RO[4] /nolabel_line64/nolabel_line78/in
+      : \RO[4] /nolabel_line64/nolabel_line77/out
+     2: \RO[4] /nolabel_line64/nolabel_line77/i_0/O (LUT2)
+      [C:/Users/iqbal.ha/Power_Monitor/Power_Monitor.srcs/sources_1/new/Power_Monitor.sv:127]
+     3: \RO[4] /nolabel_line64/nolabel_line77/i_0/I1 (LUT2)
+      : \RO[4] /nolabel_line64/nolabel_line77/b
+      : \RO[4] /nolabel_line64/nolabel_line78/out
+     4: \RO[4] /nolabel_line64/nolabel_line78/LUT1_inst/O (LUT1)
+      [C:/Users/iqbal.ha/Power_Monitor/Power_Monitor.srcs/sources_1/new/Power_Monitor.sv:141]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/Users/iqbal.ha/Power_Monitor/Power_Monitor.srcs/sources_1/new/Power_Monitor.sv:122]
+Inferred a: "set_disable_timing -from I0 -to O \RO[4] /nolabel_line64/nolabel_line78/LUT1_inst"
+Found timing loop:
+     0: \RO[3] /nolabel_line64/nolabel_line78/LUT1_inst/O (LUT1)
+      [C:/Users/iqbal.ha/Power_Monitor/Power_Monitor.srcs/sources_1/new/Power_Monitor.sv:141]
+     1: \RO[3] /nolabel_line64/nolabel_line78/LUT1_inst/I0 (LUT1)
+      : \RO[3] /nolabel_line64/nolabel_line78/in
+      : \RO[3] /nolabel_line64/nolabel_line77/out
+     2: \RO[3] /nolabel_line64/nolabel_line77/i_0/O (LUT2)
+      [C:/Users/iqbal.ha/Power_Monitor/Power_Monitor.srcs/sources_1/new/Power_Monitor.sv:127]
+     3: \RO[3] /nolabel_line64/nolabel_line77/i_0/I1 (LUT2)
+      : \RO[3] /nolabel_line64/nolabel_line77/b
+      : \RO[3] /nolabel_line64/nolabel_line78/out
+     4: \RO[3] /nolabel_line64/nolabel_line78/LUT1_inst/O (LUT1)
+      [C:/Users/iqbal.ha/Power_Monitor/Power_Monitor.srcs/sources_1/new/Power_Monitor.sv:141]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/Users/iqbal.ha/Power_Monitor/Power_Monitor.srcs/sources_1/new/Power_Monitor.sv:122]
+Inferred a: "set_disable_timing -from I0 -to O \RO[3] /nolabel_line64/nolabel_line78/LUT1_inst"
+Found timing loop:
+     0: \RO[2] /nolabel_line64/nolabel_line78/LUT1_inst/O (LUT1)
+      [C:/Users/iqbal.ha/Power_Monitor/Power_Monitor.srcs/sources_1/new/Power_Monitor.sv:141]
+     1: \RO[2] /nolabel_line64/nolabel_line78/LUT1_inst/I0 (LUT1)
+      : \RO[2] /nolabel_line64/nolabel_line78/in
+      : \RO[2] /nolabel_line64/nolabel_line77/out
+     2: \RO[2] /nolabel_line64/nolabel_line77/i_0/O (LUT2)
+      [C:/Users/iqbal.ha/Power_Monitor/Power_Monitor.srcs/sources_1/new/Power_Monitor.sv:127]
+     3: \RO[2] /nolabel_line64/nolabel_line77/i_0/I1 (LUT2)
+      : \RO[2] /nolabel_line64/nolabel_line77/b
+      : \RO[2] /nolabel_line64/nolabel_line78/out
+     4: \RO[2] /nolabel_line64/nolabel_line78/LUT1_inst/O (LUT1)
+      [C:/Users/iqbal.ha/Power_Monitor/Power_Monitor.srcs/sources_1/new/Power_Monitor.sv:141]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/Users/iqbal.ha/Power_Monitor/Power_Monitor.srcs/sources_1/new/Power_Monitor.sv:122]
+Inferred a: "set_disable_timing -from I0 -to O \RO[2] /nolabel_line64/nolabel_line78/LUT1_inst"
+Found timing loop:
+     0: \RO[1] /nolabel_line64/nolabel_line78/LUT1_inst/O (LUT1)
+      [C:/Users/iqbal.ha/Power_Monitor/Power_Monitor.srcs/sources_1/new/Power_Monitor.sv:141]
+     1: \RO[1] /nolabel_line64/nolabel_line78/LUT1_inst/I0 (LUT1)
+      : \RO[1] /nolabel_line64/nolabel_line78/in
+      : \RO[1] /nolabel_line64/nolabel_line77/out
+     2: \RO[1] /nolabel_line64/nolabel_line77/i_0/O (LUT2)
+      [C:/Users/iqbal.ha/Power_Monitor/Power_Monitor.srcs/sources_1/new/Power_Monitor.sv:127]
+     3: \RO[1] /nolabel_line64/nolabel_line77/i_0/I1 (LUT2)
+      : \RO[1] /nolabel_line64/nolabel_line77/b
+      : \RO[1] /nolabel_line64/nolabel_line78/out
+     4: \RO[1] /nolabel_line64/nolabel_line78/LUT1_inst/O (LUT1)
+      [C:/Users/iqbal.ha/Power_Monitor/Power_Monitor.srcs/sources_1/new/Power_Monitor.sv:141]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/Users/iqbal.ha/Power_Monitor/Power_Monitor.srcs/sources_1/new/Power_Monitor.sv:122]
+Inferred a: "set_disable_timing -from I0 -to O \RO[1] /nolabel_line64/nolabel_line78/LUT1_inst"
+Found timing loop:
+     0: \RO[0] /nolabel_line64/nolabel_line78/LUT1_inst/O (LUT1)
+      [C:/Users/iqbal.ha/Power_Monitor/Power_Monitor.srcs/sources_1/new/Power_Monitor.sv:141]
+     1: \RO[0] /nolabel_line64/nolabel_line78/LUT1_inst/I0 (LUT1)
+      : \RO[0] /nolabel_line64/nolabel_line78/in
+      : \RO[0] /nolabel_line64/nolabel_line77/out
+     2: \RO[0] /nolabel_line64/nolabel_line77/i_0/O (LUT2)
+      [C:/Users/iqbal.ha/Power_Monitor/Power_Monitor.srcs/sources_1/new/Power_Monitor.sv:127]
+     3: \RO[0] /nolabel_line64/nolabel_line77/i_0/I1 (LUT2)
+      : \RO[0] /nolabel_line64/nolabel_line77/b
+      : \RO[0] /nolabel_line64/nolabel_line78/out
+     4: \RO[0] /nolabel_line64/nolabel_line78/LUT1_inst/O (LUT1)
+      [C:/Users/iqbal.ha/Power_Monitor/Power_Monitor.srcs/sources_1/new/Power_Monitor.sv:141]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/Users/iqbal.ha/Power_Monitor/Power_Monitor.srcs/sources_1/new/Power_Monitor.sv:122]
+Inferred a: "set_disable_timing -from I0 -to O \RO[0] /nolabel_line64/nolabel_line78/LUT1_inst"
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 1704.449 ; gain = 86.598
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 1704.449 ; gain = 86.598
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 1704.449 ; gain = 86.598
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 1704.449 ; gain = 86.598
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 1704.449 ; gain = 86.598
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 1704.449 ; gain = 86.598
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 1704.449 ; gain = 86.598
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     1|
+|2     |CARRY4 |   567|
+|3     |LUT1   |    46|
+|4     |LUT2   |   274|
+|5     |LUT3   |   691|
+|6     |LUT4   |   698|
+|7     |LUT5   |    62|
+|8     |LUT6   |   621|
+|9     |FDCE   |   640|
+|10    |IBUF   |     2|
+|11    |OBUF   |    32|
++------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 1704.449 ; gain = 86.598
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 10 critical warnings and 1 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:18 ; elapsed = 00:00:25 . Memory (MB): peak = 1704.449 ; gain = 21.645
+Synthesis Optimization Complete : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 1704.449 ; gain = 86.598
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.037 . Memory (MB): peak = 1704.449 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 567 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1707.734 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete, checksum: 62d565a8
+INFO: [Common 17-83] Releasing license: Synthesis
+40 Infos, 1 Warnings, 11 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:29 ; elapsed = 00:00:37 . Memory (MB): peak = 1707.734 ; gain = 89.883
+INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
+INFO: [Common 17-1381] The checkpoint 'C:/Users/iqbal.ha/Power_Monitor/Power_Monitor.runs/synth_1/Power_Monitor.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file Power_Monitor_utilization_synth.rpt -pb Power_Monitor_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Wed Apr 24 16:40:48 2024...

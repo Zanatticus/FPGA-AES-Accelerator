@@ -1,0 +1,221 @@
+
+
+================================================================
+== Vitis HLS Report for 'aes_main'
+================================================================
+* Date:           Thu Apr 25 11:55:50 2024
+
+* Version:        2022.1 (Build 3526262 on Mon Apr 18 15:48:16 MDT 2022)
+* Project:        AES_PM
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  6.867 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |      430|      578|  4.300 us|  5.780 us|  430|  578|       no|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        +-----------------------------------------------------------------------+------------------------------------------------------------+---------+---------+-----------+-----------+-----+-----+---------+
+        |                                                                       |                                                            |  Latency (cycles) |   Latency (absolute)  |  Interval | Pipeline|
+        |                                Instance                               |                           Module                           |   min   |   max   |    min    |    max    | min | max |   Type  |
+        +-----------------------------------------------------------------------+------------------------------------------------------------+---------+---------+-----------+-----------+-----+-----+---------+
+        |grp_aes_main_Pipeline_createRoundKeyLoop1_createRoundKeyLoop2_fu_402   |aes_main_Pipeline_createRoundKeyLoop1_createRoundKeyLoop2   |       18|       18|   0.180 us|   0.180 us|   18|   18|       no|
+        |grp_aes_main_Pipeline_addRoundKeyLoop_fu_412                           |aes_main_Pipeline_addRoundKeyLoop                           |       18|       18|   0.180 us|   0.180 us|   18|   18|       no|
+        |grp_aes_main_Pipeline_aesMainLoop_fu_419                               |aes_main_Pipeline_aesMainLoop                               |      335|      483|   3.350 us|   4.830 us|  335|  483|       no|
+        |grp_aes_main_Pipeline_createRoundKeyLoop1_createRoundKeyLoop21_fu_434  |aes_main_Pipeline_createRoundKeyLoop1_createRoundKeyLoop21  |       18|       18|   0.180 us|   0.180 us|   18|   18|       no|
+        |grp_aes_main_Pipeline_shiftRowLoop1_fu_444                             |aes_main_Pipeline_shiftRowLoop1                             |        4|        4|  40.000 ns|  40.000 ns|    4|    4|       no|
+        |grp_aes_main_Pipeline_shiftRowLoop12_fu_456                            |aes_main_Pipeline_shiftRowLoop12                            |        5|        5|  50.000 ns|  50.000 ns|    5|    5|       no|
+        |grp_aes_main_Pipeline_addRoundKeyLoop3_fu_470                          |aes_main_Pipeline_addRoundKeyLoop3                          |       18|       18|   0.180 us|   0.180 us|   18|   18|       no|
+        +-----------------------------------------------------------------------+------------------------------------------------------------+---------+---------+-----------+-----------+-----+-----+---------+
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-----+--------+-------+-----+
+|       Name      | BRAM_18K| DSP |   FF   |  LUT  | URAM|
++-----------------+---------+-----+--------+-------+-----+
+|DSP              |        -|    -|       -|      -|    -|
+|Expression       |        -|    -|       0|      2|    -|
+|FIFO             |        -|    -|       -|      -|    -|
+|Instance         |        1|    -|     747|   2719|    -|
+|Memory           |        0|    -|      16|      2|    0|
+|Multiplexer      |        -|    -|       -|    842|    -|
+|Register         |        -|    -|     119|      -|    -|
++-----------------+---------+-----+--------+-------+-----+
+|Total            |        1|    0|     882|   3565|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Available        |      280|  220|  106400|  53200|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Utilization (%)  |       ~0|    0|      ~0|      6|    0|
++-----------------+---------+-----+--------+-------+-----+
+
++ Detail: 
+    * Instance: 
+    +-----------------------------------------------------------------------+------------------------------------------------------------+---------+----+-----+------+-----+
+    |                                Instance                               |                           Module                           | BRAM_18K| DSP|  FF |  LUT | URAM|
+    +-----------------------------------------------------------------------+------------------------------------------------------------+---------+----+-----+------+-----+
+    |grp_aes_main_Pipeline_addRoundKeyLoop_fu_412                           |aes_main_Pipeline_addRoundKeyLoop                           |        0|   0|   12|    69|    0|
+    |grp_aes_main_Pipeline_addRoundKeyLoop3_fu_470                          |aes_main_Pipeline_addRoundKeyLoop3                          |        0|   0|   12|    69|    0|
+    |grp_aes_main_Pipeline_aesMainLoop_fu_419                               |aes_main_Pipeline_aesMainLoop                               |        1|   0|  611|  2077|    0|
+    |grp_aes_main_Pipeline_createRoundKeyLoop1_createRoundKeyLoop2_fu_402   |aes_main_Pipeline_createRoundKeyLoop1_createRoundKeyLoop2   |        0|   0|   19|   167|    0|
+    |grp_aes_main_Pipeline_createRoundKeyLoop1_createRoundKeyLoop21_fu_434  |aes_main_Pipeline_createRoundKeyLoop1_createRoundKeyLoop21  |        0|   0|   19|   171|    0|
+    |grp_aes_main_Pipeline_shiftRowLoop1_fu_444                             |aes_main_Pipeline_shiftRowLoop1                             |        0|   0|   37|    83|    0|
+    |grp_aes_main_Pipeline_shiftRowLoop12_fu_456                            |aes_main_Pipeline_shiftRowLoop12                            |        0|   0|   37|    83|    0|
+    +-----------------------------------------------------------------------+------------------------------------------------------------+---------+----+-----+------+-----+
+    |Total                                                                  |                                                            |        1|   0|  747|  2719|    0|
+    +-----------------------------------------------------------------------+------------------------------------------------------------+---------+----+-----+------+-----+
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    +------------+---------------------------------+---------+----+----+-----+------+-----+------+-------------+
+    |   Memory   |              Module             | BRAM_18K| FF | LUT| URAM| Words| Bits| Banks| W*Bits*Banks|
+    +------------+---------------------------------+---------+----+----+-----+------+-----+------+-------------+
+    |roundKey_U  |aes_main_roundKey_RAM_AUTO_1R1W  |        0|  16|   2|    0|    16|    8|     1|          128|
+    +------------+---------------------------------+---------+----+----+-----+------+-----+------+-------------+
+    |Total       |                                 |        0|  16|   2|    0|    16|    8|     1|          128|
+    +------------+---------------------------------+---------+----+----+-----+------+-----+------+-------------+
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +----------------------------------+----------+----+---+----+------------+------------+
+    |           Variable Name          | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +----------------------------------+----------+----+---+----+------------+------------+
+    |ap_block_state13_on_subcall_done  |        or|   0|  0|   2|           1|           1|
+    +----------------------------------+----------+----+---+----+------------+------------+
+    |Total                             |          |   0|  0|   2|           1|           1|
+    +----------------------------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    +------------------------+-----+-----------+-----+-----------+
+    |          Name          | LUT | Input Size| Bits| Total Bits|
+    +------------------------+-----+-----------+-----+-----------+
+    |ap_NS_fsm               |  113|         25|    1|         25|
+    |expandedKey_0_address0  |   20|          4|    7|         28|
+    |expandedKey_0_ce0       |   20|          4|    1|          4|
+    |expandedKey_0_ce1       |    9|          2|    1|          2|
+    |expandedKey_1_address0  |   20|          4|    7|         28|
+    |expandedKey_1_ce0       |   20|          4|    1|          4|
+    |expandedKey_1_ce1       |    9|          2|    1|          2|
+    |reg_477                 |    9|          2|    8|         16|
+    |roundKey_address0       |   31|          6|    4|         24|
+    |roundKey_ce0            |   31|          6|    1|          6|
+    |roundKey_ce1            |    9|          2|    1|          2|
+    |roundKey_d0             |   20|          4|    8|         32|
+    |roundKey_we0            |   20|          4|    1|          4|
+    |roundKey_we1            |    9|          2|    1|          2|
+    |sbox_address0           |   53|         10|    8|         80|
+    |sbox_address1           |   53|         10|    8|         80|
+    |state_address0          |  100|         20|    4|         80|
+    |state_address1          |  100|         20|    4|         80|
+    |state_ce0               |   25|          5|    1|          5|
+    |state_ce1               |   25|          5|    1|          5|
+    |state_d0                |   59|         11|    8|         88|
+    |state_d1                |   48|          9|    8|         72|
+    |state_we0               |   25|          5|    1|          5|
+    |state_we1               |   14|          3|    1|          3|
+    +------------------------+-----+-----------+-----+-----------+
+    |Total                   |  842|        169|   87|        677|
+    +------------------------+-----+-----------+-----+-----------+
+
+    * Register: 
+    +------------------------------------------------------------------------------------+----+----+-----+-----------+
+    |                                        Name                                        | FF | LUT| Bits| Const Bits|
+    +------------------------------------------------------------------------------------+----+----+-----+-----------+
+    |ap_CS_fsm                                                                           |  24|   0|   24|          0|
+    |grp_aes_main_Pipeline_addRoundKeyLoop3_fu_470_ap_start_reg                          |   1|   0|    1|          0|
+    |grp_aes_main_Pipeline_addRoundKeyLoop_fu_412_ap_start_reg                           |   1|   0|    1|          0|
+    |grp_aes_main_Pipeline_aesMainLoop_fu_419_ap_start_reg                               |   1|   0|    1|          0|
+    |grp_aes_main_Pipeline_createRoundKeyLoop1_createRoundKeyLoop21_fu_434_ap_start_reg  |   1|   0|    1|          0|
+    |grp_aes_main_Pipeline_createRoundKeyLoop1_createRoundKeyLoop2_fu_402_ap_start_reg   |   1|   0|    1|          0|
+    |grp_aes_main_Pipeline_shiftRowLoop12_fu_456_ap_start_reg                            |   1|   0|    1|          0|
+    |grp_aes_main_Pipeline_shiftRowLoop1_fu_444_ap_start_reg                             |   1|   0|    1|          0|
+    |reg_477                                                                             |   8|   0|    8|          0|
+    |reg_485                                                                             |   8|   0|    8|          0|
+    |reg_489                                                                             |   8|   0|    8|          0|
+    |reg_493                                                                             |   8|   0|    8|          0|
+    |sbox_load_31_reg_693                                                                |   8|   0|    8|          0|
+    |sbox_load_32_reg_718                                                                |   8|   0|    8|          0|
+    |sbox_load_33_reg_723                                                                |   8|   0|    8|          0|
+    |sbox_load_34_reg_758                                                                |   8|   0|    8|          0|
+    |sbox_load_35_reg_763                                                                |   8|   0|    8|          0|
+    |sbox_load_36_reg_788                                                                |   8|   0|    8|          0|
+    |sbox_load_37_reg_793                                                                |   8|   0|    8|          0|
+    +------------------------------------------------------------------------------------+----+----+-----+-----------+
+    |Total                                                                               | 119|   0|  119|          0|
+    +------------------------------------------------------------------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++------------------------+-----+-----+------------+---------------+--------------+
+|        RTL Ports       | Dir | Bits|  Protocol  | Source Object |    C Type    |
++------------------------+-----+-----+------------+---------------+--------------+
+|ap_clk                  |   in|    1|  ap_ctrl_hs|       aes_main|  return value|
+|ap_rst                  |   in|    1|  ap_ctrl_hs|       aes_main|  return value|
+|ap_start                |   in|    1|  ap_ctrl_hs|       aes_main|  return value|
+|ap_done                 |  out|    1|  ap_ctrl_hs|       aes_main|  return value|
+|ap_idle                 |  out|    1|  ap_ctrl_hs|       aes_main|  return value|
+|ap_ready                |  out|    1|  ap_ctrl_hs|       aes_main|  return value|
+|state_address0          |  out|    4|   ap_memory|          state|         array|
+|state_ce0               |  out|    1|   ap_memory|          state|         array|
+|state_we0               |  out|    1|   ap_memory|          state|         array|
+|state_d0                |  out|    8|   ap_memory|          state|         array|
+|state_q0                |   in|    8|   ap_memory|          state|         array|
+|state_address1          |  out|    4|   ap_memory|          state|         array|
+|state_ce1               |  out|    1|   ap_memory|          state|         array|
+|state_we1               |  out|    1|   ap_memory|          state|         array|
+|state_d1                |  out|    8|   ap_memory|          state|         array|
+|state_q1                |   in|    8|   ap_memory|          state|         array|
+|expandedKey_0_address0  |  out|    7|   ap_memory|  expandedKey_0|         array|
+|expandedKey_0_ce0       |  out|    1|   ap_memory|  expandedKey_0|         array|
+|expandedKey_0_q0        |   in|    8|   ap_memory|  expandedKey_0|         array|
+|expandedKey_0_address1  |  out|    7|   ap_memory|  expandedKey_0|         array|
+|expandedKey_0_ce1       |  out|    1|   ap_memory|  expandedKey_0|         array|
+|expandedKey_0_q1        |   in|    8|   ap_memory|  expandedKey_0|         array|
+|expandedKey_1_address0  |  out|    7|   ap_memory|  expandedKey_1|         array|
+|expandedKey_1_ce0       |  out|    1|   ap_memory|  expandedKey_1|         array|
+|expandedKey_1_q0        |   in|    8|   ap_memory|  expandedKey_1|         array|
+|expandedKey_1_address1  |  out|    7|   ap_memory|  expandedKey_1|         array|
+|expandedKey_1_ce1       |  out|    1|   ap_memory|  expandedKey_1|         array|
+|expandedKey_1_q1        |   in|    8|   ap_memory|  expandedKey_1|         array|
+|nbrRounds               |   in|    4|     ap_none|      nbrRounds|        scalar|
+|sbox_address0           |  out|    8|   ap_memory|           sbox|         array|
+|sbox_ce0                |  out|    1|   ap_memory|           sbox|         array|
+|sbox_q0                 |   in|    8|   ap_memory|           sbox|         array|
+|sbox_address1           |  out|    8|   ap_memory|           sbox|         array|
+|sbox_ce1                |  out|    1|   ap_memory|           sbox|         array|
+|sbox_q1                 |   in|    8|   ap_memory|           sbox|         array|
++------------------------+-----+-----+------------+---------------+--------------+
+

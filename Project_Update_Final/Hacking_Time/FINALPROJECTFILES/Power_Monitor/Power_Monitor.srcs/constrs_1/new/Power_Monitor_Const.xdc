@@ -1,0 +1,1 @@
+set_property SEVERITY {Warning} [DRC LUTLP-1]
