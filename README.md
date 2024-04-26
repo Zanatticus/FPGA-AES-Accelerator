@@ -2,5 +2,5 @@
 
 To find the Power Monitor portion of the project please switch to branch PowerMonitor
 
-In there navigate to the following directory for up to date Power Monitor progress
-
+In there navigate to the following directory for up to date Power Monitor progress:
+Project_Update_Final/Hacking_Time/FINALPROJECTFILES
