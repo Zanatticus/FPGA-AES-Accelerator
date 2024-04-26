@@ -57,5 +57,7 @@ After adding the IP under `Tools->Settings->IP->Repository`, run the respective 
 
 ## PYNQ Overlay
 
-After uploading the hardware overlay files to the PYNQ board (either within the same directory as the Jupyter notebook being run or into the PYNQ-Z2 overlay folder), use the given Jupyter Notebook files under `./overlay_files` to test the IP.
+After uploading the hardware overlay files to the PYNQ board (either within the same directory as the Jupyter notebook being run or into the PYNQ-Z2 overlay folder), use the given Jupyter Notebook files under `./overlay_files` to test the IP. 
+
+The Jupyter Notebook files have preconfigured plaintext and cipher key values as inputs to the IP (as well as the AES mode being used). These can be changed as long as the key size satisfies the respective AES mode and the plaintext size stays 16 characters.
 
