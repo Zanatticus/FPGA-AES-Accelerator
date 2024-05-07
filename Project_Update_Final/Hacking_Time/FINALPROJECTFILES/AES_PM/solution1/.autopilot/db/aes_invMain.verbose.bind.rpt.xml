@@ -1,0 +1,52 @@
+<profile>
+
+<section name = "Vitis HLS Report for 'aes_invMain'" level="0">
+<item name = "Date">Thu Apr 25 11:55:44 2024
+</item>
+<item name = "Version">2022.1 (Build 3526262 on Mon Apr 18 15:48:16 MDT 2022)</item>
+<item name = "Project">AES_PM</item>
+<item name = "Solution">solution1 (Vivado IP Flow Target)</item>
+<item name = "Product family">zynq</item>
+<item name = "Target device">xc7z020-clg400-1</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">10.00 ns, 6.867 ns, 2.70 ns</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="8">, min, max, min, max, min, max, Type</keys>
+<column name="">513, 697, 5.130 us, 6.970 us, 513, 697, no</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
+<column name="grp_aes_invMain_Pipeline_createRoundKeyLoop1_createRoundKeyLoop2_fu_402">aes_invMain_Pipeline_createRoundKeyLoop1_createRoundKeyLoop2, 18, 18, 0.180 us, 0.180 us, 18, 18, no</column>
+<column name="grp_aes_invMain_Pipeline_addRoundKeyLoop_fu_414">aes_invMain_Pipeline_addRoundKeyLoop, 18, 18, 0.180 us, 0.180 us, 18, 18, no</column>
+<column name="grp_aes_invMain_Pipeline_aesInvMainLoop_fu_421">aes_invMain_Pipeline_aesInvMainLoop, 416, 600, 4.160 us, 6.000 us, 416, 600, no</column>
+<column name="grp_aes_invMain_Pipeline_createRoundKeyLoop1_createRoundKeyLoop24_fu_435">aes_invMain_Pipeline_createRoundKeyLoop1_createRoundKeyLoop24, 18, 18, 0.180 us, 0.180 us, 18, 18, no</column>
+<column name="grp_aes_invMain_Pipeline_invShiftRowLoop1_fu_444">aes_invMain_Pipeline_invShiftRowLoop1, 4, 4, 40.000 ns, 40.000 ns, 4, 4, no</column>
+<column name="grp_aes_invMain_Pipeline_invShiftRowLoop15_fu_456">aes_invMain_Pipeline_invShiftRowLoop15, 5, 5, 50.000 ns, 50.000 ns, 5, 5, no</column>
+<column name="grp_aes_invMain_Pipeline_addRoundKeyLoop6_fu_470">aes_invMain_Pipeline_addRoundKeyLoop6, 18, 18, 0.180 us, 0.180 us, 18, 18, no</column>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+</profile>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="aes_axis.cpp" path="Z:\Users\hiqbal\AES_AXIS_HLS\vitis\vitis_source\aes_axis.cpp"/>
+    <originFiles name="aes_axis.h" path="Z:\Users\hiqbal\AES_AXIS_HLS\vitis\vitis_source\aes_axis.h"/>
+  </source>
+  <testbench>
+    <originFiles name="aes_axis_test.cpp" path="Z:\Users\hiqbal\AES_AXIS_HLS\vitis\vitis_test\aes_axis_test.cpp"/>
+    <originFiles name="decrypted.golden.dat" path="Z:\Users\hiqbal\AES_AXIS_HLS\vitis\vitis_test\decrypted.golden.dat"/>
+    <originFiles name="encrypted128.golden.dat" path="Z:\Users\hiqbal\AES_AXIS_HLS\vitis\vitis_test\encrypted128.golden.dat"/>
+    <originFiles name="encrypted192.golden.dat" path="Z:\Users\hiqbal\AES_AXIS_HLS\vitis\vitis_test\encrypted192.golden.dat"/>
+    <originFiles name="encrypted256.golden.dat" path="Z:\Users\hiqbal\AES_AXIS_HLS\vitis\vitis_test\encrypted256.golden.dat"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>

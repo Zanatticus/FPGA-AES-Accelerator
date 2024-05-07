@@ -1,0 +1,315 @@
+
+
+================================================================
+== Vitis HLS Report for 'aes'
+================================================================
+* Date:           Wed Apr 17 16:02:54 2024
+
+* Version:        2022.1 (Build 3526262 on Mon Apr 18 15:48:16 MDT 2022)
+* Project:        AES_Power_Monitor
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  7.084 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |        ?|        ?|         ?|         ?|    ?|    ?|       no|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        +-----------------------------------------------------------+------------------------------------------------+---------+---------+-----------+-----------+------+------+---------+
+        |                                                           |                                                |  Latency (cycles) |   Latency (absolute)  |   Interval  | Pipeline|
+        |                          Instance                         |                     Module                     |   min   |   max   |    min    |    max    |  min |  max |   Type  |
+        +-----------------------------------------------------------+------------------------------------------------+---------+---------+-----------+-----------+------+------+---------+
+        |grp_aes_Pipeline_1_fu_273                                  |aes_Pipeline_1                                  |       18|       18|   0.180 us|   0.180 us|    18|    18|       no|
+        |grp_aes_Pipeline_2_fu_279                                  |aes_Pipeline_2                                  |       26|       26|   0.260 us|   0.260 us|    26|    26|       no|
+        |grp_aes_Pipeline_3_fu_284                                  |aes_Pipeline_3                                  |       34|       34|   0.340 us|   0.340 us|    34|    34|       no|
+        |grp_aes_Pipeline_VITIS_LOOP_70_2_fu_289                    |aes_Pipeline_VITIS_LOOP_70_2                    |       18|       34|   0.180 us|   0.340 us|    18|    34|       no|
+        |grp_aes_Pipeline_VITIS_LOOP_75_3_fu_312                    |aes_Pipeline_VITIS_LOOP_75_3                    |       18|       18|   0.180 us|   0.180 us|    18|    18|       no|
+        |grp_aes_Pipeline_VITIS_LOOP_475_1_VITIS_LOOP_478_2_fu_337  |aes_Pipeline_VITIS_LOOP_475_1_VITIS_LOOP_478_2  |       18|       18|   0.180 us|   0.180 us|    18|    18|       no|
+        |grp_expandKey_fu_343                                       |expandKey                                       |        ?|        ?|          ?|          ?|     ?|     ?|       no|
+        |grp_aes_main_fu_358                                        |aes_main                                        |     1196|     2024|  11.960 us|  20.240 us|  1196|  2024|       no|
+        |grp_aes_Pipeline_VITIS_LOOP_489_3_VITIS_LOOP_492_4_fu_368  |aes_Pipeline_VITIS_LOOP_489_3_VITIS_LOOP_492_4  |       18|       18|   0.180 us|   0.180 us|    18|    18|       no|
+        |grp_aes_Pipeline_VITIS_LOOP_665_1_VITIS_LOOP_668_2_fu_374  |aes_Pipeline_VITIS_LOOP_665_1_VITIS_LOOP_668_2  |       18|       18|   0.180 us|   0.180 us|    18|    18|       no|
+        |grp_aes_invMain_fu_380                                     |aes_invMain                                     |     1260|     2260|  12.600 us|  22.600 us|  1260|  2260|       no|
+        |grp_aes_Pipeline_VITIS_LOOP_679_3_VITIS_LOOP_682_4_fu_390  |aes_Pipeline_VITIS_LOOP_679_3_VITIS_LOOP_682_4  |       18|       18|   0.180 us|   0.180 us|    18|    18|       no|
+        |grp_aes_Pipeline_VITIS_LOOP_85_4_fu_396                    |aes_Pipeline_VITIS_LOOP_85_4                    |       18|       18|   0.180 us|   0.180 us|    18|    18|       no|
+        |grp_aes_Pipeline_VITIS_LOOP_94_5_fu_420                    |aes_Pipeline_VITIS_LOOP_94_5                    |       18|       18|   0.180 us|   0.180 us|    18|    18|       no|
+        +-----------------------------------------------------------+------------------------------------------------+---------+---------+-----------+-----------+------+------+---------+
+
+        * Loop: 
+        +-------------------+---------+---------+-----------+-----------+-----------+------+----------+
+        |                   |  Latency (cycles) | Iteration |  Initiation Interval  | Trip |          |
+        |     Loop Name     |   min   |   max   |  Latency  |  achieved |   target  | Count| Pipelined|
+        +-------------------+---------+---------+-----------+-----------+-----------+------+----------+
+        |- VITIS_LOOP_64_1  |        ?|        ?|  84 ~ 4465|          -|          -|     ?|        no|
+        +-------------------+---------+---------+-----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-----+--------+-------+-----+
+|       Name      | BRAM_18K| DSP |   FF   |  LUT  | URAM|
++-----------------+---------+-----+--------+-------+-----+
+|DSP              |        -|    -|       -|      -|    -|
+|Expression       |        -|    -|       0|     30|    -|
+|FIFO             |        -|    -|       -|      -|    -|
+|Instance         |        6|    -|    1806|   7009|    0|
+|Memory           |        3|    -|      56|     10|    0|
+|Multiplexer      |        -|    -|       -|    957|    -|
+|Register         |        -|    -|      57|      -|    -|
++-----------------+---------+-----+--------+-------+-----+
+|Total            |        9|    0|    1919|   8006|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Available        |      280|  220|  106400|  53200|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Utilization (%)  |        3|    0|       1|     15|    0|
++-----------------+---------+-----+--------+-------+-----+
+
++ Detail: 
+    * Instance: 
+    +-----------------------------------------------------------+------------------------------------------------+---------+----+-----+------+-----+
+    |                          Instance                         |                     Module                     | BRAM_18K| DSP|  FF |  LUT | URAM|
+    +-----------------------------------------------------------+------------------------------------------------+---------+----+-----+------+-----+
+    |CTRL_BUS_s_axi_U                                           |CTRL_BUS_s_axi                                  |        0|   0|  126|   184|    0|
+    |grp_aes_Pipeline_1_fu_273                                  |aes_Pipeline_1                                  |        0|   0|    7|    50|    0|
+    |grp_aes_Pipeline_2_fu_279                                  |aes_Pipeline_2                                  |        0|   0|    7|    49|    0|
+    |grp_aes_Pipeline_3_fu_284                                  |aes_Pipeline_3                                  |        0|   0|    8|    51|    0|
+    |grp_aes_Pipeline_VITIS_LOOP_475_1_VITIS_LOOP_478_2_fu_337  |aes_Pipeline_VITIS_LOOP_475_1_VITIS_LOOP_478_2  |        0|   0|   18|   160|    0|
+    |grp_aes_Pipeline_VITIS_LOOP_489_3_VITIS_LOOP_492_4_fu_368  |aes_Pipeline_VITIS_LOOP_489_3_VITIS_LOOP_492_4  |        0|   0|   18|   160|    0|
+    |grp_aes_Pipeline_VITIS_LOOP_665_1_VITIS_LOOP_668_2_fu_374  |aes_Pipeline_VITIS_LOOP_665_1_VITIS_LOOP_668_2  |        0|   0|   18|   160|    0|
+    |grp_aes_Pipeline_VITIS_LOOP_679_3_VITIS_LOOP_682_4_fu_390  |aes_Pipeline_VITIS_LOOP_679_3_VITIS_LOOP_682_4  |        0|   0|   18|   160|    0|
+    |grp_aes_Pipeline_VITIS_LOOP_70_2_fu_289                    |aes_Pipeline_VITIS_LOOP_70_2                    |        0|   0|    8|    64|    0|
+    |grp_aes_Pipeline_VITIS_LOOP_75_3_fu_312                    |aes_Pipeline_VITIS_LOOP_75_3                    |        0|   0|   13|    63|    0|
+    |grp_aes_Pipeline_VITIS_LOOP_85_4_fu_396                    |aes_Pipeline_VITIS_LOOP_85_4                    |        0|   0|    8|    72|    0|
+    |grp_aes_Pipeline_VITIS_LOOP_94_5_fu_420                    |aes_Pipeline_VITIS_LOOP_94_5                    |        0|   0|    8|    72|    0|
+    |grp_aes_invMain_fu_380                                     |aes_invMain                                     |        2|   0|  503|  2229|    0|
+    |grp_aes_main_fu_358                                        |aes_main                                        |        2|   0|  480|  2149|    0|
+    |control_s_axi_U                                            |control_s_axi                                   |        0|   0|   82|   120|    0|
+    |grp_expandKey_fu_343                                       |expandKey                                       |        2|   0|  484|   954|    0|
+    |grp_galois_multiplication_fu_560                           |galois_multiplication                           |        0|   0|    0|   104|    0|
+    |grp_galois_multiplication_fu_565                           |galois_multiplication                           |        0|   0|    0|   104|    0|
+    |grp_galois_multiplication_fu_570                           |galois_multiplication                           |        0|   0|    0|   104|    0|
+    +-----------------------------------------------------------+------------------------------------------------+---------+----+-----+------+-----+
+    |Total                                                      |                                                |        6|   0| 1806|  7009|    0|
+    +-----------------------------------------------------------+------------------------------------------------+---------+----+-----+------+-----+
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    +-----------------------+---------------------------------+---------+----+----+-----+------+-----+------+-------------+
+    |         Memory        |              Module             | BRAM_18K| FF | LUT| URAM| Words| Bits| Banks| W*Bits*Banks|
+    +-----------------------+---------------------------------+---------+----+----+-----+------+-----+------+-------------+
+    |plaintext_array_U      |aes_main_roundKey_RAM_AUTO_1R1W  |        0|   8|   2|    0|    16|    8|     1|          128|
+    |ciphertext_array_U     |aes_main_roundKey_RAM_AUTO_1R1W  |        0|   8|   2|    0|    16|    8|     1|          128|
+    |decryptedtext_array_U  |aes_main_roundKey_RAM_AUTO_1R1W  |        0|   8|   2|    0|    16|    8|     1|          128|
+    |block_U                |block_RAM_AUTO_1R1W              |        0|  16|   2|    0|    16|    8|     1|          128|
+    |block_1_U              |block_RAM_AUTO_1R1W              |        0|  16|   2|    0|    16|    8|     1|          128|
+    |expandedKey_U          |expandedKey_RAM_AUTO_1R1W        |        1|   0|   0|    0|   240|    8|     1|         1920|
+    |expandedKey_1_U        |expandedKey_RAM_AUTO_1R1W        |        1|   0|   0|    0|   240|    8|     1|         1920|
+    |key_array128_U         |key_array128_RAM_AUTO_1R1W       |        1|   0|   0|    0|  1056|    8|     1|         8448|
+    +-----------------------+---------------------------------+---------+----+----+-----+------+-----+------+-------------+
+    |Total                  |                                 |        3|  56|  10|    0|  1616|   64|     8|        12928|
+    +-----------------------+---------------------------------+---------+----+----+-----+------+-----+------+-------------+
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +-----------------------------------------------------------------------------+----------+----+---+----+------------+------------+
+    |                                Variable Name                                | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +-----------------------------------------------------------------------------+----------+----+---+----+------------+------------+
+    |ap_block_state17_on_subcall_done                                             |       and|   0|  0|   2|           1|           1|
+    |ap_block_state23_on_subcall_done                                             |       and|   0|  0|   2|           1|           1|
+    |grp_aes_Pipeline_VITIS_LOOP_85_4_fu_396_ciphertext_and_decryptedtext_TREADY  |       and|   0|  0|   2|           1|           1|
+    |grp_aes_Pipeline_VITIS_LOOP_94_5_fu_420_ciphertext_and_decryptedtext_TREADY  |       and|   0|  0|   2|           1|           1|
+    |ap_block_state13_on_subcall_done                                             |        or|   0|  0|   2|           1|           1|
+    |ap_block_state19_on_subcall_done                                             |        or|   0|  0|   2|           1|           1|
+    |ap_predicate_op118_call_state17                                              |        or|   0|  0|   2|           1|           1|
+    |expandedKeySize_1_fu_485_p2                                                  |        or|   0|  0|   8|           8|           5|
+    |expandedKeySize_fu_470_p2                                                    |        or|   0|  0|   8|           8|           5|
+    +-----------------------------------------------------------------------------+----------+----+---+----+------------+------------+
+    |Total                                                                        |          |   0|  0|  30|          23|          17|
+    +-----------------------------------------------------------------------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    +--------------------------------------------------+-----+-----------+-----+-----------+
+    |                       Name                       | LUT | Input Size| Bits| Total Bits|
+    +--------------------------------------------------+-----+-----------+-----+-----------+
+    |ap_NS_fsm                                         |  130|         29|    1|         29|
+    |ap_phi_mux_nbrRounds_phi_fu_243_p6                |   20|          4|    4|         16|
+    |block_1_address0                                  |   20|          4|    4|         16|
+    |block_1_ce0                                       |   20|          4|    1|          4|
+    |block_1_ce1                                       |    9|          2|    1|          2|
+    |block_1_d0                                        |   14|          3|    8|         24|
+    |block_1_we0                                       |   14|          3|    1|          3|
+    |block_1_we1                                       |    9|          2|    1|          2|
+    |block_address0                                    |   20|          4|    4|         16|
+    |block_ce0                                         |   20|          4|    1|          4|
+    |block_ce1                                         |    9|          2|    1|          2|
+    |block_d0                                          |   14|          3|    8|         24|
+    |block_we0                                         |   14|          3|    1|          3|
+    |block_we1                                         |    9|          2|    1|          2|
+    |cipherkey_size_reg_225                            |   14|          3|    3|          9|
+    |ciphertext_and_decryptedtext_TDATA_int_regslice   |   14|          3|    8|         24|
+    |ciphertext_and_decryptedtext_TDEST_int_regslice   |   14|          3|    1|          3|
+    |ciphertext_and_decryptedtext_TID_int_regslice     |   14|          3|    1|          3|
+    |ciphertext_and_decryptedtext_TKEEP_int_regslice   |   14|          3|    1|          3|
+    |ciphertext_and_decryptedtext_TLAST_int_regslice   |   14|          3|    1|          3|
+    |ciphertext_and_decryptedtext_TSTRB_int_regslice   |   14|          3|    1|          3|
+    |ciphertext_and_decryptedtext_TUSER_int_regslice   |   14|          3|    1|          3|
+    |ciphertext_and_decryptedtext_TVALID_int_regslice  |   14|          3|    1|          3|
+    |ciphertext_array_address0                         |   20|          4|    4|         16|
+    |ciphertext_array_ce0                              |   20|          4|    1|          4|
+    |ciphertext_array_we0                              |    9|          2|    1|          2|
+    |decryptedtext_array_address0                      |   14|          3|    4|         12|
+    |decryptedtext_array_ce0                           |   14|          3|    1|          3|
+    |decryptedtext_array_we0                           |    9|          2|    1|          2|
+    |expandedKey_1_address0                            |   14|          3|    8|         24|
+    |expandedKey_1_ce0                                 |   14|          3|    1|          3|
+    |expandedKey_1_ce1                                 |    9|          2|    1|          2|
+    |expandedKey_1_we0                                 |    9|          2|    1|          2|
+    |expandedKey_address0                              |   14|          3|    8|         24|
+    |expandedKey_ce0                                   |   14|          3|    1|          3|
+    |expandedKey_ce1                                   |    9|          2|    1|          2|
+    |expandedKey_we0                                   |    9|          2|    1|          2|
+    |grp_expandKey_fu_343_expandedKeySize              |   14|          3|    8|         24|
+    |grp_expandKey_fu_343_expandedKey_q0               |   14|          3|    8|         24|
+    |grp_expandKey_fu_343_expandedKey_q1               |   14|          3|    8|         24|
+    |grp_galois_multiplication_fu_560_a                |   14|          3|    8|         24|
+    |grp_galois_multiplication_fu_560_b                |   14|          3|    4|         12|
+    |grp_galois_multiplication_fu_565_a                |   14|          3|    8|         24|
+    |grp_galois_multiplication_fu_565_b                |   14|          3|    4|         12|
+    |grp_galois_multiplication_fu_570_a                |   14|          3|    8|         24|
+    |grp_galois_multiplication_fu_570_b                |   14|          3|    4|         12|
+    |key_and_plaintext_TREADY_int_regslice             |   14|          3|    1|          3|
+    |key_array128_address0                             |   31|          6|   11|         66|
+    |key_array128_ce0                                  |   31|          6|    1|          6|
+    |key_array128_d0                                   |   25|          5|    8|         40|
+    |key_array128_we0                                  |   25|          5|    1|          5|
+    |key_array_reg_210                                 |   14|          3|    2|          6|
+    |nbrRounds_1_reg_255                               |   14|          3|    2|          6|
+    |nbrRounds_reg_240                                 |   14|          3|    2|          6|
+    |plaintext_array_address0                          |   14|          3|    4|         12|
+    |plaintext_array_ce0                               |   14|          3|    1|          3|
+    |plaintext_array_we0                               |    9|          2|    1|          2|
+    +--------------------------------------------------+-----+-----------+-----+-----------+
+    |Total                                             |  957|        203|  183|        637|
+    +--------------------------------------------------+-----+-----------+-----+-----------+
+
+    * Register: 
+    +------------------------------------------------------------------------+----+----+-----+-----------+
+    |                                  Name                                  | FF | LUT| Bits| Const Bits|
+    +------------------------------------------------------------------------+----+----+-----+-----------+
+    |ap_CS_fsm                                                               |  28|   0|   28|          0|
+    |cipherkey_size_reg_225                                                  |   3|   0|    6|          3|
+    |expandedKeySize_1_reg_555                                               |   2|   0|    8|          6|
+    |expandedKeySize_reg_550                                                 |   3|   0|    8|          5|
+    |grp_aes_Pipeline_1_fu_273_ap_start_reg                                  |   1|   0|    1|          0|
+    |grp_aes_Pipeline_2_fu_279_ap_start_reg                                  |   1|   0|    1|          0|
+    |grp_aes_Pipeline_3_fu_284_ap_start_reg                                  |   1|   0|    1|          0|
+    |grp_aes_Pipeline_VITIS_LOOP_475_1_VITIS_LOOP_478_2_fu_337_ap_start_reg  |   1|   0|    1|          0|
+    |grp_aes_Pipeline_VITIS_LOOP_489_3_VITIS_LOOP_492_4_fu_368_ap_start_reg  |   1|   0|    1|          0|
+    |grp_aes_Pipeline_VITIS_LOOP_665_1_VITIS_LOOP_668_2_fu_374_ap_start_reg  |   1|   0|    1|          0|
+    |grp_aes_Pipeline_VITIS_LOOP_679_3_VITIS_LOOP_682_4_fu_390_ap_start_reg  |   1|   0|    1|          0|
+    |grp_aes_Pipeline_VITIS_LOOP_70_2_fu_289_ap_start_reg                    |   1|   0|    1|          0|
+    |grp_aes_Pipeline_VITIS_LOOP_75_3_fu_312_ap_start_reg                    |   1|   0|    1|          0|
+    |grp_aes_Pipeline_VITIS_LOOP_85_4_fu_396_ap_start_reg                    |   1|   0|    1|          0|
+    |grp_aes_Pipeline_VITIS_LOOP_94_5_fu_420_ap_start_reg                    |   1|   0|    1|          0|
+    |grp_aes_invMain_fu_380_ap_start_reg                                     |   1|   0|    1|          0|
+    |grp_aes_main_fu_358_ap_start_reg                                        |   1|   0|    1|          0|
+    |grp_expandKey_fu_343_ap_start_reg                                       |   1|   0|    1|          0|
+    |key_array_reg_210                                                       |   2|   0|   11|          9|
+    |nbrRounds_1_reg_255                                                     |   2|   0|    4|          2|
+    |nbrRounds_reg_240                                                       |   2|   0|    4|          2|
+    |p_4_0_0_0115_phi_loc_load_reg_540                                       |   1|   0|    1|          0|
+    +------------------------------------------------------------------------+----+----+-----+-----------+
+    |Total                                                                   |  57|   0|   84|         27|
+    +------------------------------------------------------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++-------------------------------------+-----+-----+--------------+---------------------------------------+--------------+
+|              RTL Ports              | Dir | Bits|   Protocol   |             Source Object             |    C Type    |
++-------------------------------------+-----+-----+--------------+---------------------------------------+--------------+
+|s_axi_CTRL_BUS_AWVALID               |   in|    1|         s_axi|                               CTRL_BUS|        scalar|
+|s_axi_CTRL_BUS_AWREADY               |  out|    1|         s_axi|                               CTRL_BUS|        scalar|
+|s_axi_CTRL_BUS_AWADDR                |   in|    6|         s_axi|                               CTRL_BUS|        scalar|
+|s_axi_CTRL_BUS_WVALID                |   in|    1|         s_axi|                               CTRL_BUS|        scalar|
+|s_axi_CTRL_BUS_WREADY                |  out|    1|         s_axi|                               CTRL_BUS|        scalar|
+|s_axi_CTRL_BUS_WDATA                 |   in|   32|         s_axi|                               CTRL_BUS|        scalar|
+|s_axi_CTRL_BUS_WSTRB                 |   in|    4|         s_axi|                               CTRL_BUS|        scalar|
+|s_axi_CTRL_BUS_ARVALID               |   in|    1|         s_axi|                               CTRL_BUS|        scalar|
+|s_axi_CTRL_BUS_ARREADY               |  out|    1|         s_axi|                               CTRL_BUS|        scalar|
+|s_axi_CTRL_BUS_ARADDR                |   in|    6|         s_axi|                               CTRL_BUS|        scalar|
+|s_axi_CTRL_BUS_RVALID                |  out|    1|         s_axi|                               CTRL_BUS|        scalar|
+|s_axi_CTRL_BUS_RREADY                |   in|    1|         s_axi|                               CTRL_BUS|        scalar|
+|s_axi_CTRL_BUS_RDATA                 |  out|   32|         s_axi|                               CTRL_BUS|        scalar|
+|s_axi_CTRL_BUS_RRESP                 |  out|    2|         s_axi|                               CTRL_BUS|        scalar|
+|s_axi_CTRL_BUS_BVALID                |  out|    1|         s_axi|                               CTRL_BUS|        scalar|
+|s_axi_CTRL_BUS_BREADY                |   in|    1|         s_axi|                               CTRL_BUS|        scalar|
+|s_axi_CTRL_BUS_BRESP                 |  out|    2|         s_axi|                               CTRL_BUS|        scalar|
+|s_axi_control_AWVALID                |   in|    1|         s_axi|                                control|        scalar|
+|s_axi_control_AWREADY                |  out|    1|         s_axi|                                control|        scalar|
+|s_axi_control_AWADDR                 |   in|    5|         s_axi|                                control|        scalar|
+|s_axi_control_WVALID                 |   in|    1|         s_axi|                                control|        scalar|
+|s_axi_control_WREADY                 |  out|    1|         s_axi|                                control|        scalar|
+|s_axi_control_WDATA                  |   in|   32|         s_axi|                                control|        scalar|
+|s_axi_control_WSTRB                  |   in|    4|         s_axi|                                control|        scalar|
+|s_axi_control_ARVALID                |   in|    1|         s_axi|                                control|        scalar|
+|s_axi_control_ARREADY                |  out|    1|         s_axi|                                control|        scalar|
+|s_axi_control_ARADDR                 |   in|    5|         s_axi|                                control|        scalar|
+|s_axi_control_RVALID                 |  out|    1|         s_axi|                                control|        scalar|
+|s_axi_control_RREADY                 |   in|    1|         s_axi|                                control|        scalar|
+|s_axi_control_RDATA                  |  out|   32|         s_axi|                                control|        scalar|
+|s_axi_control_RRESP                  |  out|    2|         s_axi|                                control|        scalar|
+|s_axi_control_BVALID                 |  out|    1|         s_axi|                                control|        scalar|
+|s_axi_control_BREADY                 |   in|    1|         s_axi|                                control|        scalar|
+|s_axi_control_BRESP                  |  out|    2|         s_axi|                                control|        scalar|
+|ap_clk                               |   in|    1|  ap_ctrl_none|                                    aes|  return value|
+|ap_rst_n                             |   in|    1|  ap_ctrl_none|                                    aes|  return value|
+|key_and_plaintext_TDATA              |   in|    8|          axis|             key_and_plaintext_V_data_V|       pointer|
+|key_and_plaintext_TVALID             |   in|    1|          axis|             key_and_plaintext_V_dest_V|       pointer|
+|key_and_plaintext_TREADY             |  out|    1|          axis|             key_and_plaintext_V_dest_V|       pointer|
+|key_and_plaintext_TDEST              |   in|    1|          axis|             key_and_plaintext_V_dest_V|       pointer|
+|key_and_plaintext_TKEEP              |   in|    1|          axis|             key_and_plaintext_V_keep_V|       pointer|
+|key_and_plaintext_TSTRB              |   in|    1|          axis|             key_and_plaintext_V_strb_V|       pointer|
+|key_and_plaintext_TUSER              |   in|    1|          axis|             key_and_plaintext_V_user_V|       pointer|
+|key_and_plaintext_TLAST              |   in|    1|          axis|             key_and_plaintext_V_last_V|       pointer|
+|key_and_plaintext_TID                |   in|    1|          axis|               key_and_plaintext_V_id_V|       pointer|
+|ciphertext_and_decryptedtext_TDATA   |  out|    8|          axis|  ciphertext_and_decryptedtext_V_data_V|       pointer|
+|ciphertext_and_decryptedtext_TVALID  |  out|    1|          axis|  ciphertext_and_decryptedtext_V_dest_V|       pointer|
+|ciphertext_and_decryptedtext_TREADY  |   in|    1|          axis|  ciphertext_and_decryptedtext_V_dest_V|       pointer|
+|ciphertext_and_decryptedtext_TDEST   |  out|    1|          axis|  ciphertext_and_decryptedtext_V_dest_V|       pointer|
+|ciphertext_and_decryptedtext_TKEEP   |  out|    1|          axis|  ciphertext_and_decryptedtext_V_keep_V|       pointer|
+|ciphertext_and_decryptedtext_TSTRB   |  out|    1|          axis|  ciphertext_and_decryptedtext_V_strb_V|       pointer|
+|ciphertext_and_decryptedtext_TUSER   |  out|    1|          axis|  ciphertext_and_decryptedtext_V_user_V|       pointer|
+|ciphertext_and_decryptedtext_TLAST   |  out|    1|          axis|  ciphertext_and_decryptedtext_V_last_V|       pointer|
+|ciphertext_and_decryptedtext_TID     |  out|    1|          axis|    ciphertext_and_decryptedtext_V_id_V|       pointer|
++-------------------------------------+-----+-----+--------------+---------------------------------------+--------------+
+

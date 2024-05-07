@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# Vivado v2022.1 (64-bit)
+# SW Build 3526262 on Mon Apr 18 15:48:16 MDT 2022
+# IP Build 3524634 on Mon Apr 18 20:55:01 MDT 2022
+# Start of session at: Mon Apr 22 18:26:54 2024
+# Process ID: 8752
+# Current directory: Z:/Users/hiqbal/AES_Power_Monitor_Vivado/AES_Power_Monitor_Vivado.runs/AES_Power_Monitor_Power_Monitor_0_1_synth_1
+# Command line: vivado.exe -log AES_Power_Monitor_Power_Monitor_0_1.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source AES_Power_Monitor_Power_Monitor_0_1.tcl
+# Log file: Z:/Users/hiqbal/AES_Power_Monitor_Vivado/AES_Power_Monitor_Vivado.runs/AES_Power_Monitor_Power_Monitor_0_1_synth_1/AES_Power_Monitor_Power_Monitor_0_1.vds
+# Journal file: Z:/Users/hiqbal/AES_Power_Monitor_Vivado/AES_Power_Monitor_Vivado.runs/AES_Power_Monitor_Power_Monitor_0_1_synth_1\vivado.jou
+# Running On: X22-08, OS: Windows, CPU Frequency: 2594 MHz, CPU Physical cores: 4, Host memory: 17178 MB
+#-----------------------------------------------------------
+source AES_Power_Monitor_Power_Monitor_0_1.tcl -notrace

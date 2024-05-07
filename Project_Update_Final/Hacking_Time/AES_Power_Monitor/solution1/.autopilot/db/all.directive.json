@@ -1,0 +1,35 @@
+{"sourceFile": [{
+      "name": "",
+      "directive": [
+        {
+          "functionName": "aes",
+          "label": "",
+          "functionLabel": "",
+          "id": "1",
+          "sourceFile": "Z:\/Users\/hiqbal\/AES_Power_Monitor\/solution1\/directives.tcl",
+          "sourceLine": "6",
+          "pragma": {
+            "name": "TOP",
+            "option": [{
+                "name": "name",
+                "value": "aes"
+              }]
+          }
+        },
+        {
+          "functionName": "aes",
+          "label": "",
+          "functionLabel": "",
+          "id": "2",
+          "sourceFile": "Z:\/Users\/hiqbal\/AES_Power_Monitor\/solution1\/csynth.tcl",
+          "sourceLine": "20",
+          "pragma": {
+            "name": "TOP",
+            "option": [{
+                "name": "name",
+                "value": "aes"
+              }]
+          }
+        }
+      ]
+    }]}

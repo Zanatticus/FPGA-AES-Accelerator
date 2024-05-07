@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vivadoHLSLog:LogRoot xmlns:vivadoHLSLog="www.xilinx.com/vivadoHLSLog">
+  <errorLogs>
+    <logs>
+      <synLog/>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </errorLogs>
+  <warningLogs>
+    <logs>
+      <synLog>
+        <logs message="WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low." projectName="AES_PM" solutionName="solution1" date="2024-04-25T11:55:54.091-0400" type="Warning"/>
+        <logs message="WARNING: [HLS 200-960] Cannot flatten loop 'VITIS_LOOP_61_1' (Downloads/aes_axis.cpp:58:13) in function 'aes' more than one sub loop.&#xD;&#xA;Resolution: For help on HLS 200-960 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.1;t=hls+guidance;d=200-960.html" projectName="AES_PM" solutionName="solution1" date="2024-04-25T11:55:35.057-0400" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-561] Updating loop lower bound from 1 to 3 for loop 'shiftRowLoop1' (Downloads/aes_axis.cpp:326:9) in function 'aes_main'." projectName="AES_PM" solutionName="solution1" date="2024-04-25T11:55:34.321-0400" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-561] Updating loop lower bound from 1 to 2 for loop 'shiftRowLoop1' (Downloads/aes_axis.cpp:326:9) in function 'aes_main'." projectName="AES_PM" solutionName="solution1" date="2024-04-25T11:55:34.310-0400" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-561] Updating loop upper bound from 3 to 2 for loop 'shiftRowLoop1' (Downloads/aes_axis.cpp:326:9) in function 'aes_main'." projectName="AES_PM" solutionName="solution1" date="2024-04-25T11:55:34.298-0400" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-561] Updating loop lower bound from 1 to 3 for loop 'invShiftRowLoop1' (Downloads/aes_axis.cpp:579:9) in function 'aes_invMain'." projectName="AES_PM" solutionName="solution1" date="2024-04-25T11:55:34.277-0400" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-561] Updating loop lower bound from 1 to 2 for loop 'invShiftRowLoop1' (Downloads/aes_axis.cpp:579:9) in function 'aes_invMain'." projectName="AES_PM" solutionName="solution1" date="2024-04-25T11:55:34.265-0400" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-561] Updating loop upper bound from 3 to 2 for loop 'invShiftRowLoop1' (Downloads/aes_axis.cpp:579:9) in function 'aes_invMain'." projectName="AES_PM" solutionName="solution1" date="2024-04-25T11:55:34.254-0400" type="Warning"/>
+        <logs message="WARNING: [HLS 214-189] Pipeline directive for loop 'shiftRowLoop1' (Downloads/aes_axis.cpp:324:5) in function 'aes_round' has been removed because the loop is unrolled completely (Downloads/aes_axis.cpp:424:0)" projectName="AES_PM" solutionName="solution1" date="2024-04-25T11:55:33.416-0400" type="Warning"/>
+        <logs message="WARNING: [HLS 214-189] Pipeline directive for loop 'mixColumnsLoop1' (Downloads/aes_axis.cpp:371:5) in function 'aes_round' has been removed because the loop is unrolled completely (Downloads/aes_axis.cpp:424:0)" projectName="AES_PM" solutionName="solution1" date="2024-04-25T11:55:33.393-0400" type="Warning"/>
+        <logs message="WARNING: [HLS 214-189] Pipeline directive for loop 'createRoundKeyLoop2' (Downloads/aes_axis.cpp:440:9) in function 'aes_main' has been removed because the loop is unrolled completely (Downloads/aes_axis.cpp:448:0)" projectName="AES_PM" solutionName="solution1" date="2024-04-25T11:55:33.359-0400" type="Warning"/>
+        <logs message="WARNING: [HLS 214-189] Pipeline directive for loop 'invShiftRowLoop1' (Downloads/aes_axis.cpp:577:5) in function 'aes_invRound' has been removed because the loop is unrolled completely (Downloads/aes_axis.cpp:645:0)" projectName="AES_PM" solutionName="solution1" date="2024-04-25T11:55:33.323-0400" type="Warning"/>
+        <logs message="WARNING: [HLS 214-189] Pipeline directive for loop 'invMixColumnsLoop1' (Downloads/aes_axis.cpp:597:5) in function 'aes_invRound' has been removed because the loop is unrolled completely (Downloads/aes_axis.cpp:645:0)" projectName="AES_PM" solutionName="solution1" date="2024-04-25T11:55:33.288-0400" type="Warning"/>
+        <logs message="WARNING: [HLS 214-189] Pipeline directive for loop 'createRoundKeyLoop2' (Downloads/aes_axis.cpp:440:9) in function 'aes_invMain' has been removed because the loop is unrolled completely (Downloads/aes_axis.cpp:653:0)" projectName="AES_PM" solutionName="solution1" date="2024-04-25T11:55:33.277-0400" type="Warning"/>
+      </synLog>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </warningLogs>
+</vivadoHLSLog:LogRoot>

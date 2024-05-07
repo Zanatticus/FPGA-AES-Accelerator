@@ -1,0 +1,222 @@
+<profile>
+
+<section name = "Vitis HLS Report for 'aes_main'" level="0">
+<item name = "Date">Wed Apr 17 16:02:35 2024
+</item>
+<item name = "Version">2022.1 (Build 3526262 on Mon Apr 18 15:48:16 MDT 2022)</item>
+<item name = "Project">AES_Power_Monitor</item>
+<item name = "Solution">solution1 (Vivado IP Flow Target)</item>
+<item name = "Product family">zynq</item>
+<item name = "Target device">xc7z020-clg400-1</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">10.00 ns, 5.982 ns, 2.70 ns</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="8">, min, max, min, max, min, max, Type</keys>
+<column name="">1196, 2024, 11.960 us, 20.240 us, 1196, 2024, no</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
+<column name="grp_aes_main_Pipeline_VITIS_LOOP_398_1_VITIS_LOOP_401_2_fu_246">aes_main_Pipeline_VITIS_LOOP_398_1_VITIS_LOOP_401_2, 19, 19, 0.190 us, 0.190 us, 19, 19, no</column>
+<column name="grp_aes_main_Pipeline_VITIS_LOOP_308_1_fu_254">aes_main_Pipeline_VITIS_LOOP_308_1, 18, 18, 0.180 us, 0.180 us, 18, 18, no</column>
+<column name="grp_aes_main_Pipeline_VITIS_LOOP_398_1_VITIS_LOOP_401_21_fu_261">aes_main_Pipeline_VITIS_LOOP_398_1_VITIS_LOOP_401_21, 19, 19, 0.190 us, 0.190 us, 19, 19, no</column>
+<column name="grp_aes_main_Pipeline_VITIS_LOOP_276_1_fu_269">aes_main_Pipeline_VITIS_LOOP_276_1, 19, 19, 0.190 us, 0.190 us, 19, 19, no</column>
+<column name="grp_aes_round_fu_277">aes_round, 80, 104, 0.800 us, 1.040 us, 80, 104, no</column>
+<column name="grp_aes_main_Pipeline_VITIS_LOOP_308_12_fu_286">aes_main_Pipeline_VITIS_LOOP_308_12, 18, 18, 0.180 us, 0.180 us, 18, 18, no</column>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+<column name="- VITIS_LOOP_415_1">1107, 1911, 123 ~ 147, -, -, 9 ~ 13, no</column>
+<column name=" + VITIS_LOOP_398_1">40, 40, 10, -, -, 4, no</column>
+<column name="  ++ VITIS_LOOP_401_2">8, 8, 2, -, -, 4, no</column>
+<column name="- shiftRowsLoop">8, 32, 2 ~ 8, -, -, 4, no</column>
+<column name=" + VITIS_LOOP_296_1">0, 3, 1, -, -, 0 ~ 3, no</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Utilization Estimates" level="0">
+<item name = "Summary"><table name="" hasTotal="1">
+<keys size="6">Name, BRAM_18K, DSP, FF, LUT, URAM</keys>
+<column name="DSP">-, -, -, -, -</column>
+<column name="Expression">-, -, 0, 150, -</column>
+<column name="FIFO">-, -, -, -, -</column>
+<column name="Instance">2, -, 354, 1421, -</column>
+<column name="Memory">0, -, 8, 2, 0</column>
+<column name="Multiplexer">-, -, -, 576, -</column>
+<column name="Register">-, -, 118, -, -</column>
+<specialColumn name="Available">280, 220, 106400, 53200, 0</specialColumn>
+<specialColumn name="Utilization (%)">~0, 0, ~0, 4, 0</specialColumn>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="1">
+<keys size="7">Instance, Module, BRAM_18K, DSP, FF, LUT, URAM</keys>
+<column name="grp_aes_main_Pipeline_VITIS_LOOP_276_1_fu_269">aes_main_Pipeline_VITIS_LOOP_276_1, 1, 0, 18, 61, 0</column>
+<column name="grp_aes_main_Pipeline_VITIS_LOOP_308_1_fu_254">aes_main_Pipeline_VITIS_LOOP_308_1, 0, 0, 12, 69, 0</column>
+<column name="grp_aes_main_Pipeline_VITIS_LOOP_308_12_fu_286">aes_main_Pipeline_VITIS_LOOP_308_12, 0, 0, 12, 69, 0</column>
+<column name="grp_aes_main_Pipeline_VITIS_LOOP_398_1_VITIS_LOOP_401_2_fu_246">aes_main_Pipeline_VITIS_LOOP_398_1_VITIS_LOOP_401_2, 0, 0, 30, 160, 0</column>
+<column name="grp_aes_main_Pipeline_VITIS_LOOP_398_1_VITIS_LOOP_401_21_fu_261">aes_main_Pipeline_VITIS_LOOP_398_1_VITIS_LOOP_401_21, 0, 0, 30, 162, 0</column>
+<column name="grp_aes_round_fu_277">aes_round, 1, 0, 252, 900, 0</column>
+</table>
+</item>
+<item name = "DSP"><table name="" hasTotal="0">
+<keys size="3">Instance, Module, Expression</keys>
+</table>
+</item>
+<item name = "Memory"><table name="" hasTotal="1">
+<keys size="10">Memory, Module, BRAM_18K, FF, LUT, URAM, Words, Bits, Banks, W*Bits*Banks</keys>
+<column name="roundKey_U">aes_main_roundKey_RAM_AUTO_1R1W, 0, 8, 2, 0, 16, 8, 1, 128</column>
+</table>
+</item>
+<item name = "FIFO"><table name="" hasTotal="1">
+<keys size="8">Name, BRAM_18K, FF, LUT, URAM, Depth, Bits, Size:D*B</keys>
+</table>
+</item>
+<item name = "Expression"><table name="" hasTotal="1">
+<keys size="7">Variable Name, Operation, DSP, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
+<column name="add_ln296_fu_483_p2">+, 0, 0, 10, 2, 1</column>
+<column name="add_ln398_1_fu_321_p2">+, 0, 0, 11, 3, 1</column>
+<column name="add_ln401_fu_359_p2">+, 0, 0, 11, 3, 1</column>
+<column name="add_ln402_2_fu_396_p2">+, 0, 0, 13, 4, 4</column>
+<column name="add_ln402_fu_374_p2">+, 0, 0, 15, 8, 8</column>
+<column name="add_ln415_fu_343_p2">+, 0, 0, 13, 4, 1</column>
+<column name="i_12_fu_414_p2">+, 0, 0, 11, 3, 1</column>
+<column name="icmp_ln285_fu_408_p2">icmp, 0, 0, 9, 3, 4</column>
+<column name="icmp_ln296_2_fu_478_p2">icmp, 0, 0, 8, 3, 3</column>
+<column name="icmp_ln296_fu_437_p2">icmp, 0, 0, 8, 2, 1</column>
+<column name="icmp_ln398_fu_315_p2">icmp, 0, 0, 9, 3, 4</column>
+<column name="icmp_ln401_fu_353_p2">icmp, 0, 0, 9, 3, 4</column>
+<column name="icmp_ln415_fu_301_p2">icmp, 0, 0, 9, 4, 4</column>
+<column name="add_ptr_i_sum743_fu_454_p2">or, 0, 0, 4, 4, 2</column>
+<column name="add_ptr_i_sum764_fu_464_p2">or, 0, 0, 4, 4, 2</column>
+<column name="ap_block_state10_on_subcall_done">or, 0, 0, 2, 1, 1</column>
+<column name="or_ln300_fu_443_p2">or, 0, 0, 4, 4, 1</column>
+</table>
+</item>
+<item name = "Multiplexer"><table name="" hasTotal="1">
+<keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
+<column name="ap_NS_fsm">81, 17, 1, 17</column>
+<column name="empty_48_reg_198">9, 2, 8, 16</column>
+<column name="empty_49_reg_209">9, 2, 8, 16</column>
+<column name="empty_50_reg_221">9, 2, 8, 16</column>
+<column name="expandedKey_address0">20, 4, 8, 32</column>
+<column name="expandedKey_ce0">20, 4, 1, 4</column>
+<column name="i_11_reg_187">9, 2, 2, 4</column>
+<column name="i_7_fu_80">9, 2, 4, 8</column>
+<column name="i_8_reg_165">9, 2, 3, 6</column>
+<column name="i_9_fu_88">9, 2, 3, 6</column>
+<column name="j_reg_176">9, 2, 3, 6</column>
+<column name="roundKey_address0">37, 7, 4, 28</column>
+<column name="roundKey_ce0">37, 7, 1, 7</column>
+<column name="roundKey_d0">20, 4, 8, 32</column>
+<column name="roundKey_we0">20, 4, 1, 4</column>
+<column name="state_address0">48, 9, 4, 36</column>
+<column name="state_address1">48, 9, 4, 36</column>
+<column name="state_ce0">31, 6, 1, 6</column>
+<column name="state_ce1">31, 6, 1, 6</column>
+<column name="state_d0">37, 7, 8, 56</column>
+<column name="state_d1">20, 4, 8, 32</column>
+<column name="state_we0">31, 6, 1, 6</column>
+<column name="state_we1">14, 3, 1, 3</column>
+<column name="tmp_reg_233">9, 2, 8, 16</column>
+</table>
+</item>
+<item name = "Register"><table name="" hasTotal="1">
+<keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
+<column name="add_ln398_1_reg_529">3, 0, 3, 0</column>
+<column name="add_ln401_reg_542">3, 0, 3, 0</column>
+<column name="add_ln402_2_reg_552">4, 0, 4, 0</column>
+<column name="ap_CS_fsm">16, 0, 16, 0</column>
+<column name="empty_48_reg_198">8, 0, 8, 0</column>
+<column name="empty_49_reg_209">8, 0, 8, 0</column>
+<column name="empty_50_reg_221">8, 0, 8, 0</column>
+<column name="grp_aes_main_Pipeline_VITIS_LOOP_276_1_fu_269_ap_start_reg">1, 0, 1, 0</column>
+<column name="grp_aes_main_Pipeline_VITIS_LOOP_308_12_fu_286_ap_start_reg">1, 0, 1, 0</column>
+<column name="grp_aes_main_Pipeline_VITIS_LOOP_308_1_fu_254_ap_start_reg">1, 0, 1, 0</column>
+<column name="grp_aes_main_Pipeline_VITIS_LOOP_398_1_VITIS_LOOP_401_21_fu_261_ap_start_reg">1, 0, 1, 0</column>
+<column name="grp_aes_main_Pipeline_VITIS_LOOP_398_1_VITIS_LOOP_401_2_fu_246_ap_start_reg">1, 0, 1, 0</column>
+<column name="grp_aes_round_fu_277_ap_start_reg">1, 0, 1, 0</column>
+<column name="i_11_reg_187">2, 0, 2, 0</column>
+<column name="i_12_reg_563">3, 0, 3, 0</column>
+<column name="i_7_fu_80">4, 0, 4, 0</column>
+<column name="i_8_reg_165">3, 0, 3, 0</column>
+<column name="i_9_fu_88">3, 0, 3, 0</column>
+<column name="i_reg_506">4, 0, 4, 0</column>
+<column name="icmp_ln296_reg_579">1, 0, 1, 0</column>
+<column name="j_reg_176">3, 0, 3, 0</column>
+<column name="shl_ln1_reg_568">2, 0, 4, 2</column>
+<column name="state_addr_6_reg_583">2, 0, 4, 2</column>
+<column name="state_addr_7_reg_588">2, 0, 4, 2</column>
+<column name="state_addr_8_reg_593">2, 0, 4, 2</column>
+<column name="state_addr_reg_574">2, 0, 4, 2</column>
+<column name="state_load_5_reg_603">8, 0, 8, 0</column>
+<column name="state_load_reg_598">8, 0, 8, 0</column>
+<column name="tmp_reg_233">8, 0, 8, 0</column>
+<column name="zext_ln398_1_reg_521">3, 0, 4, 1</column>
+<column name="zext_ln401_reg_534">2, 0, 8, 6</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Interface" level="0">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">RTL Ports, Dir, Bits, Protocol, Source Object, C Type</keys>
+<column name="ap_clk">in, 1, ap_ctrl_hs, aes_main, return value</column>
+<column name="ap_rst">in, 1, ap_ctrl_hs, aes_main, return value</column>
+<column name="ap_start">in, 1, ap_ctrl_hs, aes_main, return value</column>
+<column name="ap_done">out, 1, ap_ctrl_hs, aes_main, return value</column>
+<column name="ap_idle">out, 1, ap_ctrl_hs, aes_main, return value</column>
+<column name="ap_ready">out, 1, ap_ctrl_hs, aes_main, return value</column>
+<column name="grp_galois_multiplication_fu_560_p_din1">out, 8, ap_ctrl_hs, aes_main, return value</column>
+<column name="grp_galois_multiplication_fu_560_p_din2">out, 4, ap_ctrl_hs, aes_main, return value</column>
+<column name="grp_galois_multiplication_fu_560_p_dout0">in, 8, ap_ctrl_hs, aes_main, return value</column>
+<column name="grp_galois_multiplication_fu_560_p_ready">in, 1, ap_ctrl_hs, aes_main, return value</column>
+<column name="grp_galois_multiplication_fu_565_p_din1">out, 8, ap_ctrl_hs, aes_main, return value</column>
+<column name="grp_galois_multiplication_fu_565_p_din2">out, 4, ap_ctrl_hs, aes_main, return value</column>
+<column name="grp_galois_multiplication_fu_565_p_dout0">in, 8, ap_ctrl_hs, aes_main, return value</column>
+<column name="grp_galois_multiplication_fu_565_p_ready">in, 1, ap_ctrl_hs, aes_main, return value</column>
+<column name="grp_galois_multiplication_fu_570_p_din1">out, 8, ap_ctrl_hs, aes_main, return value</column>
+<column name="grp_galois_multiplication_fu_570_p_din2">out, 4, ap_ctrl_hs, aes_main, return value</column>
+<column name="grp_galois_multiplication_fu_570_p_dout0">in, 8, ap_ctrl_hs, aes_main, return value</column>
+<column name="grp_galois_multiplication_fu_570_p_ready">in, 1, ap_ctrl_hs, aes_main, return value</column>
+<column name="state_address0">out, 4, ap_memory, state, array</column>
+<column name="state_ce0">out, 1, ap_memory, state, array</column>
+<column name="state_we0">out, 1, ap_memory, state, array</column>
+<column name="state_d0">out, 8, ap_memory, state, array</column>
+<column name="state_q0">in, 8, ap_memory, state, array</column>
+<column name="state_address1">out, 4, ap_memory, state, array</column>
+<column name="state_ce1">out, 1, ap_memory, state, array</column>
+<column name="state_we1">out, 1, ap_memory, state, array</column>
+<column name="state_d1">out, 8, ap_memory, state, array</column>
+<column name="state_q1">in, 8, ap_memory, state, array</column>
+<column name="expandedKey_address0">out, 8, ap_memory, expandedKey, array</column>
+<column name="expandedKey_ce0">out, 1, ap_memory, expandedKey, array</column>
+<column name="expandedKey_q0">in, 8, ap_memory, expandedKey, array</column>
+<column name="nbrRounds">in, 4, ap_none, nbrRounds, scalar</column>
+</table>
+</item>
+</section>
+</profile>

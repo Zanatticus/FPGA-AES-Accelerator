@@ -1,0 +1,61 @@
+verilog xil_defaultlib --include "C:/Xilinx/Vivado/2022.1/data/xilinx_vip/include" --include "../../../../AES_Power_Monitor_Vivado.gen/sources_1/bd/AES_Power_Monitor/ipshared/ec67/hdl" --include "../../../../AES_Power_Monitor_Vivado.gen/sources_1/bd/AES_Power_Monitor/ipshared/5765/hdl" --include "../../../../AES_Power_Monitor_Vivado.gen/sources_1/bd/AES_Power_Monitor/ipshared/b5f3/hdl/verilog" --include "../../../../AES_Power_Monitor_Vivado.gen/sources_1/bd/AES_Power_Monitor/ip/AES_Power_Monitor_aes_0_2/drivers/aes_v1_0/src" \
+"../../../bd/AES_Power_Monitor/ip/AES_Power_Monitor_processing_system7_0_1/sim/AES_Power_Monitor_processing_system7_0_1.v" \
+"../../../bd/AES_Power_Monitor/ip/AES_Power_Monitor_xbar_1/sim/AES_Power_Monitor_xbar_1.v" \
+"../../../../AES_Power_Monitor_Vivado.gen/sources_1/bd/AES_Power_Monitor/ipshared/b5f3/hdl/verilog/aes_aes_invMain.v" \
+"../../../../AES_Power_Monitor_Vivado.gen/sources_1/bd/AES_Power_Monitor/ipshared/b5f3/hdl/verilog/aes_aes_invMain_Pipeline_invShiftRowLoop.v" \
+"../../../../AES_Power_Monitor_Vivado.gen/sources_1/bd/AES_Power_Monitor/ipshared/b5f3/hdl/verilog/aes_aes_invMain_Pipeline_VITIS_LOOP_308_1.v" \
+"../../../../AES_Power_Monitor_Vivado.gen/sources_1/bd/AES_Power_Monitor/ipshared/b5f3/hdl/verilog/aes_aes_invMain_Pipeline_VITIS_LOOP_398_1_VITIS_LOOP_401_2.v" \
+"../../../../AES_Power_Monitor_Vivado.gen/sources_1/bd/AES_Power_Monitor/ipshared/b5f3/hdl/verilog/aes_aes_invMain_Pipeline_VITIS_LOOP_507_1.v" \
+"../../../../AES_Power_Monitor_Vivado.gen/sources_1/bd/AES_Power_Monitor/ipshared/b5f3/hdl/verilog/aes_aes_invRound.v" \
+"../../../../AES_Power_Monitor_Vivado.gen/sources_1/bd/AES_Power_Monitor/ipshared/b5f3/hdl/verilog/aes_aes_invRound_Pipeline_invMixColumnsLoop.v" \
+"../../../../AES_Power_Monitor_Vivado.gen/sources_1/bd/AES_Power_Monitor/ipshared/b5f3/hdl/verilog/aes_aes_invRound_Pipeline_invShiftRowLoop.v" \
+"../../../../AES_Power_Monitor_Vivado.gen/sources_1/bd/AES_Power_Monitor/ipshared/b5f3/hdl/verilog/aes_aes_invRound_Pipeline_VITIS_LOOP_308_1.v" \
+"../../../../AES_Power_Monitor_Vivado.gen/sources_1/bd/AES_Power_Monitor/ipshared/b5f3/hdl/verilog/aes_aes_invRound_Pipeline_VITIS_LOOP_507_1.v" \
+"../../../../AES_Power_Monitor_Vivado.gen/sources_1/bd/AES_Power_Monitor/ipshared/b5f3/hdl/verilog/aes_aes_invRound_Pipeline_VITIS_LOOP_507_1_rsbox_ROM_AUTO_1R.v" \
+"../../../../AES_Power_Monitor_Vivado.gen/sources_1/bd/AES_Power_Monitor/ipshared/b5f3/hdl/verilog/aes_aes_main.v" \
+"../../../../AES_Power_Monitor_Vivado.gen/sources_1/bd/AES_Power_Monitor/ipshared/b5f3/hdl/verilog/aes_aes_main_Pipeline_VITIS_LOOP_276_1.v" \
+"../../../../AES_Power_Monitor_Vivado.gen/sources_1/bd/AES_Power_Monitor/ipshared/b5f3/hdl/verilog/aes_aes_main_Pipeline_VITIS_LOOP_308_1.v" \
+"../../../../AES_Power_Monitor_Vivado.gen/sources_1/bd/AES_Power_Monitor/ipshared/b5f3/hdl/verilog/aes_aes_main_Pipeline_VITIS_LOOP_308_12.v" \
+"../../../../AES_Power_Monitor_Vivado.gen/sources_1/bd/AES_Power_Monitor/ipshared/b5f3/hdl/verilog/aes_aes_main_Pipeline_VITIS_LOOP_398_1_VITIS_LOOP_401_2.v" \
+"../../../../AES_Power_Monitor_Vivado.gen/sources_1/bd/AES_Power_Monitor/ipshared/b5f3/hdl/verilog/aes_aes_main_Pipeline_VITIS_LOOP_398_1_VITIS_LOOP_401_21.v" \
+"../../../../AES_Power_Monitor_Vivado.gen/sources_1/bd/AES_Power_Monitor/ipshared/b5f3/hdl/verilog/aes_aes_main_roundKey_RAM_AUTO_1R1W.v" \
+"../../../../AES_Power_Monitor_Vivado.gen/sources_1/bd/AES_Power_Monitor/ipshared/b5f3/hdl/verilog/aes_aes_Pipeline_1.v" \
+"../../../../AES_Power_Monitor_Vivado.gen/sources_1/bd/AES_Power_Monitor/ipshared/b5f3/hdl/verilog/aes_aes_Pipeline_2.v" \
+"../../../../AES_Power_Monitor_Vivado.gen/sources_1/bd/AES_Power_Monitor/ipshared/b5f3/hdl/verilog/aes_aes_Pipeline_3.v" \
+"../../../../AES_Power_Monitor_Vivado.gen/sources_1/bd/AES_Power_Monitor/ipshared/b5f3/hdl/verilog/aes_aes_Pipeline_VITIS_LOOP_70_2.v" \
+"../../../../AES_Power_Monitor_Vivado.gen/sources_1/bd/AES_Power_Monitor/ipshared/b5f3/hdl/verilog/aes_aes_Pipeline_VITIS_LOOP_75_3.v" \
+"../../../../AES_Power_Monitor_Vivado.gen/sources_1/bd/AES_Power_Monitor/ipshared/b5f3/hdl/verilog/aes_aes_Pipeline_VITIS_LOOP_85_4.v" \
+"../../../../AES_Power_Monitor_Vivado.gen/sources_1/bd/AES_Power_Monitor/ipshared/b5f3/hdl/verilog/aes_aes_Pipeline_VITIS_LOOP_94_5.v" \
+"../../../../AES_Power_Monitor_Vivado.gen/sources_1/bd/AES_Power_Monitor/ipshared/b5f3/hdl/verilog/aes_aes_Pipeline_VITIS_LOOP_475_1_VITIS_LOOP_478_2.v" \
+"../../../../AES_Power_Monitor_Vivado.gen/sources_1/bd/AES_Power_Monitor/ipshared/b5f3/hdl/verilog/aes_aes_Pipeline_VITIS_LOOP_489_3_VITIS_LOOP_492_4.v" \
+"../../../../AES_Power_Monitor_Vivado.gen/sources_1/bd/AES_Power_Monitor/ipshared/b5f3/hdl/verilog/aes_aes_Pipeline_VITIS_LOOP_665_1_VITIS_LOOP_668_2.v" \
+"../../../../AES_Power_Monitor_Vivado.gen/sources_1/bd/AES_Power_Monitor/ipshared/b5f3/hdl/verilog/aes_aes_Pipeline_VITIS_LOOP_679_3_VITIS_LOOP_682_4.v" \
+"../../../../AES_Power_Monitor_Vivado.gen/sources_1/bd/AES_Power_Monitor/ipshared/b5f3/hdl/verilog/aes_aes_round.v" \
+"../../../../AES_Power_Monitor_Vivado.gen/sources_1/bd/AES_Power_Monitor/ipshared/b5f3/hdl/verilog/aes_aes_round_Pipeline_mixColumnsLoop.v" \
+"../../../../AES_Power_Monitor_Vivado.gen/sources_1/bd/AES_Power_Monitor/ipshared/b5f3/hdl/verilog/aes_aes_round_Pipeline_VITIS_LOOP_276_1.v" \
+"../../../../AES_Power_Monitor_Vivado.gen/sources_1/bd/AES_Power_Monitor/ipshared/b5f3/hdl/verilog/aes_aes_round_Pipeline_VITIS_LOOP_308_1.v" \
+"../../../../AES_Power_Monitor_Vivado.gen/sources_1/bd/AES_Power_Monitor/ipshared/b5f3/hdl/verilog/aes_block_RAM_AUTO_1R1W.v" \
+"../../../../AES_Power_Monitor_Vivado.gen/sources_1/bd/AES_Power_Monitor/ipshared/b5f3/hdl/verilog/aes_control_s_axi.v" \
+"../../../../AES_Power_Monitor_Vivado.gen/sources_1/bd/AES_Power_Monitor/ipshared/b5f3/hdl/verilog/aes_CTRL_BUS_s_axi.v" \
+"../../../../AES_Power_Monitor_Vivado.gen/sources_1/bd/AES_Power_Monitor/ipshared/b5f3/hdl/verilog/aes_expandedKey_RAM_AUTO_1R1W.v" \
+"../../../../AES_Power_Monitor_Vivado.gen/sources_1/bd/AES_Power_Monitor/ipshared/b5f3/hdl/verilog/aes_expandKey.v" \
+"../../../../AES_Power_Monitor_Vivado.gen/sources_1/bd/AES_Power_Monitor/ipshared/b5f3/hdl/verilog/aes_expandKey_Pipeline_expandKeyLoop.v" \
+"../../../../AES_Power_Monitor_Vivado.gen/sources_1/bd/AES_Power_Monitor/ipshared/b5f3/hdl/verilog/aes_expandKey_Pipeline_expandKeyLoop_Rcon_ROM_AUTO_1R.v" \
+"../../../../AES_Power_Monitor_Vivado.gen/sources_1/bd/AES_Power_Monitor/ipshared/b5f3/hdl/verilog/aes_expandKey_Pipeline_expandKeyLoop_sbox_ROM_AUTO_1R.v" \
+"../../../../AES_Power_Monitor_Vivado.gen/sources_1/bd/AES_Power_Monitor/ipshared/b5f3/hdl/verilog/aes_expandKey_Pipeline_VITIS_LOOP_227_1.v" \
+"../../../../AES_Power_Monitor_Vivado.gen/sources_1/bd/AES_Power_Monitor/ipshared/b5f3/hdl/verilog/aes_flow_control_loop_pipe_sequential_init.v" \
+"../../../../AES_Power_Monitor_Vivado.gen/sources_1/bd/AES_Power_Monitor/ipshared/b5f3/hdl/verilog/aes_galois_multiplication.v" \
+"../../../../AES_Power_Monitor_Vivado.gen/sources_1/bd/AES_Power_Monitor/ipshared/b5f3/hdl/verilog/aes_hls_deadlock_idx0_monitor.v" \
+"../../../../AES_Power_Monitor_Vivado.gen/sources_1/bd/AES_Power_Monitor/ipshared/b5f3/hdl/verilog/aes_key_array128_RAM_AUTO_1R1W.v" \
+"../../../../AES_Power_Monitor_Vivado.gen/sources_1/bd/AES_Power_Monitor/ipshared/b5f3/hdl/verilog/aes_regslice_both.v" \
+"../../../../AES_Power_Monitor_Vivado.gen/sources_1/bd/AES_Power_Monitor/ipshared/b5f3/hdl/verilog/aes_urem_8ns_6ns_5_12_1.v" \
+"../../../../AES_Power_Monitor_Vivado.gen/sources_1/bd/AES_Power_Monitor/ipshared/b5f3/hdl/verilog/aes.v" \
+"../../../bd/AES_Power_Monitor/ip/AES_Power_Monitor_aes_0_2/sim/AES_Power_Monitor_aes_0_2.v" \
+"z:/Users/hiqbal/AES_Power_Monitor_Vivado/AES_Power_Monitor_Vivado.gen/sources_1/bd/AES_Power_Monitor/ip/AES_Power_Monitor_Power_Monitor_0_1/AES_Power_Monitor_Power_Monitor_0_1_sim_netlist.v" \
+"../../../bd/AES_Power_Monitor/ip/AES_Power_Monitor_auto_pc_0/AES_Power_Monitor_auto_pc_0_sim_netlist.v" \
+"../../../bd/AES_Power_Monitor/ip/AES_Power_Monitor_auto_pc_1/AES_Power_Monitor_auto_pc_1_sim_netlist.v" \
+"../../../bd/AES_Power_Monitor/ip/AES_Power_Monitor_auto_pc_2/AES_Power_Monitor_auto_pc_2_sim_netlist.v" \
+
+verilog xil_defaultlib "glbl.v"
+
+nosort

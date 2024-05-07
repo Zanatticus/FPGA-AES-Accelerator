@@ -1,0 +1,149 @@
+<profile>
+
+<section name = "Vitis HLS Report for 'aes_Pipeline_plaintextLoop'" level="0">
+<item name = "Date">Thu Apr 25 11:55:46 2024
+</item>
+<item name = "Version">2022.1 (Build 3526262 on Mon Apr 18 15:48:16 MDT 2022)</item>
+<item name = "Project">AES_PM</item>
+<item name = "Solution">solution1 (Vivado IP Flow Target)</item>
+<item name = "Product family">zynq</item>
+<item name = "Target device">xc7z020-clg400-1</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">10.00 ns, 3.686 ns, 2.70 ns</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="8">, min, max, min, max, min, max, Type</keys>
+<column name="">18, 18, 0.180 us, 0.180 us, 18, 18, no</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+<column name="- plaintextLoop">16, 16, 1, 1, 1, 16, yes</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Utilization Estimates" level="0">
+<item name = "Summary"><table name="" hasTotal="1">
+<keys size="6">Name, BRAM_18K, DSP, FF, LUT, URAM</keys>
+<column name="DSP">-, -, -, -, -</column>
+<column name="Expression">-, -, 0, 27, -</column>
+<column name="FIFO">-, -, -, -, -</column>
+<column name="Instance">-, -, -, -, -</column>
+<column name="Memory">-, -, -, -, -</column>
+<column name="Multiplexer">-, -, -, 36, -</column>
+<column name="Register">-, -, 13, -, -</column>
+<specialColumn name="Available">280, 220, 106400, 53200, 0</specialColumn>
+<specialColumn name="Utilization (%)">0, 0, ~0, ~0, 0</specialColumn>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="1">
+<keys size="7">Instance, Module, BRAM_18K, DSP, FF, LUT, URAM</keys>
+</table>
+</item>
+<item name = "DSP"><table name="" hasTotal="0">
+<keys size="3">Instance, Module, Expression</keys>
+</table>
+</item>
+<item name = "Memory"><table name="" hasTotal="1">
+<keys size="10">Memory, Module, BRAM_18K, FF, LUT, URAM, Words, Bits, Banks, W*Bits*Banks</keys>
+</table>
+</item>
+<item name = "FIFO"><table name="" hasTotal="1">
+<keys size="8">Name, BRAM_18K, FF, LUT, URAM, Depth, Bits, Size:D*B</keys>
+</table>
+</item>
+<item name = "Expression"><table name="" hasTotal="1">
+<keys size="7">Variable Name, Operation, DSP, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
+<column name="add_ln76_fu_181_p2">+, 0, 0, 13, 5, 1</column>
+<column name="ap_condition_209">and, 0, 0, 2, 1, 1</column>
+<column name="icmp_ln76_fu_175_p2">icmp, 0, 0, 10, 5, 6</column>
+<column name="ap_block_state1_pp0_stage0_iter0">or, 0, 0, 2, 1, 1</column>
+</table>
+</item>
+<item name = "Multiplexer"><table name="" hasTotal="1">
+<keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
+<column name="ap_done_int">9, 2, 1, 2</column>
+<column name="ap_sig_allocacmp_i_12">9, 2, 5, 10</column>
+<column name="i_fu_90">9, 2, 5, 10</column>
+<column name="key_and_plaintext_TDATA_blk_n">9, 2, 1, 2</column>
+</table>
+</item>
+<item name = "Register"><table name="" hasTotal="1">
+<keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
+<column name="ap_CS_fsm">1, 0, 1, 0</column>
+<column name="ap_done_reg">1, 0, 1, 0</column>
+<column name="i_fu_90">5, 0, 5, 0</column>
+<column name="tmp_k_and_p_dest_V_fu_66">1, 0, 1, 0</column>
+<column name="tmp_k_and_p_id_V_fu_70">1, 0, 1, 0</column>
+<column name="tmp_k_and_p_keep_V_fu_86">1, 0, 1, 0</column>
+<column name="tmp_k_and_p_last_V_fu_74">1, 0, 1, 0</column>
+<column name="tmp_k_and_p_strb_V_fu_82">1, 0, 1, 0</column>
+<column name="tmp_k_and_p_user_V_fu_78">1, 0, 1, 0</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Interface" level="0">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">RTL Ports, Dir, Bits, Protocol, Source Object, C Type</keys>
+<column name="ap_clk">in, 1, ap_ctrl_hs, aes_Pipeline_plaintextLoop, return value</column>
+<column name="ap_rst">in, 1, ap_ctrl_hs, aes_Pipeline_plaintextLoop, return value</column>
+<column name="ap_start">in, 1, ap_ctrl_hs, aes_Pipeline_plaintextLoop, return value</column>
+<column name="ap_done">out, 1, ap_ctrl_hs, aes_Pipeline_plaintextLoop, return value</column>
+<column name="ap_idle">out, 1, ap_ctrl_hs, aes_Pipeline_plaintextLoop, return value</column>
+<column name="ap_ready">out, 1, ap_ctrl_hs, aes_Pipeline_plaintextLoop, return value</column>
+<column name="key_and_plaintext_TVALID">in, 1, axis, key_and_plaintext_V_data_V, pointer</column>
+<column name="key_and_plaintext_TDATA">in, 8, axis, key_and_plaintext_V_data_V, pointer</column>
+<column name="key_and_plaintext_TREADY">out, 1, axis, key_and_plaintext_V_dest_V, pointer</column>
+<column name="key_and_plaintext_TDEST">in, 1, axis, key_and_plaintext_V_dest_V, pointer</column>
+<column name="key_and_plaintext_TKEEP">in, 1, axis, key_and_plaintext_V_keep_V, pointer</column>
+<column name="key_and_plaintext_TSTRB">in, 1, axis, key_and_plaintext_V_strb_V, pointer</column>
+<column name="key_and_plaintext_TUSER">in, 1, axis, key_and_plaintext_V_user_V, pointer</column>
+<column name="key_and_plaintext_TLAST">in, 1, axis, key_and_plaintext_V_last_V, pointer</column>
+<column name="key_and_plaintext_TID">in, 1, axis, key_and_plaintext_V_id_V, pointer</column>
+<column name="plaintext_array_address0">out, 4, ap_memory, plaintext_array, array</column>
+<column name="plaintext_array_ce0">out, 1, ap_memory, plaintext_array, array</column>
+<column name="plaintext_array_we0">out, 1, ap_memory, plaintext_array, array</column>
+<column name="plaintext_array_d0">out, 8, ap_memory, plaintext_array, array</column>
+<column name="tmp_keep_V_out">out, 1, ap_vld, tmp_keep_V_out, pointer</column>
+<column name="tmp_keep_V_out_ap_vld">out, 1, ap_vld, tmp_keep_V_out, pointer</column>
+<column name="tmp_strb_V_out">out, 1, ap_vld, tmp_strb_V_out, pointer</column>
+<column name="tmp_strb_V_out_ap_vld">out, 1, ap_vld, tmp_strb_V_out, pointer</column>
+<column name="tmp_user_V_out">out, 1, ap_vld, tmp_user_V_out, pointer</column>
+<column name="tmp_user_V_out_ap_vld">out, 1, ap_vld, tmp_user_V_out, pointer</column>
+<column name="p_4_0_0_0115_phi_out">out, 1, ap_vld, p_4_0_0_0115_phi_out, pointer</column>
+<column name="p_4_0_0_0115_phi_out_ap_vld">out, 1, ap_vld, p_4_0_0_0115_phi_out, pointer</column>
+<column name="tmp_id_V_out">out, 1, ap_vld, tmp_id_V_out, pointer</column>
+<column name="tmp_id_V_out_ap_vld">out, 1, ap_vld, tmp_id_V_out, pointer</column>
+<column name="tmp_dest_V_out">out, 1, ap_vld, tmp_dest_V_out, pointer</column>
+<column name="tmp_dest_V_out_ap_vld">out, 1, ap_vld, tmp_dest_V_out, pointer</column>
+</table>
+</item>
+</section>
+</profile>

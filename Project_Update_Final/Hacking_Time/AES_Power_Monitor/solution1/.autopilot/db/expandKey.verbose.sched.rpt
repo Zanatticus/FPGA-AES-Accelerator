@@ -1,0 +1,137 @@
+
+
+================================================================
+== Vitis HLS Report for 'expandKey'
+================================================================
+* Date:           Wed Apr 17 16:01:46 2024
+
+* Version:        2022.1 (Build 3526262 on Mon Apr 18 15:48:16 MDT 2022)
+* Project:        AES_Power_Monitor
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  7.084 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |        ?|        ?|         ?|         ?|    ?|    ?|       no|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 4
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 
+4 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 4.89>
+ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%size_read = read i6 @_ssdm_op_Read.ap_auto.i6, i6 %size"   --->   Operation 5 'read' 'size_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%key_read = read i11 @_ssdm_op_Read.ap_auto.i11, i11 %key"   --->   Operation 6 'read' 'key_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [2/2] (4.89ns)   --->   "%call_ln0 = call void @expandKey_Pipeline_VITIS_LOOP_227_1, i6 %size_read, i11 %key_read, i8 %key_array128, i8 %expandedKey"   --->   Operation 7 'call' 'call_ln0' <Predicate = true> <Delay = 4.89> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 2 <SV = 1> <Delay = 0.00>
+ST_2 : Operation 8 [1/2] (0.00ns)   --->   "%call_ln0 = call void @expandKey_Pipeline_VITIS_LOOP_227_1, i6 %size_read, i11 %key_read, i8 %key_array128, i8 %expandedKey"   --->   Operation 8 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 3 <SV = 2> <Delay = 3.01>
+ST_3 : Operation 9 [1/1] (0.00ns)   --->   "%expandedKeySize_read = read i8 @_ssdm_op_Read.ap_auto.i8, i8 %expandedKeySize"   --->   Operation 9 'read' 'expandedKeySize_read' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 10 [1/1] (1.42ns)   --->   "%cmp17 = icmp_eq  i6 %size_read, i6 32"   --->   Operation 10 'icmp' 'cmp17' <Predicate = true> <Delay = 1.42> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.42> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 11 [2/2] (1.58ns)   --->   "%call_ln0 = call void @expandKey_Pipeline_expandKeyLoop, i6 %size_read, i8 %expandedKeySize_read, i8 %expandedKey, i1 %cmp17, i8 %sbox, i8 %Rcon"   --->   Operation 11 'call' 'call_ln0' <Predicate = true> <Delay = 1.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 4 <SV = 3> <Delay = 0.00>
+ST_4 : Operation 12 [1/2] (0.00ns)   --->   "%call_ln0 = call void @expandKey_Pipeline_expandKeyLoop, i6 %size_read, i8 %expandedKeySize_read, i8 %expandedKey, i1 %cmp17, i8 %sbox, i8 %Rcon"   --->   Operation 12 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_4 : Operation 13 [1/1] (0.00ns)   --->   "%ret_ln267 = ret" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:267]   --->   Operation 13 'ret' 'ret_ln267' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 2.7ns.
+
+ <State 1>: 4.89ns
+The critical path consists of the following:
+	wire read operation ('size') on port 'size' [9]  (0 ns)
+	'call' operation ('call_ln0') to 'expandKey_Pipeline_VITIS_LOOP_227_1' [11]  (4.89 ns)
+
+ <State 2>: 0ns
+The critical path consists of the following:
+
+ <State 3>: 3.01ns
+The critical path consists of the following:
+	'icmp' operation ('cmp17') [12]  (1.43 ns)
+	'call' operation ('call_ln0') to 'expandKey_Pipeline_expandKeyLoop' [13]  (1.59 ns)
+
+ <State 4>: 0ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

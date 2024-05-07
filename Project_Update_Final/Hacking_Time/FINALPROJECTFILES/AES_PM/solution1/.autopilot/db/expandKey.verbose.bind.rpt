@@ -1,0 +1,548 @@
+
+
+================================================================
+== Vitis HLS Report for 'expandKey'
+================================================================
+* Date:           Thu Apr 25 11:55:37 2024
+
+* Version:        2022.1 (Build 3526262 on Mon Apr 18 15:48:16 MDT 2022)
+* Project:        AES_PM
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  7.164 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+-----------+-----------+------+------+---------+
+    |  Latency (cycles) |   Latency (absolute)  |   Interval  | Pipeline|
+    |   min   |   max   |    min    |    max    |  min |  max |   Type  |
+    +---------+---------+-----------+-----------+------+------+---------+
+    |     1579|     2927|  15.790 us|  29.270 us|  1579|  2927|       no|
+    +---------+---------+-----------+-----------+------+------+---------+
+
+    + Detail: 
+        * Instance: 
+        +---------------------------------------------+-----------------------------------+---------+---------+-----------+-----------+------+------+---------+
+        |                                             |                                   |  Latency (cycles) |   Latency (absolute)  |   Interval  | Pipeline|
+        |                   Instance                  |               Module              |   min   |   max   |    min    |    max    |  min |  max |   Type  |
+        +---------------------------------------------+-----------------------------------+---------+---------+-----------+-----------+------+------+---------+
+        |grp_expandKey_Pipeline_expandKeyLoop1_fu_46  |expandKey_Pipeline_expandKeyLoop1  |        7|       11|  70.000 ns|   0.110 us|     7|    11|       no|
+        |grp_expandKey_Pipeline_expandKeyLoop2_fu_60  |expandKey_Pipeline_expandKeyLoop2  |     1569|     2913|  15.690 us|  29.130 us|  1569|  2913|       no|
+        +---------------------------------------------+-----------------------------------+---------+---------+-----------+-----------+------+------+---------+
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 4
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 
+4 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 0.00>
+ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%size_read = read i6 @_ssdm_op_Read.ap_auto.i6, i6 %size"   --->   Operation 5 'read' 'size_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%key_read = read i11 @_ssdm_op_Read.ap_auto.i11, i11 %key"   --->   Operation 6 'read' 'key_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [2/2] (0.00ns)   --->   "%call_ln0 = call void @expandKey_Pipeline_expandKeyLoop1, i6 %size_read, i11 %key_read, i8 %key_array128, i8 %expandedKey_1, i8 %expandedKey_0"   --->   Operation 7 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 2 <SV = 1> <Delay = 0.00>
+ST_2 : Operation 8 [1/2] (0.00ns)   --->   "%call_ln0 = call void @expandKey_Pipeline_expandKeyLoop1, i6 %size_read, i11 %key_read, i8 %key_array128, i8 %expandedKey_1, i8 %expandedKey_0"   --->   Operation 8 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 3 <SV = 2> <Delay = 3.01>
+ST_3 : Operation 9 [1/1] (0.00ns)   --->   "%expandedKeySize_read = read i8 @_ssdm_op_Read.ap_auto.i8, i8 %expandedKeySize"   --->   Operation 9 'read' 'expandedKeySize_read' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 10 [1/1] (1.42ns)   --->   "%cmp17 = icmp_eq  i6 %size_read, i6 32"   --->   Operation 10 'icmp' 'cmp17' <Predicate = true> <Delay = 1.42> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.42> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 11 [2/2] (1.58ns)   --->   "%call_ln0 = call void @expandKey_Pipeline_expandKeyLoop2, i6 %size_read, i8 %expandedKey_1, i8 %expandedKey_0, i8 %expandedKeySize_read, i6 %size_read, i6 %size_read, i1 %cmp17, i8 %sbox, i8 %Rcon"   --->   Operation 11 'call' 'call_ln0' <Predicate = true> <Delay = 1.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 4 <SV = 3> <Delay = 0.00>
+ST_4 : Operation 12 [1/2] (0.00ns)   --->   "%call_ln0 = call void @expandKey_Pipeline_expandKeyLoop2, i6 %size_read, i8 %expandedKey_1, i8 %expandedKey_0, i8 %expandedKeySize_read, i6 %size_read, i6 %size_read, i1 %cmp17, i8 %sbox, i8 %Rcon"   --->   Operation 12 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_4 : Operation 13 [1/1] (0.00ns)   --->   "%ret_ln293 = ret" [Downloads/aes_axis.cpp:293]   --->   Operation 13 'ret' 'ret_ln293' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+STG Binding: 
+---------------- STG Properties BEGIN ----------------
+- Is combinational: 0
+- Is one-state seq: 0
+- Is datapath-only: 0
+- Is pipelined: 0
+- Is top level: 0
+Port [ Return ] is wired: 1; IO mode=ap_ctrl_hs:ce=0
+Port [ expandedKey_0]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=2; type=1; pingpong=0; private_global=0; MemPort=[22]; IO mode=ap_memory:ce=0
+Port [ expandedKey_1]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=2; type=1; pingpong=0; private_global=0; MemPort=[22]; IO mode=ap_memory:ce=0
+Port [ key_array128]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=1; pingpong=0; private_global=0; MemPort=[11113333333333333]; IO mode=ap_memory:ce=0
+Port [ key]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+Port [ size]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+Port [ expandedKeySize]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+Port [ sbox]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=0; type=1; pingpong=0; private_global=0; MemPort=[11]; IO mode=ap_memory:ce=0
+Port [ Rcon]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=0; type=1; pingpong=0; private_global=0; MemPort=[13]; IO mode=ap_memory:ce=0
+---------------- STG Properties END ------------------
+
+---------------- Datapath Model BEGIN ----------------
+
+<LifeTime>
+<method=bitvector/>
+size_read            (read) [ 00111]
+key_read             (read) [ 00100]
+call_ln0             (call) [ 00000]
+expandedKeySize_read (read) [ 00001]
+cmp17                (icmp) [ 00001]
+call_ln0             (call) [ 00000]
+ret_ln293            (ret ) [ 00000]
+</LifeTime>
+
+<model>
+
+<comp_list>
+<comp id="0" class="1000" name="expandedKey_0">
+<pin_list>
+<pin id="1" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="expandedKey_0"/><MemPortTyVec>2 2 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="2" class="1000" name="expandedKey_1">
+<pin_list>
+<pin id="3" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="expandedKey_1"/><MemPortTyVec>2 2 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="4" class="1000" name="key_array128">
+<pin_list>
+<pin id="5" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="key_array128"/><MemPortTyVec>1 1 1 1 3 3 3 3 3 3 3 3 3 3 3 3 3 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="6" class="1000" name="key">
+<pin_list>
+<pin id="7" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="key"/></StgValue>
+</bind>
+</comp>
+
+<comp id="8" class="1000" name="size">
+<pin_list>
+<pin id="9" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="size"/></StgValue>
+</bind>
+</comp>
+
+<comp id="10" class="1000" name="expandedKeySize">
+<pin_list>
+<pin id="11" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="expandedKeySize"/></StgValue>
+</bind>
+</comp>
+
+<comp id="12" class="1000" name="sbox">
+<pin_list>
+<pin id="13" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="sbox"/><MemPortTyVec>1 1 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="14" class="1000" name="Rcon">
+<pin_list>
+<pin id="15" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="Rcon"/><MemPortTyVec>1 3 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="16" class="1001" name="const_16">
+<pin_list>
+<pin id="17" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_Read.ap_auto.i6"/></StgValue>
+</bind>
+</comp>
+
+<comp id="18" class="1001" name="const_18">
+<pin_list>
+<pin id="19" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_Read.ap_auto.i11"/></StgValue>
+</bind>
+</comp>
+
+<comp id="20" class="1001" name="const_20">
+<pin_list>
+<pin id="21" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="expandKey_Pipeline_expandKeyLoop1"/></StgValue>
+</bind>
+</comp>
+
+<comp id="22" class="1001" name="const_22">
+<pin_list>
+<pin id="23" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_Read.ap_auto.i8"/></StgValue>
+</bind>
+</comp>
+
+<comp id="24" class="1001" name="const_24">
+<pin_list>
+<pin id="25" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="26" class="1001" name="const_26">
+<pin_list>
+<pin id="27" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="expandKey_Pipeline_expandKeyLoop2"/></StgValue>
+</bind>
+</comp>
+
+<comp id="28" class="1004" name="size_read_read_fu_28">
+<pin_list>
+<pin id="29" dir="0" index="0" bw="6" slack="0"/>
+<pin id="30" dir="0" index="1" bw="6" slack="0"/>
+<pin id="31" dir="1" index="2" bw="6" slack="0"/>
+</pin_list>
+<bind>
+<opcode="read(1150) " fcode="read"/>
+<opset="size_read/1 "/>
+</bind>
+</comp>
+
+<comp id="34" class="1004" name="key_read_read_fu_34">
+<pin_list>
+<pin id="35" dir="0" index="0" bw="11" slack="0"/>
+<pin id="36" dir="0" index="1" bw="11" slack="0"/>
+<pin id="37" dir="1" index="2" bw="11" slack="0"/>
+</pin_list>
+<bind>
+<opcode="read(1150) " fcode="read"/>
+<opset="key_read/1 "/>
+</bind>
+</comp>
+
+<comp id="40" class="1004" name="expandedKeySize_read_read_fu_40">
+<pin_list>
+<pin id="41" dir="0" index="0" bw="8" slack="0"/>
+<pin id="42" dir="0" index="1" bw="8" slack="0"/>
+<pin id="43" dir="1" index="2" bw="8" slack="0"/>
+</pin_list>
+<bind>
+<opcode="read(1150) " fcode="read"/>
+<opset="expandedKeySize_read/3 "/>
+</bind>
+</comp>
+
+<comp id="46" class="1004" name="grp_expandKey_Pipeline_expandKeyLoop1_fu_46">
+<pin_list>
+<pin id="47" dir="0" index="0" bw="0" slack="0"/>
+<pin id="48" dir="0" index="1" bw="6" slack="0"/>
+<pin id="49" dir="0" index="2" bw="11" slack="0"/>
+<pin id="50" dir="0" index="3" bw="8" slack="0"/>
+<pin id="51" dir="0" index="4" bw="8" slack="0"/>
+<pin id="52" dir="0" index="5" bw="8" slack="0"/>
+<pin id="53" dir="1" index="6" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="call(48) " fcode="call"/>
+<opset="call_ln0/1 "/>
+</bind>
+</comp>
+
+<comp id="60" class="1004" name="grp_expandKey_Pipeline_expandKeyLoop2_fu_60">
+<pin_list>
+<pin id="61" dir="0" index="0" bw="0" slack="0"/>
+<pin id="62" dir="0" index="1" bw="6" slack="2"/>
+<pin id="63" dir="0" index="2" bw="8" slack="0"/>
+<pin id="64" dir="0" index="3" bw="8" slack="0"/>
+<pin id="65" dir="0" index="4" bw="8" slack="0"/>
+<pin id="66" dir="0" index="5" bw="6" slack="2"/>
+<pin id="67" dir="0" index="6" bw="6" slack="2"/>
+<pin id="68" dir="0" index="7" bw="1" slack="0"/>
+<pin id="69" dir="0" index="8" bw="8" slack="0"/>
+<pin id="70" dir="0" index="9" bw="8" slack="0"/>
+<pin id="71" dir="1" index="10" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="call(48) " fcode="call"/>
+<opset="call_ln0/3 "/>
+</bind>
+</comp>
+
+<comp id="78" class="1004" name="cmp17_fu_78">
+<pin_list>
+<pin id="79" dir="0" index="0" bw="6" slack="2"/>
+<pin id="80" dir="0" index="1" bw="6" slack="0"/>
+<pin id="81" dir="1" index="2" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="icmp(45) " fcode="icmp"/>
+<opset="cmp17/3 "/>
+</bind>
+</comp>
+
+<comp id="84" class="1005" name="size_read_reg_84">
+<pin_list>
+<pin id="85" dir="0" index="0" bw="6" slack="1"/>
+<pin id="86" dir="1" index="1" bw="6" slack="1"/>
+</pin_list>
+<bind>
+<opset="size_read "/>
+</bind>
+</comp>
+
+<comp id="93" class="1005" name="key_read_reg_93">
+<pin_list>
+<pin id="94" dir="0" index="0" bw="11" slack="1"/>
+<pin id="95" dir="1" index="1" bw="11" slack="1"/>
+</pin_list>
+<bind>
+<opset="key_read "/>
+</bind>
+</comp>
+
+<comp id="98" class="1005" name="expandedKeySize_read_reg_98">
+<pin_list>
+<pin id="99" dir="0" index="0" bw="8" slack="1"/>
+<pin id="100" dir="1" index="1" bw="8" slack="1"/>
+</pin_list>
+<bind>
+<opset="expandedKeySize_read "/>
+</bind>
+</comp>
+
+<comp id="103" class="1005" name="cmp17_reg_103">
+<pin_list>
+<pin id="104" dir="0" index="0" bw="1" slack="1"/>
+<pin id="105" dir="1" index="1" bw="1" slack="1"/>
+</pin_list>
+<bind>
+<opset="cmp17 "/>
+</bind>
+</comp>
+
+</comp_list>
+
+<net_list>
+<net id="32"><net_src comp="16" pin="0"/><net_sink comp="28" pin=0"/></net>
+
+<net id="33"><net_src comp="8" pin="0"/><net_sink comp="28" pin=1"/></net>
+
+<net id="38"><net_src comp="18" pin="0"/><net_sink comp="34" pin=0"/></net>
+
+<net id="39"><net_src comp="6" pin="0"/><net_sink comp="34" pin=1"/></net>
+
+<net id="44"><net_src comp="22" pin="0"/><net_sink comp="40" pin=0"/></net>
+
+<net id="45"><net_src comp="10" pin="0"/><net_sink comp="40" pin=1"/></net>
+
+<net id="54"><net_src comp="20" pin="0"/><net_sink comp="46" pin=0"/></net>
+
+<net id="55"><net_src comp="28" pin="2"/><net_sink comp="46" pin=1"/></net>
+
+<net id="56"><net_src comp="34" pin="2"/><net_sink comp="46" pin=2"/></net>
+
+<net id="57"><net_src comp="4" pin="0"/><net_sink comp="46" pin=3"/></net>
+
+<net id="58"><net_src comp="2" pin="0"/><net_sink comp="46" pin=4"/></net>
+
+<net id="59"><net_src comp="0" pin="0"/><net_sink comp="46" pin=5"/></net>
+
+<net id="72"><net_src comp="26" pin="0"/><net_sink comp="60" pin=0"/></net>
+
+<net id="73"><net_src comp="2" pin="0"/><net_sink comp="60" pin=2"/></net>
+
+<net id="74"><net_src comp="0" pin="0"/><net_sink comp="60" pin=3"/></net>
+
+<net id="75"><net_src comp="40" pin="2"/><net_sink comp="60" pin=4"/></net>
+
+<net id="76"><net_src comp="12" pin="0"/><net_sink comp="60" pin=8"/></net>
+
+<net id="77"><net_src comp="14" pin="0"/><net_sink comp="60" pin=9"/></net>
+
+<net id="82"><net_src comp="24" pin="0"/><net_sink comp="78" pin=1"/></net>
+
+<net id="83"><net_src comp="78" pin="2"/><net_sink comp="60" pin=7"/></net>
+
+<net id="87"><net_src comp="28" pin="2"/><net_sink comp="84" pin=0"/></net>
+
+<net id="88"><net_src comp="84" pin="1"/><net_sink comp="46" pin=1"/></net>
+
+<net id="89"><net_src comp="84" pin="1"/><net_sink comp="78" pin=0"/></net>
+
+<net id="90"><net_src comp="84" pin="1"/><net_sink comp="60" pin=1"/></net>
+
+<net id="91"><net_src comp="84" pin="1"/><net_sink comp="60" pin=5"/></net>
+
+<net id="92"><net_src comp="84" pin="1"/><net_sink comp="60" pin=6"/></net>
+
+<net id="96"><net_src comp="34" pin="2"/><net_sink comp="93" pin=0"/></net>
+
+<net id="97"><net_src comp="93" pin="1"/><net_sink comp="46" pin=2"/></net>
+
+<net id="101"><net_src comp="40" pin="2"/><net_sink comp="98" pin=0"/></net>
+
+<net id="102"><net_src comp="98" pin="1"/><net_sink comp="60" pin=4"/></net>
+
+<net id="106"><net_src comp="78" pin="2"/><net_sink comp="103" pin=0"/></net>
+
+<net id="107"><net_src comp="103" pin="1"/><net_sink comp="60" pin=7"/></net>
+
+</net_list>
+
+</model> 
+---------------- Datapath Model END ------------------
+
+* FSMD analyzer results:
+  - Output states:
+	Port: expandedKey_0 | {1 2 3 4 }
+	Port: expandedKey_1 | {1 2 3 4 }
+ - Input state : 
+	Port: expandKey : expandedKey_0 | {3 4 }
+	Port: expandKey : expandedKey_1 | {3 4 }
+	Port: expandKey : key_array128 | {1 2 }
+	Port: expandKey : key | {1 }
+	Port: expandKey : size | {1 }
+	Port: expandKey : expandedKeySize | {3 }
+	Port: expandKey : sbox | {3 4 }
+	Port: expandKey : Rcon | {3 4 }
+  - Chain level:
+	State 1
+	State 2
+	State 3
+		call_ln0 : 1
+	State 4
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+
+* Functional unit list:
+|----------|---------------------------------------------|---------|---------|---------|
+| Operation|               Functional Unit               |  Delay  |    FF   |   LUT   |
+|----------|---------------------------------------------|---------|---------|---------|
+|   call   | grp_expandKey_Pipeline_expandKeyLoop1_fu_46 |  6.352  |   194   |   271   |
+|          | grp_expandKey_Pipeline_expandKeyLoop2_fu_60 |  20.652 |   2911  |   2598  |
+|----------|---------------------------------------------|---------|---------|---------|
+|   icmp   |                 cmp17_fu_78                 |    0    |    0    |    10   |
+|----------|---------------------------------------------|---------|---------|---------|
+|          |             size_read_read_fu_28            |    0    |    0    |    0    |
+|   read   |             key_read_read_fu_34             |    0    |    0    |    0    |
+|          |       expandedKeySize_read_read_fu_40       |    0    |    0    |    0    |
+|----------|---------------------------------------------|---------|---------|---------|
+|   Total  |                                             |  27.004 |   3105  |   2879  |
+|----------|---------------------------------------------|---------|---------|---------|
+
+Memories:
+N/A
+
+* Register list:
++---------------------------+--------+
+|                           |   FF   |
++---------------------------+--------+
+|       cmp17_reg_103       |    1   |
+|expandedKeySize_read_reg_98|    8   |
+|      key_read_reg_93      |   11   |
+|      size_read_reg_84     |    6   |
++---------------------------+--------+
+|           Total           |   26   |
++---------------------------+--------+
+
+* Multiplexer (MUX) list: 
+|---------------------------------------------|------|------|------|--------||---------||---------|
+|                     Comp                    |  Pin | Size |  BW  | S x BW ||  Delay  ||   LUT   |
+|---------------------------------------------|------|------|------|--------||---------||---------|
+| grp_expandKey_Pipeline_expandKeyLoop1_fu_46 |  p1  |   2  |   6  |   12   ||    9    |
+| grp_expandKey_Pipeline_expandKeyLoop1_fu_46 |  p2  |   2  |  11  |   22   ||    9    |
+| grp_expandKey_Pipeline_expandKeyLoop2_fu_60 |  p4  |   2  |   8  |   16   ||    9    |
+| grp_expandKey_Pipeline_expandKeyLoop2_fu_60 |  p7  |   2  |   1  |    2   ||    9    |
+|---------------------------------------------|------|------|------|--------||---------||---------|
+|                    Total                    |      |      |      |   52   ||  6.352  ||    36   |
+|---------------------------------------------|------|------|------|--------||---------||---------|
+
+
+
+* Summary:
++-----------+--------+--------+--------+
+|           |  Delay |   FF   |   LUT  |
++-----------+--------+--------+--------+
+|  Function |   27   |  3105  |  2879  |
+|   Memory  |    -   |    -   |    -   |
+|Multiplexer|    6   |    -   |   36   |
+|  Register |    -   |   26   |    -   |
++-----------+--------+--------+--------+
+|   Total   |   33   |  3131  |  2915  |
++-----------+--------+--------+--------+

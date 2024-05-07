@@ -1,0 +1,24 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0x0",
+      "device": "xc7z020clg400-1",
+      "gen_directory": "../../../../Power_MonitorV2.gen/sources_1/bd/Power_Monitor",
+      "name": "Power_Monitor",
+      "rev_ctrl_bd_flag": "RevCtrlBdOff",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2022.1"
+    },
+    "design_tree": {
+      "Power_Monitor_0": ""
+    },
+    "components": {
+      "Power_Monitor_0": {
+        "vlnv": "neu.edu:user:Power_Monitor:1.0",
+        "xci_name": "Power_Monitor_Power_Monitor_0_0",
+        "xci_path": "ip\\Power_Monitor_Power_Monitor_0_0\\Power_Monitor_Power_Monitor_0_0.xci",
+        "inst_hier_path": "Power_Monitor_0"
+      }
+    }
+  }
+}

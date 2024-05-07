@@ -1,0 +1,195 @@
+
+
+================================================================
+== Vitis HLS Report for 'expandKey_Pipeline_expandKeyLoop1'
+================================================================
+* Date:           Thu Apr 25 11:55:36 2024
+
+* Version:        2022.1 (Build 3526262 on Mon Apr 18 15:48:16 MDT 2022)
+* Project:        AES_PM
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  5.576 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+-----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute)  |  Interval | Pipeline|
+    |   min   |   max   |    min    |    max   | min | max |   Type  |
+    +---------+---------+-----------+----------+-----+-----+---------+
+    |        7|       11|  70.000 ns|  0.110 us|    7|   11|       no|
+    +---------+---------+-----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +------------------+---------+---------+----------+-----------+-----------+-------+----------+
+        |                  |  Latency (cycles) | Iteration|  Initiation Interval  |  Trip |          |
+        |     Loop Name    |   min   |   max   |  Latency |  achieved |   target  | Count | Pipelined|
+        +------------------+---------+---------+----------+-----------+-----------+-------+----------+
+        |- expandKeyLoop1  |        5|        9|         2|          1|          1|  4 ~ 8|       yes|
+        +------------------+---------+---------+----------+-----------+-----------+-------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 2
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 3
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 3
+* Pipeline : 1
+  Pipeline-0 : II = 1, D = 3, States = { 1 2 3 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.58>
+ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%i_0 = alloca i32 1"   --->   Operation 5 'alloca' 'i_0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%key_read = read i11 @_ssdm_op_Read.ap_auto.i11, i11 %key"   --->   Operation 6 'read' 'key_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%zext_ln241_read = read i6 @_ssdm_op_Read.ap_auto.i6, i6 %zext_ln241"   --->   Operation 7 'read' 'zext_ln241_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%zext_ln241_cast = zext i6 %zext_ln241_read"   --->   Operation 8 'zext' 'zext_ln241_cast' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 9 [1/1] (1.58ns)   --->   "%store_ln0 = store i64 0, i64 %i_0"   --->   Operation 9 'store' 'store_ln0' <Predicate = true> <Delay = 1.58>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%br_ln0 = br void %for.inc.0"   --->   Operation 10 'br' 'br_ln0' <Predicate = true> <Delay = 0.00>
+
+State 2 <SV = 1> <Delay = 5.34>
+ST_2 : Operation 11 [1/1] (0.00ns)   --->   "%i_0_load = load i64 %i_0"   --->   Operation 11 'load' 'i_0_load' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 12 [1/1] (0.00ns)   --->   "%speclooptripcount_ln0 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64 4, i64 8, i64 6"   --->   Operation 12 'speclooptripcount' 'speclooptripcount_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 13 [1/1] (2.77ns)   --->   "%icmp_ln241 = icmp_eq  i64 %i_0_load, i64 %zext_ln241_cast" [Downloads/aes_axis.cpp:241]   --->   Operation 13 'icmp' 'icmp_ln241' <Predicate = true> <Delay = 2.77> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 2.77> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 14 [1/1] (0.00ns)   --->   "%br_ln241 = br i1 %icmp_ln241, void %for.inc.split.0, void %for.inc.0.for.end.loopexit_crit_edge.exitStub" [Downloads/aes_axis.cpp:241]   --->   Operation 14 'br' 'br_ln241' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 15 [1/1] (0.00ns)   --->   "%empty = trunc i64 %i_0_load"   --->   Operation 15 'trunc' 'empty' <Predicate = (!icmp_ln241)> <Delay = 0.00>
+ST_2 : Operation 16 [1/1] (1.63ns)   --->   "%add_ln244 = add i11 %empty, i11 %key_read" [Downloads/aes_axis.cpp:244]   --->   Operation 16 'add' 'add_ln244' <Predicate = (!icmp_ln241)> <Delay = 1.63> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.63> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 17 [1/1] (0.00ns)   --->   "%zext_ln244 = zext i11 %add_ln244" [Downloads/aes_axis.cpp:244]   --->   Operation 17 'zext' 'zext_ln244' <Predicate = (!icmp_ln241)> <Delay = 0.00>
+ST_2 : Operation 18 [1/1] (0.00ns)   --->   "%key_array128_addr = getelementptr i8 %key_array128, i64 0, i64 %zext_ln244" [Downloads/aes_axis.cpp:244]   --->   Operation 18 'getelementptr' 'key_array128_addr' <Predicate = (!icmp_ln241)> <Delay = 0.00>
+ST_2 : Operation 19 [2/2] (3.25ns)   --->   "%key_array128_load = load i11 %key_array128_addr" [Downloads/aes_axis.cpp:244]   --->   Operation 19 'load' 'key_array128_load' <Predicate = (!icmp_ln241)> <Delay = 3.25> <CoreInst = "RAM_1WnR">   --->   Core 83 'RAM_1WnR' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 17> <Width = 8> <Depth = 1056> <RAM>
+ST_2 : Operation 20 [1/1] (0.00ns)   --->   "%lshr_ln = partselect i7 @_ssdm_op_PartSelect.i7.i64.i32.i32, i64 %i_0_load, i32 1, i32 7" [Downloads/aes_axis.cpp:244]   --->   Operation 20 'partselect' 'lshr_ln' <Predicate = (!icmp_ln241)> <Delay = 0.00>
+ST_2 : Operation 21 [1/1] (0.00ns) (grouped into LUT with out node icmp_ln241_1)   --->   "%or_ln241 = or i64 %i_0_load, i64 1" [Downloads/aes_axis.cpp:241]   --->   Operation 21 'or' 'or_ln241' <Predicate = (!icmp_ln241)> <Delay = 0.00>
+ST_2 : Operation 22 [1/1] (0.00ns)   --->   "%or_ln241_3 = or i11 %empty, i11 1" [Downloads/aes_axis.cpp:241]   --->   Operation 22 'or' 'or_ln241_3' <Predicate = (!icmp_ln241)> <Delay = 0.00>
+ST_2 : Operation 23 [1/1] (2.77ns) (out node of the LUT)   --->   "%icmp_ln241_1 = icmp_eq  i64 %or_ln241, i64 %zext_ln241_cast" [Downloads/aes_axis.cpp:241]   --->   Operation 23 'icmp' 'icmp_ln241_1' <Predicate = (!icmp_ln241)> <Delay = 2.77> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 2.77> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 24 [1/1] (0.00ns)   --->   "%br_ln241 = br i1 %icmp_ln241_1, void %for.inc.split.1, void %for.inc.0.for.end.loopexit_crit_edge.exitStub" [Downloads/aes_axis.cpp:241]   --->   Operation 24 'br' 'br_ln241' <Predicate = (!icmp_ln241)> <Delay = 0.00>
+ST_2 : Operation 25 [1/1] (1.63ns)   --->   "%add_ln244_1 = add i11 %or_ln241_3, i11 %key_read" [Downloads/aes_axis.cpp:244]   --->   Operation 25 'add' 'add_ln244_1' <Predicate = (!icmp_ln241 & !icmp_ln241_1)> <Delay = 1.63> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.63> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 26 [1/1] (0.00ns)   --->   "%zext_ln244_2 = zext i11 %add_ln244_1" [Downloads/aes_axis.cpp:244]   --->   Operation 26 'zext' 'zext_ln244_2' <Predicate = (!icmp_ln241 & !icmp_ln241_1)> <Delay = 0.00>
+ST_2 : Operation 27 [1/1] (0.00ns)   --->   "%key_array128_addr_1 = getelementptr i8 %key_array128, i64 0, i64 %zext_ln244_2" [Downloads/aes_axis.cpp:244]   --->   Operation 27 'getelementptr' 'key_array128_addr_1' <Predicate = (!icmp_ln241 & !icmp_ln241_1)> <Delay = 0.00>
+ST_2 : Operation 28 [2/2] (3.25ns)   --->   "%key_array128_load_1 = load i11 %key_array128_addr_1" [Downloads/aes_axis.cpp:244]   --->   Operation 28 'load' 'key_array128_load_1' <Predicate = (!icmp_ln241 & !icmp_ln241_1)> <Delay = 3.25> <CoreInst = "RAM_1WnR">   --->   Core 83 'RAM_1WnR' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 17> <Width = 8> <Depth = 1056> <RAM>
+ST_2 : Operation 29 [1/1] (0.00ns) (grouped into LUT with out node icmp_ln241_2)   --->   "%or_ln241_1 = or i64 %i_0_load, i64 2" [Downloads/aes_axis.cpp:241]   --->   Operation 29 'or' 'or_ln241_1' <Predicate = (!icmp_ln241 & !icmp_ln241_1)> <Delay = 0.00>
+ST_2 : Operation 30 [1/1] (0.00ns)   --->   "%or_ln241_4 = or i11 %empty, i11 2" [Downloads/aes_axis.cpp:241]   --->   Operation 30 'or' 'or_ln241_4' <Predicate = (!icmp_ln241 & !icmp_ln241_1)> <Delay = 0.00>
+ST_2 : Operation 31 [1/1] (2.77ns) (out node of the LUT)   --->   "%icmp_ln241_2 = icmp_eq  i64 %or_ln241_1, i64 %zext_ln241_cast" [Downloads/aes_axis.cpp:241]   --->   Operation 31 'icmp' 'icmp_ln241_2' <Predicate = (!icmp_ln241 & !icmp_ln241_1)> <Delay = 2.77> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 2.77> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 32 [1/1] (0.00ns)   --->   "%br_ln241 = br i1 %icmp_ln241_2, void %for.inc.split.2, void %for.inc.0.for.end.loopexit_crit_edge.exitStub" [Downloads/aes_axis.cpp:241]   --->   Operation 32 'br' 'br_ln241' <Predicate = (!icmp_ln241 & !icmp_ln241_1)> <Delay = 0.00>
+ST_2 : Operation 33 [1/1] (1.63ns)   --->   "%add_ln244_2 = add i11 %or_ln241_4, i11 %key_read" [Downloads/aes_axis.cpp:244]   --->   Operation 33 'add' 'add_ln244_2' <Predicate = (!icmp_ln241 & !icmp_ln241_1 & !icmp_ln241_2)> <Delay = 1.63> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.63> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 34 [1/1] (0.00ns)   --->   "%zext_ln244_3 = zext i11 %add_ln244_2" [Downloads/aes_axis.cpp:244]   --->   Operation 34 'zext' 'zext_ln244_3' <Predicate = (!icmp_ln241 & !icmp_ln241_1 & !icmp_ln241_2)> <Delay = 0.00>
+ST_2 : Operation 35 [1/1] (0.00ns)   --->   "%key_array128_addr_2 = getelementptr i8 %key_array128, i64 0, i64 %zext_ln244_3" [Downloads/aes_axis.cpp:244]   --->   Operation 35 'getelementptr' 'key_array128_addr_2' <Predicate = (!icmp_ln241 & !icmp_ln241_1 & !icmp_ln241_2)> <Delay = 0.00>
+ST_2 : Operation 36 [2/2] (3.25ns)   --->   "%key_array128_load_2 = load i11 %key_array128_addr_2" [Downloads/aes_axis.cpp:244]   --->   Operation 36 'load' 'key_array128_load_2' <Predicate = (!icmp_ln241 & !icmp_ln241_1 & !icmp_ln241_2)> <Delay = 3.25> <CoreInst = "RAM_1WnR">   --->   Core 83 'RAM_1WnR' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 17> <Width = 8> <Depth = 1056> <RAM>
+ST_2 : Operation 37 [1/1] (0.00ns) (grouped into LUT with out node icmp_ln241_3)   --->   "%or_ln241_2 = or i64 %i_0_load, i64 3" [Downloads/aes_axis.cpp:241]   --->   Operation 37 'or' 'or_ln241_2' <Predicate = (!icmp_ln241 & !icmp_ln241_1 & !icmp_ln241_2)> <Delay = 0.00>
+ST_2 : Operation 38 [1/1] (0.00ns)   --->   "%or_ln241_5 = or i11 %empty, i11 3" [Downloads/aes_axis.cpp:241]   --->   Operation 38 'or' 'or_ln241_5' <Predicate = (!icmp_ln241 & !icmp_ln241_1 & !icmp_ln241_2)> <Delay = 0.00>
+ST_2 : Operation 39 [1/1] (2.77ns) (out node of the LUT)   --->   "%icmp_ln241_3 = icmp_eq  i64 %or_ln241_2, i64 %zext_ln241_cast" [Downloads/aes_axis.cpp:241]   --->   Operation 39 'icmp' 'icmp_ln241_3' <Predicate = (!icmp_ln241 & !icmp_ln241_1 & !icmp_ln241_2)> <Delay = 2.77> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 2.77> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 40 [1/1] (0.00ns)   --->   "%br_ln241 = br i1 %icmp_ln241_3, void %for.inc.split.3, void %for.inc.0.for.end.loopexit_crit_edge.exitStub" [Downloads/aes_axis.cpp:241]   --->   Operation 40 'br' 'br_ln241' <Predicate = (!icmp_ln241 & !icmp_ln241_1 & !icmp_ln241_2)> <Delay = 0.00>
+ST_2 : Operation 41 [1/1] (1.63ns)   --->   "%add_ln244_3 = add i11 %or_ln241_5, i11 %key_read" [Downloads/aes_axis.cpp:244]   --->   Operation 41 'add' 'add_ln244_3' <Predicate = (!icmp_ln241 & !icmp_ln241_1 & !icmp_ln241_2 & !icmp_ln241_3)> <Delay = 1.63> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.63> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 42 [1/1] (0.00ns)   --->   "%zext_ln244_5 = zext i11 %add_ln244_3" [Downloads/aes_axis.cpp:244]   --->   Operation 42 'zext' 'zext_ln244_5' <Predicate = (!icmp_ln241 & !icmp_ln241_1 & !icmp_ln241_2 & !icmp_ln241_3)> <Delay = 0.00>
+ST_2 : Operation 43 [1/1] (0.00ns)   --->   "%key_array128_addr_3 = getelementptr i8 %key_array128, i64 0, i64 %zext_ln244_5" [Downloads/aes_axis.cpp:244]   --->   Operation 43 'getelementptr' 'key_array128_addr_3' <Predicate = (!icmp_ln241 & !icmp_ln241_1 & !icmp_ln241_2 & !icmp_ln241_3)> <Delay = 0.00>
+ST_2 : Operation 44 [2/2] (3.25ns)   --->   "%key_array128_load_3 = load i11 %key_array128_addr_3" [Downloads/aes_axis.cpp:244]   --->   Operation 44 'load' 'key_array128_load_3' <Predicate = (!icmp_ln241 & !icmp_ln241_1 & !icmp_ln241_2 & !icmp_ln241_3)> <Delay = 3.25> <CoreInst = "RAM_1WnR">   --->   Core 83 'RAM_1WnR' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 17> <Width = 8> <Depth = 1056> <RAM>
+ST_2 : Operation 45 [1/1] (3.52ns)   --->   "%add_ln241 = add i64 %i_0_load, i64 4" [Downloads/aes_axis.cpp:241]   --->   Operation 45 'add' 'add_ln241' <Predicate = (!icmp_ln241 & !icmp_ln241_1 & !icmp_ln241_2 & !icmp_ln241_3)> <Delay = 3.52> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 3.52> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 46 [1/1] (1.58ns)   --->   "%store_ln241 = store i64 %add_ln241, i64 %i_0" [Downloads/aes_axis.cpp:241]   --->   Operation 46 'store' 'store_ln241' <Predicate = (!icmp_ln241 & !icmp_ln241_1 & !icmp_ln241_2 & !icmp_ln241_3)> <Delay = 1.58>
+
+State 3 <SV = 2> <Delay = 5.57>
+ST_3 : Operation 47 [1/1] (0.00ns)   --->   "%specpipeline_ln0 = specpipeline void @_ssdm_op_SpecPipeline, i32 1, i32 0, i32 0, i32 0, void @empty_16" [Downloads/aes_axis.cpp:0]   --->   Operation 47 'specpipeline' 'specpipeline_ln0' <Predicate = (!icmp_ln241)> <Delay = 0.00>
+ST_3 : Operation 48 [1/1] (0.00ns)   --->   "%specloopname_ln234 = specloopname void @_ssdm_op_SpecLoopName, void @empty_12" [Downloads/aes_axis.cpp:234]   --->   Operation 48 'specloopname' 'specloopname_ln234' <Predicate = (!icmp_ln241)> <Delay = 0.00>
+ST_3 : Operation 49 [1/2] (3.25ns)   --->   "%key_array128_load = load i11 %key_array128_addr" [Downloads/aes_axis.cpp:244]   --->   Operation 49 'load' 'key_array128_load' <Predicate = (!icmp_ln241)> <Delay = 3.25> <CoreInst = "RAM_1WnR">   --->   Core 83 'RAM_1WnR' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 17> <Width = 8> <Depth = 1056> <RAM>
+ST_3 : Operation 50 [1/1] (0.00ns)   --->   "%zext_ln244_1 = zext i7 %lshr_ln" [Downloads/aes_axis.cpp:244]   --->   Operation 50 'zext' 'zext_ln244_1' <Predicate = (!icmp_ln241)> <Delay = 0.00>
+ST_3 : Operation 51 [1/1] (0.00ns)   --->   "%expandedKey_0_addr = getelementptr i8 %expandedKey_0, i64 0, i64 %zext_ln244_1" [Downloads/aes_axis.cpp:244]   --->   Operation 51 'getelementptr' 'expandedKey_0_addr' <Predicate = (!icmp_ln241)> <Delay = 0.00>
+ST_3 : Operation 52 [1/1] (2.32ns)   --->   "%store_ln244 = store i8 %key_array128_load, i7 %expandedKey_0_addr" [Downloads/aes_axis.cpp:244]   --->   Operation 52 'store' 'store_ln244' <Predicate = (!icmp_ln241)> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 120> <RAM>
+ST_3 : Operation 53 [1/2] (3.25ns)   --->   "%key_array128_load_1 = load i11 %key_array128_addr_1" [Downloads/aes_axis.cpp:244]   --->   Operation 53 'load' 'key_array128_load_1' <Predicate = (!icmp_ln241 & !icmp_ln241_1)> <Delay = 3.25> <CoreInst = "RAM_1WnR">   --->   Core 83 'RAM_1WnR' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 17> <Width = 8> <Depth = 1056> <RAM>
+ST_3 : Operation 54 [1/1] (0.00ns)   --->   "%expandedKey_1_addr = getelementptr i8 %expandedKey_1, i64 0, i64 %zext_ln244_1" [Downloads/aes_axis.cpp:244]   --->   Operation 54 'getelementptr' 'expandedKey_1_addr' <Predicate = (!icmp_ln241 & !icmp_ln241_1)> <Delay = 0.00>
+ST_3 : Operation 55 [1/1] (2.32ns)   --->   "%store_ln244 = store i8 %key_array128_load_1, i7 %expandedKey_1_addr" [Downloads/aes_axis.cpp:244]   --->   Operation 55 'store' 'store_ln244' <Predicate = (!icmp_ln241 & !icmp_ln241_1)> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 120> <RAM>
+ST_3 : Operation 56 [1/2] (3.25ns)   --->   "%key_array128_load_2 = load i11 %key_array128_addr_2" [Downloads/aes_axis.cpp:244]   --->   Operation 56 'load' 'key_array128_load_2' <Predicate = (!icmp_ln241 & !icmp_ln241_1 & !icmp_ln241_2)> <Delay = 3.25> <CoreInst = "RAM_1WnR">   --->   Core 83 'RAM_1WnR' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 17> <Width = 8> <Depth = 1056> <RAM>
+ST_3 : Operation 57 [1/1] (0.00ns)   --->   "%or_ln244 = or i7 %lshr_ln, i7 1" [Downloads/aes_axis.cpp:244]   --->   Operation 57 'or' 'or_ln244' <Predicate = (!icmp_ln241 & !icmp_ln241_1 & !icmp_ln241_2)> <Delay = 0.00>
+ST_3 : Operation 58 [1/1] (0.00ns)   --->   "%zext_ln244_4 = zext i7 %or_ln244" [Downloads/aes_axis.cpp:244]   --->   Operation 58 'zext' 'zext_ln244_4' <Predicate = (!icmp_ln241 & !icmp_ln241_1 & !icmp_ln241_2)> <Delay = 0.00>
+ST_3 : Operation 59 [1/1] (0.00ns)   --->   "%expandedKey_0_addr_10 = getelementptr i8 %expandedKey_0, i64 0, i64 %zext_ln244_4" [Downloads/aes_axis.cpp:244]   --->   Operation 59 'getelementptr' 'expandedKey_0_addr_10' <Predicate = (!icmp_ln241 & !icmp_ln241_1 & !icmp_ln241_2)> <Delay = 0.00>
+ST_3 : Operation 60 [1/1] (2.32ns)   --->   "%store_ln244 = store i8 %key_array128_load_2, i7 %expandedKey_0_addr_10" [Downloads/aes_axis.cpp:244]   --->   Operation 60 'store' 'store_ln244' <Predicate = (!icmp_ln241 & !icmp_ln241_1 & !icmp_ln241_2)> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 120> <RAM>
+ST_3 : Operation 61 [1/2] (3.25ns)   --->   "%key_array128_load_3 = load i11 %key_array128_addr_3" [Downloads/aes_axis.cpp:244]   --->   Operation 61 'load' 'key_array128_load_3' <Predicate = (!icmp_ln241 & !icmp_ln241_1 & !icmp_ln241_2 & !icmp_ln241_3)> <Delay = 3.25> <CoreInst = "RAM_1WnR">   --->   Core 83 'RAM_1WnR' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 17> <Width = 8> <Depth = 1056> <RAM>
+ST_3 : Operation 62 [1/1] (0.00ns)   --->   "%expandedKey_1_addr_10 = getelementptr i8 %expandedKey_1, i64 0, i64 %zext_ln244_4" [Downloads/aes_axis.cpp:244]   --->   Operation 62 'getelementptr' 'expandedKey_1_addr_10' <Predicate = (!icmp_ln241 & !icmp_ln241_1 & !icmp_ln241_2 & !icmp_ln241_3)> <Delay = 0.00>
+ST_3 : Operation 63 [1/1] (2.32ns)   --->   "%store_ln244 = store i8 %key_array128_load_3, i7 %expandedKey_1_addr_10" [Downloads/aes_axis.cpp:244]   --->   Operation 63 'store' 'store_ln244' <Predicate = (!icmp_ln241 & !icmp_ln241_1 & !icmp_ln241_2 & !icmp_ln241_3)> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 120> <RAM>
+ST_3 : Operation 64 [1/1] (0.00ns)   --->   "%br_ln241 = br void %for.inc.0" [Downloads/aes_axis.cpp:241]   --->   Operation 64 'br' 'br_ln241' <Predicate = (!icmp_ln241 & !icmp_ln241_1 & !icmp_ln241_2 & !icmp_ln241_3)> <Delay = 0.00>
+ST_3 : Operation 65 [1/1] (0.00ns)   --->   "%ret_ln0 = ret"   --->   Operation 65 'ret' 'ret_ln0' <Predicate = (icmp_ln241_3) | (icmp_ln241_2) | (icmp_ln241_1) | (icmp_ln241)> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 2.7ns.
+
+ <State 1>: 1.59ns
+The critical path consists of the following:
+	'alloca' operation ('i_0') [6]  (0 ns)
+	'store' operation ('store_ln0') of constant 0 on local variable 'i_0' [10]  (1.59 ns)
+
+ <State 2>: 5.34ns
+The critical path consists of the following:
+	'load' operation ('i_0_load') on local variable 'i_0' [13]  (0 ns)
+	'add' operation ('add_ln241', Downloads/aes_axis.cpp:241) [64]  (3.52 ns)
+	'store' operation ('store_ln241', Downloads/aes_axis.cpp:241) of variable 'add_ln241', Downloads/aes_axis.cpp:241 on local variable 'i_0' [65]  (1.59 ns)
+	blocking operation 0.234 ns on control path)
+
+ <State 3>: 5.58ns
+The critical path consists of the following:
+	'load' operation ('key_array128_load_1', Downloads/aes_axis.cpp:244) on array 'key_array128' [37]  (3.25 ns)
+	'store' operation ('store_ln244', Downloads/aes_axis.cpp:244) of variable 'key_array128_load_1', Downloads/aes_axis.cpp:244 on array 'expandedKey_1' [39]  (2.32 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

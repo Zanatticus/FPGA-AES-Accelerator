@@ -1,0 +1,454 @@
+
+
+================================================================
+== Vitis HLS Report for 'aes_invMain'
+================================================================
+* Date:           Wed Apr 17 16:02:10 2024
+
+* Version:        2022.1 (Build 3526262 on Mon Apr 18 15:48:16 MDT 2022)
+* Project:        AES_Power_Monitor
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  5.982 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+-----------+-----------+------+------+---------+
+    |  Latency (cycles) |   Latency (absolute)  |   Interval  | Pipeline|
+    |   min   |   max   |    min    |    max    |  min |  max |   Type  |
+    +---------+---------+-----------+-----------+------+------+---------+
+    |     1260|     2260|  12.600 us|  22.600 us|  1260|  2260|       no|
+    +---------+---------+-----------+-----------+------+------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-----------------------+---------+---------+-----------+-----------+-----------+--------+----------+
+        |                       |  Latency (cycles) | Iteration |  Initiation Interval  |  Trip  |          |
+        |       Loop Name       |   min   |   max   |  Latency  |  achieved |   target  |  Count | Pipelined|
+        +-----------------------+---------+---------+-----------+-----------+-----------+--------+----------+
+        |- VITIS_LOOP_398_1     |       40|       40|         10|          -|          -|       4|        no|
+        | + VITIS_LOOP_401_2    |        8|        8|          2|          -|          -|       4|        no|
+        |- VITIS_LOOP_308_1     |       32|       32|          2|          -|          -|      16|        no|
+        |- VITIS_LOOP_605_1     |     1116|     2080|  124 ~ 160|          -|          -|  9 ~ 13|        no|
+        | + VITIS_LOOP_398_1    |       40|       40|         10|          -|          -|       4|        no|
+        |  ++ VITIS_LOOP_401_2  |        8|        8|          2|          -|          -|       4|        no|
+        |- VITIS_LOOP_515_1     |        8|       44|     2 ~ 11|          -|          -|       4|        no|
+        +-----------------------+---------+---------+-----------+-----------+-----------+--------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 21
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 5 
+3 --> 4 2 
+4 --> 3 
+5 --> 6 7 
+6 --> 5 
+7 --> 12 8 
+8 --> 11 9 
+9 --> 10 8 
+10 --> 9 
+11 --> 7 
+12 --> 13 
+13 --> 19 14 18 
+14 --> 15 
+15 --> 16 
+16 --> 17 
+17 --> 18 
+18 --> 13 
+19 --> 20 
+20 --> 21 
+21 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.58>
+ST_1 : Operation 22 [1/1] (0.00ns)   --->   "%i = alloca i32 1"   --->   Operation 22 'alloca' 'i' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 23 [1/1] (0.00ns)   --->   "%nbrRounds_read = read i4 @_ssdm_op_Read.ap_auto.i4, i4 %nbrRounds"   --->   Operation 23 'read' 'nbrRounds_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 24 [1/1] (0.00ns)   --->   "%tmp_loc = alloca i64 1"   --->   Operation 24 'alloca' 'tmp_loc' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 25 [1/1] (0.00ns)   --->   "%p_loc10 = alloca i64 1"   --->   Operation 25 'alloca' 'p_loc10' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 26 [1/1] (0.00ns)   --->   "%p_loc9 = alloca i64 1"   --->   Operation 26 'alloca' 'p_loc9' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 27 [1/1] (0.00ns)   --->   "%p_loc = alloca i64 1"   --->   Operation 27 'alloca' 'p_loc' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 28 [1/1] (0.00ns)   --->   "%roundKey = alloca i64 1" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:600]   --->   Operation 28 'alloca' 'roundKey' <Predicate = true> <Delay = 0.00> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_1 : Operation 29 [1/1] (1.58ns)   --->   "%store_ln398 = store i3 0, i3 %i" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:398]   --->   Operation 29 'store' 'store_ln398' <Predicate = true> <Delay = 1.58>
+ST_1 : Operation 30 [1/1] (0.00ns)   --->   "%br_ln398 = br void %VITIS_LOOP_401_2.i" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:398]   --->   Operation 30 'br' 'br_ln398' <Predicate = true> <Delay = 0.00>
+
+State 2 <SV = 1> <Delay = 2.71>
+ST_2 : Operation 31 [1/1] (0.00ns)   --->   "%i_23 = load i3 %i"   --->   Operation 31 'load' 'i_23' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 32 [1/1] (0.00ns)   --->   "%zext_ln398 = zext i3 %i_23" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:398]   --->   Operation 32 'zext' 'zext_ln398' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 33 [1/1] (1.13ns)   --->   "%icmp_ln398 = icmp_eq  i3 %i_23, i3 4" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:398]   --->   Operation 33 'icmp' 'icmp_ln398' <Predicate = true> <Delay = 1.13> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.13> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 34 [1/1] (0.00ns)   --->   "%empty = speclooptripcount i32 @_ssdm_op_SpecLoopTripCount, i64 4, i64 4, i64 4"   --->   Operation 34 'speclooptripcount' 'empty' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 35 [1/1] (1.65ns)   --->   "%add_ln398 = add i3 %i_23, i3 1" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:398]   --->   Operation 35 'add' 'add_ln398' <Predicate = true> <Delay = 1.65> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.65> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 36 [1/1] (0.00ns)   --->   "%br_ln398 = br i1 %icmp_ln398, void %VITIS_LOOP_401_2.i.split, void %for.inc.i7.preheader" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:398]   --->   Operation 36 'br' 'br_ln398' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 37 [1/1] (0.00ns)   --->   "%specloopname_ln396 = specloopname void @_ssdm_op_SpecLoopName, void @empty_23" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:396]   --->   Operation 37 'specloopname' 'specloopname_ln396' <Predicate = (!icmp_ln398)> <Delay = 0.00>
+ST_2 : Operation 38 [1/1] (0.00ns)   --->   "%empty_56 = trunc i3 %i_23"   --->   Operation 38 'trunc' 'empty_56' <Predicate = (!icmp_ln398)> <Delay = 0.00>
+ST_2 : Operation 39 [1/1] (0.00ns)   --->   "%tmp_s = bitconcatenate i4 @_ssdm_op_BitConcatenate.i4.i2.i2, i2 %empty_56, i2 0"   --->   Operation 39 'bitconcatenate' 'tmp_s' <Predicate = (!icmp_ln398)> <Delay = 0.00>
+ST_2 : Operation 40 [1/1] (0.00ns)   --->   "%zext_ln401 = zext i4 %tmp_s" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:401]   --->   Operation 40 'zext' 'zext_ln401' <Predicate = (!icmp_ln398)> <Delay = 0.00>
+ST_2 : Operation 41 [1/1] (1.58ns)   --->   "%br_ln401 = br void %for.inc.i" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:401]   --->   Operation 41 'br' 'br_ln401' <Predicate = (!icmp_ln398)> <Delay = 1.58>
+ST_2 : Operation 42 [1/1] (0.00ns)   --->   "%i_20 = alloca i32 1"   --->   Operation 42 'alloca' 'i_20' <Predicate = (icmp_ln398)> <Delay = 0.00>
+ST_2 : Operation 43 [1/1] (1.58ns)   --->   "%store_ln308 = store i5 0, i5 %i_20" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:308]   --->   Operation 43 'store' 'store_ln308' <Predicate = (icmp_ln398)> <Delay = 1.58>
+ST_2 : Operation 44 [1/1] (0.00ns)   --->   "%br_ln308 = br void %for.inc.i7" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:308]   --->   Operation 44 'br' 'br_ln308' <Predicate = (icmp_ln398)> <Delay = 0.00>
+
+State 3 <SV = 2> <Delay = 5.16>
+ST_3 : Operation 45 [1/1] (0.00ns)   --->   "%j = phi i3 %add_ln401, void %for.inc.i.split, i3 0, void %VITIS_LOOP_401_2.i.split" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:401]   --->   Operation 45 'phi' 'j' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 46 [1/1] (1.13ns)   --->   "%icmp_ln401 = icmp_eq  i3 %j, i3 4" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:401]   --->   Operation 46 'icmp' 'icmp_ln401' <Predicate = true> <Delay = 1.13> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.13> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 47 [1/1] (0.00ns)   --->   "%empty_57 = speclooptripcount i32 @_ssdm_op_SpecLoopTripCount, i64 4, i64 4, i64 4"   --->   Operation 47 'speclooptripcount' 'empty_57' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 48 [1/1] (1.65ns)   --->   "%add_ln401 = add i3 %j, i3 1" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:401]   --->   Operation 48 'add' 'add_ln401' <Predicate = true> <Delay = 1.65> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.65> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 49 [1/1] (0.00ns)   --->   "%br_ln401 = br i1 %icmp_ln401, void %for.inc.i.split, void %for.inc8.i" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:401]   --->   Operation 49 'br' 'br_ln401' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 50 [1/1] (0.00ns)   --->   "%tmp1 = bitconcatenate i8 @_ssdm_op_BitConcatenate.i8.i4.i1.i3, i4 %nbrRounds_read, i1 0, i3 %j" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:402]   --->   Operation 50 'bitconcatenate' 'tmp1' <Predicate = (!icmp_ln401)> <Delay = 0.00>
+ST_3 : Operation 51 [1/1] (1.91ns)   --->   "%add_ln402 = add i8 %tmp1, i8 %zext_ln401" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:402]   --->   Operation 51 'add' 'add_ln402' <Predicate = (!icmp_ln401)> <Delay = 1.91> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.91> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 52 [1/1] (0.00ns)   --->   "%zext_ln402 = zext i8 %add_ln402" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:402]   --->   Operation 52 'zext' 'zext_ln402' <Predicate = (!icmp_ln401)> <Delay = 0.00>
+ST_3 : Operation 53 [1/1] (0.00ns)   --->   "%expandedKey_addr16 = getelementptr i8 %expandedKey, i64 0, i64 %zext_ln402" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:402]   --->   Operation 53 'getelementptr' 'expandedKey_addr16' <Predicate = (!icmp_ln401)> <Delay = 0.00>
+ST_3 : Operation 54 [2/2] (3.25ns)   --->   "%expandedKey_load = load i8 %expandedKey_addr16" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:402]   --->   Operation 54 'load' 'expandedKey_load' <Predicate = (!icmp_ln401)> <Delay = 3.25> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 240> <RAM>
+ST_3 : Operation 55 [1/1] (0.00ns)   --->   "%trunc_ln402 = trunc i3 %j" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:402]   --->   Operation 55 'trunc' 'trunc_ln402' <Predicate = (!icmp_ln401)> <Delay = 0.00>
+ST_3 : Operation 56 [1/1] (0.00ns)   --->   "%shl_ln = bitconcatenate i4 @_ssdm_op_BitConcatenate.i4.i2.i2, i2 %trunc_ln402, i2 0" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:402]   --->   Operation 56 'bitconcatenate' 'shl_ln' <Predicate = (!icmp_ln401)> <Delay = 0.00>
+ST_3 : Operation 57 [1/1] (1.73ns)   --->   "%add_ln402_4 = add i4 %shl_ln, i4 %zext_ln398" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:402]   --->   Operation 57 'add' 'add_ln402_4' <Predicate = (!icmp_ln401)> <Delay = 1.73> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.73> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 58 [1/1] (1.58ns)   --->   "%store_ln398 = store i3 %add_ln398, i3 %i" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:398]   --->   Operation 58 'store' 'store_ln398' <Predicate = (icmp_ln401)> <Delay = 1.58>
+ST_3 : Operation 59 [1/1] (0.00ns)   --->   "%br_ln398 = br void %VITIS_LOOP_401_2.i" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:398]   --->   Operation 59 'br' 'br_ln398' <Predicate = (icmp_ln401)> <Delay = 0.00>
+
+State 4 <SV = 3> <Delay = 5.57>
+ST_4 : Operation 60 [1/1] (0.00ns)   --->   "%specloopname_ln396 = specloopname void @_ssdm_op_SpecLoopName, void @empty_8" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:396]   --->   Operation 60 'specloopname' 'specloopname_ln396' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 61 [1/2] (3.25ns)   --->   "%expandedKey_load = load i8 %expandedKey_addr16" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:402]   --->   Operation 61 'load' 'expandedKey_load' <Predicate = true> <Delay = 3.25> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 240> <RAM>
+ST_4 : Operation 62 [1/1] (0.00ns)   --->   "%zext_ln402_4 = zext i4 %add_ln402_4" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:402]   --->   Operation 62 'zext' 'zext_ln402_4' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 63 [1/1] (0.00ns)   --->   "%roundKey_addr_1 = getelementptr i8 %roundKey, i64 0, i64 %zext_ln402_4" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:402]   --->   Operation 63 'getelementptr' 'roundKey_addr_1' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 64 [1/1] (2.32ns)   --->   "%store_ln402 = store i8 %expandedKey_load, i4 %roundKey_addr_1" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:402]   --->   Operation 64 'store' 'store_ln402' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_4 : Operation 65 [1/1] (0.00ns)   --->   "%br_ln401 = br void %for.inc.i" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:401]   --->   Operation 65 'br' 'br_ln401' <Predicate = true> <Delay = 0.00>
+
+State 5 <SV = 2> <Delay = 3.36>
+ST_5 : Operation 66 [1/1] (0.00ns)   --->   "%i_25 = load i5 %i_20" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:308]   --->   Operation 66 'load' 'i_25' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 67 [1/1] (0.00ns)   --->   "%zext_ln308 = zext i5 %i_25" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:308]   --->   Operation 67 'zext' 'zext_ln308' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 68 [1/1] (1.36ns)   --->   "%icmp_ln308 = icmp_eq  i5 %i_25, i5 16" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:308]   --->   Operation 68 'icmp' 'icmp_ln308' <Predicate = true> <Delay = 1.36> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.36> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 69 [1/1] (0.00ns)   --->   "%empty_58 = speclooptripcount i32 @_ssdm_op_SpecLoopTripCount, i64 16, i64 16, i64 16"   --->   Operation 69 'speclooptripcount' 'empty_58' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 70 [1/1] (1.78ns)   --->   "%add_ln308 = add i5 %i_25, i5 1" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:308]   --->   Operation 70 'add' 'add_ln308' <Predicate = true> <Delay = 1.78> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 71 [1/1] (0.00ns)   --->   "%br_ln308 = br i1 %icmp_ln308, void %for.inc.i7.split, void %_Z11addRoundKeyPhS_.exit" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:308]   --->   Operation 71 'br' 'br_ln308' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 72 [1/1] (0.00ns)   --->   "%state_addr = getelementptr i8 %state, i64 0, i64 %zext_ln308" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:309]   --->   Operation 72 'getelementptr' 'state_addr' <Predicate = (!icmp_ln308)> <Delay = 0.00>
+ST_5 : Operation 73 [2/2] (2.32ns)   --->   "%state_load = load i4 %state_addr" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:309]   --->   Operation 73 'load' 'state_load' <Predicate = (!icmp_ln308)> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_5 : Operation 74 [1/1] (0.00ns)   --->   "%roundKey_addr = getelementptr i8 %roundKey, i64 0, i64 %zext_ln308" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:309]   --->   Operation 74 'getelementptr' 'roundKey_addr' <Predicate = (!icmp_ln308)> <Delay = 0.00>
+ST_5 : Operation 75 [2/2] (2.32ns)   --->   "%roundKey_load = load i4 %roundKey_addr" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:309]   --->   Operation 75 'load' 'roundKey_load' <Predicate = (!icmp_ln308)> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_5 : Operation 76 [1/1] (1.58ns)   --->   "%store_ln308 = store i5 %add_ln308, i5 %i_20" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:308]   --->   Operation 76 'store' 'store_ln308' <Predicate = (!icmp_ln308)> <Delay = 1.58>
+ST_5 : Operation 77 [1/1] (0.00ns)   --->   "%i_21 = alloca i32 1"   --->   Operation 77 'alloca' 'i_21' <Predicate = (icmp_ln308)> <Delay = 0.00>
+ST_5 : Operation 78 [1/1] (1.73ns)   --->   "%add_ln605 = add i4 %nbrRounds_read, i4 15" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:605]   --->   Operation 78 'add' 'add_ln605' <Predicate = (icmp_ln308)> <Delay = 1.73> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.73> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 79 [1/1] (0.00ns)   --->   "%zext_ln605 = zext i4 %add_ln605" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:605]   --->   Operation 79 'zext' 'zext_ln605' <Predicate = (icmp_ln308)> <Delay = 0.00>
+ST_5 : Operation 80 [1/1] (1.58ns)   --->   "%store_ln605 = store i5 %zext_ln605, i5 %i_21" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:605]   --->   Operation 80 'store' 'store_ln605' <Predicate = (icmp_ln308)> <Delay = 1.58>
+ST_5 : Operation 81 [1/1] (0.00ns)   --->   "%br_ln605 = br void %for.inc" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:605]   --->   Operation 81 'br' 'br_ln605' <Predicate = (icmp_ln308)> <Delay = 0.00>
+
+State 6 <SV = 3> <Delay = 5.63>
+ST_6 : Operation 82 [1/1] (0.00ns)   --->   "%specloopname_ln307 = specloopname void @_ssdm_op_SpecLoopName, void @empty_13" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:307]   --->   Operation 82 'specloopname' 'specloopname_ln307' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 83 [1/2] (2.32ns)   --->   "%state_load = load i4 %state_addr" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:309]   --->   Operation 83 'load' 'state_load' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_6 : Operation 84 [1/2] (2.32ns)   --->   "%roundKey_load = load i4 %roundKey_addr" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:309]   --->   Operation 84 'load' 'roundKey_load' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_6 : Operation 85 [1/1] (0.99ns)   --->   "%xor_ln309 = xor i8 %roundKey_load, i8 %state_load" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:309]   --->   Operation 85 'xor' 'xor_ln309' <Predicate = true> <Delay = 0.99> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 86 [1/1] (2.32ns)   --->   "%store_ln309 = store i8 %xor_ln309, i4 %state_addr" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:309]   --->   Operation 86 'store' 'store_ln309' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_6 : Operation 87 [1/1] (0.00ns)   --->   "%br_ln308 = br void %for.inc.i7" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:308]   --->   Operation 87 'br' 'br_ln308' <Predicate = true> <Delay = 0.00>
+
+State 7 <SV = 3> <Delay = 2.95>
+ST_7 : Operation 88 [1/1] (0.00ns)   --->   "%i_26 = load i5 %i_21" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:605]   --->   Operation 88 'load' 'i_26' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 89 [1/1] (1.36ns)   --->   "%icmp_ln605 = icmp_eq  i5 %i_26, i5 0" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:605]   --->   Operation 89 'icmp' 'icmp_ln605' <Predicate = true> <Delay = 1.36> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.36> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 90 [1/1] (0.00ns)   --->   "%empty_59 = speclooptripcount i32 @_ssdm_op_SpecLoopTripCount, i64 9, i64 13, i64 0"   --->   Operation 90 'speclooptripcount' 'empty_59' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 91 [1/1] (0.00ns)   --->   "%br_ln605 = br i1 %icmp_ln605, void %for.inc.split, void %for.inc.i39.preheader" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:605]   --->   Operation 91 'br' 'br_ln605' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 92 [1/1] (0.00ns)   --->   "%specloopname_ln598 = specloopname void @_ssdm_op_SpecLoopName, void @empty_19" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:598]   --->   Operation 92 'specloopname' 'specloopname_ln598' <Predicate = (!icmp_ln605)> <Delay = 0.00>
+ST_7 : Operation 93 [1/1] (1.58ns)   --->   "%br_ln398 = br void %VITIS_LOOP_401_2.i10" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:398]   --->   Operation 93 'br' 'br_ln398' <Predicate = (!icmp_ln605)> <Delay = 1.58>
+ST_7 : Operation 94 [1/1] (0.00ns)   --->   "%i_24 = alloca i32 1"   --->   Operation 94 'alloca' 'i_24' <Predicate = (icmp_ln605)> <Delay = 0.00>
+ST_7 : Operation 95 [2/2] (0.00ns)   --->   "%call_ln0 = call void @aes_invMain_Pipeline_VITIS_LOOP_398_1_VITIS_LOOP_401_2, i8 %expandedKey, i8 %roundKey"   --->   Operation 95 'call' 'call_ln0' <Predicate = (icmp_ln605)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_7 : Operation 96 [1/1] (1.58ns)   --->   "%store_ln515 = store i3 0, i3 %i_24" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:515]   --->   Operation 96 'store' 'store_ln515' <Predicate = (icmp_ln605)> <Delay = 1.58>
+
+State 8 <SV = 4> <Delay = 3.36>
+ST_8 : Operation 97 [1/1] (0.00ns)   --->   "%i_22 = phi i3 %add_ln398_3, void %for.inc8.i24, i3 0, void %for.inc.split" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:398]   --->   Operation 97 'phi' 'i_22' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 98 [1/1] (0.00ns)   --->   "%zext_ln398_2 = zext i3 %i_22" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:398]   --->   Operation 98 'zext' 'zext_ln398_2' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 99 [1/1] (1.13ns)   --->   "%icmp_ln398_1 = icmp_eq  i3 %i_22, i3 4" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:398]   --->   Operation 99 'icmp' 'icmp_ln398_1' <Predicate = true> <Delay = 1.13> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.13> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 100 [1/1] (0.00ns)   --->   "%empty_60 = speclooptripcount i32 @_ssdm_op_SpecLoopTripCount, i64 4, i64 4, i64 4"   --->   Operation 100 'speclooptripcount' 'empty_60' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 101 [1/1] (1.65ns)   --->   "%add_ln398_3 = add i3 %i_22, i3 1" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:398]   --->   Operation 101 'add' 'add_ln398_3' <Predicate = true> <Delay = 1.65> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.65> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 102 [1/1] (0.00ns)   --->   "%br_ln398 = br i1 %icmp_ln398_1, void %VITIS_LOOP_401_2.i10.split, void %_Z14createRoundKeyPhS_.exit25" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:398]   --->   Operation 102 'br' 'br_ln398' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 103 [1/1] (0.00ns)   --->   "%specloopname_ln396 = specloopname void @_ssdm_op_SpecLoopName, void @empty_23" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:396]   --->   Operation 103 'specloopname' 'specloopname_ln396' <Predicate = (!icmp_ln398_1)> <Delay = 0.00>
+ST_8 : Operation 104 [1/1] (0.00ns)   --->   "%empty_61 = trunc i3 %i_22" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:398]   --->   Operation 104 'trunc' 'empty_61' <Predicate = (!icmp_ln398_1)> <Delay = 0.00>
+ST_8 : Operation 105 [1/1] (0.00ns)   --->   "%tmp_26 = bitconcatenate i4 @_ssdm_op_BitConcatenate.i4.i2.i2, i2 %empty_61, i2 0" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:398]   --->   Operation 105 'bitconcatenate' 'tmp_26' <Predicate = (!icmp_ln398_1)> <Delay = 0.00>
+ST_8 : Operation 106 [1/1] (0.00ns)   --->   "%zext_ln401_1 = zext i4 %tmp_26" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:401]   --->   Operation 106 'zext' 'zext_ln401_1' <Predicate = (!icmp_ln398_1)> <Delay = 0.00>
+ST_8 : Operation 107 [1/1] (1.58ns)   --->   "%br_ln401 = br void %for.inc.i21" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:401]   --->   Operation 107 'br' 'br_ln401' <Predicate = (!icmp_ln398_1)> <Delay = 1.58>
+ST_8 : Operation 108 [2/2] (0.00ns)   --->   "%call_ln608 = call void @aes_invRound, i8 %state, i8 %roundKey, i8 %rsbox" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:608]   --->   Operation 108 'call' 'call_ln608' <Predicate = (icmp_ln398_1)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_8 : Operation 109 [1/1] (1.78ns)   --->   "%add_ln605_1 = add i5 %i_26, i5 31" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:605]   --->   Operation 109 'add' 'add_ln605_1' <Predicate = (icmp_ln398_1)> <Delay = 1.78> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 110 [1/1] (1.58ns)   --->   "%store_ln605 = store i5 %add_ln605_1, i5 %i_21" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:605]   --->   Operation 110 'store' 'store_ln605' <Predicate = (icmp_ln398_1)> <Delay = 1.58>
+
+State 9 <SV = 5> <Delay = 5.16>
+ST_9 : Operation 111 [1/1] (0.00ns)   --->   "%j_1 = phi i3 %add_ln401_1, void %for.inc.i21.split, i3 0, void %VITIS_LOOP_401_2.i10.split" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:401]   --->   Operation 111 'phi' 'j_1' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 112 [1/1] (1.13ns)   --->   "%icmp_ln401_1 = icmp_eq  i3 %j_1, i3 4" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:401]   --->   Operation 112 'icmp' 'icmp_ln401_1' <Predicate = true> <Delay = 1.13> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.13> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 113 [1/1] (0.00ns)   --->   "%empty_62 = speclooptripcount i32 @_ssdm_op_SpecLoopTripCount, i64 4, i64 4, i64 4"   --->   Operation 113 'speclooptripcount' 'empty_62' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 114 [1/1] (1.65ns)   --->   "%add_ln401_1 = add i3 %j_1, i3 1" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:401]   --->   Operation 114 'add' 'add_ln401_1' <Predicate = true> <Delay = 1.65> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.65> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 115 [1/1] (0.00ns)   --->   "%br_ln401 = br i1 %icmp_ln401_1, void %for.inc.i21.split, void %for.inc8.i24" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:401]   --->   Operation 115 'br' 'br_ln401' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 116 [1/1] (0.00ns)   --->   "%trunc_ln605 = trunc i5 %i_26" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:605]   --->   Operation 116 'trunc' 'trunc_ln605' <Predicate = (!icmp_ln401_1)> <Delay = 0.00>
+ST_9 : Operation 117 [1/1] (0.00ns)   --->   "%tmp2 = bitconcatenate i8 @_ssdm_op_BitConcatenate.i8.i4.i1.i3, i4 %trunc_ln605, i1 0, i3 %j_1" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:402]   --->   Operation 117 'bitconcatenate' 'tmp2' <Predicate = (!icmp_ln401_1)> <Delay = 0.00>
+ST_9 : Operation 118 [1/1] (1.91ns)   --->   "%add_ln402_5 = add i8 %tmp2, i8 %zext_ln401_1" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:402]   --->   Operation 118 'add' 'add_ln402_5' <Predicate = (!icmp_ln401_1)> <Delay = 1.91> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.91> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 119 [1/1] (0.00ns)   --->   "%zext_ln402_5 = zext i8 %add_ln402_5" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:402]   --->   Operation 119 'zext' 'zext_ln402_5' <Predicate = (!icmp_ln401_1)> <Delay = 0.00>
+ST_9 : Operation 120 [1/1] (0.00ns)   --->   "%expandedKey_addr = getelementptr i8 %expandedKey, i64 0, i64 %zext_ln402_5" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:402]   --->   Operation 120 'getelementptr' 'expandedKey_addr' <Predicate = (!icmp_ln401_1)> <Delay = 0.00>
+ST_9 : Operation 121 [2/2] (3.25ns)   --->   "%expandedKey_load_8 = load i8 %expandedKey_addr" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:402]   --->   Operation 121 'load' 'expandedKey_load_8' <Predicate = (!icmp_ln401_1)> <Delay = 3.25> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 240> <RAM>
+ST_9 : Operation 122 [1/1] (0.00ns)   --->   "%trunc_ln402_1 = trunc i3 %j_1" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:402]   --->   Operation 122 'trunc' 'trunc_ln402_1' <Predicate = (!icmp_ln401_1)> <Delay = 0.00>
+ST_9 : Operation 123 [1/1] (0.00ns)   --->   "%shl_ln402_4 = bitconcatenate i4 @_ssdm_op_BitConcatenate.i4.i2.i2, i2 %trunc_ln402_1, i2 0" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:402]   --->   Operation 123 'bitconcatenate' 'shl_ln402_4' <Predicate = (!icmp_ln401_1)> <Delay = 0.00>
+ST_9 : Operation 124 [1/1] (1.73ns)   --->   "%add_ln402_6 = add i4 %shl_ln402_4, i4 %zext_ln398_2" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:402]   --->   Operation 124 'add' 'add_ln402_6' <Predicate = (!icmp_ln401_1)> <Delay = 1.73> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.73> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 125 [1/1] (0.00ns)   --->   "%br_ln398 = br void %VITIS_LOOP_401_2.i10" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:398]   --->   Operation 125 'br' 'br_ln398' <Predicate = (icmp_ln401_1)> <Delay = 0.00>
+
+State 10 <SV = 6> <Delay = 5.57>
+ST_10 : Operation 126 [1/1] (0.00ns)   --->   "%specloopname_ln396 = specloopname void @_ssdm_op_SpecLoopName, void @empty_8" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:396]   --->   Operation 126 'specloopname' 'specloopname_ln396' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 127 [1/2] (3.25ns)   --->   "%expandedKey_load_8 = load i8 %expandedKey_addr" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:402]   --->   Operation 127 'load' 'expandedKey_load_8' <Predicate = true> <Delay = 3.25> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 240> <RAM>
+ST_10 : Operation 128 [1/1] (0.00ns)   --->   "%zext_ln402_6 = zext i4 %add_ln402_6" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:402]   --->   Operation 128 'zext' 'zext_ln402_6' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 129 [1/1] (0.00ns)   --->   "%roundKey_addr_2 = getelementptr i8 %roundKey, i64 0, i64 %zext_ln402_6" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:402]   --->   Operation 129 'getelementptr' 'roundKey_addr_2' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 130 [1/1] (2.32ns)   --->   "%store_ln402 = store i8 %expandedKey_load_8, i4 %roundKey_addr_2" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:402]   --->   Operation 130 'store' 'store_ln402' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_10 : Operation 131 [1/1] (0.00ns)   --->   "%br_ln401 = br void %for.inc.i21" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:401]   --->   Operation 131 'br' 'br_ln401' <Predicate = true> <Delay = 0.00>
+
+State 11 <SV = 5> <Delay = 0.00>
+ST_11 : Operation 132 [1/2] (0.00ns)   --->   "%call_ln608 = call void @aes_invRound, i8 %state, i8 %roundKey, i8 %rsbox" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:608]   --->   Operation 132 'call' 'call_ln608' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_11 : Operation 133 [1/1] (0.00ns)   --->   "%br_ln605 = br void %for.inc" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:605]   --->   Operation 133 'br' 'br_ln605' <Predicate = true> <Delay = 0.00>
+
+State 12 <SV = 4> <Delay = 0.00>
+ST_12 : Operation 134 [1/2] (0.00ns)   --->   "%call_ln0 = call void @aes_invMain_Pipeline_VITIS_LOOP_398_1_VITIS_LOOP_401_2, i8 %expandedKey, i8 %roundKey"   --->   Operation 134 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_12 : Operation 135 [1/1] (0.00ns)   --->   "%br_ln515 = br void %for.inc.i47" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:515]   --->   Operation 135 'br' 'br_ln515' <Predicate = true> <Delay = 0.00>
+
+State 13 <SV = 5> <Delay = 2.32>
+ST_13 : Operation 136 [1/1] (0.00ns)   --->   "%i_27 = load i3 %i_24" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:515]   --->   Operation 136 'load' 'i_27' <Predicate = true> <Delay = 0.00>
+ST_13 : Operation 137 [1/1] (0.00ns)   --->   "%trunc_ln515 = trunc i3 %i_27" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:515]   --->   Operation 137 'trunc' 'trunc_ln515' <Predicate = true> <Delay = 0.00>
+ST_13 : Operation 138 [1/1] (1.13ns)   --->   "%icmp_ln515 = icmp_eq  i3 %i_27, i3 4" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:515]   --->   Operation 138 'icmp' 'icmp_ln515' <Predicate = true> <Delay = 1.13> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.13> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_13 : Operation 139 [1/1] (0.00ns)   --->   "%empty_63 = speclooptripcount i32 @_ssdm_op_SpecLoopTripCount, i64 4, i64 4, i64 4"   --->   Operation 139 'speclooptripcount' 'empty_63' <Predicate = true> <Delay = 0.00>
+ST_13 : Operation 140 [1/1] (1.65ns)   --->   "%i_28 = add i3 %i_27, i3 1" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:515]   --->   Operation 140 'add' 'i_28' <Predicate = true> <Delay = 1.65> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.65> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_13 : Operation 141 [1/1] (0.00ns)   --->   "%br_ln515 = br i1 %icmp_ln515, void %for.inc.i47.split, void %for.inc.i56.preheader" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:515]   --->   Operation 141 'br' 'br_ln515' <Predicate = true> <Delay = 0.00>
+ST_13 : Operation 142 [1/1] (0.00ns)   --->   "%specloopname_ln513 = specloopname void @_ssdm_op_SpecLoopName, void @empty_16" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:513]   --->   Operation 142 'specloopname' 'specloopname_ln513' <Predicate = (!icmp_ln515)> <Delay = 0.00>
+ST_13 : Operation 143 [1/1] (0.00ns)   --->   "%shl_ln2 = bitconcatenate i4 @_ssdm_op_BitConcatenate.i4.i2.i2, i2 %trunc_ln515, i2 0" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:516]   --->   Operation 143 'bitconcatenate' 'shl_ln2' <Predicate = (!icmp_ln515)> <Delay = 0.00>
+ST_13 : Operation 144 [1/1] (0.00ns)   --->   "%zext_ln516 = zext i4 %shl_ln2" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:516]   --->   Operation 144 'zext' 'zext_ln516' <Predicate = (!icmp_ln515)> <Delay = 0.00>
+ST_13 : Operation 145 [1/1] (0.00ns)   --->   "%state_addr_15 = getelementptr i8 %state, i64 0, i64 %zext_ln516" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:516]   --->   Operation 145 'getelementptr' 'state_addr_15' <Predicate = (!icmp_ln515)> <Delay = 0.00>
+ST_13 : Operation 146 [1/1] (0.00ns)   --->   "%add_ptr_i_sum2 = or i4 %shl_ln2, i4 3" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:516]   --->   Operation 146 'or' 'add_ptr_i_sum2' <Predicate = (!icmp_ln515)> <Delay = 0.00>
+ST_13 : Operation 147 [1/1] (0.00ns)   --->   "%add_ptr_i_sum2_cast = zext i4 %add_ptr_i_sum2" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:516]   --->   Operation 147 'zext' 'add_ptr_i_sum2_cast' <Predicate = (!icmp_ln515)> <Delay = 0.00>
+ST_13 : Operation 148 [1/1] (0.00ns)   --->   "%state_addr_16 = getelementptr i8 %state, i64 0, i64 %add_ptr_i_sum2_cast" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:516]   --->   Operation 148 'getelementptr' 'state_addr_16' <Predicate = (!icmp_ln515)> <Delay = 0.00>
+ST_13 : Operation 149 [1/1] (0.95ns)   --->   "%icmp_ln525 = icmp_eq  i2 %trunc_ln515, i2 0" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:525]   --->   Operation 149 'icmp' 'icmp_ln525' <Predicate = (!icmp_ln515)> <Delay = 0.95> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.95> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_13 : Operation 150 [1/1] (0.00ns)   --->   "%br_ln525 = br i1 %icmp_ln525, void %for.body.lr.ph.i.i, void %_Z11invShiftRowPhh.exit.i" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:525]   --->   Operation 150 'br' 'br_ln525' <Predicate = (!icmp_ln515)> <Delay = 0.00>
+ST_13 : Operation 151 [1/1] (0.00ns)   --->   "%or_ln530 = or i4 %shl_ln2, i4 2" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:530]   --->   Operation 151 'or' 'or_ln530' <Predicate = (!icmp_ln515 & !icmp_ln525)> <Delay = 0.00>
+ST_13 : Operation 152 [1/1] (0.00ns)   --->   "%zext_ln530 = zext i4 %or_ln530" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:530]   --->   Operation 152 'zext' 'zext_ln530' <Predicate = (!icmp_ln515 & !icmp_ln525)> <Delay = 0.00>
+ST_13 : Operation 153 [1/1] (0.00ns)   --->   "%state_addr_17 = getelementptr i8 %state, i64 0, i64 %zext_ln530" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:530]   --->   Operation 153 'getelementptr' 'state_addr_17' <Predicate = (!icmp_ln515 & !icmp_ln525)> <Delay = 0.00>
+ST_13 : Operation 154 [2/2] (2.32ns)   --->   "%state_load_14 = load i4 %state_addr_16" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:528]   --->   Operation 154 'load' 'state_load_14' <Predicate = (!icmp_ln515 & !icmp_ln525)> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_13 : Operation 155 [2/2] (2.32ns)   --->   "%state_load_15 = load i4 %state_addr_17" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:530]   --->   Operation 155 'load' 'state_load_15' <Predicate = (!icmp_ln515 & !icmp_ln525)> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_13 : Operation 156 [2/2] (0.00ns)   --->   "%call_ln0 = call void @aes_invMain_Pipeline_VITIS_LOOP_507_1, i8 %state, i8 %rsbox"   --->   Operation 156 'call' 'call_ln0' <Predicate = (icmp_ln515)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 14 <SV = 6> <Delay = 2.32>
+ST_14 : Operation 157 [1/1] (0.00ns)   --->   "%add_ptr_i_sum774 = or i4 %shl_ln2, i4 1" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:516]   --->   Operation 157 'or' 'add_ptr_i_sum774' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 158 [1/1] (0.00ns)   --->   "%add_ptr_i_sum774_cast = zext i4 %add_ptr_i_sum774" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:516]   --->   Operation 158 'zext' 'add_ptr_i_sum774_cast' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 159 [1/1] (0.00ns)   --->   "%state_addr_18 = getelementptr i8 %state, i64 0, i64 %add_ptr_i_sum774_cast" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:516]   --->   Operation 159 'getelementptr' 'state_addr_18' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 160 [1/2] (2.32ns)   --->   "%state_load_14 = load i4 %state_addr_16" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:528]   --->   Operation 160 'load' 'state_load_14' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_14 : Operation 161 [1/2] (2.32ns)   --->   "%state_load_15 = load i4 %state_addr_17" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:530]   --->   Operation 161 'load' 'state_load_15' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_14 : Operation 162 [2/2] (2.32ns)   --->   "%state_load_16 = load i4 %state_addr_18" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:530]   --->   Operation 162 'load' 'state_load_16' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_14 : Operation 163 [2/2] (2.32ns)   --->   "%state_load_17 = load i4 %state_addr_15" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:530]   --->   Operation 163 'load' 'state_load_17' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+
+State 15 <SV = 7> <Delay = 3.91>
+ST_15 : Operation 164 [1/2] (2.32ns)   --->   "%state_load_16 = load i4 %state_addr_18" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:530]   --->   Operation 164 'load' 'state_load_16' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_15 : Operation 165 [1/2] (2.32ns)   --->   "%state_load_17 = load i4 %state_addr_15" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:530]   --->   Operation 165 'load' 'state_load_17' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_15 : Operation 166 [2/2] (1.58ns)   --->   "%call_ln530 = call void @aes_invMain_Pipeline_invShiftRowLoop, i8 %state_load_17, i8 %state_load_16, i8 %state_load_15, i8 %state_load_14, i2 %trunc_ln515, i8 %p_loc, i8 %p_loc9, i8 %p_loc10, i8 %tmp_loc" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:530]   --->   Operation 166 'call' 'call_ln530' <Predicate = true> <Delay = 1.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 16 <SV = 8> <Delay = 0.95>
+ST_16 : Operation 167 [1/2] (0.95ns)   --->   "%call_ln530 = call void @aes_invMain_Pipeline_invShiftRowLoop, i8 %state_load_17, i8 %state_load_16, i8 %state_load_15, i8 %state_load_14, i2 %trunc_ln515, i8 %p_loc, i8 %p_loc9, i8 %p_loc10, i8 %tmp_loc" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:530]   --->   Operation 167 'call' 'call_ln530' <Predicate = true> <Delay = 0.95> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 17 <SV = 9> <Delay = 2.32>
+ST_17 : Operation 168 [1/1] (0.00ns)   --->   "%p_loc10_load = load i8 %p_loc10"   --->   Operation 168 'load' 'p_loc10_load' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 169 [1/1] (0.00ns)   --->   "%tmp_loc_load = load i8 %tmp_loc"   --->   Operation 169 'load' 'tmp_loc_load' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 170 [1/1] (2.32ns)   --->   "%store_ln528 = store i8 %tmp_loc_load, i4 %state_addr_16" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:528]   --->   Operation 170 'store' 'store_ln528' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_17 : Operation 171 [1/1] (2.32ns)   --->   "%store_ln530 = store i8 %p_loc10_load, i4 %state_addr_17" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:530]   --->   Operation 171 'store' 'store_ln530' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+
+State 18 <SV = 10> <Delay = 2.32>
+ST_18 : Operation 172 [1/1] (0.00ns)   --->   "%p_loc_load = load i8 %p_loc"   --->   Operation 172 'load' 'p_loc_load' <Predicate = (!icmp_ln525)> <Delay = 0.00>
+ST_18 : Operation 173 [1/1] (0.00ns)   --->   "%p_loc9_load = load i8 %p_loc9"   --->   Operation 173 'load' 'p_loc9_load' <Predicate = (!icmp_ln525)> <Delay = 0.00>
+ST_18 : Operation 174 [1/1] (2.32ns)   --->   "%store_ln530 = store i8 %p_loc9_load, i4 %state_addr_18" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:530]   --->   Operation 174 'store' 'store_ln530' <Predicate = (!icmp_ln525)> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_18 : Operation 175 [1/1] (2.32ns)   --->   "%store_ln530 = store i8 %p_loc_load, i4 %state_addr_15" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:530]   --->   Operation 175 'store' 'store_ln530' <Predicate = (!icmp_ln525)> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_18 : Operation 176 [1/1] (0.00ns)   --->   "%br_ln533 = br void %_Z11invShiftRowPhh.exit.i" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:533]   --->   Operation 176 'br' 'br_ln533' <Predicate = (!icmp_ln525)> <Delay = 0.00>
+ST_18 : Operation 177 [1/1] (1.58ns)   --->   "%store_ln515 = store i3 %i_28, i3 %i_24" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:515]   --->   Operation 177 'store' 'store_ln515' <Predicate = true> <Delay = 1.58>
+ST_18 : Operation 178 [1/1] (0.00ns)   --->   "%br_ln515 = br void %for.inc.i47" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:515]   --->   Operation 178 'br' 'br_ln515' <Predicate = true> <Delay = 0.00>
+
+State 19 <SV = 6> <Delay = 0.00>
+ST_19 : Operation 179 [1/2] (0.00ns)   --->   "%call_ln0 = call void @aes_invMain_Pipeline_VITIS_LOOP_507_1, i8 %state, i8 %rsbox"   --->   Operation 179 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 20 <SV = 7> <Delay = 0.00>
+ST_20 : Operation 180 [2/2] (0.00ns)   --->   "%call_ln0 = call void @aes_invMain_Pipeline_VITIS_LOOP_308_1, i8 %state, i8 %roundKey"   --->   Operation 180 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 21 <SV = 8> <Delay = 0.00>
+ST_21 : Operation 181 [1/2] (0.00ns)   --->   "%call_ln0 = call void @aes_invMain_Pipeline_VITIS_LOOP_308_1, i8 %state, i8 %roundKey"   --->   Operation 181 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_21 : Operation 182 [1/1] (0.00ns)   --->   "%ret_ln615 = ret" [AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:615]   --->   Operation 182 'ret' 'ret_ln615' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 2.7ns.
+
+ <State 1>: 1.59ns
+The critical path consists of the following:
+	'alloca' operation ('i') [5]  (0 ns)
+	'store' operation ('store_ln398', AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:398) of constant 0 on local variable 'i' [12]  (1.59 ns)
+
+ <State 2>: 2.72ns
+The critical path consists of the following:
+	'load' operation ('i') on local variable 'i' [15]  (0 ns)
+	'add' operation ('add_ln398', AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:398) [19]  (1.65 ns)
+	blocking operation 1.07 ns on control path)
+
+ <State 3>: 5.17ns
+The critical path consists of the following:
+	'phi' operation ('j', AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:401) with incoming values : ('add_ln401', AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:401) [28]  (0 ns)
+	'add' operation ('add_ln402', AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:402) [36]  (1.92 ns)
+	'getelementptr' operation ('expandedKey_addr16', AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:402) [38]  (0 ns)
+	'load' operation ('expandedKey_load', AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:402) on array 'expandedKey' [39]  (3.25 ns)
+
+ <State 4>: 5.58ns
+The critical path consists of the following:
+	'load' operation ('expandedKey_load', AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:402) on array 'expandedKey' [39]  (3.25 ns)
+	'store' operation ('store_ln402', AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:402) of variable 'expandedKey_load', AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:402 on array 'roundKey', AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:600 [45]  (2.32 ns)
+
+ <State 5>: 3.37ns
+The critical path consists of the following:
+	'load' operation ('i', AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:308) on local variable 'i' [55]  (0 ns)
+	'add' operation ('add_ln308', AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:308) [59]  (1.78 ns)
+	'store' operation ('store_ln308', AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:308) of variable 'add_ln308', AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:308 on local variable 'i' [69]  (1.59 ns)
+
+ <State 6>: 5.63ns
+The critical path consists of the following:
+	'load' operation ('state_load', AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:309) on array 'state' [64]  (2.32 ns)
+	'xor' operation ('xor_ln309', AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:309) [67]  (0.99 ns)
+	'store' operation ('store_ln309', AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:309) of variable 'xor_ln309', AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:309 on array 'state' [68]  (2.32 ns)
+
+ <State 7>: 2.95ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('i', AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:398) with incoming values : ('add_ln398_3', AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:398) [86]  (1.59 ns)
+	blocking operation 1.36 ns on control path)
+
+ <State 8>: 3.37ns
+The critical path consists of the following:
+	'add' operation ('add_ln605_1', AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:605) [123]  (1.78 ns)
+	'store' operation ('store_ln605', AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:605) of variable 'add_ln605_1', AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:605 on local variable 'i' [124]  (1.59 ns)
+
+ <State 9>: 5.17ns
+The critical path consists of the following:
+	'phi' operation ('j', AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:401) with incoming values : ('add_ln401_1', AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:401) [99]  (0 ns)
+	'add' operation ('add_ln402_5', AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:402) [108]  (1.92 ns)
+	'getelementptr' operation ('expandedKey_addr', AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:402) [110]  (0 ns)
+	'load' operation ('expandedKey_load_8', AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:402) on array 'expandedKey' [111]  (3.25 ns)
+
+ <State 10>: 5.58ns
+The critical path consists of the following:
+	'load' operation ('expandedKey_load_8', AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:402) on array 'expandedKey' [111]  (3.25 ns)
+	'store' operation ('store_ln402', AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:402) of variable 'expandedKey_load_8', AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:402 on array 'roundKey', AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:600 [117]  (2.32 ns)
+
+ <State 11>: 0ns
+The critical path consists of the following:
+
+ <State 12>: 0ns
+The critical path consists of the following:
+
+ <State 13>: 2.32ns
+The critical path consists of the following:
+	'load' operation ('i', AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:515) on local variable 'i' [132]  (0 ns)
+	'or' operation ('add_ptr_i_sum2', AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:516) [143]  (0 ns)
+	'getelementptr' operation ('state_addr_16', AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:516) [145]  (0 ns)
+	'load' operation ('state_load_14', AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:528) on array 'state' [155]  (2.32 ns)
+
+ <State 14>: 2.32ns
+The critical path consists of the following:
+	'load' operation ('state_load_14', AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:528) on array 'state' [155]  (2.32 ns)
+
+ <State 15>: 3.91ns
+The critical path consists of the following:
+	'load' operation ('state_load_16', AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:530) on array 'state' [157]  (2.32 ns)
+	'call' operation ('call_ln530', AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:530) to 'aes_invMain_Pipeline_invShiftRowLoop' [159]  (1.59 ns)
+
+ <State 16>: 0.959ns
+The critical path consists of the following:
+	'call' operation ('call_ln530', AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:530) to 'aes_invMain_Pipeline_invShiftRowLoop' [159]  (0.959 ns)
+
+ <State 17>: 2.32ns
+The critical path consists of the following:
+	'load' operation ('tmp_loc_load') on local variable 'tmp_loc' [163]  (0 ns)
+	'store' operation ('store_ln528', AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:528) of variable 'tmp_loc_load' on array 'state' [164]  (2.32 ns)
+
+ <State 18>: 2.32ns
+The critical path consists of the following:
+	'load' operation ('p_loc9_load') on local variable 'p_loc9' [161]  (0 ns)
+	'store' operation ('store_ln530', AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:530) of variable 'p_loc9_load' on array 'state' [166]  (2.32 ns)
+
+ <State 19>: 0ns
+The critical path consists of the following:
+
+ <State 20>: 0ns
+The critical path consists of the following:
+
+ <State 21>: 0ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+	State 19
+	State 20
+	State 21
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

@@ -1,0 +1,223 @@
+
+
+================================================================
+== Vitis HLS Report for 'expandKey_Pipeline_expandKeyLoop'
+================================================================
+* Date:           Wed Apr 17 16:02:23 2024
+
+* Version:        2022.1 (Build 3526262 on Mon Apr 18 15:48:16 MDT 2022)
+* Project:        AES_Power_Monitor
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  7.084 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |        ?|        ?|         ?|         ?|    ?|    ?|       no|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-----------------+---------+---------+----------+-----------+-----------+------+----------+
+        |                 |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |    Loop Name    |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +-----------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- expandKeyLoop  |        ?|        ?|        24|         15|         15|     ?|       yes|
+        +-----------------+---------+---------+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-----+--------+-------+-----+
+|       Name      | BRAM_18K| DSP |   FF   |  LUT  | URAM|
++-----------------+---------+-----+--------+-------+-----+
+|DSP              |        -|    -|       -|      -|    -|
+|Expression       |        -|    -|       0|    389|    -|
+|FIFO             |        -|    -|       -|      -|    -|
+|Instance         |        -|    -|     195|    126|    -|
+|Memory           |        2|    -|       0|      0|    -|
+|Multiplexer      |        -|    -|       -|    265|    -|
+|Register         |        -|    -|     267|      -|    -|
++-----------------+---------+-----+--------+-------+-----+
+|Total            |        2|    0|     462|    780|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Available        |      280|  220|  106400|  53200|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Utilization (%)  |       ~0|    0|      ~0|      1|    0|
++-----------------+---------+-----+--------+-------+-----+
+
++ Detail: 
+    * Instance: 
+    +-------------------------+---------------------+---------+----+-----+-----+-----+
+    |         Instance        |        Module       | BRAM_18K| DSP|  FF | LUT | URAM|
+    +-------------------------+---------------------+---------+----+-----+-----+-----+
+    |urem_8ns_6ns_5_12_1_U34  |urem_8ns_6ns_5_12_1  |        0|   0|  195|  126|    0|
+    +-------------------------+---------------------+---------+----+-----+-----+-----+
+    |Total                    |                     |        0|   0|  195|  126|    0|
+    +-------------------------+---------------------+---------+----+-----+-----+-----+
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    +--------+---------------------------------------------------+---------+---+----+-----+------+-----+------+-------------+
+    | Memory |                       Module                      | BRAM_18K| FF| LUT| URAM| Words| Bits| Banks| W*Bits*Banks|
+    +--------+---------------------------------------------------+---------+---+----+-----+------+-----+------+-------------+
+    |Rcon_U  |expandKey_Pipeline_expandKeyLoop_Rcon_ROM_AUTO_1R  |        1|  0|   0|    0|   255|    8|     1|         2040|
+    |sbox_U  |expandKey_Pipeline_expandKeyLoop_sbox_ROM_AUTO_1R  |        1|  0|   0|    0|   256|    8|     1|         2048|
+    +--------+---------------------------------------------------+---------+---+----+-----+------+-----+------+-------------+
+    |Total   |                                                   |        2|  0|   0|    0|   511|   16|     2|         4088|
+    +--------+---------------------------------------------------+---------+---+----+-----+------+-----+------+-------------+
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +---------------------------+----------+----+---+----+------------+------------+
+    |       Variable Name       | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +---------------------------+----------+----+---+----+------------+------------+
+    |add_ln239_1_fu_335_p2      |         +|   0|  0|  15|           8|           3|
+    |add_ln239_2_fu_345_p2      |         +|   0|  0|  15|           8|           3|
+    |add_ln239_3_fu_369_p2      |         +|   0|  0|  15|           8|           2|
+    |add_ln239_fu_325_p2        |         +|   0|  0|  15|           8|           4|
+    |add_ln264_1_fu_527_p2      |         +|   0|  0|  15|           8|           2|
+    |add_ln264_2_fu_558_p2      |         +|   0|  0|  15|           8|           2|
+    |add_ln264_3_fu_314_p2      |         +|   0|  0|  15|           8|           3|
+    |add_ln264_fu_475_p2        |         +|   0|  0|  15|           8|           1|
+    |rconIteration_2_fu_406_p2  |         +|   0|  0|  39|          32|           1|
+    |sub_ln263_1_fu_480_p2      |         -|   0|  0|  15|           8|           8|
+    |sub_ln263_2_fu_532_p2      |         -|   0|  0|  15|           8|           8|
+    |sub_ln263_3_fu_563_p2      |         -|   0|  0|  15|           8|           8|
+    |sub_ln263_fu_360_p2        |         -|   0|  0|  15|           8|           8|
+    |and_ln251_fu_441_p2        |       and|   0|  0|   2|           1|           1|
+    |icmp_ln233_fu_292_p2       |      icmp|   0|  0|  11|           8|           8|
+    |icmp_ln245_fu_383_p2       |      icmp|   0|  0|   9|           5|           1|
+    |icmp_ln251_fu_435_p2       |      icmp|   0|  0|  10|           5|           6|
+    |rconIteration_fu_411_p3    |    select|   0|  0|  32|           1|          32|
+    |select_ln245_1_fu_496_p3   |    select|   0|  0|   8|           1|           8|
+    |select_ln245_2_fu_429_p3   |    select|   0|  0|   8|           1|           8|
+    |select_ln245_3_fu_399_p3   |    select|   0|  0|   8|           1|           8|
+    |select_ln245_fu_490_p3     |    select|   0|  0|   8|           1|           8|
+    |select_ln251_1_fu_542_p3   |    select|   0|  0|   8|           1|           8|
+    |select_ln251_2_fu_507_p3   |    select|   0|  0|   8|           1|           8|
+    |select_ln251_3_fu_451_p3   |    select|   0|  0|   8|           1|           8|
+    |select_ln251_fu_573_p3     |    select|   0|  0|   8|           1|           8|
+    |ap_enable_pp0              |       xor|   0|  0|   2|           1|           2|
+    |xor_ln206_fu_394_p2        |       xor|   0|  0|   8|           8|           8|
+    |xor_ln263_1_fu_513_p2      |       xor|   0|  0|   8|           8|           8|
+    |xor_ln263_2_fu_548_p2      |       xor|   0|  0|   8|           8|           8|
+    |xor_ln263_3_fu_579_p2      |       xor|   0|  0|   8|           8|           8|
+    |xor_ln263_fu_458_p2        |       xor|   0|  0|   8|           8|           8|
+    +---------------------------+----------+----+---+----+------------+------------+
+    |Total                      |          |   0|  0| 389|         197|         207|
+    +---------------------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    +-----------------------------+----+-----------+-----+-----------+
+    |             Name            | LUT| Input Size| Bits| Total Bits|
+    +-----------------------------+----+-----------+-----+-----------+
+    |ap_NS_fsm                    |  65|         16|    1|         16|
+    |ap_done_int                  |   9|          2|    1|          2|
+    |ap_enable_reg_pp0_iter0      |   9|          2|    1|          2|
+    |ap_enable_reg_pp0_iter0_reg  |   9|          2|    1|          2|
+    |ap_enable_reg_pp0_iter1      |   9|          2|    1|          2|
+    |currentSize_fu_58            |   9|          2|    8|         16|
+    |expandedKey_address0         |  53|         10|    8|         80|
+    |expandedKey_address1         |  20|          4|    8|         32|
+    |expandedKey_d0               |  25|          5|    8|         40|
+    |rconIteration_1_fu_54        |   9|          2|   32|         64|
+    |sbox_address0                |  48|          9|    8|         72|
+    +-----------------------------+----+-----------+-----+-----------+
+    |Total                        | 265|         56|   77|        328|
+    +-----------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +-------------------------------------+----+----+-----+-----------+
+    |                 Name                | FF | LUT| Bits| Const Bits|
+    +-------------------------------------+----+----+-----+-----------+
+    |Rcon_load_reg_652                    |   8|   0|    8|          0|
+    |add_ln264_1_reg_806                  |   8|   0|    8|          0|
+    |add_ln264_2_reg_821                  |   8|   0|    8|          0|
+    |add_ln264_reg_770                    |   8|   0|    8|          0|
+    |and_ln251_reg_743                    |   1|   0|    1|          0|
+    |ap_CS_fsm                            |  15|   0|   15|          0|
+    |ap_done_reg                          |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter0_reg          |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter1              |   1|   0|    1|          0|
+    |currentSize_1_reg_622                |   8|   0|    8|          0|
+    |currentSize_1_reg_622_pp0_iter1_reg  |   8|   0|    8|          0|
+    |currentSize_fu_58                    |   8|   0|    8|          0|
+    |expandedKey_load_1_reg_667           |   8|   0|    8|          0|
+    |expandedKey_load_2_reg_673           |   8|   0|    8|          0|
+    |expandedKey_load_3_reg_693           |   8|   0|    8|          0|
+    |expandedKey_load_7_reg_727           |   8|   0|    8|          0|
+    |expandedKey_load_reg_722             |   8|   0|    8|          0|
+    |icmp_ln233_reg_637                   |   1|   0|    1|          0|
+    |icmp_ln245_reg_703                   |   1|   0|    1|          0|
+    |rconIteration_1_fu_54                |  32|   0|   32|          0|
+    |rconIteration_1_load_reg_641         |  32|   0|   32|          0|
+    |reg_267                              |   8|   0|    8|          0|
+    |reg_271                              |   8|   0|    8|          0|
+    |select_ln245_1_reg_786               |   8|   0|    8|          0|
+    |select_ln245_2_reg_738               |   8|   0|    8|          0|
+    |select_ln245_3_reg_716               |   8|   0|    8|          0|
+    |select_ln245_reg_780                 |   8|   0|    8|          0|
+    |size_cast_cast_reg_613               |   6|   0|    8|          2|
+    |xor_ln263_1_reg_796                  |   8|   0|    8|          0|
+    |xor_ln263_2_reg_816                  |   8|   0|    8|          0|
+    |xor_ln263_3_reg_831                  |   8|   0|    8|          0|
+    |xor_ln263_reg_755                    |   8|   0|    8|          0|
+    +-------------------------------------+----+----+-----+-----------+
+    |Total                                | 267|   0|  269|          2|
+    +-------------------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++----------------------+-----+-----+------------+----------------------------------+--------------+
+|       RTL Ports      | Dir | Bits|  Protocol  |           Source Object          |    C Type    |
++----------------------+-----+-----+------------+----------------------------------+--------------+
+|ap_clk                |   in|    1|  ap_ctrl_hs|  expandKey_Pipeline_expandKeyLoop|  return value|
+|ap_rst                |   in|    1|  ap_ctrl_hs|  expandKey_Pipeline_expandKeyLoop|  return value|
+|ap_start              |   in|    1|  ap_ctrl_hs|  expandKey_Pipeline_expandKeyLoop|  return value|
+|ap_done               |  out|    1|  ap_ctrl_hs|  expandKey_Pipeline_expandKeyLoop|  return value|
+|ap_idle               |  out|    1|  ap_ctrl_hs|  expandKey_Pipeline_expandKeyLoop|  return value|
+|ap_ready              |  out|    1|  ap_ctrl_hs|  expandKey_Pipeline_expandKeyLoop|  return value|
+|size_cast             |   in|    6|     ap_none|                         size_cast|        scalar|
+|expandedKeySize       |   in|    8|     ap_none|                   expandedKeySize|        scalar|
+|expandedKey_address0  |  out|    8|   ap_memory|                       expandedKey|         array|
+|expandedKey_ce0       |  out|    1|   ap_memory|                       expandedKey|         array|
+|expandedKey_we0       |  out|    1|   ap_memory|                       expandedKey|         array|
+|expandedKey_d0        |  out|    8|   ap_memory|                       expandedKey|         array|
+|expandedKey_q0        |   in|    8|   ap_memory|                       expandedKey|         array|
+|expandedKey_address1  |  out|    8|   ap_memory|                       expandedKey|         array|
+|expandedKey_ce1       |  out|    1|   ap_memory|                       expandedKey|         array|
+|expandedKey_q1        |   in|    8|   ap_memory|                       expandedKey|         array|
+|cmp17                 |   in|    1|     ap_none|                             cmp17|        scalar|
++----------------------+-----+-----+------------+----------------------------------+--------------+
+

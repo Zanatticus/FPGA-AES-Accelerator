@@ -1,0 +1,146 @@
+
+
+================================================================
+== Vitis HLS Report for 'expandKey_Pipeline_VITIS_LOOP_227_1'
+================================================================
+* Date:           Wed Apr 17 16:02:22 2024
+
+* Version:        2022.1 (Build 3526262 on Mon Apr 18 15:48:16 MDT 2022)
+* Project:        AES_Power_Monitor
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  6.508 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |       18|       34|  0.180 us|  0.340 us|   18|   34|       no|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +--------------------+---------+---------+----------+-----------+-----------+---------+----------+
+        |                    |  Latency (cycles) | Iteration|  Initiation Interval  |   Trip  |          |
+        |      Loop Name     |   min   |   max   |  Latency |  achieved |   target  |  Count  | Pipelined|
+        +--------------------+---------+---------+----------+-----------+-----------+---------+----------+
+        |- VITIS_LOOP_227_1  |       16|       32|         2|          1|          1|  16 ~ 32|       yes|
+        +--------------------+---------+---------+----------+-----------+-----------+---------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-----+--------+-------+-----+
+|       Name      | BRAM_18K| DSP |   FF   |  LUT  | URAM|
++-----------------+---------+-----+--------+-------+-----+
+|DSP              |        -|    -|       -|      -|    -|
+|Expression       |        -|    -|       0|     38|    -|
+|FIFO             |        -|    -|       -|      -|    -|
+|Instance         |        -|    -|       -|      -|    -|
+|Memory           |        -|    -|       -|      -|    -|
+|Multiplexer      |        -|    -|       -|     36|    -|
+|Register         |        -|    -|      15|      -|    -|
++-----------------+---------+-----+--------+-------+-----+
+|Total            |        0|    0|      15|     74|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Available        |      280|  220|  106400|  53200|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Utilization (%)  |        0|    0|      ~0|     ~0|    0|
++-----------------+---------+-----+--------+-------+-----+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +---------------------+----------+----+---+----+------------+------------+
+    |    Variable Name    | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +---------------------+----------+----+---+----+------------+------------+
+    |add_ln227_fu_95_p2   |         +|   0|  0|  14|           6|           1|
+    |add_ln228_fu_105_p2  |         +|   0|  0|  12|          11|          11|
+    |icmp_ln227_fu_89_p2  |      icmp|   0|  0|  10|           6|           6|
+    |ap_enable_pp0        |       xor|   0|  0|   2|           1|           2|
+    +---------------------+----------+----+---+----+------------+------------+
+    |Total                |          |   0|  0|  38|          24|          20|
+    +---------------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    +-------------------------+----+-----------+-----+-----------+
+    |           Name          | LUT| Input Size| Bits| Total Bits|
+    +-------------------------+----+-----------+-----+-----------+
+    |ap_done_int              |   9|          2|    1|          2|
+    |ap_enable_reg_pp0_iter1  |   9|          2|    1|          2|
+    |ap_sig_allocacmp_i_1     |   9|          2|    6|         12|
+    |i_fu_38                  |   9|          2|    6|         12|
+    +-------------------------+----+-----------+-----+-----------+
+    |Total                    |  36|          8|   14|         28|
+    +-------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +-------------------------+---+----+-----+-----------+
+    |           Name          | FF| LUT| Bits| Const Bits|
+    +-------------------------+---+----+-----+-----------+
+    |ap_CS_fsm                |  1|   0|    1|          0|
+    |ap_done_reg              |  1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter1  |  1|   0|    1|          0|
+    |i_1_reg_132              |  6|   0|    6|          0|
+    |i_fu_38                  |  6|   0|    6|          0|
+    +-------------------------+---+----+-----+-----------+
+    |Total                    | 15|   0|   15|          0|
+    +-------------------------+---+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++-----------------------+-----+-----+------------+-------------------------------------+--------------+
+|       RTL Ports       | Dir | Bits|  Protocol  |            Source Object            |    C Type    |
++-----------------------+-----+-----+------------+-------------------------------------+--------------+
+|ap_clk                 |   in|    1|  ap_ctrl_hs|  expandKey_Pipeline_VITIS_LOOP_227_1|  return value|
+|ap_rst                 |   in|    1|  ap_ctrl_hs|  expandKey_Pipeline_VITIS_LOOP_227_1|  return value|
+|ap_start               |   in|    1|  ap_ctrl_hs|  expandKey_Pipeline_VITIS_LOOP_227_1|  return value|
+|ap_done                |  out|    1|  ap_ctrl_hs|  expandKey_Pipeline_VITIS_LOOP_227_1|  return value|
+|ap_idle                |  out|    1|  ap_ctrl_hs|  expandKey_Pipeline_VITIS_LOOP_227_1|  return value|
+|ap_ready               |  out|    1|  ap_ctrl_hs|  expandKey_Pipeline_VITIS_LOOP_227_1|  return value|
+|size                   |   in|    6|     ap_none|                                 size|        scalar|
+|key                    |   in|   11|     ap_none|                                  key|        scalar|
+|key_array128_address0  |  out|   11|   ap_memory|                         key_array128|         array|
+|key_array128_ce0       |  out|    1|   ap_memory|                         key_array128|         array|
+|key_array128_q0        |   in|    8|   ap_memory|                         key_array128|         array|
+|expandedKey_address0   |  out|    8|   ap_memory|                          expandedKey|         array|
+|expandedKey_ce0        |  out|    1|   ap_memory|                          expandedKey|         array|
+|expandedKey_we0        |  out|    1|   ap_memory|                          expandedKey|         array|
+|expandedKey_d0         |  out|    8|   ap_memory|                          expandedKey|         array|
++-----------------------+-----+-----+------------+-------------------------------------+--------------+
+

@@ -1,0 +1,383 @@
+
+
+================================================================
+== Synthesis Summary Report of 'aes'
+================================================================
++ General Information: 
+    * Date:           Wed Apr 17 16:02:57 2024
+    * Version:        2022.1 (Build 3526262 on Mon Apr 18 15:48:16 MDT 2022)
+    * Project:        AES_Power_Monitor
+    * Solution:       solution1 (Vivado IP Flow Target)
+    * Product family: zynq
+    * Target device:  xc7z020-clg400-1
+    
+
++ Performance & Resource Estimates: 
+    
+    PS: '+' for module; 'o' for loop; '*' for dataflow
+    +-------------------------------------------------------------+------+------+---------+-----------+----------+---------+------+----------+---------+----+-----------+------------+-----+
+    |                           Modules                           | Issue|      | Latency |  Latency  | Iteration|         | Trip |          |         |    |           |            |     |
+    |                           & Loops                           | Type | Slack| (cycles)|    (ns)   |  Latency | Interval| Count| Pipelined|  BRAM   | DSP|     FF    |     LUT    | URAM|
+    +-------------------------------------------------------------+------+------+---------+-----------+----------+---------+------+----------+---------+----+-----------+------------+-----+
+    |+ aes                                                        |     -|  0.22|        -|          -|         -|        -|     -|        no|   9 (3%)|   -|  1919 (1%)|  8006 (15%)|    -|
+    | + aes_Pipeline_1                                            |     -|  2.68|       18|    180.000|         -|       18|     -|        no|        -|   -|    7 (~0%)|    50 (~0%)|    -|
+    |  o Loop 1                                                   |     -|  7.30|       16|    160.000|         1|        1|    16|       yes|        -|   -|          -|           -|    -|
+    | + aes_Pipeline_2                                            |     -|  2.68|       26|    260.000|         -|       26|     -|        no|        -|   -|    7 (~0%)|    49 (~0%)|    -|
+    |  o Loop 1                                                   |     -|  7.30|       24|    240.000|         1|        1|    24|       yes|        -|   -|          -|           -|    -|
+    | + aes_Pipeline_3                                            |     -|  2.62|       34|    340.000|         -|       34|     -|        no|        -|   -|    8 (~0%)|    51 (~0%)|    -|
+    |  o Loop 1                                                   |     -|  7.30|       32|    320.000|         1|        1|    32|       yes|        -|   -|          -|           -|    -|
+    | o VITIS_LOOP_64_1                                           |     -|  7.30|        -|          -|      4465|        -|     -|        no|        -|   -|          -|           -|    -|
+    |  + aes_Pipeline_VITIS_LOOP_70_2                             |     -|  2.62|       34|    340.000|         -|       34|     -|        no|        -|   -|    8 (~0%)|    64 (~0%)|    -|
+    |   o VITIS_LOOP_70_2                                         |     -|  7.30|       32|    320.000|         1|        1|    32|       yes|        -|   -|          -|           -|    -|
+    |  + aes_Pipeline_VITIS_LOOP_75_3                             |     -|  3.61|       18|    180.000|         -|       18|     -|        no|        -|   -|   13 (~0%)|    63 (~0%)|    -|
+    |   o VITIS_LOOP_75_3                                         |     -|  7.30|       16|    160.000|         1|        1|    16|       yes|        -|   -|          -|           -|    -|
+    |  + aes_Pipeline_VITIS_LOOP_475_1_VITIS_LOOP_478_2           |     -|  0.61|       18|    180.000|         -|       18|     -|        no|        -|   -|   18 (~0%)|   160 (~0%)|    -|
+    |   o VITIS_LOOP_475_1_VITIS_LOOP_478_2                       |     -|  7.30|       16|    160.000|         2|        1|    16|       yes|        -|   -|          -|           -|    -|
+    |  + expandKey                                                |     -|  0.22|        -|          -|         -|        -|     -|        no|  2 (~0%)|   -|  484 (~0%)|    954 (1%)|    -|
+    |   + expandKey_Pipeline_VITIS_LOOP_227_1                     |     -|  0.79|       34|    340.000|         -|       34|     -|        no|        -|   -|   15 (~0%)|    74 (~0%)|    -|
+    |    o VITIS_LOOP_227_1                                       |     -|  7.30|       32|    320.000|         2|        1|    32|       yes|        -|   -|          -|           -|    -|
+    |   + expandKey_Pipeline_expandKeyLoop                        |     -|  0.22|        -|          -|         -|        -|     -|        no|  2 (~0%)|   -|  462 (~0%)|    780 (1%)|    -|
+    |    o expandKeyLoop                                          |     -|  7.30|        -|          -|        24|       15|     -|       yes|        -|   -|          -|           -|    -|
+    |  + aes_main                                                 |     -|  1.32|     2024|  2.024e+04|         -|     2024|     -|        no|  2 (~0%)|   -|  480 (~0%)|   2149 (4%)|    -|
+    |   + aes_main_Pipeline_VITIS_LOOP_398_1_VITIS_LOOP_401_2     |     -|  1.72|       19|    190.000|         -|       19|     -|        no|        -|   -|   30 (~0%)|   160 (~0%)|    -|
+    |    o VITIS_LOOP_398_1_VITIS_LOOP_401_2                      |     -|  7.30|       17|    170.000|         3|        1|    16|       yes|        -|   -|          -|           -|    -|
+    |   + aes_main_Pipeline_VITIS_LOOP_308_1                      |     -|  1.67|       18|    180.000|         -|       18|     -|        no|        -|   -|   12 (~0%)|    69 (~0%)|    -|
+    |    o VITIS_LOOP_308_1                                       |     -|  7.30|       16|    160.000|         2|        1|    16|       yes|        -|   -|          -|           -|    -|
+    |   + aes_main_Pipeline_VITIS_LOOP_398_1_VITIS_LOOP_401_21    |     -|  1.72|       19|    190.000|         -|       19|     -|        no|        -|   -|   30 (~0%)|   162 (~0%)|    -|
+    |    o VITIS_LOOP_398_1_VITIS_LOOP_401_2                      |     -|  7.30|       17|    170.000|         3|        1|    16|       yes|        -|   -|          -|           -|    -|
+    |   + aes_main_Pipeline_VITIS_LOOP_276_1                      |     -|  1.72|       19|    190.000|         -|       19|     -|        no|  1 (~0%)|   -|   18 (~0%)|    61 (~0%)|    -|
+    |    o VITIS_LOOP_276_1                                       |     -|  7.30|       17|    170.000|         3|        1|    16|       yes|        -|   -|          -|           -|    -|
+    |   + aes_main_Pipeline_VITIS_LOOP_308_12                     |     -|  1.67|       18|    180.000|         -|       18|     -|        no|        -|   -|   12 (~0%)|    69 (~0%)|    -|
+    |    o VITIS_LOOP_308_1                                       |     -|  7.30|       16|    160.000|         2|        1|    16|       yes|        -|   -|          -|           -|    -|
+    |   o VITIS_LOOP_415_1                                        |     -|  7.30|     1911|  1.911e+04|       147|        -|    13|        no|        -|   -|          -|           -|    -|
+    |    + aes_round                                              |     -|  1.32|      104|  1.040e+03|         -|      104|     -|        no|  1 (~0%)|   -|  252 (~0%)|    900 (1%)|    -|
+    |     + aes_round_Pipeline_VITIS_LOOP_276_1                   |     -|  1.72|       19|    190.000|         -|       19|     -|        no|  1 (~0%)|   -|   18 (~0%)|    61 (~0%)|    -|
+    |      o VITIS_LOOP_276_1                                     |     -|  7.30|       17|    170.000|         3|        1|    16|       yes|        -|   -|          -|           -|    -|
+    |     + aes_round_Pipeline_mixColumnsLoop                     |     -|  1.32|       30|    300.000|         -|       30|     -|        no|        -|   -|  142 (~0%)|   375 (~0%)|    -|
+    |      o mixColumnsLoop                                       |     -|  7.30|       28|    280.000|         7|        7|     4|       yes|        -|   -|          -|           -|    -|
+    |       + galois_multiplication                               |     -|  2.31|        0|      0.000|         -|        1|     -|       yes|        -|   -|          -|   104 (~0%)|    -|
+    |       + galois_multiplication                               |     -|  2.31|        0|      0.000|         -|        1|     -|       yes|        -|   -|          -|   104 (~0%)|    -|
+    |       + galois_multiplication                               |     -|  2.31|        0|      0.000|         -|        1|     -|       yes|        -|   -|          -|   104 (~0%)|    -|
+    |     + aes_round_Pipeline_VITIS_LOOP_308_1                   |     -|  1.67|       18|    180.000|         -|       18|     -|        no|        -|   -|   12 (~0%)|    69 (~0%)|    -|
+    |      o VITIS_LOOP_308_1                                     |     -|  7.30|       16|    160.000|         2|        1|    16|       yes|        -|   -|          -|           -|    -|
+    |     o shiftRowsLoop                                         |     -|  7.30|       32|    320.000|         8|        -|     4|        no|        -|   -|          -|           -|    -|
+    |      o VITIS_LOOP_296_1                                     |     -|  7.30|        3|     30.000|         1|        -|     3|        no|        -|   -|          -|           -|    -|
+    |    o VITIS_LOOP_398_1                                       |     -|  7.30|       40|    400.000|        10|        -|     4|        no|        -|   -|          -|           -|    -|
+    |     o VITIS_LOOP_401_2                                      |     -|  7.30|        8|     80.000|         2|        -|     4|        no|        -|   -|          -|           -|    -|
+    |   o shiftRowsLoop                                           |     -|  7.30|       32|    320.000|         8|        -|     4|        no|        -|   -|          -|           -|    -|
+    |    o VITIS_LOOP_296_1                                       |     -|  7.30|        3|     30.000|         1|        -|     3|        no|        -|   -|          -|           -|    -|
+    |  + aes_Pipeline_VITIS_LOOP_489_3_VITIS_LOOP_492_4           |     -|  0.61|       18|    180.000|         -|       18|     -|        no|        -|   -|   18 (~0%)|   160 (~0%)|    -|
+    |   o VITIS_LOOP_489_3_VITIS_LOOP_492_4                       |     -|  7.30|       16|    160.000|         2|        1|    16|       yes|        -|   -|          -|           -|    -|
+    |  + aes_Pipeline_VITIS_LOOP_665_1_VITIS_LOOP_668_2           |     -|  0.61|       18|    180.000|         -|       18|     -|        no|        -|   -|   18 (~0%)|   160 (~0%)|    -|
+    |   o VITIS_LOOP_665_1_VITIS_LOOP_668_2                       |     -|  7.30|       16|    160.000|         2|        1|    16|       yes|        -|   -|          -|           -|    -|
+    |  + aes_invMain                                              |     -|  1.32|     2260|  2.260e+04|         -|     2260|     -|        no|  2 (~0%)|   -|  503 (~0%)|   2229 (4%)|    -|
+    |   + aes_invMain_Pipeline_VITIS_LOOP_398_1_VITIS_LOOP_401_2  |     -|  1.72|       19|    190.000|         -|       19|     -|        no|        -|   -|   30 (~0%)|   160 (~0%)|    -|
+    |    o VITIS_LOOP_398_1_VITIS_LOOP_401_2                      |     -|  7.30|       17|    170.000|         3|        1|    16|       yes|        -|   -|          -|           -|    -|
+    |   + aes_invMain_Pipeline_VITIS_LOOP_507_1                   |     -|  1.72|       19|    190.000|         -|       19|     -|        no|        -|   -|   18 (~0%)|    61 (~0%)|    -|
+    |    o VITIS_LOOP_507_1                                       |     -|  7.30|       17|    170.000|         3|        1|    16|       yes|        -|   -|          -|           -|    -|
+    |   + aes_invMain_Pipeline_VITIS_LOOP_308_1                   |     -|  1.67|       18|    180.000|         -|       18|     -|        no|        -|   -|   12 (~0%)|    69 (~0%)|    -|
+    |    o VITIS_LOOP_308_1                                       |     -|  7.30|       16|    160.000|         2|        1|    16|       yes|        -|   -|          -|           -|    -|
+    |   o VITIS_LOOP_398_1                                        |     -|  7.30|       40|    400.000|        10|        -|     4|        no|        -|   -|          -|           -|    -|
+    |    o VITIS_LOOP_401_2                                       |     -|  7.30|        8|     80.000|         2|        -|     4|        no|        -|   -|          -|           -|    -|
+    |   o VITIS_LOOP_308_1                                        |     -|  7.30|       32|    320.000|         2|        -|    16|        no|        -|   -|          -|           -|    -|
+    |   o VITIS_LOOP_605_1                                        |     -|  7.30|     2080|  2.080e+04|       160|        -|    13|        no|        -|   -|          -|           -|    -|
+    |    + aes_invRound                                           |     -|  1.32|      117|  1.170e+03|         -|      117|     -|        no|  1 (~0%)|   -|  260 (~0%)|   1053 (1%)|    -|
+    |     + aes_invRound_Pipeline_VITIS_LOOP_507_1                |     -|  1.72|       19|    190.000|         -|       19|     -|        no|  1 (~0%)|   -|   18 (~0%)|    61 (~0%)|    -|
+    |      o VITIS_LOOP_507_1                                     |     -|  7.30|       17|    170.000|         3|        1|    16|       yes|        -|   -|          -|           -|    -|
+    |     + aes_invRound_Pipeline_VITIS_LOOP_308_1                |     -|  1.67|       18|    180.000|         -|       18|     -|        no|        -|   -|   12 (~0%)|    69 (~0%)|    -|
+    |      o VITIS_LOOP_308_1                                     |     -|  7.30|       16|    160.000|         2|        1|    16|       yes|        -|   -|          -|           -|    -|
+    |     + aes_invRound_Pipeline_invMixColumnsLoop               |     -|  1.32|       30|    300.000|         -|       30|     -|        no|        -|   -|  126 (~0%)|   507 (~0%)|    -|
+    |      o invMixColumnsLoop                                    |     -|  7.30|       28|    280.000|         7|        7|     4|       yes|        -|   -|          -|           -|    -|
+    |       + galois_multiplication                               |     -|  2.31|        0|      0.000|         -|        1|     -|       yes|        -|   -|          -|   104 (~0%)|    -|
+    |       + galois_multiplication                               |     -|  2.31|        0|      0.000|         -|        1|     -|       yes|        -|   -|          -|   104 (~0%)|    -|
+    |       + galois_multiplication                               |     -|  2.31|        0|      0.000|         -|        1|     -|       yes|        -|   -|          -|   104 (~0%)|    -|
+    |       + galois_multiplication                               |     -|  2.31|        0|      0.000|         -|        1|     -|       yes|        -|   -|          -|   104 (~0%)|    -|
+    |     o VITIS_LOOP_515_1                                      |     -|  7.30|       44|    440.000|        11|        -|     4|        no|        -|   -|          -|           -|    -|
+    |      + aes_invRound_Pipeline_invShiftRowLoop                |     -|  4.15|        5|     50.000|         -|        5|     -|        no|        -|   -|   37 (~0%)|    83 (~0%)|    -|
+    |       o invShiftRowLoop                                     |     -|  7.30|        3|     30.000|         1|        1|     3|       yes|        -|   -|          -|           -|    -|
+    |    o VITIS_LOOP_398_1                                       |     -|  7.30|       40|    400.000|        10|        -|     4|        no|        -|   -|          -|           -|    -|
+    |     o VITIS_LOOP_401_2                                      |     -|  7.30|        8|     80.000|         2|        -|     4|        no|        -|   -|          -|           -|    -|
+    |   o VITIS_LOOP_515_1                                        |     -|  7.30|       44|    440.000|        11|        -|     4|        no|        -|   -|          -|           -|    -|
+    |    + aes_invMain_Pipeline_invShiftRowLoop                   |     -|  4.15|        5|     50.000|         -|        5|     -|        no|        -|   -|   37 (~0%)|    83 (~0%)|    -|
+    |     o invShiftRowLoop                                       |     -|  7.30|        3|     30.000|         1|        1|     3|       yes|        -|   -|          -|           -|    -|
+    |  + aes_Pipeline_VITIS_LOOP_679_3_VITIS_LOOP_682_4           |     -|  0.61|       18|    180.000|         -|       18|     -|        no|        -|   -|   18 (~0%)|   160 (~0%)|    -|
+    |   o VITIS_LOOP_679_3_VITIS_LOOP_682_4                       |     -|  7.30|       16|    160.000|         2|        1|    16|       yes|        -|   -|          -|           -|    -|
+    |  + aes_Pipeline_VITIS_LOOP_85_4                             |     -|  3.93|       18|    180.000|         -|       18|     -|        no|        -|   -|    8 (~0%)|    72 (~0%)|    -|
+    |   o VITIS_LOOP_85_4                                         |     -|  7.30|       16|    160.000|         2|        1|    16|       yes|        -|   -|          -|           -|    -|
+    |  + aes_Pipeline_VITIS_LOOP_94_5                             |     -|  3.93|       18|    180.000|         -|       18|     -|        no|        -|   -|    8 (~0%)|    72 (~0%)|    -|
+    |   o VITIS_LOOP_94_5                                         |     -|  7.30|       16|    160.000|         2|        1|    16|       yes|        -|   -|          -|           -|    -|
+    +-------------------------------------------------------------+------+------+---------+-----------+----------+---------+------+----------+---------+----+-----------+------------+-----+
+
+
+================================================================
+== HW Interfaces
+================================================================
+* S_AXILITE Interfaces
++----------------+------------+---------------+--------+----------+
+| Interface      | Data Width | Address Width | Offset | Register |
++----------------+------------+---------------+--------+----------+
+| s_axi_CTRL_BUS | 32         | 6             | 16     | 0        |
+| s_axi_control  | 32         | 5             | 16     | 0        |
++----------------+------------+---------------+--------+----------+
+
+* S_AXILITE Registers
++----------------+-------------------+--------+-------+--------+----------------------------------+
+| Interface      | Register          | Offset | Width | Access | Description                      |
++----------------+-------------------+--------+-------+--------+----------------------------------+
+| s_axi_CTRL_BUS | mode              | 0x10   | 32    | W      | Data signal of mode              |
+| s_axi_CTRL_BUS | enable_in         | 0x18   | 32    | W      | Data signal of enable_in         |
+| s_axi_CTRL_BUS | power_reading_out | 0x20   | 32    | W      | Data signal of power_reading_out |
+| s_axi_control  | enable_out        | 0x10   | 32    | W      | Data signal of enable_out        |
+| s_axi_control  | power_reading_in  | 0x18   | 32    | W      | Data signal of power_reading_in  |
++----------------+-------------------+--------+-------+--------+----------------------------------+
+
+* AXIS
++------------------------------+---------------+-------+-------+-----+-------+-------+--------+-------+-------+--------+
+| Interface                    | Register Mode | TDATA | TDEST | TID | TKEEP | TLAST | TREADY | TSTRB | TUSER | TVALID |
++------------------------------+---------------+-------+-------+-----+-------+-------+--------+-------+-------+--------+
+| ciphertext_and_decryptedtext | both          | 8     | 1     | 1   | 1     | 1     | 1      | 1     | 1     | 1      |
+| key_and_plaintext            | both          | 8     | 1     | 1   | 1     | 1     | 1      | 1     | 1     | 1      |
++------------------------------+---------------+-------+-------+-----+-------+-------+--------+-------+-------+--------+
+
+* TOP LEVEL CONTROL
++-----------+--------------+----------+
+| Interface | Type         | Ports    |
++-----------+--------------+----------+
+| ap_clk    | clock        | ap_clk   |
+| ap_rst_n  | reset        | ap_rst_n |
+| ap_ctrl   | ap_ctrl_none |          |
++-----------+--------------+----------+
+
+
+================================================================
+== SW I/O Information
+================================================================
+* Top Function Arguments
++------------------------------+-----------+-------------------------------------------+
+| Argument                     | Direction | Datatype                                  |
++------------------------------+-----------+-------------------------------------------+
+| key_and_plaintext            | in        | stream<hls::axis<ap_int<8>, 1, 1, 1>, 0>& |
+| ciphertext_and_decryptedtext | out       | stream<hls::axis<ap_int<8>, 1, 1, 1>, 0>& |
+| mode                         | in        | int                                       |
+| enable_in                    | in        | unsigned char                             |
+| enable_out                   | in        | unsigned char                             |
+| power_reading_in             | in        | unsigned int                              |
+| power_reading_out            | in        | unsigned int                              |
++------------------------------+-----------+-------------------------------------------+
+
+* SW-to-HW Mapping
++------------------------------+------------------------------+-----------+---------------------------------------------+
+| Argument                     | HW Interface                 | HW Type   | HW Info                                     |
++------------------------------+------------------------------+-----------+---------------------------------------------+
+| key_and_plaintext            | key_and_plaintext            | interface |                                             |
+| ciphertext_and_decryptedtext | ciphertext_and_decryptedtext | interface |                                             |
+| mode                         | s_axi_CTRL_BUS               | register  | name=mode offset=0x10 range=32              |
+| enable_in                    | s_axi_CTRL_BUS               | register  | name=enable_in offset=0x18 range=32         |
+| enable_out                   | s_axi_control                | register  | name=enable_out offset=0x10 range=32        |
+| power_reading_in             | s_axi_control                | register  | name=power_reading_in offset=0x18 range=32  |
+| power_reading_out            | s_axi_CTRL_BUS               | register  | name=power_reading_out offset=0x20 range=32 |
++------------------------------+------------------------------+-----------+---------------------------------------------+
+
+
+================================================================
+== M_AXI Burst Information
+================================================================
+ Note: All burst requests might be further partitioned into multiple requests during RTL generation based on max_read_burst_length or max_write_burst_length settings.
+
+  No burst in design
+
+================================================================
+== Bind Op Report
+================================================================
++------------------------------------------------------------+-----+--------+-----------------+-----+--------+---------+
+| Name                                                       | DSP | Pragma | Variable        | Op  | Impl   | Latency |
++------------------------------------------------------------+-----+--------+-----------------+-----+--------+---------+
+| + aes                                                      | 0   |        |                 |     |        |         |
+|  + aes_Pipeline_1                                          | 0   |        |                 |     |        |         |
+|    empty_71_fu_58_p2                                       | -   |        | empty_71        | add | fabric | 0       |
+|  + aes_Pipeline_2                                          | 0   |        |                 |     |        |         |
+|    empty_69_fu_62_p2                                       | -   |        | empty_69        | add | fabric | 0       |
+|  + aes_Pipeline_3                                          | 0   |        |                 |     |        |         |
+|    empty_67_fu_62_p2                                       | -   |        | empty_67        | add | fabric | 0       |
+|  + aes_Pipeline_VITIS_LOOP_70_2                            | 0   |        |                 |     |        |         |
+|    add_ln70_fu_129_p2                                      | -   |        | add_ln70        | add | fabric | 0       |
+|  + aes_Pipeline_VITIS_LOOP_75_3                            | 0   |        |                 |     |        |         |
+|    add_ln75_fu_181_p2                                      | -   |        | add_ln75        | add | fabric | 0       |
+|  + aes_Pipeline_VITIS_LOOP_475_1_VITIS_LOOP_478_2          | 0   |        |                 |     |        |         |
+|    add_ln475_fu_105_p2                                     | -   |        | add_ln475       | add | fabric | 0       |
+|    add_ln475_1_fu_131_p2                                   | -   |        | add_ln475_1     | add | fabric | 0       |
+|    add_ln479_fu_165_p2                                     | -   |        | add_ln479       | add | fabric | 0       |
+|    add_ln479_1_fu_188_p2                                   | -   |        | add_ln479_1     | add | fabric | 0       |
+|    add_ln478_fu_194_p2                                     | -   |        | add_ln478       | add | fabric | 0       |
+|  + expandKey                                               | 0   |        |                 |     |        |         |
+|   + expandKey_Pipeline_VITIS_LOOP_227_1                    | 0   |        |                 |     |        |         |
+|     add_ln227_fu_95_p2                                     | -   |        | add_ln227       | add | fabric | 0       |
+|     add_ln228_fu_105_p2                                    | -   |        | add_ln228       | add | fabric | 0       |
+|   + expandKey_Pipeline_expandKeyLoop                       | 0   |        |                 |     |        |         |
+|     add_ln239_fu_325_p2                                    | -   |        | add_ln239       | add | fabric | 0       |
+|     add_ln239_1_fu_335_p2                                  | -   |        | add_ln239_1     | add | fabric | 0       |
+|     add_ln239_2_fu_345_p2                                  | -   |        | add_ln239_2     | add | fabric | 0       |
+|     add_ln239_3_fu_369_p2                                  | -   |        | add_ln239_3     | add | fabric | 0       |
+|     rconIteration_2_fu_406_p2                              | -   |        | rconIteration_2 | add | fabric | 0       |
+|     sub_ln263_fu_360_p2                                    | -   |        | sub_ln263       | sub | fabric | 0       |
+|     add_ln264_fu_475_p2                                    | -   |        | add_ln264       | add | fabric | 0       |
+|     sub_ln263_1_fu_480_p2                                  | -   |        | sub_ln263_1     | sub | fabric | 0       |
+|     add_ln264_1_fu_527_p2                                  | -   |        | add_ln264_1     | add | fabric | 0       |
+|     sub_ln263_2_fu_532_p2                                  | -   |        | sub_ln263_2     | sub | fabric | 0       |
+|     add_ln264_2_fu_558_p2                                  | -   |        | add_ln264_2     | add | fabric | 0       |
+|     sub_ln263_3_fu_563_p2                                  | -   |        | sub_ln263_3     | sub | fabric | 0       |
+|     add_ln264_3_fu_314_p2                                  | -   |        | add_ln264_3     | add | fabric | 0       |
+|  + aes_main                                                | 0   |        |                 |     |        |         |
+|    add_ln398_1_fu_321_p2                                   | -   |        | add_ln398_1     | add | fabric | 0       |
+|    add_ln401_fu_359_p2                                     | -   |        | add_ln401       | add | fabric | 0       |
+|    add_ln402_fu_374_p2                                     | -   |        | add_ln402       | add | fabric | 0       |
+|    add_ln402_2_fu_396_p2                                   | -   |        | add_ln402_2     | add | fabric | 0       |
+|    add_ln415_fu_343_p2                                     | -   |        | add_ln415       | add | fabric | 0       |
+|    i_12_fu_414_p2                                          | -   |        | i_12            | add | fabric | 0       |
+|    add_ln296_fu_483_p2                                     | -   |        | add_ln296       | add | fabric | 0       |
+|   + aes_main_Pipeline_VITIS_LOOP_398_1_VITIS_LOOP_401_2    | 0   |        |                 |     |        |         |
+|     add_ln398_fu_105_p2                                    | -   |        | add_ln398       | add | fabric | 0       |
+|     add_ln398_2_fu_131_p2                                  | -   |        | add_ln398_2     | add | fabric | 0       |
+|     add_ln402_fu_187_p2                                    | -   |        | add_ln402       | add | fabric | 0       |
+|     add_ln402_1_fu_205_p2                                  | -   |        | add_ln402_1     | add | fabric | 0       |
+|     add_ln401_fu_153_p2                                    | -   |        | add_ln401       | add | fabric | 0       |
+|   + aes_main_Pipeline_VITIS_LOOP_308_1                     | 0   |        |                 |     |        |         |
+|     add_ln308_fu_78_p2                                     | -   |        | add_ln308       | add | fabric | 0       |
+|   + aes_main_Pipeline_VITIS_LOOP_398_1_VITIS_LOOP_401_21   | 0   |        |                 |     |        |         |
+|     add_ln398_fu_119_p2                                    | -   |        | add_ln398       | add | fabric | 0       |
+|     add_ln398_1_fu_145_p2                                  | -   |        | add_ln398_1     | add | fabric | 0       |
+|     add_ln402_fu_210_p2                                    | -   |        | add_ln402       | add | fabric | 0       |
+|     add_ln402_1_fu_228_p2                                  | -   |        | add_ln402_1     | add | fabric | 0       |
+|     add_ln401_fu_167_p2                                    | -   |        | add_ln401       | add | fabric | 0       |
+|   + aes_main_Pipeline_VITIS_LOOP_276_1                     | 0   |        |                 |     |        |         |
+|     add_ln276_fu_79_p2                                     | -   |        | add_ln276       | add | fabric | 0       |
+|   + aes_round                                              | 0   |        |                 |     |        |         |
+|     i_5_fu_194_p2                                          | -   |        | i_5             | add | fabric | 0       |
+|     add_ln296_fu_263_p2                                    | -   |        | add_ln296       | add | fabric | 0       |
+|    + aes_round_Pipeline_VITIS_LOOP_276_1                   | 0   |        |                 |     |        |         |
+|      add_ln276_fu_79_p2                                    | -   |        | add_ln276       | add | fabric | 0       |
+|    + aes_round_Pipeline_mixColumnsLoop                     | 0   |        |                 |     |        |         |
+|      add_ln337_fu_128_p2                                   | -   |        | add_ln337       | add | fabric | 0       |
+|    + aes_round_Pipeline_VITIS_LOOP_308_1                   | 0   |        |                 |     |        |         |
+|      add_ln308_fu_78_p2                                    | -   |        | add_ln308       | add | fabric | 0       |
+|   + aes_main_Pipeline_VITIS_LOOP_308_12                    | 0   |        |                 |     |        |         |
+|     add_ln308_fu_78_p2                                     | -   |        | add_ln308       | add | fabric | 0       |
+|  + aes_Pipeline_VITIS_LOOP_489_3_VITIS_LOOP_492_4          | 0   |        |                 |     |        |         |
+|    add_ln489_fu_105_p2                                     | -   |        | add_ln489       | add | fabric | 0       |
+|    add_ln489_1_fu_131_p2                                   | -   |        | add_ln489_1     | add | fabric | 0       |
+|    add_ln493_fu_177_p2                                     | -   |        | add_ln493       | add | fabric | 0       |
+|    add_ln493_1_fu_188_p2                                   | -   |        | add_ln493_1     | add | fabric | 0       |
+|    add_ln492_fu_194_p2                                     | -   |        | add_ln492       | add | fabric | 0       |
+|  + aes_Pipeline_VITIS_LOOP_665_1_VITIS_LOOP_668_2          | 0   |        |                 |     |        |         |
+|    add_ln665_fu_105_p2                                     | -   |        | add_ln665       | add | fabric | 0       |
+|    add_ln665_1_fu_131_p2                                   | -   |        | add_ln665_1     | add | fabric | 0       |
+|    add_ln669_fu_165_p2                                     | -   |        | add_ln669       | add | fabric | 0       |
+|    add_ln669_1_fu_188_p2                                   | -   |        | add_ln669_1     | add | fabric | 0       |
+|    add_ln668_fu_194_p2                                     | -   |        | add_ln668       | add | fabric | 0       |
+|  + aes_invMain                                             | 0   |        |                 |     |        |         |
+|    add_ln398_fu_313_p2                                     | -   |        | add_ln398       | add | fabric | 0       |
+|    add_ln401_fu_346_p2                                     | -   |        | add_ln401       | add | fabric | 0       |
+|    add_ln402_fu_361_p2                                     | -   |        | add_ln402       | add | fabric | 0       |
+|    add_ln402_4_fu_383_p2                                   | -   |        | add_ln402_4     | add | fabric | 0       |
+|    add_ln308_fu_411_p2                                     | -   |        | add_ln308       | add | fabric | 0       |
+|    add_ln605_fu_422_p2                                     | -   |        | add_ln605       | add | fabric | 0       |
+|    add_ln398_3_fu_467_p2                                   | -   |        | add_ln398_3     | add | fabric | 0       |
+|    add_ln401_1_fu_505_p2                                   | -   |        | add_ln401_1     | add | fabric | 0       |
+|    add_ln402_5_fu_524_p2                                   | -   |        | add_ln402_5     | add | fabric | 0       |
+|    add_ln402_6_fu_546_p2                                   | -   |        | add_ln402_6     | add | fabric | 0       |
+|    add_ln605_1_fu_489_p2                                   | -   |        | add_ln605_1     | add | fabric | 0       |
+|    i_28_fu_568_p2                                          | -   |        | i_28            | add | fabric | 0       |
+|   + aes_invMain_Pipeline_VITIS_LOOP_398_1_VITIS_LOOP_401_2 | 0   |        |                 |     |        |         |
+|     add_ln398_fu_105_p2                                    | -   |        | add_ln398       | add | fabric | 0       |
+|     add_ln398_3_fu_131_p2                                  | -   |        | add_ln398_3     | add | fabric | 0       |
+|     add_ln402_fu_187_p2                                    | -   |        | add_ln402       | add | fabric | 0       |
+|     add_ln402_3_fu_205_p2                                  | -   |        | add_ln402_3     | add | fabric | 0       |
+|     add_ln401_fu_153_p2                                    | -   |        | add_ln401       | add | fabric | 0       |
+|   + aes_invRound                                           | 0   |        |                 |     |        |         |
+|     i_17_fu_159_p2                                         | -   |        | i_17            | add | fabric | 0       |
+|    + aes_invRound_Pipeline_VITIS_LOOP_507_1                | 0   |        |                 |     |        |         |
+|      add_ln507_fu_79_p2                                    | -   |        | add_ln507       | add | fabric | 0       |
+|    + aes_invRound_Pipeline_invShiftRowLoop                 | 0   |        |                 |     |        |         |
+|      add_ln525_fu_171_p2                                   | -   |        | add_ln525       | add | fabric | 0       |
+|    + aes_invRound_Pipeline_VITIS_LOOP_308_1                | 0   |        |                 |     |        |         |
+|      add_ln308_fu_78_p2                                    | -   |        | add_ln308       | add | fabric | 0       |
+|    + aes_invRound_Pipeline_invMixColumnsLoop               | 0   |        |                 |     |        |         |
+|      add_ln542_fu_134_p2                                   | -   |        | add_ln542       | add | fabric | 0       |
+|   + aes_invMain_Pipeline_VITIS_LOOP_507_1                  | 0   |        |                 |     |        |         |
+|     add_ln507_fu_79_p2                                     | -   |        | add_ln507       | add | fabric | 0       |
+|   + aes_invMain_Pipeline_invShiftRowLoop                   | 0   |        |                 |     |        |         |
+|     add_ln525_fu_171_p2                                    | -   |        | add_ln525       | add | fabric | 0       |
+|   + aes_invMain_Pipeline_VITIS_LOOP_308_1                  | 0   |        |                 |     |        |         |
+|     add_ln308_fu_78_p2                                     | -   |        | add_ln308       | add | fabric | 0       |
+|  + aes_Pipeline_VITIS_LOOP_679_3_VITIS_LOOP_682_4          | 0   |        |                 |     |        |         |
+|    add_ln679_fu_105_p2                                     | -   |        | add_ln679       | add | fabric | 0       |
+|    add_ln679_1_fu_131_p2                                   | -   |        | add_ln679_1     | add | fabric | 0       |
+|    add_ln683_fu_177_p2                                     | -   |        | add_ln683       | add | fabric | 0       |
+|    add_ln683_1_fu_188_p2                                   | -   |        | add_ln683_1     | add | fabric | 0       |
+|    add_ln682_fu_194_p2                                     | -   |        | add_ln682       | add | fabric | 0       |
+|  + aes_Pipeline_VITIS_LOOP_85_4                            | 0   |        |                 |     |        |         |
+|    add_ln85_fu_154_p2                                      | -   |        | add_ln85        | add | fabric | 0       |
+|  + aes_Pipeline_VITIS_LOOP_94_5                            | 0   |        |                 |     |        |         |
+|    add_ln94_fu_154_p2                                      | -   |        | add_ln94        | add | fabric | 0       |
++------------------------------------------------------------+-----+--------+-----------------+-----+--------+---------+
+
+
+================================================================
+== Bind Storage Report
+================================================================
++---------------------------------------------+------+------+--------+---------------------+---------+------+---------+
+| Name                                        | BRAM | URAM | Pragma | Variable            | Storage | Impl | Latency |
++---------------------------------------------+------+------+--------+---------------------+---------+------+---------+
+| + aes                                       | 9    | 0    |        |                     |         |      |         |
+|   key_array128_U                            | 1    | -    |        | key_array128        | ram_1p  | auto | 1       |
+|   expandedKey_U                             | 1    | -    |        | expandedKey         | ram_s2p | auto | 1       |
+|   block_U                                   | -    | -    |        | block               | ram_t2p | auto | 1       |
+|   expandedKey_1_U                           | 1    | -    |        | expandedKey_1       | ram_s2p | auto | 1       |
+|   block_1_U                                 | -    | -    |        | block_1             | ram_t2p | auto | 1       |
+|   plaintext_array_U                         | -    | -    |        | plaintext_array     | ram_1p  | auto | 1       |
+|   ciphertext_array_U                        | -    | -    |        | ciphertext_array    | ram_1p  | auto | 1       |
+|   decryptedtext_array_U                     | -    | -    |        | decryptedtext_array | ram_1p  | auto | 1       |
+|  + expandKey                                | 2    | 0    |        |                     |         |      |         |
+|   + expandKey_Pipeline_expandKeyLoop        | 2    | 0    |        |                     |         |      |         |
+|     sbox_U                                  | 1    | -    |        | sbox                | rom_1p  | auto | 1       |
+|     Rcon_U                                  | 1    | -    |        | Rcon                | rom_1p  | auto | 1       |
+|  + aes_main                                 | 2    | 0    |        |                     |         |      |         |
+|    roundKey_U                               | -    | -    |        | roundKey            | ram_1p  | auto | 1       |
+|   + aes_main_Pipeline_VITIS_LOOP_276_1      | 1    | 0    |        |                     |         |      |         |
+|     sbox_U                                  | 1    | -    |        | sbox                | rom_1p  | auto | 1       |
+|   + aes_round                               | 1    | 0    |        |                     |         |      |         |
+|    + aes_round_Pipeline_VITIS_LOOP_276_1    | 1    | 0    |        |                     |         |      |         |
+|      sbox_U                                 | 1    | -    |        | sbox                | rom_1p  | auto | 1       |
+|  + aes_invMain                              | 2    | 0    |        |                     |         |      |         |
+|    roundKey_U                               | -    | -    |        | roundKey            | ram_1p  | auto | 1       |
+|    rsbox_U                                  | 1    | -    |        | rsbox               | rom_1p  | auto | 1       |
+|   + aes_invRound                            | 1    | 0    |        |                     |         |      |         |
+|    + aes_invRound_Pipeline_VITIS_LOOP_507_1 | 1    | 0    |        |                     |         |      |         |
+|      rsbox_U                                | 1    | -    |        | rsbox               | rom_1p  | auto | 1       |
++---------------------------------------------+------+------+--------+---------------------+---------+------+---------+
+
+
+================================================================
+== Pragma Report
+================================================================
+* Valid Pragma Syntax
++-----------+--------------------------------------------------+--------------------------------------------------------------------------------------+
+| Type      | Options                                          | Location                                                                             |
++-----------+--------------------------------------------------+--------------------------------------------------------------------------------------+
+| interface | ap_ctrl_none port=return                         | AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:17 in aes, return                       |
+| interface | axis port=key_and_plaintext                      | AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:18 in aes, key_and_plaintext            |
+| interface | axis port=ciphertext_and_decryptedtext           | AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:19 in aes, ciphertext_and_decryptedtext |
+| interface | s_axilite port=mode bundle=CTRL_BUS              | AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:20 in aes, mode                         |
+| interface | s_axilite port=enable_out                        | AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:21 in aes, enable_out                   |
+| interface | s_axilite port=power_reading_in                  | AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:22 in aes, power_reading_in             |
+| interface | s_axilite port=enable_in bundle=CTRL_BUS         | AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:23 in aes, enable_in                    |
+| interface | s_axilite port=power_reading_out bundle=CTRL_BUS | AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:24 in aes, power_reading_out            |
+| interface | s_axilite port=return bundle=CTRL_BUS            | AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:25 in aes, return                       |
+| pipeline  | II=15                                            | AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:235 in expandkey                        |
+| pipeline  | II=4                                             | AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:286 in shiftrows                        |
+| pipeline  | II=7                                             | AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:339 in mixcolumns                       |
+| pipeline  | II=5                                             | AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:527 in invshiftrow                      |
+| pipeline  | II=8                                             | AES_AXIS_HLS/vitis/vitis_source/aes_axis.cpp:544 in invmixcolumns                    |
++-----------+--------------------------------------------------+--------------------------------------------------------------------------------------+
+
+

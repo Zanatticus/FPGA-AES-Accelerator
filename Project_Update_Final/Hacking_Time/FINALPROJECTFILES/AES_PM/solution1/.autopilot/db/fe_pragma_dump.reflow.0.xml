@@ -1,0 +1,62 @@
+<pragmas>
+<pragma file="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_common.h" line="559" pragmaType="inline" parentfunction="ssdm_int<8, true>::ssdm_int(signed char)" off="0" region="0" recursive="0"/>
+<pragma file="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h" line="126" pragmaType="inline" parentfunction="get_id_ptr" off="0" region="0" recursive="0"/>
+<pragma file="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_common.h" line="567" pragmaType="inline" parentfunction="_ZN8ssdm_intILi1ELb0EEC2EDq1_j" off="0" region="0" recursive="0"/>
+<pragma file="Downloads/aes_axis.cpp" line="441" pragmaType="pipeline" parentfunction="createRoundKey" off="0" ii="-1" rewind="0" style=""/>
+<pragma file="Downloads/aes_axis.cpp" line="662" pragmaType="loop_tripcount" parentfunction="aes_invMain" min="9" max="13" avg="11"/>
+<pragma file="Downloads/aes_axis.cpp" line="663" pragmaType="performance" parentfunction="aes_invMain" target_ti="600"/>
+<pragma file="Downloads/aes_axis.cpp" line="599" pragmaType="pipeline" parentfunction="invMixColumns" off="0" ii="6" rewind="0" style=""/>
+<pragma file="Downloads/aes_axis.cpp" line="212" pragmaType="unroll" parentfunction="core" factor="-1" skip_exit_check="0"/>
+<pragma file="Downloads/aes_axis.cpp" line="138" pragmaType="bind_storage" parentfunction="getSBoxValue" op="666" impl="216" latency="-1" variable="_ZL4sbox"/>
+<pragma file="Downloads/aes_axis.cpp" line="166" pragmaType="unroll" parentfunction="rotate" factor="-1" skip_exit_check="0"/>
+<pragma file="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_int_base.h" line="257" pragmaType="inline" parentfunction="ap_int_base<8, true>::ap_int_base(unsigned char)" off="0" region="0" recursive="0"/>
+<pragma file="Downloads/aes_axis.cpp" line="558" pragmaType="unroll" parentfunction="invSubBytes" factor="-1" skip_exit_check="0"/>
+<pragma file="Downloads/aes_axis.cpp" line="568" pragmaType="unroll" parentfunction="invShiftRows" factor="-1" skip_exit_check="0"/>
+<pragma file="Downloads/aes_axis.cpp" line="252" pragmaType="pipeline" parentfunction="expandKey" off="0" ii="12" rewind="0" style=""/>
+<pragma file="Downloads/aes_axis.cpp" line="251" pragmaType="loop_tripcount" parentfunction="expandKey" min="128" max="240" avg="192"/>
+<pragma file="Downloads/aes_axis.cpp" line="259" pragmaType="unroll" parentfunction="expandKey" factor="-1" skip_exit_check="0"/>
+<pragma file="Downloads/aes_axis.cpp" line="276" pragmaType="unroll" parentfunction="expandKey" factor="-1" skip_exit_check="0"/>
+<pragma file="Downloads/aes_axis.cpp" line="288" pragmaType="unroll" parentfunction="expandKey" factor="-1" skip_exit_check="0"/>
+<pragma file="Downloads/aes_axis.cpp" line="242" pragmaType="loop_tripcount" parentfunction="expandKey" min="16" max="32" avg="24"/>
+<pragma file="Downloads/aes_axis.cpp" line="236" pragmaType="array_partition" parentfunction="expandKey" dim="1" factor="0" mode="complete" dynamic="0" variable=""/>
+<pragma file="Downloads/aes_axis.cpp" line="243" pragmaType="performance" parentfunction="expandKey" target_ti="8"/>
+<pragma file="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h" line="122" pragmaType="inline" parentfunction="get_user_ptr" off="0" region="0" recursive="0"/>
+<pragma file="Downloads/aes_axis.cpp" line="147" pragmaType="bind_storage" parentfunction="getSBoxInvert" op="666" impl="216" latency="-1" variable="_ZL5rsbox"/>
+<pragma file="Downloads/aes_axis.cpp" line="581" pragmaType="pipeline" parentfunction="invShiftRow" off="0" ii="5" rewind="0" style=""/>
+<pragma file="Downloads/aes_axis.cpp" line="579" pragmaType="loop_tripcount" parentfunction="invShiftRow" min="1" max="3" avg="2"/>
+<pragma file="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h" line="130" pragmaType="inline" parentfunction="get_dest_ptr" off="0" region="0" recursive="0"/>
+<pragma file="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_int_base.h" line="587" pragmaType="inline" parentfunction="ap_int_base<1, false>::operator unsigned long long() const" off="0" region="0" recursive="0"/>
+<pragma file="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_int.h" line="176" pragmaType="inline" parentfunction="ap_int<8>::ap_int(unsigned char)" off="0" region="0" recursive="0"/>
+<pragma file="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h" line="302" pragmaType="inline" parentfunction="write" off="0" region="0" recursive="0"/>
+<pragma file="Downloads/aes_axis.cpp" line="66" pragmaType="loop_tripcount" parentfunction="aes" min="1" max="1" avg="1"/>
+<pragma file="Downloads/aes_axis.cpp" line="70" pragmaType="loop_tripcount" parentfunction="aes" min="16" max="32" avg="24"/>
+<pragma file="Downloads/aes_axis.cpp" line="15" pragmaType="interface" parentfunction="aes" mode="axis" port="key_and_plaintext" register="1" register_mode="both" name="" depth="-1"/>
+<pragma file="Downloads/aes_axis.cpp" line="16" pragmaType="interface" parentfunction="aes" mode="axis" port="ciphertext_and_decryptedtext" register="1" register_mode="both" name="" depth="-1"/>
+<pragma file="Downloads/aes_axis.cpp" line="17" pragmaType="interface" parentfunction="aes" mode="s_axilite" port="mode" bundle="" offset="-1" name="" clock="" impl="" register="0"/>
+<pragma file="Downloads/aes_axis.cpp" line="18" pragmaType="interface" parentfunction="aes" mode="s_axilite" port="enable_out" bundle="" offset="-1" name="" clock="" impl="" register="0"/>
+<pragma file="Downloads/aes_axis.cpp" line="19" pragmaType="interface" parentfunction="aes" mode="s_axilite" port="power_reading_in" bundle="" offset="-1" name="" clock="" impl="" register="0"/>
+<pragma file="Downloads/aes_axis.cpp" line="20" pragmaType="interface" parentfunction="aes" mode="s_axilite" port="enable_in" bundle="CTRL_BUS" offset="-1" name="" clock="" impl="" register="0"/>
+<pragma file="Downloads/aes_axis.cpp" line="21" pragmaType="interface" parentfunction="aes" mode="s_axilite" port="power_reading_out" bundle="CTRL_BUS" offset="-1" name="" clock="" impl="" register="0"/>
+<pragma file="Downloads/aes_axis.cpp" line="22" pragmaType="interface" parentfunction="aes" mode="s_axilite" port="" bundle="CTRL_BUS" offset="-1" name="" clock="" impl="" register="0"/>
+<pragma file="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_int_base.h" line="587" pragmaType="inline" parentfunction="ap_int_base<8, true>::operator long long() const" off="0" region="0" recursive="0"/>
+<pragma file="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h" line="281" pragmaType="inline" parentfunction="read" off="0" region="0" recursive="0"/>
+<pragma file="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_int_base.h" line="260" pragmaType="inline" parentfunction="ap_int_base<1, false>::ap_int_base(int)" off="0" region="0" recursive="0"/>
+<pragma file="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_int.h" line="333" pragmaType="inline" parentfunction="ap_uint<1>::ap_uint(int)" off="0" region="0" recursive="0"/>
+<pragma file="Downloads/aes_axis.cpp" line="313" pragmaType="unroll" parentfunction="shiftRows" factor="-1" skip_exit_check="0"/>
+<pragma file="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_int.h" line="67" pragmaType="inline" parentfunction="ap_int<8>::ap_int()" off="0" region="0" recursive="0"/>
+<pragma file="Downloads/aes_axis.cpp" line="459" pragmaType="loop_tripcount" parentfunction="aes_main" min="9" max="13" avg="11"/>
+<pragma file="Downloads/aes_axis.cpp" line="460" pragmaType="performance" parentfunction="aes_main" target_ti="500"/>
+<pragma file="Downloads/aes_axis.cpp" line="373" pragmaType="pipeline" parentfunction="mixColumns" off="0" ii="-1" rewind="0" style=""/>
+<pragma file="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_int_base.h" line="221" pragmaType="inline" parentfunction="ap_int_base<8, true>::ap_int_base()" off="0" region="0" recursive="0"/>
+<pragma file="Downloads/aes_axis.cpp" line="197" pragmaType="bind_storage" parentfunction="getRconValue" op="666" impl="216" latency="-1" variable="_ZL4Rcon"/>
+<pragma file="Downloads/aes_axis.cpp" line="327" pragmaType="pipeline" parentfunction="shiftRow" off="0" ii="6" rewind="0" style=""/>
+<pragma file="Downloads/aes_axis.cpp" line="326" pragmaType="loop_tripcount" parentfunction="shiftRow" min="1" max="3" avg="2"/>
+<pragma file="Downloads/aes_axis.cpp" line="399" pragmaType="unroll" parentfunction="mixColumn" factor="-1" skip_exit_check="0"/>
+<pragma file="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_int_base.h" line="221" pragmaType="inline" parentfunction="ap_int_base<1, false>::ap_int_base()" off="0" region="0" recursive="0"/>
+<pragma file="Downloads/aes_axis.cpp" line="303" pragmaType="unroll" parentfunction="subBytes" factor="-1" skip_exit_check="0"/>
+<pragma file="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_int.h" line="230" pragmaType="inline" parentfunction="ap_uint<1>::ap_uint()" off="0" region="0" recursive="0"/>
+<pragma file="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_common.h" line="0" pragmaType="inline" parentfunction="ssdm_int<8, true>::ssdm_int()" off="0" region="0" recursive="0"/>
+<pragma file="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_int_base.h" line="0" pragmaType="inline" parentfunction="checkOverflowBaseC" off="0" region="0" recursive="0"/>
+<pragma file="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_int_base.h" line="0" pragmaType="inline" parentfunction="checkOverflowBaseC" off="0" region="0" recursive="0"/>
+<pragma file="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_common.h" line="0" pragmaType="inline" parentfunction="ssdm_int<1, false>::ssdm_int()" off="0" region="0" recursive="0"/>
+</pragmas>

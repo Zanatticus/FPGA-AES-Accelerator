@@ -1,0 +1,150 @@
+
+
+================================================================
+== Vitis HLS Report for 'aes_Pipeline_VITIS_LOOP_70_2'
+================================================================
+* Date:           Wed Apr 17 16:02:20 2024
+
+* Version:        2022.1 (Build 3526262 on Mon Apr 18 15:48:16 MDT 2022)
+* Project:        AES_Power_Monitor
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  4.681 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |       18|       34|  0.180 us|  0.340 us|   18|   34|       no|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-------------------+---------+---------+----------+-----------+-----------+---------+----------+
+        |                   |  Latency (cycles) | Iteration|  Initiation Interval  |   Trip  |          |
+        |     Loop Name     |   min   |   max   |  Latency |  achieved |   target  |  Count  | Pipelined|
+        +-------------------+---------+---------+----------+-----------+-----------+---------+----------+
+        |- VITIS_LOOP_70_2  |       16|       32|         1|          1|          1|  16 ~ 32|       yes|
+        +-------------------+---------+---------+----------+-----------+-----------+---------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-----+--------+-------+-----+
+|       Name      | BRAM_18K| DSP |   FF   |  LUT  | URAM|
++-----------------+---------+-----+--------+-------+-----+
+|DSP              |        -|    -|       -|      -|    -|
+|Expression       |        -|    -|       0|     28|    -|
+|FIFO             |        -|    -|       -|      -|    -|
+|Instance         |        -|    -|       -|      -|    -|
+|Memory           |        -|    -|       -|      -|    -|
+|Multiplexer      |        -|    -|       -|     36|    -|
+|Register         |        -|    -|       8|      -|    -|
++-----------------+---------+-----+--------+-------+-----+
+|Total            |        0|    0|       8|     64|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Available        |      280|  220|  106400|  53200|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Utilization (%)  |        0|    0|      ~0|     ~0|    0|
++-----------------+---------+-----+--------+-------+-----+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +----------------------------------+----------+----+---+----+------------+------------+
+    |           Variable Name          | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +----------------------------------+----------+----+---+----+------------+------------+
+    |add_ln70_fu_129_p2                |         +|   0|  0|  14|           6|           1|
+    |ap_condition_132                  |       and|   0|  0|   2|           1|           1|
+    |icmp_ln70_fu_123_p2               |      icmp|   0|  0|  10|           6|           6|
+    |ap_block_state1_pp0_stage0_iter0  |        or|   0|  0|   2|           1|           1|
+    +----------------------------------+----------+----+---+----+------------+------------+
+    |Total                             |          |   0|  0|  28|          14|           9|
+    +----------------------------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    +-------------------------------+----+-----------+-----+-----------+
+    |              Name             | LUT| Input Size| Bits| Total Bits|
+    +-------------------------------+----+-----------+-----+-----------+
+    |ap_done_int                    |   9|          2|    1|          2|
+    |ap_sig_allocacmp_i_31          |   9|          2|    6|         12|
+    |i_fu_68                        |   9|          2|    6|         12|
+    |key_and_plaintext_TDATA_blk_n  |   9|          2|    1|          2|
+    +-------------------------------+----+-----------+-----+-----------+
+    |Total                          |  36|          8|   14|         28|
+    +-------------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +-------------+---+----+-----+-----------+
+    |     Name    | FF| LUT| Bits| Const Bits|
+    +-------------+---+----+-----+-----------+
+    |ap_CS_fsm    |  1|   0|    1|          0|
+    |ap_done_reg  |  1|   0|    1|          0|
+    |i_fu_68      |  6|   0|    6|          0|
+    +-------------+---+----+-----+-----------+
+    |Total        |  8|   0|    8|          0|
+    +-------------+---+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++--------------------------+-----+-----+------------+------------------------------+--------------+
+|         RTL Ports        | Dir | Bits|  Protocol  |         Source Object        |    C Type    |
++--------------------------+-----+-----+------------+------------------------------+--------------+
+|ap_clk                    |   in|    1|  ap_ctrl_hs|  aes_Pipeline_VITIS_LOOP_70_2|  return value|
+|ap_rst                    |   in|    1|  ap_ctrl_hs|  aes_Pipeline_VITIS_LOOP_70_2|  return value|
+|ap_start                  |   in|    1|  ap_ctrl_hs|  aes_Pipeline_VITIS_LOOP_70_2|  return value|
+|ap_done                   |  out|    1|  ap_ctrl_hs|  aes_Pipeline_VITIS_LOOP_70_2|  return value|
+|ap_idle                   |  out|    1|  ap_ctrl_hs|  aes_Pipeline_VITIS_LOOP_70_2|  return value|
+|ap_ready                  |  out|    1|  ap_ctrl_hs|  aes_Pipeline_VITIS_LOOP_70_2|  return value|
+|key_and_plaintext_TVALID  |   in|    1|        axis|    key_and_plaintext_V_data_V|       pointer|
+|key_and_plaintext_TDATA   |   in|    8|        axis|    key_and_plaintext_V_data_V|       pointer|
+|cipherkey_size            |   in|    6|     ap_none|                cipherkey_size|        scalar|
+|key_and_plaintext_TREADY  |  out|    1|        axis|    key_and_plaintext_V_dest_V|       pointer|
+|key_and_plaintext_TDEST   |   in|    1|        axis|    key_and_plaintext_V_dest_V|       pointer|
+|key_and_plaintext_TKEEP   |   in|    1|        axis|    key_and_plaintext_V_keep_V|       pointer|
+|key_and_plaintext_TSTRB   |   in|    1|        axis|    key_and_plaintext_V_strb_V|       pointer|
+|key_and_plaintext_TUSER   |   in|    1|        axis|    key_and_plaintext_V_user_V|       pointer|
+|key_and_plaintext_TLAST   |   in|    1|        axis|    key_and_plaintext_V_last_V|       pointer|
+|key_and_plaintext_TID     |   in|    1|        axis|      key_and_plaintext_V_id_V|       pointer|
+|key_array                 |   in|   11|     ap_none|                     key_array|        scalar|
+|key_array128_address0     |  out|   11|   ap_memory|                  key_array128|         array|
+|key_array128_ce0          |  out|    1|   ap_memory|                  key_array128|         array|
+|key_array128_we0          |  out|    1|   ap_memory|                  key_array128|         array|
+|key_array128_d0           |  out|    8|   ap_memory|                  key_array128|         array|
++--------------------------+-----+-----+------------+------------------------------+--------------+
+

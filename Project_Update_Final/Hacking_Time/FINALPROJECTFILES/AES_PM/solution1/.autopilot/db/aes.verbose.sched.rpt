@@ -1,0 +1,433 @@
+
+
+================================================================
+== Vitis HLS Report for 'aes'
+================================================================
+* Date:           Thu Apr 25 11:55:45 2024
+
+* Version:        2022.1 (Build 3526262 on Mon Apr 18 15:48:16 MDT 2022)
+* Project:        AES_PM
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  7.164 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+-----------+-----+------+---------+
+    |  Latency (cycles) |  Latency (absolute)  |  Interval  | Pipeline|
+    |   min   |   max   |    min   |    max    | min |  max |   Type  |
+    +---------+---------+----------+-----------+-----+------+---------+
+    |       84|     7379|  0.840 us|  73.790 us|   85|  7380|       no|
+    +---------+---------+----------+-----------+-----+------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-------------------+---------+---------+-----------+-----------+-----------+------+----------+
+        |                   |  Latency (cycles) | Iteration |  Initiation Interval  | Trip |          |
+        |     Loop Name     |   min   |   max   |  Latency  |  achieved |   target  | Count| Pipelined|
+        +-------------------+---------+---------+-----------+-----------+-----------+------+----------+
+        |- VITIS_LOOP_61_1  |      104|     7294|  84 ~ 7274|          -|          -|     1|        no|
+        +-------------------+---------+---------+-----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 28
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 
+4 --> 5 
+5 --> 6 
+6 --> 28 7 
+7 --> 8 
+8 --> 9 
+9 --> 10 
+10 --> 11 
+11 --> 12 
+12 --> 13 17 
+13 --> 14 
+14 --> 15 
+15 --> 16 
+16 --> 17 
+17 --> 18 23 
+18 --> 19 
+19 --> 20 
+20 --> 21 
+21 --> 22 
+22 --> 23 
+23 --> 24 
+24 --> 25 
+25 --> 26 
+26 --> 27 
+27 --> 7 28 
+28 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 0.00>
+ST_1 : Operation 29 [1/1] (0.00ns)   --->   "%tmp_dest_V_loc = alloca i64 1"   --->   Operation 29 'alloca' 'tmp_dest_V_loc' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 30 [1/1] (0.00ns)   --->   "%tmp_id_V_loc = alloca i64 1"   --->   Operation 30 'alloca' 'tmp_id_V_loc' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 31 [1/1] (0.00ns)   --->   "%p_4_0_0_0115_phi_loc = alloca i64 1"   --->   Operation 31 'alloca' 'p_4_0_0_0115_phi_loc' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 32 [1/1] (0.00ns)   --->   "%tmp_user_V_loc = alloca i64 1"   --->   Operation 32 'alloca' 'tmp_user_V_loc' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 33 [1/1] (0.00ns)   --->   "%tmp_strb_V_loc = alloca i64 1"   --->   Operation 33 'alloca' 'tmp_strb_V_loc' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 34 [1/1] (0.00ns)   --->   "%tmp_keep_V_loc = alloca i64 1"   --->   Operation 34 'alloca' 'tmp_keep_V_loc' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 35 [1/1] (0.00ns)   --->   "%key_array128 = alloca i64 1"   --->   Operation 35 'alloca' 'key_array128' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 36 [1/1] (0.00ns)   --->   "%expandedKey = alloca i64 1" [Downloads/aes_axis.cpp:686]   --->   Operation 36 'alloca' 'expandedKey' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 37 [1/1] (0.00ns)   --->   "%expandedKey_1 = alloca i64 1" [Downloads/aes_axis.cpp:686]   --->   Operation 37 'alloca' 'expandedKey_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 38 [1/1] (0.00ns)   --->   "%block = alloca i64 1" [Downloads/aes_axis.cpp:689]   --->   Operation 38 'alloca' 'block' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 39 [1/1] (0.00ns)   --->   "%expandedKey_2 = alloca i64 1" [Downloads/aes_axis.cpp:483]   --->   Operation 39 'alloca' 'expandedKey_2' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 40 [1/1] (0.00ns)   --->   "%expandedKey_3 = alloca i64 1" [Downloads/aes_axis.cpp:483]   --->   Operation 40 'alloca' 'expandedKey_3' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 41 [1/1] (0.00ns)   --->   "%block_1 = alloca i64 1" [Downloads/aes_axis.cpp:486]   --->   Operation 41 'alloca' 'block_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 42 [1/1] (0.00ns)   --->   "%plaintext_array = alloca i64 1" [Downloads/aes_axis.cpp:55]   --->   Operation 42 'alloca' 'plaintext_array' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 43 [1/1] (0.00ns)   --->   "%ciphertext_array = alloca i64 1" [Downloads/aes_axis.cpp:56]   --->   Operation 43 'alloca' 'ciphertext_array' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 44 [1/1] (0.00ns)   --->   "%decryptedtext_array = alloca i64 1" [Downloads/aes_axis.cpp:57]   --->   Operation 44 'alloca' 'decryptedtext_array' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 45 [2/2] (0.00ns)   --->   "%call_ln0 = call void @aes_Pipeline_1, i8 %key_array128"   --->   Operation 45 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 2 <SV = 1> <Delay = 0.00>
+ST_2 : Operation 46 [1/2] (0.00ns)   --->   "%call_ln0 = call void @aes_Pipeline_1, i8 %key_array128"   --->   Operation 46 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 3 <SV = 2> <Delay = 0.00>
+ST_3 : Operation 47 [2/2] (0.00ns)   --->   "%call_ln0 = call void @aes_Pipeline_2, i8 %key_array128"   --->   Operation 47 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 4 <SV = 3> <Delay = 0.00>
+ST_4 : Operation 48 [1/2] (0.00ns)   --->   "%call_ln0 = call void @aes_Pipeline_2, i8 %key_array128"   --->   Operation 48 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 5 <SV = 4> <Delay = 0.00>
+ST_5 : Operation 49 [2/2] (0.00ns)   --->   "%call_ln0 = call void @aes_Pipeline_3, i8 %key_array128"   --->   Operation 49 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 6 <SV = 5> <Delay = 2.70>
+ST_6 : Operation 50 [1/1] (1.00ns)   --->   "%mode_read = read i32 @_ssdm_op_Read.s_axilite.i32, i32 %mode"   --->   Operation 50 'read' 'mode_read' <Predicate = true> <Delay = 1.00> <CoreInst = "s_axilite">   --->   Core 114 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_6 : Operation 51 [1/1] (0.00ns)   --->   "%spectopmodule_ln6 = spectopmodule void @_ssdm_op_SpecTopModule, void @empty" [Downloads/aes_axis.cpp:6]   --->   Operation 51 'spectopmodule' 'spectopmodule_ln6' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 52 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i8 %key_and_plaintext_V_data_V, i1 %key_and_plaintext_V_keep_V, i1 %key_and_plaintext_V_strb_V, i1 %key_and_plaintext_V_user_V, i1 %key_and_plaintext_V_last_V, i1 %key_and_plaintext_V_id_V, i1 %key_and_plaintext_V_dest_V, void @empty_14, i32 1, i32 1, void @empty_15, i32 0, i32 0, void @empty_16, void @empty_16, void @empty_16, i32 0, i32 0, i32 0, i32 0, void @empty_16, void @empty_16, i32 4294967295, i32 0"   --->   Operation 52 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 53 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i8 %key_and_plaintext_V_data_V"   --->   Operation 53 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 54 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i1 %key_and_plaintext_V_keep_V"   --->   Operation 54 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 55 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i1 %key_and_plaintext_V_strb_V"   --->   Operation 55 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 56 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i1 %key_and_plaintext_V_user_V"   --->   Operation 56 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 57 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i1 %key_and_plaintext_V_last_V"   --->   Operation 57 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 58 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i1 %key_and_plaintext_V_id_V"   --->   Operation 58 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 59 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i1 %key_and_plaintext_V_dest_V"   --->   Operation 59 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 60 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i8 %ciphertext_and_decryptedtext_V_data_V, i1 %ciphertext_and_decryptedtext_V_keep_V, i1 %ciphertext_and_decryptedtext_V_strb_V, i1 %ciphertext_and_decryptedtext_V_user_V, i1 %ciphertext_and_decryptedtext_V_last_V, i1 %ciphertext_and_decryptedtext_V_id_V, i1 %ciphertext_and_decryptedtext_V_dest_V, void @empty_14, i32 1, i32 1, void @empty_15, i32 0, i32 0, void @empty_16, void @empty_16, void @empty_16, i32 0, i32 0, i32 0, i32 0, void @empty_16, void @empty_16, i32 4294967295, i32 0"   --->   Operation 60 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 61 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i8 %ciphertext_and_decryptedtext_V_data_V"   --->   Operation 61 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 62 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i1 %ciphertext_and_decryptedtext_V_keep_V"   --->   Operation 62 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 63 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i1 %ciphertext_and_decryptedtext_V_strb_V"   --->   Operation 63 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 64 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i1 %ciphertext_and_decryptedtext_V_user_V"   --->   Operation 64 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 65 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i1 %ciphertext_and_decryptedtext_V_last_V"   --->   Operation 65 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 66 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i1 %ciphertext_and_decryptedtext_V_id_V"   --->   Operation 66 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 67 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i1 %ciphertext_and_decryptedtext_V_dest_V"   --->   Operation 67 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 68 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %mode"   --->   Operation 68 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 69 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %mode, void @empty_19, i32 0, i32 0, void @empty_16, i32 0, i32 0, void @empty_20, void @empty_21, void @empty_16, i32 0, i32 0, i32 0, i32 0, void @empty_16, void @empty_16, i32 4294967295, i32 0"   --->   Operation 69 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 70 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %mode, void @empty_22, i32 0, i32 0, void @empty_16, i32 0, i32 0, void @empty_16, void @empty_16, void @empty_16, i32 0, i32 0, i32 0, i32 0, void @empty_16, void @empty_16, i32 4294967295, i32 0"   --->   Operation 70 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 71 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i8 %enable_in"   --->   Operation 71 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 72 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i8 %enable_in, void @empty_19, i32 0, i32 0, void @empty_16, i32 0, i32 0, void @empty_23, void @empty_21, void @empty_16, i32 0, i32 0, i32 0, i32 0, void @empty_16, void @empty_16, i32 4294967295, i32 0"   --->   Operation 72 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 73 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i8 %enable_in, void @empty_22, i32 0, i32 0, void @empty_16, i32 0, i32 0, void @empty_16, void @empty_16, void @empty_16, i32 0, i32 0, i32 0, i32 0, void @empty_16, void @empty_16, i32 4294967295, i32 0"   --->   Operation 73 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 74 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i8 %enable_out"   --->   Operation 74 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 75 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i8 %enable_out, void @empty_19, i32 0, i32 0, void @empty_16, i32 0, i32 0, void @empty_20, void @empty_24, void @empty_16, i32 0, i32 0, i32 0, i32 0, void @empty_16, void @empty_16, i32 4294967295, i32 0"   --->   Operation 75 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 76 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i8 %enable_out, void @empty_22, i32 0, i32 0, void @empty_16, i32 0, i32 0, void @empty_16, void @empty_16, void @empty_16, i32 0, i32 0, i32 0, i32 0, void @empty_16, void @empty_16, i32 4294967295, i32 0"   --->   Operation 76 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 77 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %power_reading_in"   --->   Operation 77 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 78 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %power_reading_in, void @empty_19, i32 0, i32 0, void @empty_16, i32 0, i32 0, void @empty_20, void @empty_25, void @empty_16, i32 0, i32 0, i32 0, i32 0, void @empty_16, void @empty_16, i32 4294967295, i32 0"   --->   Operation 78 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 79 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %power_reading_in, void @empty_22, i32 0, i32 0, void @empty_16, i32 0, i32 0, void @empty_16, void @empty_16, void @empty_16, i32 0, i32 0, i32 0, i32 0, void @empty_16, void @empty_16, i32 4294967295, i32 0"   --->   Operation 79 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 80 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %power_reading_out"   --->   Operation 80 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 81 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %power_reading_out, void @empty_19, i32 0, i32 0, void @empty_16, i32 0, i32 0, void @empty_23, void @empty_24, void @empty_16, i32 0, i32 0, i32 0, i32 0, void @empty_16, void @empty_16, i32 4294967295, i32 0"   --->   Operation 81 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 82 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %power_reading_out, void @empty_22, i32 0, i32 0, void @empty_16, i32 0, i32 0, void @empty_16, void @empty_16, void @empty_16, i32 0, i32 0, i32 0, i32 0, void @empty_16, void @empty_16, i32 4294967295, i32 0"   --->   Operation 82 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 83 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 0, void @empty_19, i32 0, i32 0, void @empty_16, i32 0, i32 0, void @empty_23, void @empty_16, void @empty_16, i32 0, i32 0, i32 0, i32 0, void @empty_16, void @empty_16, i32 4294967295, i32 0"   --->   Operation 83 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 84 [1/2] (0.00ns)   --->   "%call_ln0 = call void @aes_Pipeline_3, i8 %key_array128"   --->   Operation 84 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_6 : Operation 85 [1/1] (1.70ns)   --->   "%switch_ln38 = switch i32 %mode_read, void %cleanup, i32 128, void %sw.epilog, i32 192, void %sw.bb1, i32 256, void %sw.bb3" [Downloads/aes_axis.cpp:38]   --->   Operation 85 'switch' 'switch_ln38' <Predicate = true> <Delay = 1.70>
+ST_6 : Operation 86 [1/1] (1.70ns)   --->   "%br_ln51 = br void %sw.epilog" [Downloads/aes_axis.cpp:51]   --->   Operation 86 'br' 'br_ln51' <Predicate = (mode_read == 256)> <Delay = 1.70>
+ST_6 : Operation 87 [1/1] (1.70ns)   --->   "%br_ln47 = br void %sw.epilog" [Downloads/aes_axis.cpp:47]   --->   Operation 87 'br' 'br_ln47' <Predicate = (mode_read == 192)> <Delay = 1.70>
+ST_6 : Operation 88 [1/1] (0.00ns)   --->   "%key_array = phi i11 1024, void %sw.bb3, i11 512, void %sw.bb1, i11 0, void %entry"   --->   Operation 88 'phi' 'key_array' <Predicate = (mode_read == 256) | (mode_read == 192) | (mode_read == 128)> <Delay = 0.00>
+ST_6 : Operation 89 [1/1] (0.00ns)   --->   "%cipherkey_size = phi i6 32, void %sw.bb3, i6 24, void %sw.bb1, i6 16, void %entry"   --->   Operation 89 'phi' 'cipherkey_size' <Predicate = (mode_read == 256) | (mode_read == 192) | (mode_read == 128)> <Delay = 0.00>
+ST_6 : Operation 90 [1/1] (0.00ns)   --->   "%br_ln61 = br void %while.body" [Downloads/aes_axis.cpp:61]   --->   Operation 90 'br' 'br_ln61' <Predicate = (mode_read == 256) | (mode_read == 192) | (mode_read == 128)> <Delay = 0.00>
+
+State 7 <SV = 6> <Delay = 4.68>
+ST_7 : Operation 91 [1/1] (0.00ns)   --->   "%empty = wait i32 @_ssdm_op_Wait"   --->   Operation 91 'wait' 'empty' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 92 [2/2] (4.68ns)   --->   "%call_ln0 = call void @aes_Pipeline_cipherkeyLoop, i6 %cipherkey_size, i8 %key_and_plaintext_V_data_V, i1 %key_and_plaintext_V_keep_V, i1 %key_and_plaintext_V_strb_V, i1 %key_and_plaintext_V_user_V, i1 %key_and_plaintext_V_last_V, i1 %key_and_plaintext_V_id_V, i1 %key_and_plaintext_V_dest_V, i11 %key_array, i8 %key_array128"   --->   Operation 92 'call' 'call_ln0' <Predicate = true> <Delay = 4.68> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 8 <SV = 7> <Delay = 0.00>
+ST_8 : Operation 93 [1/2] (0.00ns)   --->   "%call_ln0 = call void @aes_Pipeline_cipherkeyLoop, i6 %cipherkey_size, i8 %key_and_plaintext_V_data_V, i1 %key_and_plaintext_V_keep_V, i1 %key_and_plaintext_V_strb_V, i1 %key_and_plaintext_V_user_V, i1 %key_and_plaintext_V_last_V, i1 %key_and_plaintext_V_id_V, i1 %key_and_plaintext_V_dest_V, i11 %key_array, i8 %key_array128"   --->   Operation 93 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 9 <SV = 8> <Delay = 0.00>
+ST_9 : Operation 94 [1/1] (0.00ns)   --->   "%empty_43 = wait i32 @_ssdm_op_Wait"   --->   Operation 94 'wait' 'empty_43' <Predicate = true> <Delay = 0.00>
+
+State 10 <SV = 9> <Delay = 2.32>
+ST_10 : Operation 95 [1/1] (0.00ns)   --->   "%empty_44 = wait i32 @_ssdm_op_Wait"   --->   Operation 95 'wait' 'empty_44' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 96 [2/2] (2.32ns)   --->   "%call_ln0 = call void @aes_Pipeline_plaintextLoop, i8 %key_and_plaintext_V_data_V, i1 %key_and_plaintext_V_keep_V, i1 %key_and_plaintext_V_strb_V, i1 %key_and_plaintext_V_user_V, i1 %key_and_plaintext_V_last_V, i1 %key_and_plaintext_V_id_V, i1 %key_and_plaintext_V_dest_V, i8 %plaintext_array, i1 %tmp_keep_V_loc, i1 %tmp_strb_V_loc, i1 %tmp_user_V_loc, i1 %p_4_0_0_0115_phi_loc, i1 %tmp_id_V_loc, i1 %tmp_dest_V_loc"   --->   Operation 96 'call' 'call_ln0' <Predicate = true> <Delay = 2.32> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 11 <SV = 10> <Delay = 2.95>
+ST_11 : Operation 97 [1/2] (2.95ns)   --->   "%call_ln0 = call void @aes_Pipeline_plaintextLoop, i8 %key_and_plaintext_V_data_V, i1 %key_and_plaintext_V_keep_V, i1 %key_and_plaintext_V_strb_V, i1 %key_and_plaintext_V_user_V, i1 %key_and_plaintext_V_last_V, i1 %key_and_plaintext_V_id_V, i1 %key_and_plaintext_V_dest_V, i8 %plaintext_array, i1 %tmp_keep_V_loc, i1 %tmp_strb_V_loc, i1 %tmp_user_V_loc, i1 %p_4_0_0_0115_phi_loc, i1 %tmp_id_V_loc, i1 %tmp_dest_V_loc"   --->   Operation 97 'call' 'call_ln0' <Predicate = true> <Delay = 2.95> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 12 <SV = 11> <Delay = 3.29>
+ST_12 : Operation 98 [1/1] (0.00ns)   --->   "%speclooptripcount_ln66 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64 1, i64 1, i64 1" [Downloads/aes_axis.cpp:66]   --->   Operation 98 'speclooptripcount' 'speclooptripcount_ln66' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 99 [1/1] (0.00ns)   --->   "%specloopname_ln58 = specloopname void @_ssdm_op_SpecLoopName, void @empty_8" [Downloads/aes_axis.cpp:58]   --->   Operation 99 'specloopname' 'specloopname_ln58' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 100 [1/1] (0.00ns)   --->   "%tmp_keep_V_loc_load = load i1 %tmp_keep_V_loc"   --->   Operation 100 'load' 'tmp_keep_V_loc_load' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 101 [1/1] (0.00ns)   --->   "%tmp_strb_V_loc_load = load i1 %tmp_strb_V_loc"   --->   Operation 101 'load' 'tmp_strb_V_loc_load' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 102 [1/1] (0.00ns)   --->   "%tmp_user_V_loc_load = load i1 %tmp_user_V_loc"   --->   Operation 102 'load' 'tmp_user_V_loc_load' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 103 [1/1] (0.00ns)   --->   "%p_4_0_0_0115_phi_loc_load = load i1 %p_4_0_0_0115_phi_loc"   --->   Operation 103 'load' 'p_4_0_0_0115_phi_loc_load' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 104 [1/1] (0.00ns)   --->   "%tmp_id_V_loc_load = load i1 %tmp_id_V_loc"   --->   Operation 104 'load' 'tmp_id_V_loc_load' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 105 [1/1] (0.00ns)   --->   "%tmp_dest_V_loc_load = load i1 %tmp_dest_V_loc"   --->   Operation 105 'load' 'tmp_dest_V_loc_load' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 106 [1/1] (0.00ns)   --->   "%empty_45 = wait i32 @_ssdm_op_Wait"   --->   Operation 106 'wait' 'empty_45' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 107 [1/1] (1.70ns)   --->   "%switch_ln491 = switch i6 %cipherkey_size, void %_Z11aes_encryptPhS_S_i.exit, i6 16, void %sw.epilog.i, i6 24, void %sw.bb1.i, i6 32, void %sw.bb2.i" [Downloads/aes_axis.cpp:491]   --->   Operation 107 'switch' 'switch_ln491' <Predicate = true> <Delay = 1.70>
+ST_12 : Operation 108 [1/1] (1.70ns)   --->   "%br_ln501 = br void %sw.epilog.i" [Downloads/aes_axis.cpp:501]   --->   Operation 108 'br' 'br_ln501' <Predicate = (cipherkey_size == 32)> <Delay = 1.70>
+ST_12 : Operation 109 [1/1] (1.70ns)   --->   "%br_ln498 = br void %sw.epilog.i" [Downloads/aes_axis.cpp:498]   --->   Operation 109 'br' 'br_ln498' <Predicate = (cipherkey_size == 24)> <Delay = 1.70>
+ST_12 : Operation 110 [1/1] (0.00ns)   --->   "%nbrRounds = phi i4 14, void %sw.bb2.i, i4 12, void %sw.bb1.i, i4 10, void %while.body"   --->   Operation 110 'phi' 'nbrRounds' <Predicate = (cipherkey_size == 32) | (cipherkey_size == 24) | (cipherkey_size == 16)> <Delay = 0.00>
+ST_12 : Operation 111 [2/2] (0.00ns)   --->   "%call_ln0 = call void @aes_Pipeline_aesEncryptLoop1_aesEncryptLoop2, i8 %plaintext_array, i8 %block_1"   --->   Operation 111 'call' 'call_ln0' <Predicate = (cipherkey_size == 32) | (cipherkey_size == 24) | (cipherkey_size == 16)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_12 : Operation 112 [1/1] (0.00ns)   --->   "%shl_ln = bitconcatenate i8 @_ssdm_op_BitConcatenate.i8.i4.i4, i4 %nbrRounds, i4 0" [Downloads/aes_axis.cpp:507]   --->   Operation 112 'bitconcatenate' 'shl_ln' <Predicate = (cipherkey_size == 32) | (cipherkey_size == 24) | (cipherkey_size == 16)> <Delay = 0.00>
+ST_12 : Operation 113 [1/1] (0.00ns)   --->   "%expandedKeySize = or i8 %shl_ln, i8 16" [Downloads/aes_axis.cpp:507]   --->   Operation 113 'or' 'expandedKeySize' <Predicate = (cipherkey_size == 32) | (cipherkey_size == 24) | (cipherkey_size == 16)> <Delay = 0.00>
+ST_12 : Operation 114 [2/2] (1.58ns)   --->   "%call_ln529 = call void @expandKey, i8 %expandedKey_2, i8 %expandedKey_3, i8 %key_array128, i11 %key_array, i6 %cipherkey_size, i8 %expandedKeySize, i8 %sbox, i8 %Rcon" [Downloads/aes_axis.cpp:529]   --->   Operation 114 'call' 'call_ln529' <Predicate = (cipherkey_size == 32) | (cipherkey_size == 24) | (cipherkey_size == 16)> <Delay = 1.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 13 <SV = 12> <Delay = 0.00>
+ST_13 : Operation 115 [1/2] (0.00ns)   --->   "%call_ln0 = call void @aes_Pipeline_aesEncryptLoop1_aesEncryptLoop2, i8 %plaintext_array, i8 %block_1"   --->   Operation 115 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_13 : Operation 116 [1/2] (0.00ns)   --->   "%call_ln529 = call void @expandKey, i8 %expandedKey_2, i8 %expandedKey_3, i8 %key_array128, i11 %key_array, i6 %cipherkey_size, i8 %expandedKeySize, i8 %sbox, i8 %Rcon" [Downloads/aes_axis.cpp:529]   --->   Operation 116 'call' 'call_ln529' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 14 <SV = 13> <Delay = 2.89>
+ST_14 : Operation 117 [2/2] (2.89ns)   --->   "%call_ln532 = call void @aes_main, i8 %block_1, i8 %expandedKey_2, i8 %expandedKey_3, i4 %nbrRounds, i8 %sbox" [Downloads/aes_axis.cpp:532]   --->   Operation 117 'call' 'call_ln532' <Predicate = true> <Delay = 2.89> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 15 <SV = 14> <Delay = 0.00>
+ST_15 : Operation 118 [1/2] (0.00ns)   --->   "%call_ln532 = call void @aes_main, i8 %block_1, i8 %expandedKey_2, i8 %expandedKey_3, i4 %nbrRounds, i8 %sbox" [Downloads/aes_axis.cpp:532]   --->   Operation 118 'call' 'call_ln532' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 16 <SV = 15> <Delay = 0.00>
+ST_16 : Operation 119 [2/2] (0.00ns)   --->   "%call_ln0 = call void @aes_Pipeline_aesEncryptLoop3_aesEncryptLoop4, i8 %block_1, i8 %ciphertext_array"   --->   Operation 119 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 17 <SV = 16> <Delay = 1.70>
+ST_17 : Operation 120 [1/2] (0.00ns)   --->   "%call_ln0 = call void @aes_Pipeline_aesEncryptLoop3_aesEncryptLoop4, i8 %block_1, i8 %ciphertext_array"   --->   Operation 120 'call' 'call_ln0' <Predicate = (cipherkey_size == 32) | (cipherkey_size == 24) | (cipherkey_size == 16)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_17 : Operation 121 [1/1] (0.00ns)   --->   "%br_ln0 = br void %_Z11aes_encryptPhS_S_i.exit"   --->   Operation 121 'br' 'br_ln0' <Predicate = (cipherkey_size == 32) | (cipherkey_size == 24) | (cipherkey_size == 16)> <Delay = 0.00>
+ST_17 : Operation 122 [1/1] (1.70ns)   --->   "%switch_ln694 = switch i6 %cipherkey_size, void %_Z11aes_decryptPhS_S_i.exit, i6 16, void %sw.epilog.i343, i6 24, void %sw.bb1.i338, i6 32, void %sw.bb2.i339" [Downloads/aes_axis.cpp:694]   --->   Operation 122 'switch' 'switch_ln694' <Predicate = true> <Delay = 1.70>
+ST_17 : Operation 123 [1/1] (1.70ns)   --->   "%br_ln704 = br void %sw.epilog.i343" [Downloads/aes_axis.cpp:704]   --->   Operation 123 'br' 'br_ln704' <Predicate = (cipherkey_size == 32)> <Delay = 1.70>
+ST_17 : Operation 124 [1/1] (1.70ns)   --->   "%br_ln701 = br void %sw.epilog.i343" [Downloads/aes_axis.cpp:701]   --->   Operation 124 'br' 'br_ln701' <Predicate = (cipherkey_size == 24)> <Delay = 1.70>
+
+State 18 <SV = 17> <Delay = 1.58>
+ST_18 : Operation 125 [1/1] (0.00ns)   --->   "%nbrRounds_1 = phi i4 14, void %sw.bb2.i339, i4 12, void %sw.bb1.i338, i4 10, void %_Z11aes_encryptPhS_S_i.exit"   --->   Operation 125 'phi' 'nbrRounds_1' <Predicate = true> <Delay = 0.00>
+ST_18 : Operation 126 [2/2] (0.00ns)   --->   "%call_ln0 = call void @aes_Pipeline_aesDecryptLoop1_aesDecryptLoop2, i8 %ciphertext_array, i8 %block"   --->   Operation 126 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_18 : Operation 127 [1/1] (0.00ns)   --->   "%shl_ln3 = bitconcatenate i8 @_ssdm_op_BitConcatenate.i8.i4.i4, i4 %nbrRounds_1, i4 0" [Downloads/aes_axis.cpp:710]   --->   Operation 127 'bitconcatenate' 'shl_ln3' <Predicate = true> <Delay = 0.00>
+ST_18 : Operation 128 [1/1] (0.00ns)   --->   "%expandedKeySize_1 = or i8 %shl_ln3, i8 16" [Downloads/aes_axis.cpp:710]   --->   Operation 128 'or' 'expandedKeySize_1' <Predicate = true> <Delay = 0.00>
+ST_18 : Operation 129 [2/2] (1.58ns)   --->   "%call_ln733 = call void @expandKey, i8 %expandedKey, i8 %expandedKey_1, i8 %key_array128, i11 %key_array, i6 %cipherkey_size, i8 %expandedKeySize_1, i8 %sbox, i8 %Rcon" [Downloads/aes_axis.cpp:733]   --->   Operation 129 'call' 'call_ln733' <Predicate = true> <Delay = 1.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 19 <SV = 18> <Delay = 0.00>
+ST_19 : Operation 130 [1/2] (0.00ns)   --->   "%call_ln0 = call void @aes_Pipeline_aesDecryptLoop1_aesDecryptLoop2, i8 %ciphertext_array, i8 %block"   --->   Operation 130 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_19 : Operation 131 [1/2] (0.00ns)   --->   "%call_ln733 = call void @expandKey, i8 %expandedKey, i8 %expandedKey_1, i8 %key_array128, i11 %key_array, i6 %cipherkey_size, i8 %expandedKeySize_1, i8 %sbox, i8 %Rcon" [Downloads/aes_axis.cpp:733]   --->   Operation 131 'call' 'call_ln733' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 20 <SV = 19> <Delay = 4.23>
+ST_20 : Operation 132 [2/2] (4.23ns)   --->   "%call_ln736 = call void @aes_invMain, i8 %block, i8 %expandedKey, i8 %expandedKey_1, i4 %nbrRounds_1, i8 %rsbox" [Downloads/aes_axis.cpp:736]   --->   Operation 132 'call' 'call_ln736' <Predicate = true> <Delay = 4.23> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 21 <SV = 20> <Delay = 0.00>
+ST_21 : Operation 133 [1/2] (0.00ns)   --->   "%call_ln736 = call void @aes_invMain, i8 %block, i8 %expandedKey, i8 %expandedKey_1, i4 %nbrRounds_1, i8 %rsbox" [Downloads/aes_axis.cpp:736]   --->   Operation 133 'call' 'call_ln736' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 22 <SV = 21> <Delay = 0.00>
+ST_22 : Operation 134 [2/2] (0.00ns)   --->   "%call_ln0 = call void @aes_Pipeline_aesDecryptLoop3_aesDecryptLoop4, i8 %block, i8 %decryptedtext_array"   --->   Operation 134 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 23 <SV = 22> <Delay = 0.00>
+ST_23 : Operation 135 [1/2] (0.00ns)   --->   "%call_ln0 = call void @aes_Pipeline_aesDecryptLoop3_aesDecryptLoop4, i8 %block, i8 %decryptedtext_array"   --->   Operation 135 'call' 'call_ln0' <Predicate = (cipherkey_size == 32) | (cipherkey_size == 24) | (cipherkey_size == 16)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_23 : Operation 136 [1/1] (0.00ns)   --->   "%br_ln0 = br void %_Z11aes_decryptPhS_S_i.exit"   --->   Operation 136 'br' 'br_ln0' <Predicate = (cipherkey_size == 32) | (cipherkey_size == 24) | (cipherkey_size == 16)> <Delay = 0.00>
+ST_23 : Operation 137 [1/1] (0.00ns)   --->   "%empty_46 = wait i32 @_ssdm_op_Wait"   --->   Operation 137 'wait' 'empty_46' <Predicate = true> <Delay = 0.00>
+ST_23 : Operation 138 [2/2] (0.00ns)   --->   "%call_ln0 = call void @aes_Pipeline_ciphertextLoop, i8 %ciphertext_array, i1 %tmp_keep_V_loc_load, i1 %tmp_strb_V_loc_load, i1 %tmp_user_V_loc_load, i1 %tmp_id_V_loc_load, i1 %tmp_dest_V_loc_load, i8 %ciphertext_and_decryptedtext_V_data_V, i1 %ciphertext_and_decryptedtext_V_keep_V, i1 %ciphertext_and_decryptedtext_V_strb_V, i1 %ciphertext_and_decryptedtext_V_user_V, i1 %ciphertext_and_decryptedtext_V_last_V, i1 %ciphertext_and_decryptedtext_V_id_V, i1 %ciphertext_and_decryptedtext_V_dest_V"   --->   Operation 138 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 24 <SV = 23> <Delay = 2.32>
+ST_24 : Operation 139 [1/2] (2.32ns)   --->   "%call_ln0 = call void @aes_Pipeline_ciphertextLoop, i8 %ciphertext_array, i1 %tmp_keep_V_loc_load, i1 %tmp_strb_V_loc_load, i1 %tmp_user_V_loc_load, i1 %tmp_id_V_loc_load, i1 %tmp_dest_V_loc_load, i8 %ciphertext_and_decryptedtext_V_data_V, i1 %ciphertext_and_decryptedtext_V_keep_V, i1 %ciphertext_and_decryptedtext_V_strb_V, i1 %ciphertext_and_decryptedtext_V_user_V, i1 %ciphertext_and_decryptedtext_V_last_V, i1 %ciphertext_and_decryptedtext_V_id_V, i1 %ciphertext_and_decryptedtext_V_dest_V"   --->   Operation 139 'call' 'call_ln0' <Predicate = true> <Delay = 2.32> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 25 <SV = 24> <Delay = 0.00>
+ST_25 : Operation 140 [1/1] (0.00ns)   --->   "%empty_47 = wait i32 @_ssdm_op_Wait"   --->   Operation 140 'wait' 'empty_47' <Predicate = true> <Delay = 0.00>
+
+State 26 <SV = 25> <Delay = 0.00>
+ST_26 : Operation 141 [1/1] (0.00ns)   --->   "%empty_48 = wait i32 @_ssdm_op_Wait"   --->   Operation 141 'wait' 'empty_48' <Predicate = true> <Delay = 0.00>
+ST_26 : Operation 142 [2/2] (0.00ns)   --->   "%call_ln0 = call void @aes_Pipeline_decryptedTextLoop, i8 %decryptedtext_array, i1 %tmp_keep_V_loc_load, i1 %tmp_strb_V_loc_load, i1 %tmp_user_V_loc_load, i1 %tmp_id_V_loc_load, i1 %tmp_dest_V_loc_load, i8 %ciphertext_and_decryptedtext_V_data_V, i1 %ciphertext_and_decryptedtext_V_keep_V, i1 %ciphertext_and_decryptedtext_V_strb_V, i1 %ciphertext_and_decryptedtext_V_user_V, i1 %ciphertext_and_decryptedtext_V_last_V, i1 %ciphertext_and_decryptedtext_V_id_V, i1 %ciphertext_and_decryptedtext_V_dest_V"   --->   Operation 142 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 27 <SV = 26> <Delay = 2.32>
+ST_27 : Operation 143 [1/2] (2.32ns)   --->   "%call_ln0 = call void @aes_Pipeline_decryptedTextLoop, i8 %decryptedtext_array, i1 %tmp_keep_V_loc_load, i1 %tmp_strb_V_loc_load, i1 %tmp_user_V_loc_load, i1 %tmp_id_V_loc_load, i1 %tmp_dest_V_loc_load, i8 %ciphertext_and_decryptedtext_V_data_V, i1 %ciphertext_and_decryptedtext_V_keep_V, i1 %ciphertext_and_decryptedtext_V_strb_V, i1 %ciphertext_and_decryptedtext_V_user_V, i1 %ciphertext_and_decryptedtext_V_last_V, i1 %ciphertext_and_decryptedtext_V_id_V, i1 %ciphertext_and_decryptedtext_V_dest_V"   --->   Operation 143 'call' 'call_ln0' <Predicate = true> <Delay = 2.32> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_27 : Operation 144 [1/1] (0.00ns)   --->   "%br_ln106 = br i1 %p_4_0_0_0115_phi_loc_load, void %if.end63, void %cleanup.loopexit" [Downloads/aes_axis.cpp:106]   --->   Operation 144 'br' 'br_ln106' <Predicate = true> <Delay = 0.00>
+ST_27 : Operation 145 [1/1] (0.00ns)   --->   "%br_ln61 = br void %while.body" [Downloads/aes_axis.cpp:61]   --->   Operation 145 'br' 'br_ln61' <Predicate = (!p_4_0_0_0115_phi_loc_load)> <Delay = 0.00>
+ST_27 : Operation 146 [1/1] (0.00ns)   --->   "%br_ln0 = br void %cleanup"   --->   Operation 146 'br' 'br_ln0' <Predicate = (p_4_0_0_0115_phi_loc_load)> <Delay = 0.00>
+
+State 28 <SV = 27> <Delay = 0.00>
+ST_28 : Operation 147 [1/1] (0.00ns)   --->   "%ret_ln111 = ret" [Downloads/aes_axis.cpp:111]   --->   Operation 147 'ret' 'ret_ln111' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 2.7ns.
+
+ <State 1>: 0ns
+The critical path consists of the following:
+
+ <State 2>: 0ns
+The critical path consists of the following:
+
+ <State 3>: 0ns
+The critical path consists of the following:
+
+ <State 4>: 0ns
+The critical path consists of the following:
+
+ <State 5>: 0ns
+The critical path consists of the following:
+
+ <State 6>: 2.71ns
+The critical path consists of the following:
+	s_axi read operation ('mode_read') on port 'mode' [23]  (1 ns)
+	multiplexor before 'phi' operation ('key_array') [82]  (1.71 ns)
+
+ <State 7>: 4.68ns
+The critical path consists of the following:
+	'call' operation ('call_ln0') to 'aes_Pipeline_cipherkeyLoop' [89]  (4.68 ns)
+
+ <State 8>: 0ns
+The critical path consists of the following:
+
+ <State 9>: 0ns
+The critical path consists of the following:
+
+ <State 10>: 2.32ns
+The critical path consists of the following:
+	'call' operation ('call_ln0') to 'aes_Pipeline_plaintextLoop' [92]  (2.32 ns)
+
+ <State 11>: 2.95ns
+The critical path consists of the following:
+	'call' operation ('call_ln0') to 'aes_Pipeline_plaintextLoop' [92]  (2.95 ns)
+
+ <State 12>: 3.3ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('nbrRounds') [106]  (1.71 ns)
+	'phi' operation ('nbrRounds') [106]  (0 ns)
+	'or' operation ('expandedKeySize', Downloads/aes_axis.cpp:507) [109]  (0 ns)
+	'call' operation ('call_ln529', Downloads/aes_axis.cpp:529) to 'expandKey' [110]  (1.59 ns)
+
+ <State 13>: 0ns
+The critical path consists of the following:
+
+ <State 14>: 2.89ns
+The critical path consists of the following:
+	'call' operation ('call_ln532', Downloads/aes_axis.cpp:532) to 'aes_main' [111]  (2.89 ns)
+
+ <State 15>: 0ns
+The critical path consists of the following:
+
+ <State 16>: 0ns
+The critical path consists of the following:
+
+ <State 17>: 1.71ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('nbrRounds') [121]  (1.71 ns)
+
+ <State 18>: 1.59ns
+The critical path consists of the following:
+	'phi' operation ('nbrRounds') [121]  (0 ns)
+	'or' operation ('expandedKeySize_1', Downloads/aes_axis.cpp:710) [124]  (0 ns)
+	'call' operation ('call_ln733', Downloads/aes_axis.cpp:733) to 'expandKey' [125]  (1.59 ns)
+
+ <State 19>: 0ns
+The critical path consists of the following:
+
+ <State 20>: 4.24ns
+The critical path consists of the following:
+	'call' operation ('call_ln736', Downloads/aes_axis.cpp:736) to 'aes_invMain' [126]  (4.24 ns)
+
+ <State 21>: 0ns
+The critical path consists of the following:
+
+ <State 22>: 0ns
+The critical path consists of the following:
+
+ <State 23>: 0ns
+The critical path consists of the following:
+
+ <State 24>: 2.32ns
+The critical path consists of the following:
+	'call' operation ('call_ln0') to 'aes_Pipeline_ciphertextLoop' [131]  (2.32 ns)
+
+ <State 25>: 0ns
+The critical path consists of the following:
+
+ <State 26>: 0ns
+The critical path consists of the following:
+
+ <State 27>: 2.32ns
+The critical path consists of the following:
+	'call' operation ('call_ln0') to 'aes_Pipeline_decryptedTextLoop' [134]  (2.32 ns)
+
+ <State 28>: 0ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+	State 19
+	State 20
+	State 21
+	State 22
+	State 23
+	State 24
+	State 25
+	State 26
+	State 27
+	State 28
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

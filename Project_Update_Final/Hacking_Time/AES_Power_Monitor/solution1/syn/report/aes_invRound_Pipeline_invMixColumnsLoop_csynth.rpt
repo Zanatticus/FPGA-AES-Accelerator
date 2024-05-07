@@ -1,0 +1,212 @@
+
+
+================================================================
+== Vitis HLS Report for 'aes_invRound_Pipeline_invMixColumnsLoop'
+================================================================
+* Date:           Wed Apr 17 16:02:41 2024
+
+* Version:        2022.1 (Build 3526262 on Mon Apr 18 15:48:16 MDT 2022)
+* Project:        AES_Power_Monitor
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  5.982 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |       30|       30|  0.300 us|  0.300 us|   30|   30|       no|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        +----------------------------------+-----------------------+---------+---------+----------+----------+-----+-----+---------+
+        |                                  |                       |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+        |             Instance             |         Module        |   min   |   max   |    min   |    max   | min | max |   Type  |
+        +----------------------------------+-----------------------+---------+---------+----------+----------+-----+-----+---------+
+        |grp_galois_multiplication_fu_87   |galois_multiplication  |        0|        0|      0 ns|      0 ns|    1|    1|      yes|
+        |grp_galois_multiplication_fu_94   |galois_multiplication  |        0|        0|      0 ns|      0 ns|    1|    1|      yes|
+        |grp_galois_multiplication_fu_101  |galois_multiplication  |        0|        0|      0 ns|      0 ns|    1|    1|      yes|
+        |grp_galois_multiplication_fu_108  |galois_multiplication  |        0|        0|      0 ns|      0 ns|    1|    1|      yes|
+        +----------------------------------+-----------------------+---------+---------+----------+----------+-----+-----+---------+
+
+        * Loop: 
+        +---------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |                     |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |      Loop Name      |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +---------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- invMixColumnsLoop  |       28|       28|         7|          7|          8|     4|       yes|
+        +---------------------+---------+---------+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-----+--------+-------+-----+
+|       Name      | BRAM_18K| DSP |   FF   |  LUT  | URAM|
++-----------------+---------+-----+--------+-------+-----+
+|DSP              |        -|    -|       -|      -|    -|
+|Expression       |        -|    -|       0|    120|    -|
+|FIFO             |        -|    -|       -|      -|    -|
+|Instance         |        -|    -|       0|    104|    -|
+|Memory           |        -|    -|       -|      -|    -|
+|Multiplexer      |        -|    -|       -|    283|    -|
+|Register         |        -|    -|     126|      -|    -|
++-----------------+---------+-----+--------+-------+-----+
+|Total            |        0|    0|     126|    507|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Available        |      280|  220|  106400|  53200|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Utilization (%)  |        0|    0|      ~0|     ~0|    0|
++-----------------+---------+-----+--------+-------+-----+
+
++ Detail: 
+    * Instance: 
+    +---------------------------------+-----------------------+---------+----+---+-----+-----+
+    |             Instance            |         Module        | BRAM_18K| DSP| FF| LUT | URAM|
+    +---------------------------------+-----------------------+---------+----+---+-----+-----+
+    |grp_galois_multiplication_fu_94  |galois_multiplication  |        0|   0|  0|  104|    0|
+    +---------------------------------+-----------------------+---------+----+---+-----+-----+
+    |Total                            |                       |        0|   0|  0|  104|    0|
+    +---------------------------------+-----------------------+---------+----+---+-----+-----+
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +-----------------------+----------+----+---+----+------------+------------+
+    |     Variable Name     | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +-----------------------+----------+----+---+----+------------+------------+
+    |add_ln542_fu_134_p2    |         +|   0|  0|  11|           3|           1|
+    |icmp_ln542_fu_128_p2   |      icmp|   0|  0|   9|           3|           4|
+    |xor_ln548_fu_145_p2    |       xor|   0|  0|   4|           3|           4|
+    |xor_ln572_1_fu_186_p2  |       xor|   0|  0|   8|           8|           8|
+    |xor_ln572_2_fu_181_p2  |       xor|   0|  0|   8|           8|           8|
+    |xor_ln572_fu_191_p2    |       xor|   0|  0|   8|           8|           8|
+    |xor_ln576_1_fu_197_p2  |       xor|   0|  0|   8|           8|           8|
+    |xor_ln576_2_fu_201_p2  |       xor|   0|  0|   8|           8|           8|
+    |xor_ln576_fu_207_p2    |       xor|   0|  0|   8|           8|           8|
+    |xor_ln580_1_fu_213_p2  |       xor|   0|  0|   8|           8|           8|
+    |xor_ln580_2_fu_219_p2  |       xor|   0|  0|   8|           8|           8|
+    |xor_ln580_fu_225_p2    |       xor|   0|  0|   8|           8|           8|
+    |xor_ln584_1_fu_237_p2  |       xor|   0|  0|   8|           8|           8|
+    |xor_ln584_2_fu_231_p2  |       xor|   0|  0|   8|           8|           8|
+    |xor_ln584_fu_243_p2    |       xor|   0|  0|   8|           8|           8|
+    +-----------------------+----------+----+---+----+------------+------------+
+    |Total                  |          |   0|  0| 120|         105|         105|
+    +-----------------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    +------------------------------------+----+-----------+-----+-----------+
+    |                Name                | LUT| Input Size| Bits| Total Bits|
+    +------------------------------------+----+-----------+-----+-----------+
+    |ap_NS_fsm                           |  42|          8|    1|          8|
+    |ap_done_int                         |   9|          2|    1|          2|
+    |ap_sig_allocacmp_i_13               |   9|          2|    3|          6|
+    |grp_galois_multiplication_fu_101_a  |  20|          4|    8|         32|
+    |grp_galois_multiplication_fu_101_b  |  14|          3|    4|         12|
+    |grp_galois_multiplication_fu_108_a  |  20|          4|    8|         32|
+    |grp_galois_multiplication_fu_108_b  |  14|          3|    4|         12|
+    |grp_galois_multiplication_fu_87_a   |  20|          4|    8|         32|
+    |grp_galois_multiplication_fu_87_b   |  14|          3|    4|         12|
+    |grp_galois_multiplication_fu_94_a   |  14|          3|    8|         24|
+    |grp_galois_multiplication_fu_94_b   |  20|          4|    4|         16|
+    |i_fu_42                             |   9|          2|    3|          6|
+    |state_address0                      |  25|          5|    4|         20|
+    |state_address1                      |  25|          5|    4|         20|
+    |state_d0                            |  14|          3|    8|         24|
+    |state_d1                            |  14|          3|    8|         24|
+    +------------------------------------+----+-----------+-----+-----------+
+    |Total                               | 283|         58|   80|        282|
+    +------------------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +-----------------------+---+----+-----+-----------+
+    |          Name         | FF| LUT| Bits| Const Bits|
+    +-----------------------+---+----+-----+-----------+
+    |ap_CS_fsm              |  7|   0|    7|          0|
+    |ap_done_reg            |  1|   0|    1|          0|
+    |cpy_4_reg_286          |  8|   0|    8|          0|
+    |cpy_5_reg_304          |  8|   0|    8|          0|
+    |cpy_6_reg_311          |  8|   0|    8|          0|
+    |cpy_reg_279            |  8|   0|    8|          0|
+    |i_13_reg_256           |  3|   0|    3|          0|
+    |i_fu_42                |  3|   0|    3|          0|
+    |state_addr_10_reg_292  |  3|   0|    4|          1|
+    |state_addr_11_reg_298  |  4|   0|    4|          0|
+    |state_addr_9_reg_274   |  3|   0|    4|          1|
+    |state_addr_reg_264     |  3|   0|    4|          1|
+    |tmp_13_reg_323         |  8|   0|    8|          0|
+    |tmp_14_reg_328         |  8|   0|    8|          0|
+    |tmp_15_reg_333         |  8|   0|    8|          0|
+    |tmp_s_reg_318          |  8|   0|    8|          0|
+    |xor_ln548_reg_269      |  3|   0|    3|          0|
+    |xor_ln572_reg_338      |  8|   0|    8|          0|
+    |xor_ln576_reg_343      |  8|   0|    8|          0|
+    |xor_ln580_reg_348      |  8|   0|    8|          0|
+    |xor_ln584_reg_353      |  8|   0|    8|          0|
+    +-----------------------+---+----+-----+-----------+
+    |Total                  |126|   0|  129|          3|
+    +-----------------------+---+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++------------------------------------------+-----+-----+------------+-----------------------------------------+--------------+
+|                 RTL Ports                | Dir | Bits|  Protocol  |              Source Object              |    C Type    |
++------------------------------------------+-----+-----+------------+-----------------------------------------+--------------+
+|ap_clk                                    |   in|    1|  ap_ctrl_hs|  aes_invRound_Pipeline_invMixColumnsLoop|  return value|
+|ap_rst                                    |   in|    1|  ap_ctrl_hs|  aes_invRound_Pipeline_invMixColumnsLoop|  return value|
+|ap_start                                  |   in|    1|  ap_ctrl_hs|  aes_invRound_Pipeline_invMixColumnsLoop|  return value|
+|ap_done                                   |  out|    1|  ap_ctrl_hs|  aes_invRound_Pipeline_invMixColumnsLoop|  return value|
+|ap_idle                                   |  out|    1|  ap_ctrl_hs|  aes_invRound_Pipeline_invMixColumnsLoop|  return value|
+|ap_ready                                  |  out|    1|  ap_ctrl_hs|  aes_invRound_Pipeline_invMixColumnsLoop|  return value|
+|grp_galois_multiplication_fu_329_p_din1   |  out|    8|  ap_ctrl_hs|  aes_invRound_Pipeline_invMixColumnsLoop|  return value|
+|grp_galois_multiplication_fu_329_p_din2   |  out|    4|  ap_ctrl_hs|  aes_invRound_Pipeline_invMixColumnsLoop|  return value|
+|grp_galois_multiplication_fu_329_p_dout0  |   in|    8|  ap_ctrl_hs|  aes_invRound_Pipeline_invMixColumnsLoop|  return value|
+|grp_galois_multiplication_fu_329_p_ready  |   in|    1|  ap_ctrl_hs|  aes_invRound_Pipeline_invMixColumnsLoop|  return value|
+|grp_galois_multiplication_fu_334_p_din1   |  out|    8|  ap_ctrl_hs|  aes_invRound_Pipeline_invMixColumnsLoop|  return value|
+|grp_galois_multiplication_fu_334_p_din2   |  out|    4|  ap_ctrl_hs|  aes_invRound_Pipeline_invMixColumnsLoop|  return value|
+|grp_galois_multiplication_fu_334_p_dout0  |   in|    8|  ap_ctrl_hs|  aes_invRound_Pipeline_invMixColumnsLoop|  return value|
+|grp_galois_multiplication_fu_334_p_ready  |   in|    1|  ap_ctrl_hs|  aes_invRound_Pipeline_invMixColumnsLoop|  return value|
+|grp_galois_multiplication_fu_339_p_din1   |  out|    8|  ap_ctrl_hs|  aes_invRound_Pipeline_invMixColumnsLoop|  return value|
+|grp_galois_multiplication_fu_339_p_din2   |  out|    4|  ap_ctrl_hs|  aes_invRound_Pipeline_invMixColumnsLoop|  return value|
+|grp_galois_multiplication_fu_339_p_dout0  |   in|    8|  ap_ctrl_hs|  aes_invRound_Pipeline_invMixColumnsLoop|  return value|
+|grp_galois_multiplication_fu_339_p_ready  |   in|    1|  ap_ctrl_hs|  aes_invRound_Pipeline_invMixColumnsLoop|  return value|
+|state_address0                            |  out|    4|   ap_memory|                                    state|         array|
+|state_ce0                                 |  out|    1|   ap_memory|                                    state|         array|
+|state_we0                                 |  out|    1|   ap_memory|                                    state|         array|
+|state_d0                                  |  out|    8|   ap_memory|                                    state|         array|
+|state_q0                                  |   in|    8|   ap_memory|                                    state|         array|
+|state_address1                            |  out|    4|   ap_memory|                                    state|         array|
+|state_ce1                                 |  out|    1|   ap_memory|                                    state|         array|
+|state_we1                                 |  out|    1|   ap_memory|                                    state|         array|
+|state_d1                                  |  out|    8|   ap_memory|                                    state|         array|
+|state_q1                                  |   in|    8|   ap_memory|                                    state|         array|
++------------------------------------------+-----+-----+------------+-----------------------------------------+--------------+
+

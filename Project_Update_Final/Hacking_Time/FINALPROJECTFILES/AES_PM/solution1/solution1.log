@@ -1,0 +1,1857 @@
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.1 (64-bit)
+Tool Version Limit: 2022.04
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-1611] Setting target device to 'xcvu11p-flga2577-1-e'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_part xcvu11p-flga2577-1-e 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.014 seconds; current allocated memory: 1.442 GB.
+INFO: [HLS 200-10] Analyzing design file 'Downloads/aes_axis.cpp' ... 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 4.152 seconds; current allocated memory: 1.442 GB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_int<8>, 1ul, 1ul, 1ul>::get_user_ptr()' into 'hls::stream<hls::axis<ap_int<8>, 1ul, 1ul, 1ul>, 0>::read(hls::axis<ap_int<8>, 1ul, 1ul, 1ul>&)' (C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:283:50)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_int<8>, 1ul, 1ul, 1ul>::get_dest_ptr()' into 'hls::stream<hls::axis<ap_int<8>, 1ul, 1ul, 1ul>, 0>::read(hls::axis<ap_int<8>, 1ul, 1ul, 1ul>&)' (C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:286:25)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_int<8>, 1ul, 1ul, 1ul>::get_id_ptr()' into 'hls::stream<hls::axis<ap_int<8>, 1ul, 1ul, 1ul>, 0>::read(hls::axis<ap_int<8>, 1ul, 1ul, 1ul>&)' (C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:285:67)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_int<8>, 1ul, 1ul, 1ul>::get_user_ptr()' into 'hls::stream<hls::axis<ap_int<8>, 1ul, 1ul, 1ul>, 0>::read(hls::axis<ap_int<8>, 1ul, 1ul, 1ul>&)' (C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:285:36)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_int<8>, 1ul, 1ul, 1ul>::get_dest_ptr()' into 'hls::stream<hls::axis<ap_int<8>, 1ul, 1ul, 1ul>, 0>::read(hls::axis<ap_int<8>, 1ul, 1ul, 1ul>&)' (C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:284:39)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_int<8>, 1ul, 1ul, 1ul>::get_id_ptr()' into 'hls::stream<hls::axis<ap_int<8>, 1ul, 1ul, 1ul>, 0>::read(hls::axis<ap_int<8>, 1ul, 1ul, 1ul>&)' (C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:284:23)
+INFO: [HLS 214-131] Inlining function 'ssdm_int<8, true>::ssdm_int(signed char)' into 'ap_int_base<8, true>::ap_int_base(unsigned char)' (C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_int_base.h:257:77)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<8, true>::ap_int_base(unsigned char)' into 'ap_int<8>::ap_int(unsigned char)' (C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_int.h:176:67)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_int<8>, 1ul, 1ul, 1ul>::get_user_ptr()' into 'hls::stream<hls::axis<ap_int<8>, 1ul, 1ul, 1ul>, 0>::write(hls::axis<ap_int<8>, 1ul, 1ul, 1ul> const&)' (C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:304:51)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_int<8>, 1ul, 1ul, 1ul>::get_dest_ptr()' into 'hls::stream<hls::axis<ap_int<8>, 1ul, 1ul, 1ul>, 0>::write(hls::axis<ap_int<8>, 1ul, 1ul, 1ul> const&)' (C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:307:26)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_int<8>, 1ul, 1ul, 1ul>::get_id_ptr()' into 'hls::stream<hls::axis<ap_int<8>, 1ul, 1ul, 1ul>, 0>::write(hls::axis<ap_int<8>, 1ul, 1ul, 1ul> const&)' (C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:306:68)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_int<8>, 1ul, 1ul, 1ul>::get_user_ptr()' into 'hls::stream<hls::axis<ap_int<8>, 1ul, 1ul, 1ul>, 0>::write(hls::axis<ap_int<8>, 1ul, 1ul, 1ul> const&)' (C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:306:37)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_int<8>, 1ul, 1ul, 1ul>::get_dest_ptr()' into 'hls::stream<hls::axis<ap_int<8>, 1ul, 1ul, 1ul>, 0>::write(hls::axis<ap_int<8>, 1ul, 1ul, 1ul> const&)' (C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:305:40)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_int<8>, 1ul, 1ul, 1ul>::get_id_ptr()' into 'hls::stream<hls::axis<ap_int<8>, 1ul, 1ul, 1ul>, 0>::write(hls::axis<ap_int<8>, 1ul, 1ul, 1ul> const&)' (C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:305:24)
+INFO: [HLS 214-131] Inlining function '_ZN8ssdm_intILi1ELb0EEC2EDq1_j' into 'ap_int_base<1, false>::ap_int_base(int)' (C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_int_base.h:260:67)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<1, false>::ap_int_base(int)' into 'ap_uint<1>::ap_uint(int)' (C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_int.h:333:58)
+INFO: [HLS 214-131] Inlining function 'hls::stream<hls::axis<ap_int<8>, 1ul, 1ul, 1ul>, 0>::read(hls::axis<ap_int<8>, 1ul, 1ul, 1ul>&)' into 'aes(hls::stream<hls::axis<ap_int<8>, 1ul, 1ul, 1ul>, 0>&, hls::stream<hls::axis<ap_int<8>, 1ul, 1ul, 1ul>, 0>&, int)' (Downloads/aes_axis.cpp:50:20)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<1, false>::operator unsigned long long() const' into 'aes(hls::stream<hls::axis<ap_int<8>, 1ul, 1ul, 1ul>, 0>&, hls::stream<hls::axis<ap_int<8>, 1ul, 1ul, 1ul>, 0>&, int)' (Downloads/aes_axis.cpp:85:7)
+INFO: [HLS 214-131] Inlining function 'hls::stream<hls::axis<ap_int<8>, 1ul, 1ul, 1ul>, 0>::write(hls::axis<ap_int<8>, 1ul, 1ul, 1ul> const&)' into 'aes(hls::stream<hls::axis<ap_int<8>, 1ul, 1ul, 1ul>, 0>&, hls::stream<hls::axis<ap_int<8>, 1ul, 1ul, 1ul>, 0>&, int)' (Downloads/aes_axis.cpp:83:33)
+INFO: [HLS 214-131] Inlining function 'hls::stream<hls::axis<ap_int<8>, 1ul, 1ul, 1ul>, 0>::write(hls::axis<ap_int<8>, 1ul, 1ul, 1ul> const&)' into 'aes(hls::stream<hls::axis<ap_int<8>, 1ul, 1ul, 1ul>, 0>&, hls::stream<hls::axis<ap_int<8>, 1ul, 1ul, 1ul>, 0>&, int)' (Downloads/aes_axis.cpp:73:33)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<8, true>::operator long long() const' into 'aes(hls::stream<hls::axis<ap_int<8>, 1ul, 1ul, 1ul>, 0>&, hls::stream<hls::axis<ap_int<8>, 1ul, 1ul, 1ul>, 0>&, int)' (Downloads/aes_axis.cpp:51:19)
+INFO: [HLS 214-131] Inlining function 'hls::stream<hls::axis<ap_int<8>, 1ul, 1ul, 1ul>, 0>::read(hls::axis<ap_int<8>, 1ul, 1ul, 1ul>&)' into 'aes(hls::stream<hls::axis<ap_int<8>, 1ul, 1ul, 1ul>, 0>&, hls::stream<hls::axis<ap_int<8>, 1ul, 1ul, 1ul>, 0>&, int)' (Downloads/aes_axis.cpp:56:22)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<8, true>::operator long long() const' into 'aes(hls::stream<hls::axis<ap_int<8>, 1ul, 1ul, 1ul>, 0>&, hls::stream<hls::axis<ap_int<8>, 1ul, 1ul, 1ul>, 0>&, int)' (Downloads/aes_axis.cpp:57:25)
+INFO: [HLS 214-291] Loop 'invMixColumnsLoop2' is marked as complete unroll implied by the pipeline pragma (Downloads/aes_axis.cpp:581:9)
+INFO: [HLS 214-291] Loop 'invMixColumnsLoop3' is marked as complete unroll implied by the pipeline pragma (Downloads/aes_axis.cpp:590:9)
+INFO: [HLS 214-291] Loop 'invMixColumnLoop' is marked as complete unroll implied by the pipeline pragma (Downloads/aes_axis.cpp:601:5)
+INFO: [HLS 214-291] Loop 'invShiftRowLoop2' is marked as complete unroll implied by the pipeline pragma (Downloads/aes_axis.cpp:563:9)
+INFO: [HLS 214-291] Loop 'mixColumnsLoop2' is marked as complete unroll implied by the pipeline pragma (Downloads/aes_axis.cpp:355:9)
+INFO: [HLS 214-291] Loop 'mixColumnsLoop3' is marked as complete unroll implied by the pipeline pragma (Downloads/aes_axis.cpp:364:9)
+INFO: [HLS 214-291] Loop 'mixColumnLoop' is marked as complete unroll implied by the pipeline pragma (Downloads/aes_axis.cpp:376:5)
+INFO: [HLS 214-291] Loop 'galoisMultiplicationLoop' is marked as complete unroll implied by the pipeline pragma (Downloads/aes_axis.cpp:330:5)
+INFO: [HLS 214-291] Loop 'shiftRowLoop2' is marked as complete unroll implied by the pipeline pragma (Downloads/aes_axis.cpp:309:9)
+INFO: [HLS 214-291] Loop 'expandKeyLoop3' is marked as complete unroll implied by the pipeline pragma (Downloads/aes_axis.cpp:236:9)
+INFO: [HLS 214-291] Loop 'expandKeyLoop4' is marked as complete unroll implied by the pipeline pragma (Downloads/aes_axis.cpp:254:13)
+INFO: [HLS 214-291] Loop 'expandKeyLoop5' is marked as complete unroll implied by the pipeline pragma (Downloads/aes_axis.cpp:265:9)
+INFO: [HLS 214-291] Loop 'coreLoop' is marked as complete unroll implied by the pipeline pragma (Downloads/aes_axis.cpp:189:5)
+INFO: [HLS 214-291] Loop 'rotateLoop' is marked as complete unroll implied by the pipeline pragma (Downloads/aes_axis.cpp:144:5)
+INFO: [HLS 214-186] Unrolling loop 'invMixColumnsLoop2' (Downloads/aes_axis.cpp:581:9) in function 'invMixColumns' completely with a factor of 4 (Downloads/aes_axis.cpp:571:0)
+INFO: [HLS 214-186] Unrolling loop 'invMixColumnsLoop3' (Downloads/aes_axis.cpp:590:9) in function 'invMixColumns' completely with a factor of 4 (Downloads/aes_axis.cpp:571:0)
+INFO: [HLS 214-186] Unrolling loop 'invMixColumnLoop' (Downloads/aes_axis.cpp:601:5) in function 'invMixColumn' completely with a factor of 4 (Downloads/aes_axis.cpp:598:0)
+INFO: [HLS 214-186] Unrolling loop 'invSubBytesLoop' (Downloads/aes_axis.cpp:536:5) in function 'invSubBytes' completely with a factor of 16 (Downloads/aes_axis.cpp:528:0)
+INFO: [HLS 214-186] Unrolling loop 'invShiftRowsLoop' (Downloads/aes_axis.cpp:546:5) in function 'invShiftRows' completely with a factor of 4 (Downloads/aes_axis.cpp:543:0)
+INFO: [HLS 214-186] Unrolling loop 'invShiftRowLoop2' (Downloads/aes_axis.cpp:563:9) in function 'invShiftRow' completely with a factor of 3 (Downloads/aes_axis.cpp:553:0)
+INFO: [HLS 214-186] Unrolling loop 'mixColumnsLoop2' (Downloads/aes_axis.cpp:355:9) in function 'mixColumns' completely with a factor of 4 (Downloads/aes_axis.cpp:344:0)
+INFO: [HLS 214-186] Unrolling loop 'mixColumnsLoop3' (Downloads/aes_axis.cpp:364:9) in function 'mixColumns' completely with a factor of 4 (Downloads/aes_axis.cpp:344:0)
+INFO: [HLS 214-186] Unrolling loop 'mixColumnLoop' (Downloads/aes_axis.cpp:376:5) in function 'mixColumn' completely with a factor of 4 (Downloads/aes_axis.cpp:372:0)
+INFO: [HLS 214-186] Unrolling loop 'galoisMultiplicationLoop' (Downloads/aes_axis.cpp:330:5) in function 'galois_multiplication' completely with a factor of 8 (Downloads/aes_axis.cpp:325:0)
+INFO: [HLS 214-186] Unrolling loop 'shiftRowsLoop' (Downloads/aes_axis.cpp:291:5) in function 'shiftRows' completely with a factor of 4 (Downloads/aes_axis.cpp:288:0)
+INFO: [HLS 214-186] Unrolling loop 'shiftRowLoop2' (Downloads/aes_axis.cpp:309:9) in function 'shiftRow' completely with a factor of 3 (Downloads/aes_axis.cpp:298:0)
+INFO: [HLS 214-186] Unrolling loop 'subBytesLoop' (Downloads/aes_axis.cpp:281:5) in function 'subBytes' completely with a factor of 16 (Downloads/aes_axis.cpp:275:0)
+INFO: [HLS 214-186] Unrolling loop 'expandKeyLoop3' (Downloads/aes_axis.cpp:236:9) in function 'expandKey' completely with a factor of 4 (Downloads/aes_axis.cpp:209:0)
+INFO: [HLS 214-186] Unrolling loop 'expandKeyLoop4' (Downloads/aes_axis.cpp:254:13) in function 'expandKey' completely with a factor of 4 (Downloads/aes_axis.cpp:209:0)
+INFO: [HLS 214-186] Unrolling loop 'expandKeyLoop5' (Downloads/aes_axis.cpp:265:9) in function 'expandKey' completely with a factor of 4 (Downloads/aes_axis.cpp:209:0)
+INFO: [HLS 214-186] Unrolling loop 'coreLoop' (Downloads/aes_axis.cpp:189:5) in function 'core' completely with a factor of 4 (Downloads/aes_axis.cpp:181:0)
+INFO: [HLS 214-186] Unrolling loop 'rotateLoop' (Downloads/aes_axis.cpp:144:5) in function 'rotate' completely with a factor of 3 (Downloads/aes_axis.cpp:138:0)
+INFO: [HLS 214-178] Inlining function 'rotate(unsigned char*)' into 'core(unsigned char*, int)' (Downloads/aes_axis.cpp:181:0)
+INFO: [HLS 214-178] Inlining function 'getSBoxValue(unsigned char)' into 'core(unsigned char*, int)' (Downloads/aes_axis.cpp:181:0)
+INFO: [HLS 214-178] Inlining function 'getRconValue(unsigned char)' into 'core(unsigned char*, int)' (Downloads/aes_axis.cpp:181:0)
+INFO: [HLS 214-178] Inlining function 'core(unsigned char*, int)' into 'expandKey(unsigned char*, unsigned char*, int, unsigned long)' (Downloads/aes_axis.cpp:209:0)
+INFO: [HLS 214-178] Inlining function 'getSBoxValue(unsigned char)' into 'expandKey(unsigned char*, unsigned char*, int, unsigned long)' (Downloads/aes_axis.cpp:209:0)
+INFO: [HLS 214-178] Inlining function 'getSBoxValue(unsigned char)' into 'subBytes(unsigned char*)' (Downloads/aes_axis.cpp:275:0)
+INFO: [HLS 214-178] Inlining function 'shiftRow(unsigned char*, unsigned char)' into 'shiftRows(unsigned char*)' (Downloads/aes_axis.cpp:288:0)
+INFO: [HLS 214-178] Inlining function 'mixColumn(unsigned char*)' into 'mixColumns(unsigned char*)' (Downloads/aes_axis.cpp:344:0)
+INFO: [HLS 214-178] Inlining function 'subBytes(unsigned char*)' into 'aes_round(unsigned char*, unsigned char*)' (Downloads/aes_axis.cpp:403:0)
+INFO: [HLS 214-178] Inlining function 'shiftRows(unsigned char*)' into 'aes_round(unsigned char*, unsigned char*)' (Downloads/aes_axis.cpp:403:0)
+INFO: [HLS 214-178] Inlining function 'mixColumns(unsigned char*)' into 'aes_round(unsigned char*, unsigned char*)' (Downloads/aes_axis.cpp:403:0)
+INFO: [HLS 214-178] Inlining function 'addRoundKey(unsigned char*, unsigned char*)' into 'aes_round(unsigned char*, unsigned char*)' (Downloads/aes_axis.cpp:403:0)
+INFO: [HLS 214-178] Inlining function 'createRoundKey(unsigned char*, unsigned char*)' into 'aes_main(unsigned char*, unsigned char*, int)' (Downloads/aes_axis.cpp:427:0)
+INFO: [HLS 214-178] Inlining function 'addRoundKey(unsigned char*, unsigned char*)' into 'aes_main(unsigned char*, unsigned char*, int)' (Downloads/aes_axis.cpp:427:0)
+INFO: [HLS 214-178] Inlining function 'subBytes(unsigned char*)' into 'aes_main(unsigned char*, unsigned char*, int)' (Downloads/aes_axis.cpp:427:0)
+INFO: [HLS 214-178] Inlining function 'shiftRows(unsigned char*)' into 'aes_main(unsigned char*, unsigned char*, int)' (Downloads/aes_axis.cpp:427:0)
+INFO: [HLS 214-178] Inlining function 'invShiftRow(unsigned char*, unsigned char)' into 'invShiftRows(unsigned char*)' (Downloads/aes_axis.cpp:543:0)
+INFO: [HLS 214-178] Inlining function 'getSBoxInvert(unsigned char)' into 'invSubBytes(unsigned char*)' (Downloads/aes_axis.cpp:528:0)
+INFO: [HLS 214-178] Inlining function 'invMixColumn(unsigned char*)' into 'invMixColumns(unsigned char*)' (Downloads/aes_axis.cpp:571:0)
+INFO: [HLS 214-178] Inlining function 'invShiftRows(unsigned char*)' into 'aes_invRound(unsigned char*, unsigned char*)' (Downloads/aes_axis.cpp:624:0)
+INFO: [HLS 214-178] Inlining function 'invSubBytes(unsigned char*)' into 'aes_invRound(unsigned char*, unsigned char*)' (Downloads/aes_axis.cpp:624:0)
+INFO: [HLS 214-178] Inlining function 'addRoundKey(unsigned char*, unsigned char*)' into 'aes_invRound(unsigned char*, unsigned char*)' (Downloads/aes_axis.cpp:624:0)
+INFO: [HLS 214-178] Inlining function 'invMixColumns(unsigned char*)' into 'aes_invRound(unsigned char*, unsigned char*)' (Downloads/aes_axis.cpp:624:0)
+INFO: [HLS 214-178] Inlining function 'createRoundKey(unsigned char*, unsigned char*)' into 'aes_invMain(unsigned char*, unsigned char*, int)' (Downloads/aes_axis.cpp:632:0)
+INFO: [HLS 214-178] Inlining function 'addRoundKey(unsigned char*, unsigned char*)' into 'aes_invMain(unsigned char*, unsigned char*, int)' (Downloads/aes_axis.cpp:632:0)
+INFO: [HLS 214-178] Inlining function 'invShiftRows(unsigned char*)' into 'aes_invMain(unsigned char*, unsigned char*, int)' (Downloads/aes_axis.cpp:632:0)
+INFO: [HLS 214-178] Inlining function 'invSubBytes(unsigned char*)' into 'aes_invMain(unsigned char*, unsigned char*, int)' (Downloads/aes_axis.cpp:632:0)
+INFO: [HLS 214-178] Inlining function 'aes_encrypt(unsigned char*, unsigned char*, unsigned char*, int)' into 'aes(hls::stream<hls::axis<ap_int<8>, 1ul, 1ul, 1ul>, 0>&, hls::stream<hls::axis<ap_int<8>, 1ul, 1ul, 1ul>, 0>&, int)' (Downloads/aes_axis.cpp:10:0)
+INFO: [HLS 214-178] Inlining function 'aes_decrypt(unsigned char*, unsigned char*, unsigned char*, int)' into 'aes(hls::stream<hls::axis<ap_int<8>, 1ul, 1ul, 1ul>, 0>&, hls::stream<hls::axis<ap_int<8>, 1ul, 1ul, 1ul>, 0>&, int)' (Downloads/aes_axis.cpp:10:0)
+INFO: [HLS 214-269] Inferring pragma 'pipeline II=38' for loop 'aesMainLoop' in function 'aes_main' due to performance pragma (Downloads/aes_axis.cpp:439:9)
+INFO: [HLS 214-268] Inferring pragma 'unroll' for loop 'createRoundKeyLoop2' in function 'aes_main' due to performance pragma (Downloads/aes_axis.cpp:439:9)
+INFO: [HLS 214-268] Inferring pragma 'unroll' for loop 'createRoundKeyLoop1' in function 'aes_main' due to performance pragma (Downloads/aes_axis.cpp:439:9)
+INFO: [HLS 214-268] Inferring pragma 'unroll' for loop 'addRoundKeyLoop' in function 'aes_round' due to performance pragma (Downloads/aes_axis.cpp:439:9)
+INFO: [HLS 214-268] Inferring pragma 'unroll' for loop 'mixColumnsLoop1' in function 'aes_round' due to performance pragma (Downloads/aes_axis.cpp:439:9)
+INFO: [HLS 214-268] Inferring pragma 'unroll' for loop 'shiftRowLoop1' in function 'aes_round' due to performance pragma (Downloads/aes_axis.cpp:439:9)
+INFO: [HLS 214-301] Met performance pragma target_ti=500 cycles for loop 'aesMainLoop' in function 'aes_main' (Downloads/aes_axis.cpp:439:9)
+INFO: [HLS 214-269] Inferring pragma 'pipeline II=46' for loop 'aesInvMainLoop' in function 'aes_invMain' due to performance pragma (Downloads/aes_axis.cpp:642:9)
+INFO: [HLS 214-268] Inferring pragma 'unroll' for loop 'createRoundKeyLoop2' in function 'aes_invMain' due to performance pragma (Downloads/aes_axis.cpp:642:9)
+INFO: [HLS 214-268] Inferring pragma 'unroll' for loop 'createRoundKeyLoop1' in function 'aes_invMain' due to performance pragma (Downloads/aes_axis.cpp:642:9)
+INFO: [HLS 214-268] Inferring pragma 'unroll' for loop 'invMixColumnsLoop1' in function 'aes_invRound' due to performance pragma (Downloads/aes_axis.cpp:642:9)
+INFO: [HLS 214-268] Inferring pragma 'unroll' for loop 'addRoundKeyLoop' in function 'aes_invRound' due to performance pragma (Downloads/aes_axis.cpp:642:9)
+INFO: [HLS 214-268] Inferring pragma 'unroll' for loop 'invShiftRowLoop1' in function 'aes_invRound' due to performance pragma (Downloads/aes_axis.cpp:642:9)
+INFO: [HLS 214-301] Met performance pragma target_ti=600 cycles for loop 'aesInvMainLoop' in function 'aes_invMain' (Downloads/aes_axis.cpp:642:9)
+INFO: [HLS 214-268] Inferring pragma 'unroll factor=4' for loop 'expandKeyLoop1' in function 'expandKey' due to performance pragma (Downloads/aes_axis.cpp:222:9)
+INFO: [HLS 214-269] Inferring pragma 'pipeline II=1' for loop 'expandKeyLoop1' in function 'expandKey' due to performance pragma (Downloads/aes_axis.cpp:222:9)
+INFO: [HLS 214-301] Met performance pragma target_ti=8 cycles for loop 'expandKeyLoop1' in function 'expandKey' (Downloads/aes_axis.cpp:222:9)
+INFO: [HLS 214-291] Loop 'createRoundKeyLoop1' is marked as complete unroll implied by the pipeline pragma (Downloads/aes_axis.cpp:415:5)
+INFO: [HLS 214-291] Loop 'createRoundKeyLoop2' is marked as complete unroll implied by the pipeline pragma (Downloads/aes_axis.cpp:419:9)
+INFO: [HLS 214-291] Loop 'invMixColumnsLoop1' is marked as complete unroll implied by the pipeline pragma (Downloads/aes_axis.cpp:576:5)
+INFO: [HLS 214-291] Loop 'addRoundKeyLoop' is marked as complete unroll implied by the pipeline pragma (Downloads/aes_axis.cpp:319:2)
+INFO: [HLS 214-291] Loop 'invShiftRowLoop1' is marked as complete unroll implied by the pipeline pragma (Downloads/aes_axis.cpp:556:5)
+INFO: [HLS 214-291] Loop 'mixColumnsLoop1' is marked as complete unroll implied by the pipeline pragma (Downloads/aes_axis.cpp:350:5)
+INFO: [HLS 214-291] Loop 'shiftRowLoop1' is marked as complete unroll implied by the pipeline pragma (Downloads/aes_axis.cpp:303:5)
+INFO: [HLS 214-186] Unrolling loop 'createRoundKeyLoop1' (Downloads/aes_axis.cpp:415:5) in function 'aes_invMain' completely with a factor of 4 (Downloads/aes_axis.cpp:632:0)
+INFO: [HLS 214-186] Unrolling loop 'createRoundKeyLoop2' (Downloads/aes_axis.cpp:419:9) in function 'aes_invMain' completely with a factor of 4 (Downloads/aes_axis.cpp:632:0)
+WARNING: [HLS 214-189] Pipeline directive for loop 'createRoundKeyLoop2' (Downloads/aes_axis.cpp:419:9) in function 'aes_invMain' has been removed because the loop is unrolled completely (Downloads/aes_axis.cpp:632:0)
+INFO: [HLS 214-186] Unrolling loop 'invMixColumnsLoop1' (Downloads/aes_axis.cpp:576:5) in function 'aes_invRound' completely with a factor of 4 (Downloads/aes_axis.cpp:624:0)
+WARNING: [HLS 214-189] Pipeline directive for loop 'invMixColumnsLoop1' (Downloads/aes_axis.cpp:576:5) in function 'aes_invRound' has been removed because the loop is unrolled completely (Downloads/aes_axis.cpp:624:0)
+INFO: [HLS 214-186] Unrolling loop 'addRoundKeyLoop' (Downloads/aes_axis.cpp:319:2) in function 'aes_invRound' completely with a factor of 16 (Downloads/aes_axis.cpp:624:0)
+INFO: [HLS 214-186] Unrolling loop 'invShiftRowLoop1' (Downloads/aes_axis.cpp:556:5) in function 'aes_invRound' completely with a factor of 3 (Downloads/aes_axis.cpp:624:0)
+WARNING: [HLS 214-189] Pipeline directive for loop 'invShiftRowLoop1' (Downloads/aes_axis.cpp:556:5) in function 'aes_invRound' has been removed because the loop is unrolled completely (Downloads/aes_axis.cpp:624:0)
+INFO: [HLS 214-186] Unrolling loop 'invShiftRowLoop1' (Downloads/aes_axis.cpp:556:5) in function 'aes_invRound' completely with a factor of 2 (Downloads/aes_axis.cpp:624:0)
+INFO: [HLS 214-186] Unrolling loop 'createRoundKeyLoop1' (Downloads/aes_axis.cpp:415:5) in function 'aes_main' completely with a factor of 4 (Downloads/aes_axis.cpp:427:0)
+INFO: [HLS 214-186] Unrolling loop 'createRoundKeyLoop2' (Downloads/aes_axis.cpp:419:9) in function 'aes_main' completely with a factor of 4 (Downloads/aes_axis.cpp:427:0)
+WARNING: [HLS 214-189] Pipeline directive for loop 'createRoundKeyLoop2' (Downloads/aes_axis.cpp:419:9) in function 'aes_main' has been removed because the loop is unrolled completely (Downloads/aes_axis.cpp:427:0)
+INFO: [HLS 214-186] Unrolling loop 'addRoundKeyLoop' (Downloads/aes_axis.cpp:319:2) in function 'aes_round' completely with a factor of 16 (Downloads/aes_axis.cpp:403:0)
+INFO: [HLS 214-186] Unrolling loop 'mixColumnsLoop1' (Downloads/aes_axis.cpp:350:5) in function 'aes_round' completely with a factor of 4 (Downloads/aes_axis.cpp:403:0)
+WARNING: [HLS 214-189] Pipeline directive for loop 'mixColumnsLoop1' (Downloads/aes_axis.cpp:350:5) in function 'aes_round' has been removed because the loop is unrolled completely (Downloads/aes_axis.cpp:403:0)
+INFO: [HLS 214-186] Unrolling loop 'shiftRowLoop1' (Downloads/aes_axis.cpp:303:5) in function 'aes_round' completely with a factor of 3 (Downloads/aes_axis.cpp:403:0)
+WARNING: [HLS 214-189] Pipeline directive for loop 'shiftRowLoop1' (Downloads/aes_axis.cpp:303:5) in function 'aes_round' has been removed because the loop is unrolled completely (Downloads/aes_axis.cpp:403:0)
+INFO: [HLS 214-186] Unrolling loop 'shiftRowLoop1' (Downloads/aes_axis.cpp:303:5) in function 'aes_round' completely with a factor of 2 (Downloads/aes_axis.cpp:403:0)
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=cyclic factor=2 dim=1' for array 'expandedKey.i' due to pipeline pragma (Downloads/aes_axis.cpp:462:19)
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=cyclic factor=2 dim=1' for array 'expandedKey.i336' due to pipeline pragma (Downloads/aes_axis.cpp:665:19)
+INFO: [HLS 214-248] Applying array_partition to 'expandedKey.i336': Cyclic partitioning with factor 2 on dimension 1. (Downloads/aes_axis.cpp:665:19)
+INFO: [HLS 214-248] Applying array_partition to 'expandedKey.i': Cyclic partitioning with factor 2 on dimension 1. (Downloads/aes_axis.cpp:462:19)
+INFO: [HLS 214-131] Inlining function '_llvm.fpga.unpack.none.s_struct.ap_int<8>s.i8' into 'aes(hls::stream<hls::axis<ap_int<8>, 1ul, 1ul, 1ul>, 0>&, hls::stream<hls::axis<ap_int<8>, 1ul, 1ul, 1ul>, 0>&, int)' (C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:283:5)
+INFO: [HLS 214-131] Inlining function '_llvm.fpga.pack.none.i1.s_struct.ap_uint<1>s' into 'aes(hls::stream<hls::axis<ap_int<8>, 1ul, 1ul, 1ul>, 0>&, hls::stream<hls::axis<ap_int<8>, 1ul, 1ul, 1ul>, 0>&, int)' (C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:304:5)
+INFO: [HLS 214-131] Inlining function '_llvm.fpga.pack.none.i8.s_struct.ap_int<8>s' into 'aes(hls::stream<hls::axis<ap_int<8>, 1ul, 1ul, 1ul>, 0>&, hls::stream<hls::axis<ap_int<8>, 1ul, 1ul, 1ul>, 0>&, int)' (C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:304:5)
+INFO: [HLS 214-131] Inlining function '_llvm.fpga.unpack.none.s_struct.ap_uint<1>s.i1' into 'aes(hls::stream<hls::axis<ap_int<8>, 1ul, 1ul, 1ul>, 0>&, hls::stream<hls::axis<ap_int<8>, 1ul, 1ul, 1ul>, 0>&, int)' (C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:283:5)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 6.156 seconds; current allocated memory: 1.442 GB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.003 seconds; current allocated memory: 1.442 GB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.206 seconds; current allocated memory: 1.442 GB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.209 seconds; current allocated memory: 1.442 GB.
+INFO: [XFORM 203-510] Pipelining loop 'addRoundKeyLoop' (Downloads/aes_axis.cpp:319) in function 'aes_main' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'addRoundKeyLoop' (Downloads/aes_axis.cpp:319) in function 'aes_main' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'addRoundKeyLoop' (Downloads/aes_axis.cpp:319) in function 'aes_invMain' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'addRoundKeyLoop' (Downloads/aes_axis.cpp:319) in function 'aes_invMain' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'Loop-2' in function 'aes' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'Loop-3' in function 'aes' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'Loop-4' in function 'aes' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'cipherkeyLoop' (Downloads/aes_axis.cpp:43) in function 'aes' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'plaintextLoop' in function 'aes' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'aesEncryptLoop2' (Downloads/aes_axis.cpp:467) in function 'aes' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'aesEncryptLoop4' (Downloads/aes_axis.cpp:467) in function 'aes' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'aesDecryptLoop2' (Downloads/aes_axis.cpp:670) in function 'aes' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'aesDecryptLoop4' (Downloads/aes_axis.cpp:670) in function 'aes' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'ciphertextLoop' (Downloads/aes_axis.cpp:43) in function 'aes' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'decryptedTextLoop' (Downloads/aes_axis.cpp:43) in function 'aes' automatically.
+WARNING: [XFORM 203-561] Updating loop upper bound from 3 to 2 for loop 'invShiftRowLoop1' (Downloads/aes_axis.cpp:558:9) in function 'aes_invMain'.
+WARNING: [XFORM 203-561] Updating loop lower bound from 1 to 2 for loop 'invShiftRowLoop1' (Downloads/aes_axis.cpp:558:9) in function 'aes_invMain'.
+WARNING: [XFORM 203-561] Updating loop lower bound from 1 to 3 for loop 'invShiftRowLoop1' (Downloads/aes_axis.cpp:558:9) in function 'aes_invMain'.
+WARNING: [XFORM 203-561] Updating loop upper bound from 3 to 2 for loop 'shiftRowLoop1' (Downloads/aes_axis.cpp:305:9) in function 'aes_main'.
+WARNING: [XFORM 203-561] Updating loop lower bound from 1 to 2 for loop 'shiftRowLoop1' (Downloads/aes_axis.cpp:305:9) in function 'aes_main'.
+WARNING: [XFORM 203-561] Updating loop lower bound from 1 to 3 for loop 'shiftRowLoop1' (Downloads/aes_axis.cpp:305:9) in function 'aes_main'.
+INFO: [XFORM 203-501] Unrolling loop 'expandKeyLoop1' (Downloads/aes_axis.cpp:213) in function 'expandKey' partially with a factor of 4.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (Downloads/aes_axis.cpp:231:9) to (Downloads/aes_axis.cpp:268:27) in function 'expandKey'... converting 5 basic blocks.
+INFO: [XFORM 203-11] Balancing expressions in function 'galois_multiplication' (Downloads/aes_axis.cpp:324)...6 expression(s) balanced.
+INFO: [XFORM 203-11] Balancing expressions in function 'aes_round' (Downloads/aes_axis.cpp:402)...64 expression(s) balanced.
+INFO: [XFORM 203-11] Balancing expressions in function 'aes_invRound' (Downloads/aes_axis.cpp:623)...48 expression(s) balanced.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.859 seconds; current allocated memory: 1.442 GB.
+INFO: [XFORM 203-541] Flattening a loop nest 'createRoundKeyLoop1' (Downloads/aes_axis.cpp:412:9) in function 'aes_main'.
+INFO: [XFORM 203-541] Flattening a loop nest 'createRoundKeyLoop1' (Downloads/aes_axis.cpp:412:9) in function 'aes_main'.
+INFO: [XFORM 203-541] Flattening a loop nest 'createRoundKeyLoop1' (Downloads/aes_axis.cpp:412:9) in function 'aes_invMain'.
+INFO: [XFORM 203-541] Flattening a loop nest 'createRoundKeyLoop1' (Downloads/aes_axis.cpp:412:9) in function 'aes_invMain'.
+INFO: [XFORM 203-541] Flattening a loop nest 'aesEncryptLoop1' (Downloads/aes_axis.cpp:467:9) in function 'aes'.
+INFO: [XFORM 203-541] Flattening a loop nest 'aesEncryptLoop3' (Downloads/aes_axis.cpp:467:9) in function 'aes'.
+INFO: [XFORM 203-541] Flattening a loop nest 'aesDecryptLoop1' (Downloads/aes_axis.cpp:670:9) in function 'aes'.
+INFO: [XFORM 203-541] Flattening a loop nest 'aesDecryptLoop3' (Downloads/aes_axis.cpp:670:9) in function 'aes'.
+WARNING: [HLS 200-960] Cannot flatten loop 'VITIS_LOOP_44_1' (Downloads/aes_axis.cpp:41:13) in function 'aes' more than one sub loop.
+INFO: [HLS 200-472] Inferring partial write operation for 'expandedKey_0' (Downloads/aes_axis.cpp:223:17)
+INFO: [HLS 200-472] Inferring partial write operation for 'expandedKey_0' (Downloads/aes_axis.cpp:268:27)
+INFO: [HLS 200-472] Inferring partial write operation for 'state' (Downloads/aes_axis.cpp:320:18)
+INFO: [HLS 200-472] Inferring partial write operation for 'roundKey' (Downloads/aes_axis.cpp:421:26)
+INFO: [HLS 200-472] Inferring partial write operation for 'state' (Downloads/aes_axis.cpp:283:11)
+INFO: [HLS 200-472] Inferring partial write operation for 'state' (Downloads/aes_axis.cpp:310:22)
+INFO: [HLS 200-472] Inferring partial write operation for 'state' (Downloads/aes_axis.cpp:310:24)
+INFO: [HLS 200-472] Inferring partial write operation for 'state' (Downloads/aes_axis.cpp:592:32)
+INFO: [HLS 200-472] Inferring partial write operation for 'state' (Downloads/aes_axis.cpp:538:11)
+INFO: [HLS 200-472] Inferring partial write operation for 'key_array128' 
+INFO: [HLS 200-472] Inferring partial write operation for 'key_array128' 
+INFO: [HLS 200-472] Inferring partial write operation for 'key_array128' 
+INFO: [HLS 200-472] Inferring partial write operation for 'key_array128' (Downloads/aes_axis.cpp:51:17)
+INFO: [HLS 200-472] Inferring partial write operation for 'plaintext_array' (Downloads/aes_axis.cpp:57:23)
+INFO: [HLS 200-472] Inferring partial write operation for 'block.1' (Downloads/aes_axis.cpp:503:34)
+INFO: [HLS 200-472] Inferring partial write operation for 'ciphertext_array' (Downloads/aes_axis.cpp:520:33)
+INFO: [HLS 200-472] Inferring partial write operation for 'block' (Downloads/aes_axis.cpp:707:34)
+INFO: [HLS 200-472] Inferring partial write operation for 'decryptedtext_array' (Downloads/aes_axis.cpp:725:33)
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.827 seconds; current allocated memory: 1.442 GB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'aes' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'aes_Pipeline_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [HLS 200-1457] Automatically inferring inferring RAM_1WNR storage type for array 'key_array128'. Use bind_storage pragma to override this type.
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 1, loop 'Loop 1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.545 seconds; current allocated memory: 1.442 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.056 seconds; current allocated memory: 1.442 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'aes_Pipeline_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [HLS 200-1457] Automatically inferring inferring RAM_1WNR storage type for array 'key_array128'. Use bind_storage pragma to override this type.
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 1, loop 'Loop 1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.085 seconds; current allocated memory: 1.442 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.048 seconds; current allocated memory: 1.442 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'aes_Pipeline_3' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [HLS 200-1457] Automatically inferring inferring RAM_1WNR storage type for array 'key_array128'. Use bind_storage pragma to override this type.
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 1, loop 'Loop 1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.081 seconds; current allocated memory: 1.442 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.052 seconds; current allocated memory: 1.442 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'aes_Pipeline_cipherkeyLoop' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [HLS 200-1457] Automatically inferring inferring RAM_1WNR storage type for array 'key_array128'. Use bind_storage pragma to override this type.
+INFO: [SCHED 204-61] Pipelining loop 'cipherkeyLoop'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 1, loop 'cipherkeyLoop'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.083 seconds; current allocated memory: 1.442 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.052 seconds; current allocated memory: 1.442 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'aes_Pipeline_plaintextLoop' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'plaintextLoop'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 1, loop 'plaintextLoop'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.08 seconds; current allocated memory: 1.442 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.056 seconds; current allocated memory: 1.442 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'aes_Pipeline_aesEncryptLoop1_aesEncryptLoop2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'aesEncryptLoop1_aesEncryptLoop2'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 2, loop 'aesEncryptLoop1_aesEncryptLoop2'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.092 seconds; current allocated memory: 1.442 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.068 seconds; current allocated memory: 1.442 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'expandKey_Pipeline_expandKeyLoop1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [HLS 200-1457] Automatically inferring inferring RAM_1WNR storage type for array 'key_array128'. Use bind_storage pragma to override this type.
+INFO: [SCHED 204-61] Pipelining loop 'expandKeyLoop1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 3, loop 'expandKeyLoop1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.121 seconds; current allocated memory: 1.442 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.069 seconds; current allocated memory: 1.442 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'expandKey_Pipeline_expandKeyLoop2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'expandKeyLoop2'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 12, Final II = 12, Depth = 44, loop 'expandKeyLoop2'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.229 seconds; current allocated memory: 1.442 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.245 seconds; current allocated memory: 1.442 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'expandKey' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.192 seconds; current allocated memory: 1.442 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.084 seconds; current allocated memory: 1.442 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'aes_main_Pipeline_createRoundKeyLoop1_createRoundKeyLoop2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'createRoundKeyLoop1_createRoundKeyLoop2'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 2, loop 'createRoundKeyLoop1_createRoundKeyLoop2'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.172 seconds; current allocated memory: 1.442 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.066 seconds; current allocated memory: 1.442 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'aes_main_Pipeline_addRoundKeyLoop' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'addRoundKeyLoop'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 2, loop 'addRoundKeyLoop'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.105 seconds; current allocated memory: 1.442 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.059 seconds; current allocated memory: 1.442 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'galois_multiplication' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'galois_multiplication'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 0, Final II = 1, Depth = 1, function 'galois_multiplication'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 1 seconds. Elapsed time: 0.09 seconds; current allocated memory: 1.442 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.065 seconds; current allocated memory: 1.442 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'aes_round' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'aes_round'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 38, Final II = 26, Depth = 26, function 'aes_round'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.253 seconds; current allocated memory: 1.442 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.238 seconds; current allocated memory: 1.442 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'aes_main_Pipeline_aesMainLoop' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'aesMainLoop'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 38, Final II = 35, Depth = 35, loop 'aesMainLoop'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.369 seconds; current allocated memory: 1.442 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.222 seconds; current allocated memory: 1.442 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'aes_main_Pipeline_createRoundKeyLoop1_createRoundKeyLoop21' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'createRoundKeyLoop1_createRoundKeyLoop2'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 2, loop 'createRoundKeyLoop1_createRoundKeyLoop2'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.286 seconds; current allocated memory: 1.442 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.072 seconds; current allocated memory: 1.442 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'aes_main_Pipeline_shiftRowLoop1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'shiftRowLoop1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 6, Final II = 1, Depth = 2, loop 'shiftRowLoop1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.112 seconds; current allocated memory: 1.442 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.063 seconds; current allocated memory: 1.442 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'aes_main_Pipeline_shiftRowLoop12' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'shiftRowLoop1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 6, Final II = 1, Depth = 2, loop 'shiftRowLoop1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.093 seconds; current allocated memory: 1.442 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.063 seconds; current allocated memory: 1.442 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'aes_main_Pipeline_addRoundKeyLoop3' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'addRoundKeyLoop'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 2, loop 'addRoundKeyLoop'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.096 seconds; current allocated memory: 1.442 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.064 seconds; current allocated memory: 1.442 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'aes_main' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.143 seconds; current allocated memory: 1.442 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.223 seconds; current allocated memory: 1.442 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'aes_Pipeline_aesEncryptLoop3_aesEncryptLoop4' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'aesEncryptLoop3_aesEncryptLoop4'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 2, loop 'aesEncryptLoop3_aesEncryptLoop4'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.349 seconds; current allocated memory: 1.442 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.072 seconds; current allocated memory: 1.442 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'aes_Pipeline_aesDecryptLoop1_aesDecryptLoop2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'aesDecryptLoop1_aesDecryptLoop2'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 2, loop 'aesDecryptLoop1_aesDecryptLoop2'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.12 seconds; current allocated memory: 1.442 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.072 seconds; current allocated memory: 1.442 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'aes_invMain_Pipeline_createRoundKeyLoop1_createRoundKeyLoop2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'createRoundKeyLoop1_createRoundKeyLoop2'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 2, loop 'createRoundKeyLoop1_createRoundKeyLoop2'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.121 seconds; current allocated memory: 1.442 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.074 seconds; current allocated memory: 1.442 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'aes_invMain_Pipeline_addRoundKeyLoop' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'addRoundKeyLoop'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 2, loop 'addRoundKeyLoop'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.117 seconds; current allocated memory: 1.442 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.066 seconds; current allocated memory: 1.442 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'aes_invRound' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'aes_invRound'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 46, Final II = 35, Depth = 35, function 'aes_invRound'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.273 seconds; current allocated memory: 1.442 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.275 seconds; current allocated memory: 1.442 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'aes_invMain_Pipeline_aesInvMainLoop' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'aesInvMainLoop'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 46, Final II = 44, Depth = 44, loop 'aesInvMainLoop'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.382 seconds; current allocated memory: 1.442 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.25 seconds; current allocated memory: 1.442 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'aes_invMain_Pipeline_createRoundKeyLoop1_createRoundKeyLoop24' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'createRoundKeyLoop1_createRoundKeyLoop2'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 2, loop 'createRoundKeyLoop1_createRoundKeyLoop2'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.288 seconds; current allocated memory: 1.442 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.075 seconds; current allocated memory: 1.442 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'aes_invMain_Pipeline_invShiftRowLoop1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'invShiftRowLoop1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 5, Final II = 1, Depth = 2, loop 'invShiftRowLoop1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.122 seconds; current allocated memory: 1.442 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.069 seconds; current allocated memory: 1.442 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'aes_invMain_Pipeline_invShiftRowLoop15' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'invShiftRowLoop1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 5, Final II = 1, Depth = 2, loop 'invShiftRowLoop1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.102 seconds; current allocated memory: 1.442 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.071 seconds; current allocated memory: 1.442 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'aes_invMain_Pipeline_addRoundKeyLoop6' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'addRoundKeyLoop'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 2, loop 'addRoundKeyLoop'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.106 seconds; current allocated memory: 1.442 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.075 seconds; current allocated memory: 1.442 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'aes_invMain' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.161 seconds; current allocated memory: 1.442 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.229 seconds; current allocated memory: 1.442 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'aes_Pipeline_aesDecryptLoop3_aesDecryptLoop4' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'aesDecryptLoop3_aesDecryptLoop4'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 2, loop 'aesDecryptLoop3_aesDecryptLoop4'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.347 seconds; current allocated memory: 1.442 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.078 seconds; current allocated memory: 1.442 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'aes_Pipeline_ciphertextLoop' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'ciphertextLoop'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 2, loop 'ciphertextLoop'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.126 seconds; current allocated memory: 1.442 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.073 seconds; current allocated memory: 1.442 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'aes_Pipeline_decryptedTextLoop' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'decryptedTextLoop'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 2, loop 'decryptedTextLoop'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.106 seconds; current allocated memory: 1.442 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.073 seconds; current allocated memory: 1.442 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'aes' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.124 seconds; current allocated memory: 1.442 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.361 seconds; current allocated memory: 1.442 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'aes_Pipeline_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'aes_Pipeline_1'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.747 seconds; current allocated memory: 1.442 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'aes_Pipeline_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'aes_Pipeline_2'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.095 seconds; current allocated memory: 1.442 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'aes_Pipeline_3' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'aes_Pipeline_3'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.09 seconds; current allocated memory: 1.442 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'aes_Pipeline_cipherkeyLoop' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'aes_Pipeline_cipherkeyLoop'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.091 seconds; current allocated memory: 1.442 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'aes_Pipeline_plaintextLoop' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'aes_Pipeline_plaintextLoop'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.114 seconds; current allocated memory: 1.442 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'aes_Pipeline_aesEncryptLoop1_aesEncryptLoop2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'aes_Pipeline_aesEncryptLoop1_aesEncryptLoop2' pipeline 'aesEncryptLoop1_aesEncryptLoop2' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'aes_Pipeline_aesEncryptLoop1_aesEncryptLoop2'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.131 seconds; current allocated memory: 1.442 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'expandKey_Pipeline_expandKeyLoop1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'expandKey_Pipeline_expandKeyLoop1' pipeline 'expandKeyLoop1' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'expandKey_Pipeline_expandKeyLoop1'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.166 seconds; current allocated memory: 1.442 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'expandKey_Pipeline_expandKeyLoop2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'expandKey_Pipeline_expandKeyLoop2' pipeline 'expandKeyLoop2' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mux_21_8_1_1': 6 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'srem_32ns_7ns_6_36_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'expandKey_Pipeline_expandKeyLoop2'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.266 seconds; current allocated memory: 1.442 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'expandKey' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'expandKey'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.449 seconds; current allocated memory: 1.442 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'aes_main_Pipeline_createRoundKeyLoop1_createRoundKeyLoop2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'aes_main_Pipeline_createRoundKeyLoop1_createRoundKeyLoop2' pipeline 'createRoundKeyLoop1_createRoundKeyLoop2' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mux_21_8_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'aes_main_Pipeline_createRoundKeyLoop1_createRoundKeyLoop2'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.204 seconds; current allocated memory: 1.442 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'aes_main_Pipeline_addRoundKeyLoop' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'aes_main_Pipeline_addRoundKeyLoop' pipeline 'addRoundKeyLoop' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'aes_main_Pipeline_addRoundKeyLoop'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.172 seconds; current allocated memory: 1.442 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'galois_multiplication' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'galois_multiplication'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.106 seconds; current allocated memory: 1.442 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'aes_round' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'aes_round'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.169 seconds; current allocated memory: 1.442 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'aes_main_Pipeline_aesMainLoop' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'aes_main_Pipeline_aesMainLoop'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.658 seconds; current allocated memory: 1.442 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'aes_main_Pipeline_createRoundKeyLoop1_createRoundKeyLoop21' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'aes_main_Pipeline_createRoundKeyLoop1_createRoundKeyLoop21' pipeline 'createRoundKeyLoop1_createRoundKeyLoop2' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mux_21_8_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'aes_main_Pipeline_createRoundKeyLoop1_createRoundKeyLoop21'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.386 seconds; current allocated memory: 1.442 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'aes_main_Pipeline_shiftRowLoop1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'aes_main_Pipeline_shiftRowLoop1' pipeline 'shiftRowLoop1' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'aes_main_Pipeline_shiftRowLoop1'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.174 seconds; current allocated memory: 1.442 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'aes_main_Pipeline_shiftRowLoop12' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'aes_main_Pipeline_shiftRowLoop12' pipeline 'shiftRowLoop1' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'aes_main_Pipeline_shiftRowLoop12'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.134 seconds; current allocated memory: 1.442 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'aes_main_Pipeline_addRoundKeyLoop3' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'aes_main_Pipeline_addRoundKeyLoop3' pipeline 'addRoundKeyLoop' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'aes_main_Pipeline_addRoundKeyLoop3'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.13 seconds; current allocated memory: 1.442 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'aes_main' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'aes_main'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 1 seconds. Elapsed time: 0.131 seconds; current allocated memory: 1.442 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'aes_Pipeline_aesEncryptLoop3_aesEncryptLoop4' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'aes_Pipeline_aesEncryptLoop3_aesEncryptLoop4' pipeline 'aesEncryptLoop3_aesEncryptLoop4' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'aes_Pipeline_aesEncryptLoop3_aesEncryptLoop4'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.46 seconds; current allocated memory: 1.442 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'aes_Pipeline_aesDecryptLoop1_aesDecryptLoop2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'aes_Pipeline_aesDecryptLoop1_aesDecryptLoop2' pipeline 'aesDecryptLoop1_aesDecryptLoop2' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'aes_Pipeline_aesDecryptLoop1_aesDecryptLoop2'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.3 seconds; current allocated memory: 1.442 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'aes_invMain_Pipeline_createRoundKeyLoop1_createRoundKeyLoop2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'aes_invMain_Pipeline_createRoundKeyLoop1_createRoundKeyLoop2' pipeline 'createRoundKeyLoop1_createRoundKeyLoop2' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mux_21_8_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'aes_invMain_Pipeline_createRoundKeyLoop1_createRoundKeyLoop2'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.414 seconds; current allocated memory: 1.442 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'aes_invMain_Pipeline_addRoundKeyLoop' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'aes_invMain_Pipeline_addRoundKeyLoop' pipeline 'addRoundKeyLoop' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'aes_invMain_Pipeline_addRoundKeyLoop'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.316 seconds; current allocated memory: 1.442 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'aes_invRound' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'aes_invRound'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.229 seconds; current allocated memory: 1.442 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'aes_invMain_Pipeline_aesInvMainLoop' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'aes_invMain_Pipeline_aesInvMainLoop'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.954 seconds; current allocated memory: 1.442 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'aes_invMain_Pipeline_createRoundKeyLoop1_createRoundKeyLoop24' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'aes_invMain_Pipeline_createRoundKeyLoop1_createRoundKeyLoop24' pipeline 'createRoundKeyLoop1_createRoundKeyLoop2' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mux_21_8_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'aes_invMain_Pipeline_createRoundKeyLoop1_createRoundKeyLoop24'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.446 seconds; current allocated memory: 1.442 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'aes_invMain_Pipeline_invShiftRowLoop1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'aes_invMain_Pipeline_invShiftRowLoop1' pipeline 'invShiftRowLoop1' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'aes_invMain_Pipeline_invShiftRowLoop1'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.191 seconds; current allocated memory: 1.442 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'aes_invMain_Pipeline_invShiftRowLoop15' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'aes_invMain_Pipeline_invShiftRowLoop15' pipeline 'invShiftRowLoop1' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'aes_invMain_Pipeline_invShiftRowLoop15'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.136 seconds; current allocated memory: 1.442 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'aes_invMain_Pipeline_addRoundKeyLoop6' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'aes_invMain_Pipeline_addRoundKeyLoop6' pipeline 'addRoundKeyLoop' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'aes_invMain_Pipeline_addRoundKeyLoop6'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.158 seconds; current allocated memory: 1.442 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'aes_invMain' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'aes_invMain'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.155 seconds; current allocated memory: 1.442 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'aes_Pipeline_aesDecryptLoop3_aesDecryptLoop4' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'aes_Pipeline_aesDecryptLoop3_aesDecryptLoop4' pipeline 'aesDecryptLoop3_aesDecryptLoop4' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'aes_Pipeline_aesDecryptLoop3_aesDecryptLoop4'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.617 seconds; current allocated memory: 1.442 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'aes_Pipeline_ciphertextLoop' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'aes_Pipeline_ciphertextLoop' pipeline 'ciphertextLoop' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'aes_Pipeline_ciphertextLoop'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.191 seconds; current allocated memory: 1.442 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'aes_Pipeline_decryptedTextLoop' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'aes_Pipeline_decryptedTextLoop' pipeline 'decryptedTextLoop' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'aes_Pipeline_decryptedTextLoop'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.133 seconds; current allocated memory: 1.442 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'aes' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low.
+INFO: [RTGEN 206-500] Setting interface mode on port 'aes/key_and_plaintext_V_data_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'aes/key_and_plaintext_V_keep_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'aes/key_and_plaintext_V_strb_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'aes/key_and_plaintext_V_user_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'aes/key_and_plaintext_V_last_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'aes/key_and_plaintext_V_id_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'aes/key_and_plaintext_V_dest_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'aes/ciphertext_and_decryptedtext_V_data_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'aes/ciphertext_and_decryptedtext_V_keep_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'aes/ciphertext_and_decryptedtext_V_strb_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'aes/ciphertext_and_decryptedtext_V_user_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'aes/ciphertext_and_decryptedtext_V_last_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'aes/ciphertext_and_decryptedtext_V_id_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'aes/ciphertext_and_decryptedtext_V_dest_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'aes/mode' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'aes' to 's_axilite & ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Bundling port 'mode' and 'return' to AXI-Lite port control.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'aes'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.549 seconds; current allocated memory: 1.442 GB.
+INFO: [RTMG 210-279] Implementing memory 'aes_expandKey_Pipeline_expandKeyLoop2_sbox_ROM_2P_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'aes_expandKey_Pipeline_expandKeyLoop2_Rcon_ROM_2P_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-278] Implementing memory 'aes_aes_main_roundKey_RAM_AUTO_1R1W_ram (RAM)' using auto RAMs.
+INFO: [RTMG 210-279] Implementing memory 'aes_aes_invRound_rsbox_ROM_2P_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-278] Implementing memory 'aes_aes_invMain_roundKey_RAM_AUTO_1R1W_ram (RAM)' using auto RAMs.
+INFO: [RTMG 210-278] Implementing memory 'aes_key_array128_RAM_1WNR_AUTO_1R1W_ram (RAM_1WnR)' using auto RAMs.
+INFO: [RTMG 210-278] Implementing memory 'aes_expandedKey_RAM_AUTO_1R1W_ram (RAM)' using auto RAMs.
+INFO: [RTMG 210-278] Implementing memory 'aes_block_RAM_AUTO_1R1W_ram (RAM)' using auto RAMs.
+INFO: [RTMG 210-278] Implementing memory 'aes_plaintext_array_RAM_AUTO_1R1W_ram (RAM)' using auto RAMs.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 2 seconds. CPU system time: 1 seconds. Elapsed time: 2.695 seconds; current allocated memory: 1.442 GB.
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 1.554 seconds; current allocated memory: 1.442 GB.
+INFO: [VHDL 208-304] Generating VHDL RTL for aes.
+INFO: [VLOG 209-307] Generating Verilog RTL for aes.
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 238.61 MHz
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 21 seconds. CPU system time: 3 seconds. Elapsed time: 37.54 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-112] Total CPU user time: 25 seconds. Total CPU system time: 5 seconds. Total elapsed time: 41.104 seconds; peak allocated memory: 1.442 GB.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.1 (64-bit)
+Tool Version Limit: 2022.04
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-1611] Setting target device to 'xc7z020-clg400-1'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_part xc7z020clg400-1 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.015 seconds; current allocated memory: 1.373 GB.
+INFO: [HLS 200-10] Analyzing design file 'Downloads/aes_axis.cpp' ... 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 3.83 seconds; current allocated memory: 1.373 GB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_int<8>, 1ul, 1ul, 1ul>::get_user_ptr()' into 'hls::stream<hls::axis<ap_int<8>, 1ul, 1ul, 1ul>, 0>::read(hls::axis<ap_int<8>, 1ul, 1ul, 1ul>&)' (C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:283:50)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_int<8>, 1ul, 1ul, 1ul>::get_dest_ptr()' into 'hls::stream<hls::axis<ap_int<8>, 1ul, 1ul, 1ul>, 0>::read(hls::axis<ap_int<8>, 1ul, 1ul, 1ul>&)' (C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:286:25)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_int<8>, 1ul, 1ul, 1ul>::get_id_ptr()' into 'hls::stream<hls::axis<ap_int<8>, 1ul, 1ul, 1ul>, 0>::read(hls::axis<ap_int<8>, 1ul, 1ul, 1ul>&)' (C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:285:67)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_int<8>, 1ul, 1ul, 1ul>::get_user_ptr()' into 'hls::stream<hls::axis<ap_int<8>, 1ul, 1ul, 1ul>, 0>::read(hls::axis<ap_int<8>, 1ul, 1ul, 1ul>&)' (C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:285:36)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_int<8>, 1ul, 1ul, 1ul>::get_dest_ptr()' into 'hls::stream<hls::axis<ap_int<8>, 1ul, 1ul, 1ul>, 0>::read(hls::axis<ap_int<8>, 1ul, 1ul, 1ul>&)' (C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:284:39)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_int<8>, 1ul, 1ul, 1ul>::get_id_ptr()' into 'hls::stream<hls::axis<ap_int<8>, 1ul, 1ul, 1ul>, 0>::read(hls::axis<ap_int<8>, 1ul, 1ul, 1ul>&)' (C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:284:23)
+INFO: [HLS 214-131] Inlining function 'ssdm_int<8, true>::ssdm_int(signed char)' into 'ap_int_base<8, true>::ap_int_base(unsigned char)' (C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_int_base.h:257:77)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<8, true>::ap_int_base(unsigned char)' into 'ap_int<8>::ap_int(unsigned char)' (C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_int.h:176:67)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_int<8>, 1ul, 1ul, 1ul>::get_user_ptr()' into 'hls::stream<hls::axis<ap_int<8>, 1ul, 1ul, 1ul>, 0>::write(hls::axis<ap_int<8>, 1ul, 1ul, 1ul> const&)' (C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:304:51)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_int<8>, 1ul, 1ul, 1ul>::get_dest_ptr()' into 'hls::stream<hls::axis<ap_int<8>, 1ul, 1ul, 1ul>, 0>::write(hls::axis<ap_int<8>, 1ul, 1ul, 1ul> const&)' (C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:307:26)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_int<8>, 1ul, 1ul, 1ul>::get_id_ptr()' into 'hls::stream<hls::axis<ap_int<8>, 1ul, 1ul, 1ul>, 0>::write(hls::axis<ap_int<8>, 1ul, 1ul, 1ul> const&)' (C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:306:68)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_int<8>, 1ul, 1ul, 1ul>::get_user_ptr()' into 'hls::stream<hls::axis<ap_int<8>, 1ul, 1ul, 1ul>, 0>::write(hls::axis<ap_int<8>, 1ul, 1ul, 1ul> const&)' (C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:306:37)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_int<8>, 1ul, 1ul, 1ul>::get_dest_ptr()' into 'hls::stream<hls::axis<ap_int<8>, 1ul, 1ul, 1ul>, 0>::write(hls::axis<ap_int<8>, 1ul, 1ul, 1ul> const&)' (C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:305:40)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_int<8>, 1ul, 1ul, 1ul>::get_id_ptr()' into 'hls::stream<hls::axis<ap_int<8>, 1ul, 1ul, 1ul>, 0>::write(hls::axis<ap_int<8>, 1ul, 1ul, 1ul> const&)' (C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:305:24)
+INFO: [HLS 214-131] Inlining function '_ZN8ssdm_intILi1ELb0EEC2EDq1_j' into 'ap_int_base<1, false>::ap_int_base(int)' (C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_int_base.h:260:67)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<1, false>::ap_int_base(int)' into 'ap_uint<1>::ap_uint(int)' (C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_int.h:333:58)
+INFO: [HLS 214-131] Inlining function 'hls::stream<hls::axis<ap_int<8>, 1ul, 1ul, 1ul>, 0>::read(hls::axis<ap_int<8>, 1ul, 1ul, 1ul>&)' into 'aes(hls::stream<hls::axis<ap_int<8>, 1ul, 1ul, 1ul>, 0>&, hls::stream<hls::axis<ap_int<8>, 1ul, 1ul, 1ul>, 0>&, int, unsigned char, unsigned char, unsigned int, unsigned int)' (Downloads/aes_axis.cpp:71:20)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<1, false>::operator unsigned long long() const' into 'aes(hls::stream<hls::axis<ap_int<8>, 1ul, 1ul, 1ul>, 0>&, hls::stream<hls::axis<ap_int<8>, 1ul, 1ul, 1ul>, 0>&, int, unsigned char, unsigned char, unsigned int, unsigned int)' (Downloads/aes_axis.cpp:106:7)
+INFO: [HLS 214-131] Inlining function 'hls::stream<hls::axis<ap_int<8>, 1ul, 1ul, 1ul>, 0>::write(hls::axis<ap_int<8>, 1ul, 1ul, 1ul> const&)' into 'aes(hls::stream<hls::axis<ap_int<8>, 1ul, 1ul, 1ul>, 0>&, hls::stream<hls::axis<ap_int<8>, 1ul, 1ul, 1ul>, 0>&, int, unsigned char, unsigned char, unsigned int, unsigned int)' (Downloads/aes_axis.cpp:104:33)
+INFO: [HLS 214-131] Inlining function 'hls::stream<hls::axis<ap_int<8>, 1ul, 1ul, 1ul>, 0>::write(hls::axis<ap_int<8>, 1ul, 1ul, 1ul> const&)' into 'aes(hls::stream<hls::axis<ap_int<8>, 1ul, 1ul, 1ul>, 0>&, hls::stream<hls::axis<ap_int<8>, 1ul, 1ul, 1ul>, 0>&, int, unsigned char, unsigned char, unsigned int, unsigned int)' (Downloads/aes_axis.cpp:94:33)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<8, true>::operator long long() const' into 'aes(hls::stream<hls::axis<ap_int<8>, 1ul, 1ul, 1ul>, 0>&, hls::stream<hls::axis<ap_int<8>, 1ul, 1ul, 1ul>, 0>&, int, unsigned char, unsigned char, unsigned int, unsigned int)' (Downloads/aes_axis.cpp:72:19)
+INFO: [HLS 214-131] Inlining function 'hls::stream<hls::axis<ap_int<8>, 1ul, 1ul, 1ul>, 0>::read(hls::axis<ap_int<8>, 1ul, 1ul, 1ul>&)' into 'aes(hls::stream<hls::axis<ap_int<8>, 1ul, 1ul, 1ul>, 0>&, hls::stream<hls::axis<ap_int<8>, 1ul, 1ul, 1ul>, 0>&, int, unsigned char, unsigned char, unsigned int, unsigned int)' (Downloads/aes_axis.cpp:77:22)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<8, true>::operator long long() const' into 'aes(hls::stream<hls::axis<ap_int<8>, 1ul, 1ul, 1ul>, 0>&, hls::stream<hls::axis<ap_int<8>, 1ul, 1ul, 1ul>, 0>&, int, unsigned char, unsigned char, unsigned int, unsigned int)' (Downloads/aes_axis.cpp:78:25)
+INFO: [HLS 214-291] Loop 'invMixColumnsLoop2' is marked as complete unroll implied by the pipeline pragma (Downloads/aes_axis.cpp:602:9)
+INFO: [HLS 214-291] Loop 'invMixColumnsLoop3' is marked as complete unroll implied by the pipeline pragma (Downloads/aes_axis.cpp:611:9)
+INFO: [HLS 214-291] Loop 'invMixColumnLoop' is marked as complete unroll implied by the pipeline pragma (Downloads/aes_axis.cpp:622:5)
+INFO: [HLS 214-291] Loop 'invShiftRowLoop2' is marked as complete unroll implied by the pipeline pragma (Downloads/aes_axis.cpp:584:9)
+INFO: [HLS 214-291] Loop 'mixColumnsLoop2' is marked as complete unroll implied by the pipeline pragma (Downloads/aes_axis.cpp:376:9)
+INFO: [HLS 214-291] Loop 'mixColumnsLoop3' is marked as complete unroll implied by the pipeline pragma (Downloads/aes_axis.cpp:385:9)
+INFO: [HLS 214-291] Loop 'mixColumnLoop' is marked as complete unroll implied by the pipeline pragma (Downloads/aes_axis.cpp:397:5)
+INFO: [HLS 214-291] Loop 'galoisMultiplicationLoop' is marked as complete unroll implied by the pipeline pragma (Downloads/aes_axis.cpp:351:5)
+INFO: [HLS 214-291] Loop 'shiftRowLoop2' is marked as complete unroll implied by the pipeline pragma (Downloads/aes_axis.cpp:330:9)
+INFO: [HLS 214-291] Loop 'expandKeyLoop3' is marked as complete unroll implied by the pipeline pragma (Downloads/aes_axis.cpp:257:9)
+INFO: [HLS 214-291] Loop 'expandKeyLoop4' is marked as complete unroll implied by the pipeline pragma (Downloads/aes_axis.cpp:275:13)
+INFO: [HLS 214-291] Loop 'expandKeyLoop5' is marked as complete unroll implied by the pipeline pragma (Downloads/aes_axis.cpp:286:9)
+INFO: [HLS 214-291] Loop 'coreLoop' is marked as complete unroll implied by the pipeline pragma (Downloads/aes_axis.cpp:210:5)
+INFO: [HLS 214-291] Loop 'rotateLoop' is marked as complete unroll implied by the pipeline pragma (Downloads/aes_axis.cpp:165:5)
+INFO: [HLS 214-186] Unrolling loop 'invMixColumnsLoop2' (Downloads/aes_axis.cpp:602:9) in function 'invMixColumns' completely with a factor of 4 (Downloads/aes_axis.cpp:592:0)
+INFO: [HLS 214-186] Unrolling loop 'invMixColumnsLoop3' (Downloads/aes_axis.cpp:611:9) in function 'invMixColumns' completely with a factor of 4 (Downloads/aes_axis.cpp:592:0)
+INFO: [HLS 214-186] Unrolling loop 'invMixColumnLoop' (Downloads/aes_axis.cpp:622:5) in function 'invMixColumn' completely with a factor of 4 (Downloads/aes_axis.cpp:619:0)
+INFO: [HLS 214-186] Unrolling loop 'invSubBytesLoop' (Downloads/aes_axis.cpp:557:5) in function 'invSubBytes' completely with a factor of 16 (Downloads/aes_axis.cpp:549:0)
+INFO: [HLS 214-186] Unrolling loop 'invShiftRowsLoop' (Downloads/aes_axis.cpp:567:5) in function 'invShiftRows' completely with a factor of 4 (Downloads/aes_axis.cpp:564:0)
+INFO: [HLS 214-186] Unrolling loop 'invShiftRowLoop2' (Downloads/aes_axis.cpp:584:9) in function 'invShiftRow' completely with a factor of 3 (Downloads/aes_axis.cpp:574:0)
+INFO: [HLS 214-186] Unrolling loop 'mixColumnsLoop2' (Downloads/aes_axis.cpp:376:9) in function 'mixColumns' completely with a factor of 4 (Downloads/aes_axis.cpp:365:0)
+INFO: [HLS 214-186] Unrolling loop 'mixColumnsLoop3' (Downloads/aes_axis.cpp:385:9) in function 'mixColumns' completely with a factor of 4 (Downloads/aes_axis.cpp:365:0)
+INFO: [HLS 214-186] Unrolling loop 'mixColumnLoop' (Downloads/aes_axis.cpp:397:5) in function 'mixColumn' completely with a factor of 4 (Downloads/aes_axis.cpp:393:0)
+INFO: [HLS 214-186] Unrolling loop 'galoisMultiplicationLoop' (Downloads/aes_axis.cpp:351:5) in function 'galois_multiplication' completely with a factor of 8 (Downloads/aes_axis.cpp:346:0)
+INFO: [HLS 214-186] Unrolling loop 'shiftRowsLoop' (Downloads/aes_axis.cpp:312:5) in function 'shiftRows' completely with a factor of 4 (Downloads/aes_axis.cpp:309:0)
+INFO: [HLS 214-186] Unrolling loop 'shiftRowLoop2' (Downloads/aes_axis.cpp:330:9) in function 'shiftRow' completely with a factor of 3 (Downloads/aes_axis.cpp:319:0)
+INFO: [HLS 214-186] Unrolling loop 'subBytesLoop' (Downloads/aes_axis.cpp:302:5) in function 'subBytes' completely with a factor of 16 (Downloads/aes_axis.cpp:296:0)
+INFO: [HLS 214-186] Unrolling loop 'expandKeyLoop3' (Downloads/aes_axis.cpp:257:9) in function 'expandKey' completely with a factor of 4 (Downloads/aes_axis.cpp:230:0)
+INFO: [HLS 214-186] Unrolling loop 'expandKeyLoop4' (Downloads/aes_axis.cpp:275:13) in function 'expandKey' completely with a factor of 4 (Downloads/aes_axis.cpp:230:0)
+INFO: [HLS 214-186] Unrolling loop 'expandKeyLoop5' (Downloads/aes_axis.cpp:286:9) in function 'expandKey' completely with a factor of 4 (Downloads/aes_axis.cpp:230:0)
+INFO: [HLS 214-186] Unrolling loop 'coreLoop' (Downloads/aes_axis.cpp:210:5) in function 'core' completely with a factor of 4 (Downloads/aes_axis.cpp:202:0)
+INFO: [HLS 214-186] Unrolling loop 'rotateLoop' (Downloads/aes_axis.cpp:165:5) in function 'rotate' completely with a factor of 3 (Downloads/aes_axis.cpp:159:0)
+INFO: [HLS 214-178] Inlining function 'rotate(unsigned char*)' into 'core(unsigned char*, int)' (Downloads/aes_axis.cpp:202:0)
+INFO: [HLS 214-178] Inlining function 'getSBoxValue(unsigned char)' into 'core(unsigned char*, int)' (Downloads/aes_axis.cpp:202:0)
+INFO: [HLS 214-178] Inlining function 'getRconValue(unsigned char)' into 'core(unsigned char*, int)' (Downloads/aes_axis.cpp:202:0)
+INFO: [HLS 214-178] Inlining function 'core(unsigned char*, int)' into 'expandKey(unsigned char*, unsigned char*, int, unsigned long)' (Downloads/aes_axis.cpp:230:0)
+INFO: [HLS 214-178] Inlining function 'getSBoxValue(unsigned char)' into 'expandKey(unsigned char*, unsigned char*, int, unsigned long)' (Downloads/aes_axis.cpp:230:0)
+INFO: [HLS 214-178] Inlining function 'getSBoxValue(unsigned char)' into 'subBytes(unsigned char*)' (Downloads/aes_axis.cpp:296:0)
+INFO: [HLS 214-178] Inlining function 'shiftRow(unsigned char*, unsigned char)' into 'shiftRows(unsigned char*)' (Downloads/aes_axis.cpp:309:0)
+INFO: [HLS 214-178] Inlining function 'mixColumn(unsigned char*)' into 'mixColumns(unsigned char*)' (Downloads/aes_axis.cpp:365:0)
+INFO: [HLS 214-178] Inlining function 'subBytes(unsigned char*)' into 'aes_round(unsigned char*, unsigned char*)' (Downloads/aes_axis.cpp:424:0)
+INFO: [HLS 214-178] Inlining function 'shiftRows(unsigned char*)' into 'aes_round(unsigned char*, unsigned char*)' (Downloads/aes_axis.cpp:424:0)
+INFO: [HLS 214-178] Inlining function 'mixColumns(unsigned char*)' into 'aes_round(unsigned char*, unsigned char*)' (Downloads/aes_axis.cpp:424:0)
+INFO: [HLS 214-178] Inlining function 'addRoundKey(unsigned char*, unsigned char*)' into 'aes_round(unsigned char*, unsigned char*)' (Downloads/aes_axis.cpp:424:0)
+INFO: [HLS 214-178] Inlining function 'createRoundKey(unsigned char*, unsigned char*)' into 'aes_main(unsigned char*, unsigned char*, int)' (Downloads/aes_axis.cpp:448:0)
+INFO: [HLS 214-178] Inlining function 'addRoundKey(unsigned char*, unsigned char*)' into 'aes_main(unsigned char*, unsigned char*, int)' (Downloads/aes_axis.cpp:448:0)
+INFO: [HLS 214-178] Inlining function 'subBytes(unsigned char*)' into 'aes_main(unsigned char*, unsigned char*, int)' (Downloads/aes_axis.cpp:448:0)
+INFO: [HLS 214-178] Inlining function 'shiftRows(unsigned char*)' into 'aes_main(unsigned char*, unsigned char*, int)' (Downloads/aes_axis.cpp:448:0)
+INFO: [HLS 214-178] Inlining function 'invShiftRow(unsigned char*, unsigned char)' into 'invShiftRows(unsigned char*)' (Downloads/aes_axis.cpp:564:0)
+INFO: [HLS 214-178] Inlining function 'getSBoxInvert(unsigned char)' into 'invSubBytes(unsigned char*)' (Downloads/aes_axis.cpp:549:0)
+INFO: [HLS 214-178] Inlining function 'invMixColumn(unsigned char*)' into 'invMixColumns(unsigned char*)' (Downloads/aes_axis.cpp:592:0)
+INFO: [HLS 214-178] Inlining function 'invShiftRows(unsigned char*)' into 'aes_invRound(unsigned char*, unsigned char*)' (Downloads/aes_axis.cpp:645:0)
+INFO: [HLS 214-178] Inlining function 'invSubBytes(unsigned char*)' into 'aes_invRound(unsigned char*, unsigned char*)' (Downloads/aes_axis.cpp:645:0)
+INFO: [HLS 214-178] Inlining function 'addRoundKey(unsigned char*, unsigned char*)' into 'aes_invRound(unsigned char*, unsigned char*)' (Downloads/aes_axis.cpp:645:0)
+INFO: [HLS 214-178] Inlining function 'invMixColumns(unsigned char*)' into 'aes_invRound(unsigned char*, unsigned char*)' (Downloads/aes_axis.cpp:645:0)
+INFO: [HLS 214-178] Inlining function 'createRoundKey(unsigned char*, unsigned char*)' into 'aes_invMain(unsigned char*, unsigned char*, int)' (Downloads/aes_axis.cpp:653:0)
+INFO: [HLS 214-178] Inlining function 'addRoundKey(unsigned char*, unsigned char*)' into 'aes_invMain(unsigned char*, unsigned char*, int)' (Downloads/aes_axis.cpp:653:0)
+INFO: [HLS 214-178] Inlining function 'invShiftRows(unsigned char*)' into 'aes_invMain(unsigned char*, unsigned char*, int)' (Downloads/aes_axis.cpp:653:0)
+INFO: [HLS 214-178] Inlining function 'invSubBytes(unsigned char*)' into 'aes_invMain(unsigned char*, unsigned char*, int)' (Downloads/aes_axis.cpp:653:0)
+INFO: [HLS 214-178] Inlining function 'aes_encrypt(unsigned char*, unsigned char*, unsigned char*, int)' into 'aes(hls::stream<hls::axis<ap_int<8>, 1ul, 1ul, 1ul>, 0>&, hls::stream<hls::axis<ap_int<8>, 1ul, 1ul, 1ul>, 0>&, int, unsigned char, unsigned char, unsigned int, unsigned int)' (Downloads/aes_axis.cpp:14:0)
+INFO: [HLS 214-178] Inlining function 'aes_decrypt(unsigned char*, unsigned char*, unsigned char*, int)' into 'aes(hls::stream<hls::axis<ap_int<8>, 1ul, 1ul, 1ul>, 0>&, hls::stream<hls::axis<ap_int<8>, 1ul, 1ul, 1ul>, 0>&, int, unsigned char, unsigned char, unsigned int, unsigned int)' (Downloads/aes_axis.cpp:14:0)
+INFO: [HLS 214-269] Inferring pragma 'pipeline II=38' for loop 'aesMainLoop' in function 'aes_main' due to performance pragma (Downloads/aes_axis.cpp:460:9)
+INFO: [HLS 214-268] Inferring pragma 'unroll' for loop 'createRoundKeyLoop2' in function 'aes_main' due to performance pragma (Downloads/aes_axis.cpp:460:9)
+INFO: [HLS 214-268] Inferring pragma 'unroll' for loop 'createRoundKeyLoop1' in function 'aes_main' due to performance pragma (Downloads/aes_axis.cpp:460:9)
+INFO: [HLS 214-268] Inferring pragma 'unroll' for loop 'addRoundKeyLoop' in function 'aes_round' due to performance pragma (Downloads/aes_axis.cpp:460:9)
+INFO: [HLS 214-268] Inferring pragma 'unroll' for loop 'mixColumnsLoop1' in function 'aes_round' due to performance pragma (Downloads/aes_axis.cpp:460:9)
+INFO: [HLS 214-268] Inferring pragma 'unroll' for loop 'shiftRowLoop1' in function 'aes_round' due to performance pragma (Downloads/aes_axis.cpp:460:9)
+INFO: [HLS 214-301] Met performance pragma target_ti=500 cycles for loop 'aesMainLoop' in function 'aes_main' (Downloads/aes_axis.cpp:460:9)
+INFO: [HLS 214-269] Inferring pragma 'pipeline II=46' for loop 'aesInvMainLoop' in function 'aes_invMain' due to performance pragma (Downloads/aes_axis.cpp:663:9)
+INFO: [HLS 214-268] Inferring pragma 'unroll' for loop 'createRoundKeyLoop2' in function 'aes_invMain' due to performance pragma (Downloads/aes_axis.cpp:663:9)
+INFO: [HLS 214-268] Inferring pragma 'unroll' for loop 'createRoundKeyLoop1' in function 'aes_invMain' due to performance pragma (Downloads/aes_axis.cpp:663:9)
+INFO: [HLS 214-268] Inferring pragma 'unroll' for loop 'invMixColumnsLoop1' in function 'aes_invRound' due to performance pragma (Downloads/aes_axis.cpp:663:9)
+INFO: [HLS 214-268] Inferring pragma 'unroll' for loop 'addRoundKeyLoop' in function 'aes_invRound' due to performance pragma (Downloads/aes_axis.cpp:663:9)
+INFO: [HLS 214-268] Inferring pragma 'unroll' for loop 'invShiftRowLoop1' in function 'aes_invRound' due to performance pragma (Downloads/aes_axis.cpp:663:9)
+INFO: [HLS 214-301] Met performance pragma target_ti=600 cycles for loop 'aesInvMainLoop' in function 'aes_invMain' (Downloads/aes_axis.cpp:663:9)
+INFO: [HLS 214-268] Inferring pragma 'unroll factor=4' for loop 'expandKeyLoop1' in function 'expandKey' due to performance pragma (Downloads/aes_axis.cpp:243:9)
+INFO: [HLS 214-269] Inferring pragma 'pipeline II=1' for loop 'expandKeyLoop1' in function 'expandKey' due to performance pragma (Downloads/aes_axis.cpp:243:9)
+INFO: [HLS 214-301] Met performance pragma target_ti=8 cycles for loop 'expandKeyLoop1' in function 'expandKey' (Downloads/aes_axis.cpp:243:9)
+INFO: [HLS 214-291] Loop 'createRoundKeyLoop1' is marked as complete unroll implied by the pipeline pragma (Downloads/aes_axis.cpp:436:5)
+INFO: [HLS 214-291] Loop 'createRoundKeyLoop2' is marked as complete unroll implied by the pipeline pragma (Downloads/aes_axis.cpp:440:9)
+INFO: [HLS 214-291] Loop 'invMixColumnsLoop1' is marked as complete unroll implied by the pipeline pragma (Downloads/aes_axis.cpp:597:5)
+INFO: [HLS 214-291] Loop 'addRoundKeyLoop' is marked as complete unroll implied by the pipeline pragma (Downloads/aes_axis.cpp:340:2)
+INFO: [HLS 214-291] Loop 'invShiftRowLoop1' is marked as complete unroll implied by the pipeline pragma (Downloads/aes_axis.cpp:577:5)
+INFO: [HLS 214-291] Loop 'mixColumnsLoop1' is marked as complete unroll implied by the pipeline pragma (Downloads/aes_axis.cpp:371:5)
+INFO: [HLS 214-291] Loop 'shiftRowLoop1' is marked as complete unroll implied by the pipeline pragma (Downloads/aes_axis.cpp:324:5)
+INFO: [HLS 214-186] Unrolling loop 'createRoundKeyLoop1' (Downloads/aes_axis.cpp:436:5) in function 'aes_invMain' completely with a factor of 4 (Downloads/aes_axis.cpp:653:0)
+INFO: [HLS 214-186] Unrolling loop 'createRoundKeyLoop2' (Downloads/aes_axis.cpp:440:9) in function 'aes_invMain' completely with a factor of 4 (Downloads/aes_axis.cpp:653:0)
+WARNING: [HLS 214-189] Pipeline directive for loop 'createRoundKeyLoop2' (Downloads/aes_axis.cpp:440:9) in function 'aes_invMain' has been removed because the loop is unrolled completely (Downloads/aes_axis.cpp:653:0)
+INFO: [HLS 214-186] Unrolling loop 'invMixColumnsLoop1' (Downloads/aes_axis.cpp:597:5) in function 'aes_invRound' completely with a factor of 4 (Downloads/aes_axis.cpp:645:0)
+WARNING: [HLS 214-189] Pipeline directive for loop 'invMixColumnsLoop1' (Downloads/aes_axis.cpp:597:5) in function 'aes_invRound' has been removed because the loop is unrolled completely (Downloads/aes_axis.cpp:645:0)
+INFO: [HLS 214-186] Unrolling loop 'addRoundKeyLoop' (Downloads/aes_axis.cpp:340:2) in function 'aes_invRound' completely with a factor of 16 (Downloads/aes_axis.cpp:645:0)
+INFO: [HLS 214-186] Unrolling loop 'invShiftRowLoop1' (Downloads/aes_axis.cpp:577:5) in function 'aes_invRound' completely with a factor of 3 (Downloads/aes_axis.cpp:645:0)
+WARNING: [HLS 214-189] Pipeline directive for loop 'invShiftRowLoop1' (Downloads/aes_axis.cpp:577:5) in function 'aes_invRound' has been removed because the loop is unrolled completely (Downloads/aes_axis.cpp:645:0)
+INFO: [HLS 214-186] Unrolling loop 'invShiftRowLoop1' (Downloads/aes_axis.cpp:577:5) in function 'aes_invRound' completely with a factor of 2 (Downloads/aes_axis.cpp:645:0)
+INFO: [HLS 214-186] Unrolling loop 'createRoundKeyLoop1' (Downloads/aes_axis.cpp:436:5) in function 'aes_main' completely with a factor of 4 (Downloads/aes_axis.cpp:448:0)
+INFO: [HLS 214-186] Unrolling loop 'createRoundKeyLoop2' (Downloads/aes_axis.cpp:440:9) in function 'aes_main' completely with a factor of 4 (Downloads/aes_axis.cpp:448:0)
+WARNING: [HLS 214-189] Pipeline directive for loop 'createRoundKeyLoop2' (Downloads/aes_axis.cpp:440:9) in function 'aes_main' has been removed because the loop is unrolled completely (Downloads/aes_axis.cpp:448:0)
+INFO: [HLS 214-186] Unrolling loop 'addRoundKeyLoop' (Downloads/aes_axis.cpp:340:2) in function 'aes_round' completely with a factor of 16 (Downloads/aes_axis.cpp:424:0)
+INFO: [HLS 214-186] Unrolling loop 'mixColumnsLoop1' (Downloads/aes_axis.cpp:371:5) in function 'aes_round' completely with a factor of 4 (Downloads/aes_axis.cpp:424:0)
+WARNING: [HLS 214-189] Pipeline directive for loop 'mixColumnsLoop1' (Downloads/aes_axis.cpp:371:5) in function 'aes_round' has been removed because the loop is unrolled completely (Downloads/aes_axis.cpp:424:0)
+INFO: [HLS 214-186] Unrolling loop 'shiftRowLoop1' (Downloads/aes_axis.cpp:324:5) in function 'aes_round' completely with a factor of 3 (Downloads/aes_axis.cpp:424:0)
+WARNING: [HLS 214-189] Pipeline directive for loop 'shiftRowLoop1' (Downloads/aes_axis.cpp:324:5) in function 'aes_round' has been removed because the loop is unrolled completely (Downloads/aes_axis.cpp:424:0)
+INFO: [HLS 214-186] Unrolling loop 'shiftRowLoop1' (Downloads/aes_axis.cpp:324:5) in function 'aes_round' completely with a factor of 2 (Downloads/aes_axis.cpp:424:0)
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=cyclic factor=2 dim=1' for array 'expandedKey.i' due to pipeline pragma (Downloads/aes_axis.cpp:483:19)
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=cyclic factor=2 dim=1' for array 'expandedKey.i336' due to pipeline pragma (Downloads/aes_axis.cpp:686:19)
+INFO: [HLS 214-248] Applying array_partition to 'expandedKey.i336': Cyclic partitioning with factor 2 on dimension 1. (Downloads/aes_axis.cpp:686:19)
+INFO: [HLS 214-248] Applying array_partition to 'expandedKey.i': Cyclic partitioning with factor 2 on dimension 1. (Downloads/aes_axis.cpp:483:19)
+INFO: [HLS 214-131] Inlining function '_llvm.fpga.unpack.none.s_struct.ap_int<8>s.i8' into 'aes(hls::stream<hls::axis<ap_int<8>, 1ul, 1ul, 1ul>, 0>&, hls::stream<hls::axis<ap_int<8>, 1ul, 1ul, 1ul>, 0>&, int, unsigned char, unsigned char, unsigned int, unsigned int)' (C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:283:5)
+INFO: [HLS 214-131] Inlining function '_llvm.fpga.pack.none.i1.s_struct.ap_uint<1>s' into 'aes(hls::stream<hls::axis<ap_int<8>, 1ul, 1ul, 1ul>, 0>&, hls::stream<hls::axis<ap_int<8>, 1ul, 1ul, 1ul>, 0>&, int, unsigned char, unsigned char, unsigned int, unsigned int)' (C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:304:5)
+INFO: [HLS 214-131] Inlining function '_llvm.fpga.pack.none.i8.s_struct.ap_int<8>s' into 'aes(hls::stream<hls::axis<ap_int<8>, 1ul, 1ul, 1ul>, 0>&, hls::stream<hls::axis<ap_int<8>, 1ul, 1ul, 1ul>, 0>&, int, unsigned char, unsigned char, unsigned int, unsigned int)' (C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:304:5)
+INFO: [HLS 214-131] Inlining function '_llvm.fpga.unpack.none.s_struct.ap_uint<1>s.i1' into 'aes(hls::stream<hls::axis<ap_int<8>, 1ul, 1ul, 1ul>, 0>&, hls::stream<hls::axis<ap_int<8>, 1ul, 1ul, 1ul>, 0>&, int, unsigned char, unsigned char, unsigned int, unsigned int)' (C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_axi_sdata.h:283:5)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 5.894 seconds; current allocated memory: 1.373 GB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.002 seconds; current allocated memory: 1.373 GB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.15 seconds; current allocated memory: 1.373 GB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.221 seconds; current allocated memory: 1.373 GB.
+INFO: [XFORM 203-510] Pipelining loop 'addRoundKeyLoop' (Downloads/aes_axis.cpp:340) in function 'aes_main' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'addRoundKeyLoop' (Downloads/aes_axis.cpp:340) in function 'aes_main' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'addRoundKeyLoop' (Downloads/aes_axis.cpp:340) in function 'aes_invMain' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'addRoundKeyLoop' (Downloads/aes_axis.cpp:340) in function 'aes_invMain' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'Loop-2' in function 'aes' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'Loop-3' in function 'aes' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'Loop-4' in function 'aes' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'cipherkeyLoop' (Downloads/aes_axis.cpp:60) in function 'aes' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'plaintextLoop' in function 'aes' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'aesEncryptLoop2' (Downloads/aes_axis.cpp:488) in function 'aes' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'aesEncryptLoop4' (Downloads/aes_axis.cpp:488) in function 'aes' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'aesDecryptLoop2' (Downloads/aes_axis.cpp:691) in function 'aes' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'aesDecryptLoop4' (Downloads/aes_axis.cpp:691) in function 'aes' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'ciphertextLoop' (Downloads/aes_axis.cpp:60) in function 'aes' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'decryptedTextLoop' (Downloads/aes_axis.cpp:60) in function 'aes' automatically.
+WARNING: [XFORM 203-561] Updating loop upper bound from 3 to 2 for loop 'invShiftRowLoop1' (Downloads/aes_axis.cpp:579:9) in function 'aes_invMain'.
+WARNING: [XFORM 203-561] Updating loop lower bound from 1 to 2 for loop 'invShiftRowLoop1' (Downloads/aes_axis.cpp:579:9) in function 'aes_invMain'.
+WARNING: [XFORM 203-561] Updating loop lower bound from 1 to 3 for loop 'invShiftRowLoop1' (Downloads/aes_axis.cpp:579:9) in function 'aes_invMain'.
+WARNING: [XFORM 203-561] Updating loop upper bound from 3 to 2 for loop 'shiftRowLoop1' (Downloads/aes_axis.cpp:326:9) in function 'aes_main'.
+WARNING: [XFORM 203-561] Updating loop lower bound from 1 to 2 for loop 'shiftRowLoop1' (Downloads/aes_axis.cpp:326:9) in function 'aes_main'.
+WARNING: [XFORM 203-561] Updating loop lower bound from 1 to 3 for loop 'shiftRowLoop1' (Downloads/aes_axis.cpp:326:9) in function 'aes_main'.
+INFO: [XFORM 203-501] Unrolling loop 'expandKeyLoop1' (Downloads/aes_axis.cpp:234) in function 'expandKey' partially with a factor of 4.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (Downloads/aes_axis.cpp:252:9) to (Downloads/aes_axis.cpp:289:27) in function 'expandKey'... converting 5 basic blocks.
+INFO: [XFORM 203-11] Balancing expressions in function 'galois_multiplication' (Downloads/aes_axis.cpp:345)...6 expression(s) balanced.
+INFO: [XFORM 203-11] Balancing expressions in function 'aes_round' (Downloads/aes_axis.cpp:423)...64 expression(s) balanced.
+INFO: [XFORM 203-11] Balancing expressions in function 'aes_invRound' (Downloads/aes_axis.cpp:644)...48 expression(s) balanced.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.885 seconds; current allocated memory: 1.373 GB.
+INFO: [XFORM 203-541] Flattening a loop nest 'createRoundKeyLoop1' (Downloads/aes_axis.cpp:433:9) in function 'aes_main'.
+INFO: [XFORM 203-541] Flattening a loop nest 'createRoundKeyLoop1' (Downloads/aes_axis.cpp:433:9) in function 'aes_main'.
+INFO: [XFORM 203-541] Flattening a loop nest 'createRoundKeyLoop1' (Downloads/aes_axis.cpp:433:9) in function 'aes_invMain'.
+INFO: [XFORM 203-541] Flattening a loop nest 'createRoundKeyLoop1' (Downloads/aes_axis.cpp:433:9) in function 'aes_invMain'.
+INFO: [XFORM 203-541] Flattening a loop nest 'aesEncryptLoop1' (Downloads/aes_axis.cpp:488:9) in function 'aes'.
+INFO: [XFORM 203-541] Flattening a loop nest 'aesEncryptLoop3' (Downloads/aes_axis.cpp:488:9) in function 'aes'.
+INFO: [XFORM 203-541] Flattening a loop nest 'aesDecryptLoop1' (Downloads/aes_axis.cpp:691:9) in function 'aes'.
+INFO: [XFORM 203-541] Flattening a loop nest 'aesDecryptLoop3' (Downloads/aes_axis.cpp:691:9) in function 'aes'.
+WARNING: [HLS 200-960] Cannot flatten loop 'VITIS_LOOP_61_1' (Downloads/aes_axis.cpp:58:13) in function 'aes' more than one sub loop.
+INFO: [HLS 200-472] Inferring partial write operation for 'expandedKey_0' (Downloads/aes_axis.cpp:244:17)
+INFO: [HLS 200-472] Inferring partial write operation for 'expandedKey_0' (Downloads/aes_axis.cpp:289:27)
+INFO: [HLS 200-472] Inferring partial write operation for 'state' (Downloads/aes_axis.cpp:341:18)
+INFO: [HLS 200-472] Inferring partial write operation for 'roundKey' (Downloads/aes_axis.cpp:442:26)
+INFO: [HLS 200-472] Inferring partial write operation for 'state' (Downloads/aes_axis.cpp:304:11)
+INFO: [HLS 200-472] Inferring partial write operation for 'state' (Downloads/aes_axis.cpp:331:22)
+INFO: [HLS 200-472] Inferring partial write operation for 'state' (Downloads/aes_axis.cpp:331:24)
+INFO: [HLS 200-472] Inferring partial write operation for 'state' (Downloads/aes_axis.cpp:613:32)
+INFO: [HLS 200-472] Inferring partial write operation for 'state' (Downloads/aes_axis.cpp:559:11)
+INFO: [HLS 200-472] Inferring partial write operation for 'key_array128' 
+INFO: [HLS 200-472] Inferring partial write operation for 'key_array128' 
+INFO: [HLS 200-472] Inferring partial write operation for 'key_array128' 
+INFO: [HLS 200-472] Inferring partial write operation for 'key_array128' (Downloads/aes_axis.cpp:72:17)
+INFO: [HLS 200-472] Inferring partial write operation for 'plaintext_array' (Downloads/aes_axis.cpp:78:23)
+INFO: [HLS 200-472] Inferring partial write operation for 'block.1' (Downloads/aes_axis.cpp:524:34)
+INFO: [HLS 200-472] Inferring partial write operation for 'ciphertext_array' (Downloads/aes_axis.cpp:541:33)
+INFO: [HLS 200-472] Inferring partial write operation for 'block' (Downloads/aes_axis.cpp:728:34)
+INFO: [HLS 200-472] Inferring partial write operation for 'decryptedtext_array' (Downloads/aes_axis.cpp:746:33)
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.808 seconds; current allocated memory: 1.373 GB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'aes' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'aes_Pipeline_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [HLS 200-1457] Automatically inferring inferring RAM_1WNR storage type for array 'key_array128'. Use bind_storage pragma to override this type.
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 1, loop 'Loop 1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.301 seconds; current allocated memory: 1.373 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.051 seconds; current allocated memory: 1.373 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'aes_Pipeline_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [HLS 200-1457] Automatically inferring inferring RAM_1WNR storage type for array 'key_array128'. Use bind_storage pragma to override this type.
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 1, loop 'Loop 1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.082 seconds; current allocated memory: 1.373 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.05 seconds; current allocated memory: 1.373 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'aes_Pipeline_3' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [HLS 200-1457] Automatically inferring inferring RAM_1WNR storage type for array 'key_array128'. Use bind_storage pragma to override this type.
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 1, loop 'Loop 1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.084 seconds; current allocated memory: 1.373 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.051 seconds; current allocated memory: 1.373 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'aes_Pipeline_cipherkeyLoop' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [HLS 200-1457] Automatically inferring inferring RAM_1WNR storage type for array 'key_array128'. Use bind_storage pragma to override this type.
+INFO: [SCHED 204-61] Pipelining loop 'cipherkeyLoop'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 1, loop 'cipherkeyLoop'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.083 seconds; current allocated memory: 1.373 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.051 seconds; current allocated memory: 1.373 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'aes_Pipeline_plaintextLoop' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'plaintextLoop'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 1, loop 'plaintextLoop'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.077 seconds; current allocated memory: 1.373 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.057 seconds; current allocated memory: 1.373 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'aes_Pipeline_aesEncryptLoop1_aesEncryptLoop2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'aesEncryptLoop1_aesEncryptLoop2'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 2, loop 'aesEncryptLoop1_aesEncryptLoop2'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.091 seconds; current allocated memory: 1.373 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.064 seconds; current allocated memory: 1.373 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'expandKey_Pipeline_expandKeyLoop1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [HLS 200-1457] Automatically inferring inferring RAM_1WNR storage type for array 'key_array128'. Use bind_storage pragma to override this type.
+INFO: [SCHED 204-61] Pipelining loop 'expandKeyLoop1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 3, loop 'expandKeyLoop1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.118 seconds; current allocated memory: 1.373 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.07 seconds; current allocated memory: 1.373 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'expandKey_Pipeline_expandKeyLoop2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'expandKeyLoop2'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 12, Final II = 12, Depth = 45, loop 'expandKeyLoop2'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.211 seconds; current allocated memory: 1.373 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.249 seconds; current allocated memory: 1.373 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'expandKey' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.191 seconds; current allocated memory: 1.373 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.085 seconds; current allocated memory: 1.373 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'aes_main_Pipeline_createRoundKeyLoop1_createRoundKeyLoop2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'createRoundKeyLoop1_createRoundKeyLoop2'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 2, loop 'createRoundKeyLoop1_createRoundKeyLoop2'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.172 seconds; current allocated memory: 1.373 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.066 seconds; current allocated memory: 1.373 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'aes_main_Pipeline_addRoundKeyLoop' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'addRoundKeyLoop'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 2, loop 'addRoundKeyLoop'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.106 seconds; current allocated memory: 1.373 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.057 seconds; current allocated memory: 1.373 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'galois_multiplication' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'galois_multiplication'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 0, Final II = 1, Depth = 1, function 'galois_multiplication'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.088 seconds; current allocated memory: 1.373 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.061 seconds; current allocated memory: 1.373 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'aes_round' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'aes_round'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 38, Final II = 28, Depth = 28, function 'aes_round'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.225 seconds; current allocated memory: 1.373 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.243 seconds; current allocated memory: 1.373 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'aes_main_Pipeline_aesMainLoop' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'aesMainLoop'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 38, Final II = 37, Depth = 37, loop 'aesMainLoop'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.364 seconds; current allocated memory: 1.373 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.223 seconds; current allocated memory: 1.373 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'aes_main_Pipeline_createRoundKeyLoop1_createRoundKeyLoop21' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'createRoundKeyLoop1_createRoundKeyLoop2'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 2, loop 'createRoundKeyLoop1_createRoundKeyLoop2'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.279 seconds; current allocated memory: 1.373 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.069 seconds; current allocated memory: 1.373 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'aes_main_Pipeline_shiftRowLoop1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'shiftRowLoop1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 6, Final II = 1, Depth = 2, loop 'shiftRowLoop1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.122 seconds; current allocated memory: 1.373 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.071 seconds; current allocated memory: 1.373 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'aes_main_Pipeline_shiftRowLoop12' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'shiftRowLoop1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 6, Final II = 1, Depth = 2, loop 'shiftRowLoop1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.097 seconds; current allocated memory: 1.373 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.064 seconds; current allocated memory: 1.373 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'aes_main_Pipeline_addRoundKeyLoop3' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'addRoundKeyLoop'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 2, loop 'addRoundKeyLoop'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.095 seconds; current allocated memory: 1.373 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.063 seconds; current allocated memory: 1.373 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'aes_main' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.128 seconds; current allocated memory: 1.373 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.217 seconds; current allocated memory: 1.373 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'aes_Pipeline_aesEncryptLoop3_aesEncryptLoop4' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'aesEncryptLoop3_aesEncryptLoop4'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 2, loop 'aesEncryptLoop3_aesEncryptLoop4'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.346 seconds; current allocated memory: 1.373 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.075 seconds; current allocated memory: 1.373 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'aes_Pipeline_aesDecryptLoop1_aesDecryptLoop2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'aesDecryptLoop1_aesDecryptLoop2'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 2, loop 'aesDecryptLoop1_aesDecryptLoop2'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.12 seconds; current allocated memory: 1.373 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.072 seconds; current allocated memory: 1.373 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'aes_invMain_Pipeline_createRoundKeyLoop1_createRoundKeyLoop2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'createRoundKeyLoop1_createRoundKeyLoop2'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 2, loop 'createRoundKeyLoop1_createRoundKeyLoop2'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.12 seconds; current allocated memory: 1.373 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.077 seconds; current allocated memory: 1.373 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'aes_invMain_Pipeline_addRoundKeyLoop' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'addRoundKeyLoop'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 2, loop 'addRoundKeyLoop'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.115 seconds; current allocated memory: 1.373 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.067 seconds; current allocated memory: 1.373 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'aes_invRound' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'aes_invRound'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 46, Final II = 37, Depth = 37, function 'aes_invRound'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.242 seconds; current allocated memory: 1.373 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.279 seconds; current allocated memory: 1.373 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'aes_invMain_Pipeline_aesInvMainLoop' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'aesInvMainLoop'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 46, Final II = 46, Depth = 46, loop 'aesInvMainLoop'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.377 seconds; current allocated memory: 1.373 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.255 seconds; current allocated memory: 1.373 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'aes_invMain_Pipeline_createRoundKeyLoop1_createRoundKeyLoop24' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'createRoundKeyLoop1_createRoundKeyLoop2'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 2, loop 'createRoundKeyLoop1_createRoundKeyLoop2'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.283 seconds; current allocated memory: 1.373 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.076 seconds; current allocated memory: 1.373 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'aes_invMain_Pipeline_invShiftRowLoop1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'invShiftRowLoop1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 5, Final II = 1, Depth = 2, loop 'invShiftRowLoop1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.119 seconds; current allocated memory: 1.373 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.068 seconds; current allocated memory: 1.373 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'aes_invMain_Pipeline_invShiftRowLoop15' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'invShiftRowLoop1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 5, Final II = 1, Depth = 2, loop 'invShiftRowLoop1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.102 seconds; current allocated memory: 1.373 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.071 seconds; current allocated memory: 1.373 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'aes_invMain_Pipeline_addRoundKeyLoop6' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'addRoundKeyLoop'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 2, loop 'addRoundKeyLoop'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.106 seconds; current allocated memory: 1.373 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.072 seconds; current allocated memory: 1.373 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'aes_invMain' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.141 seconds; current allocated memory: 1.373 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.23 seconds; current allocated memory: 1.373 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'aes_Pipeline_aesDecryptLoop3_aesDecryptLoop4' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'aesDecryptLoop3_aesDecryptLoop4'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 2, loop 'aesDecryptLoop3_aesDecryptLoop4'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.346 seconds; current allocated memory: 1.373 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.078 seconds; current allocated memory: 1.373 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'aes_Pipeline_ciphertextLoop' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'ciphertextLoop'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 2, loop 'ciphertextLoop'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.125 seconds; current allocated memory: 1.373 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.079 seconds; current allocated memory: 1.373 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'aes_Pipeline_decryptedTextLoop' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'decryptedTextLoop'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 2, loop 'decryptedTextLoop'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.103 seconds; current allocated memory: 1.373 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.073 seconds; current allocated memory: 1.373 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'aes' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.126 seconds; current allocated memory: 1.373 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.358 seconds; current allocated memory: 1.373 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'aes_Pipeline_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'aes_Pipeline_1'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.718 seconds; current allocated memory: 1.373 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'aes_Pipeline_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'aes_Pipeline_2'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.088 seconds; current allocated memory: 1.373 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'aes_Pipeline_3' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'aes_Pipeline_3'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.088 seconds; current allocated memory: 1.373 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'aes_Pipeline_cipherkeyLoop' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'aes_Pipeline_cipherkeyLoop'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.087 seconds; current allocated memory: 1.373 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'aes_Pipeline_plaintextLoop' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'aes_Pipeline_plaintextLoop'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.103 seconds; current allocated memory: 1.373 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'aes_Pipeline_aesEncryptLoop1_aesEncryptLoop2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'aes_Pipeline_aesEncryptLoop1_aesEncryptLoop2' pipeline 'aesEncryptLoop1_aesEncryptLoop2' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'aes_Pipeline_aesEncryptLoop1_aesEncryptLoop2'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.128 seconds; current allocated memory: 1.373 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'expandKey_Pipeline_expandKeyLoop1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'expandKey_Pipeline_expandKeyLoop1' pipeline 'expandKeyLoop1' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'expandKey_Pipeline_expandKeyLoop1'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.164 seconds; current allocated memory: 1.373 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'expandKey_Pipeline_expandKeyLoop2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'expandKey_Pipeline_expandKeyLoop2' pipeline 'expandKeyLoop2' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mux_21_8_1_1': 6 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'srem_32ns_7ns_6_36_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'expandKey_Pipeline_expandKeyLoop2'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.27 seconds; current allocated memory: 1.373 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'expandKey' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'expandKey'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 1 seconds. Elapsed time: 0.446 seconds; current allocated memory: 1.373 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'aes_main_Pipeline_createRoundKeyLoop1_createRoundKeyLoop2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'aes_main_Pipeline_createRoundKeyLoop1_createRoundKeyLoop2' pipeline 'createRoundKeyLoop1_createRoundKeyLoop2' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mux_21_8_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'aes_main_Pipeline_createRoundKeyLoop1_createRoundKeyLoop2'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.199 seconds; current allocated memory: 1.373 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'aes_main_Pipeline_addRoundKeyLoop' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'aes_main_Pipeline_addRoundKeyLoop' pipeline 'addRoundKeyLoop' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'aes_main_Pipeline_addRoundKeyLoop'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.171 seconds; current allocated memory: 1.373 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'galois_multiplication' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'galois_multiplication'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.108 seconds; current allocated memory: 1.373 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'aes_round' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'aes_round'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.171 seconds; current allocated memory: 1.373 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'aes_main_Pipeline_aesMainLoop' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'aes_main_Pipeline_aesMainLoop'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.645 seconds; current allocated memory: 1.373 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'aes_main_Pipeline_createRoundKeyLoop1_createRoundKeyLoop21' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'aes_main_Pipeline_createRoundKeyLoop1_createRoundKeyLoop21' pipeline 'createRoundKeyLoop1_createRoundKeyLoop2' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mux_21_8_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'aes_main_Pipeline_createRoundKeyLoop1_createRoundKeyLoop21'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.379 seconds; current allocated memory: 1.373 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'aes_main_Pipeline_shiftRowLoop1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'aes_main_Pipeline_shiftRowLoop1' pipeline 'shiftRowLoop1' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'aes_main_Pipeline_shiftRowLoop1'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.173 seconds; current allocated memory: 1.373 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'aes_main_Pipeline_shiftRowLoop12' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'aes_main_Pipeline_shiftRowLoop12' pipeline 'shiftRowLoop1' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'aes_main_Pipeline_shiftRowLoop12'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.121 seconds; current allocated memory: 1.373 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'aes_main_Pipeline_addRoundKeyLoop3' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'aes_main_Pipeline_addRoundKeyLoop3' pipeline 'addRoundKeyLoop' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'aes_main_Pipeline_addRoundKeyLoop3'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.125 seconds; current allocated memory: 1.373 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'aes_main' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'aes_main'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.123 seconds; current allocated memory: 1.373 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'aes_Pipeline_aesEncryptLoop3_aesEncryptLoop4' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'aes_Pipeline_aesEncryptLoop3_aesEncryptLoop4' pipeline 'aesEncryptLoop3_aesEncryptLoop4' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'aes_Pipeline_aesEncryptLoop3_aesEncryptLoop4'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.422 seconds; current allocated memory: 1.373 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'aes_Pipeline_aesDecryptLoop1_aesDecryptLoop2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'aes_Pipeline_aesDecryptLoop1_aesDecryptLoop2' pipeline 'aesDecryptLoop1_aesDecryptLoop2' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'aes_Pipeline_aesDecryptLoop1_aesDecryptLoop2'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.167 seconds; current allocated memory: 1.373 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'aes_invMain_Pipeline_createRoundKeyLoop1_createRoundKeyLoop2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'aes_invMain_Pipeline_createRoundKeyLoop1_createRoundKeyLoop2' pipeline 'createRoundKeyLoop1_createRoundKeyLoop2' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mux_21_8_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'aes_invMain_Pipeline_createRoundKeyLoop1_createRoundKeyLoop2'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.184 seconds; current allocated memory: 1.373 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'aes_invMain_Pipeline_addRoundKeyLoop' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'aes_invMain_Pipeline_addRoundKeyLoop' pipeline 'addRoundKeyLoop' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'aes_invMain_Pipeline_addRoundKeyLoop'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.176 seconds; current allocated memory: 1.373 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'aes_invRound' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'aes_invRound'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.131 seconds; current allocated memory: 1.373 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'aes_invMain_Pipeline_aesInvMainLoop' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'aes_invMain_Pipeline_aesInvMainLoop'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.633 seconds; current allocated memory: 1.373 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'aes_invMain_Pipeline_createRoundKeyLoop1_createRoundKeyLoop24' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'aes_invMain_Pipeline_createRoundKeyLoop1_createRoundKeyLoop24' pipeline 'createRoundKeyLoop1_createRoundKeyLoop2' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mux_21_8_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'aes_invMain_Pipeline_createRoundKeyLoop1_createRoundKeyLoop24'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.388 seconds; current allocated memory: 1.373 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'aes_invMain_Pipeline_invShiftRowLoop1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'aes_invMain_Pipeline_invShiftRowLoop1' pipeline 'invShiftRowLoop1' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'aes_invMain_Pipeline_invShiftRowLoop1'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.177 seconds; current allocated memory: 1.373 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'aes_invMain_Pipeline_invShiftRowLoop15' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'aes_invMain_Pipeline_invShiftRowLoop15' pipeline 'invShiftRowLoop1' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'aes_invMain_Pipeline_invShiftRowLoop15'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.129 seconds; current allocated memory: 1.373 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'aes_invMain_Pipeline_addRoundKeyLoop6' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'aes_invMain_Pipeline_addRoundKeyLoop6' pipeline 'addRoundKeyLoop' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'aes_invMain_Pipeline_addRoundKeyLoop6'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.125 seconds; current allocated memory: 1.373 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'aes_invMain' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'aes_invMain'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.127 seconds; current allocated memory: 1.373 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'aes_Pipeline_aesDecryptLoop3_aesDecryptLoop4' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'aes_Pipeline_aesDecryptLoop3_aesDecryptLoop4' pipeline 'aesDecryptLoop3_aesDecryptLoop4' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'aes_Pipeline_aesDecryptLoop3_aesDecryptLoop4'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.421 seconds; current allocated memory: 1.373 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'aes_Pipeline_ciphertextLoop' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'aes_Pipeline_ciphertextLoop' pipeline 'ciphertextLoop' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'aes_Pipeline_ciphertextLoop'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.172 seconds; current allocated memory: 1.373 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'aes_Pipeline_decryptedTextLoop' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'aes_Pipeline_decryptedTextLoop' pipeline 'decryptedTextLoop' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'aes_Pipeline_decryptedTextLoop'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.129 seconds; current allocated memory: 1.373 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'aes' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low.
+INFO: [RTGEN 206-500] Setting interface mode on port 'aes/key_and_plaintext_V_data_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'aes/key_and_plaintext_V_keep_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'aes/key_and_plaintext_V_strb_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'aes/key_and_plaintext_V_user_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'aes/key_and_plaintext_V_last_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'aes/key_and_plaintext_V_id_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'aes/key_and_plaintext_V_dest_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'aes/ciphertext_and_decryptedtext_V_data_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'aes/ciphertext_and_decryptedtext_V_keep_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'aes/ciphertext_and_decryptedtext_V_strb_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'aes/ciphertext_and_decryptedtext_V_user_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'aes/ciphertext_and_decryptedtext_V_last_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'aes/ciphertext_and_decryptedtext_V_id_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'aes/ciphertext_and_decryptedtext_V_dest_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'aes/mode' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'aes/enable_in' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'aes/enable_out' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'aes/power_reading_in' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'aes/power_reading_out' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'aes' to 's_axilite & ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Bundling port 'enable_in', 'power_reading_out' and 'return' to AXI-Lite port CTRL_BUS.
+INFO: [RTGEN 206-100] Bundling port 'mode', 'enable_out' and 'power_reading_in' to AXI-Lite port control.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'aes'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.522 seconds; current allocated memory: 1.373 GB.
+INFO: [RTMG 210-279] Implementing memory 'aes_expandKey_Pipeline_expandKeyLoop2_sbox_ROM_2P_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'aes_expandKey_Pipeline_expandKeyLoop2_Rcon_ROM_2P_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-278] Implementing memory 'aes_aes_main_roundKey_RAM_AUTO_1R1W_ram (RAM)' using auto RAMs.
+INFO: [RTMG 210-279] Implementing memory 'aes_aes_invRound_rsbox_ROM_2P_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-278] Implementing memory 'aes_aes_invMain_roundKey_RAM_AUTO_1R1W_ram (RAM)' using auto RAMs.
+INFO: [RTMG 210-278] Implementing memory 'aes_key_array128_RAM_1WNR_AUTO_1R1W_ram (RAM_1WnR)' using auto RAMs.
+INFO: [RTMG 210-278] Implementing memory 'aes_expandedKey_RAM_AUTO_1R1W_ram (RAM)' using auto RAMs.
+INFO: [RTMG 210-278] Implementing memory 'aes_block_RAM_AUTO_1R1W_ram (RAM)' using auto RAMs.
+INFO: [RTMG 210-278] Implementing memory 'aes_plaintext_array_RAM_AUTO_1R1W_ram (RAM)' using auto RAMs.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 2 seconds. CPU system time: 1 seconds. Elapsed time: 2.681 seconds; current allocated memory: 1.373 GB.
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 1.635 seconds; current allocated memory: 1.373 GB.
+INFO: [VHDL 208-304] Generating VHDL RTL for aes.
+INFO: [VLOG 209-307] Generating Verilog RTL for aes.
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 139.59 MHz
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 20 seconds. CPU system time: 2 seconds. Elapsed time: 35.088 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-112] Total CPU user time: 23 seconds. Total CPU system time: 4 seconds. Total elapsed time: 39.78 seconds; peak allocated memory: 1.373 GB.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.1 (64-bit)
+Tool Version Limit: 2022.04
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-1611] Setting target device to 'xc7z020-clg400-1'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1464] Running solution command: config_export -output=C:/Users/iqbal.ha
+INFO: [HLS 200-1510] Running: set_part xc7z020clg400-1 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-1510] Running: config_export -output C:/Users/iqbal.ha 
+INFO: [HLS 200-1510] Running: export_design -rtl verilog -format ip_catalog -output C:/Users/iqbal.ha 
+INFO: [IMPL 213-8] Exporting RTL as a Vivado IP.
+INFO: [HLS 200-802] Generated output file export.zip
+INFO: [HLS 200-111] Finished Command export_design CPU user time: 2 seconds. CPU system time: 1 seconds. Elapsed time: 15.077 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-112] Total CPU user time: 5 seconds. Total CPU system time: 2 seconds. Total elapsed time: 17.749 seconds; peak allocated memory: 1.451 GB.

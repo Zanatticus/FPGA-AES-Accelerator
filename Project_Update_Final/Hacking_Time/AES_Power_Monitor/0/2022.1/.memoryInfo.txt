@@ -1,0 +1,47 @@
+
+Host Name:                 X22-16
+OS Name:                   Microsoft Windows 10 Education N
+OS Version:                10.0.19042 N/A Build 19042
+OS Manufacturer:           Microsoft Corporation
+OS Configuration:          Member Workstation
+OS Build Type:             Multiprocessor Free
+Registered Owner:          coeadmin
+Registered Organization:   
+Product ID:                00328-60000-00001-AA696
+Original Install Date:     6/29/2021, 10:52:44 AM
+System Boot Time:          4/16/2024, 6:14:30 AM
+System Manufacturer:       VMware, Inc.
+System Model:              VMware7,1
+System Type:               x64-based PC
+Processor(s):              2 Processor(s) Installed.
+                           [01]: Intel64 Family 6 Model 63 Stepping 0 GenuineIntel ~2594 Mhz
+                           [02]: Intel64 Family 6 Model 63 Stepping 0 GenuineIntel ~2594 Mhz
+BIOS Version:              VMware, Inc. VMW71.00V.18227214.B64.2106252220, 6/25/2021
+Windows Directory:         C:\WINDOWS
+System Directory:          C:\WINDOWS\system32
+Boot Device:               \Device\HarddiskVolume2
+System Locale:             en-us;English (United States)
+Input Locale:              en-us;English (United States)
+Time Zone:                 (UTC-05:00) Eastern Time (US & Canada)
+Total Physical Memory:     16,383 MB
+Available Physical Memory: 12,196 MB
+Virtual Memory: Max Size:  17,407 MB
+Virtual Memory: Available: 13,050 MB
+Virtual Memory: In Use:    4,357 MB
+Page File Location(s):     C:\pagefile.sys
+Domain:                    wincoe.coe.neu.edu
+Logon Server:              \\GATES
+Hotfix(s):                 5 Hotfix(s) Installed.
+                           [01]: KB5003254
+                           [02]: KB4562830
+                           [03]: KB4580325
+                           [04]: KB5003637
+                           [05]: KB5003503
+Network Card(s):           1 NIC(s) Installed.
+                           [01]: vmxnet3 Ethernet Adapter
+                                 Connection Name: Ethernet0
+                                 DHCP Enabled:    Yes
+                                 DHCP Server:     129.10.32.82
+                                 IP address(es)
+                                 [01]: 10.90.8.172
+Hyper-V Requirements:      A hypervisor has been detected. Features required for Hyper-V will not be displayed.
